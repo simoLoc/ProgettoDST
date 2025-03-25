@@ -18,7 +18,6 @@ model = lms.llm("smollm2-1.7b-instruct")
 #     return response
 
 
-
 prompt_rules ="""Trigger Action Rules refers to an event-based system. When a specific event occurs, it triggers a predefined action. This helps connect different services so they can work together without manual effort.Trigger Action Rules refers to an event-based system. When a specific event occurs, it triggers a predefined action. This helps connect different services so they can work together without manual effort.
 The trigger-action rule is divided into two subparts, trigger and action, both containing channel, title and fields.
 The key concepts are:
@@ -84,8 +83,6 @@ Frame(trigger_channel = ''; trigger_title = ''; trigger_fields = ''; action_chan
     Frame(trigger_channel = 'Facebook'; trigger_title = 'New photo post by you with hashtag'; trigger_fields = 'Hashtag (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet with image'; action_fields = 'Tweet (Text input), Photo URL (Text input > Photo)')
 - System: Perfect, the rule has been set up! Whenever you post a photo on Facebook with the hashtag #frase_poderosa, it will automatically be shared on Twitter with the text 'New Facebook post: {post text}' and the attached photo.
 
-# Final Belief State
-Frame(trigger_channel = 'Facebook'; trigger_title = 'New photo post by you with hashtag'; trigger_fields = 'Hashtag (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet with image'; action_fields = 'Tweet (Text input), Photo URL (Text input > Photo)')
 """
 
 prompt_completo = f"""Generate an example of an incremental conversation between user and system. In such a conversation, the goal is to complete one field of the action activation rule at each step. The trigger-action rule on which to generate the conversation is provided as input.
@@ -115,9 +112,8 @@ action_fields: Tweet (Text input)
 
 
 By processing the current input, it generates an incremental conversation, between the system and the user, and the temporary belief state for each user utterance. At the end of Conversation, the output contains also the Final Belief State. The purpose of this conversation is to fill in the fields of the trigger-action rule at each step, this must be done using the trigger-action rule provided as input.
-The system must not explicitly ask for that field to be completed.
+The system must not explicitly ask for that field to be completed. The belief state fields must contain exactly the fields of the input trigger-action rule. Utterances must not refer to the fields of the trigger-action rule. Avoid generating the same statements if the fields of the trigger-action rule have already been processed. 
 """
-
 
 # try:
 #         # print('Producing response...')

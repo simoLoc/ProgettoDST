@@ -24,5 +24,4 @@ def csv_to_json(csv_file, json_file):
     print(f"Conversione completata! JSON salvato in {json_file}")
 
 
-# Esempio di utilizzo
 csv_to_json('C:/Users/Utente/Desktop/DST/dataset_6k.csv', 'C:/Users/Utente/Desktop/DST/dataset_6k.json')
