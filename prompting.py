@@ -106,7 +106,6 @@ for entry in dataset:
     prompt_completo = f"""Generate an example of an incremental conversation between user and system. In such a conversation, the goal is to complete one field of the action activation rule at each step. 
     The trigger-action rule on which to generate the conversation is provided as input. The system must ask questions that are related to and consistent with the completion of the various fields in the activation rule.
     Conversely, the user must provide the values needed to complete the fields. The output must contain the utterances between the user and the system, as well as the temporary belief state for each user utterance.
-    Iniatial belief state is at the beginning of the Conversation, so all its fields must be empty. Otherwise, Final belief state is at the end of the Conversation and it corresponds to the last belief state contained in the Conversation.
 
 
     ### RULES 
@@ -130,8 +129,11 @@ for entry in dataset:
     action_fields: {action_fields}
 
 
-    By processing the current input, it generates an incremental conversation, between the system and the user, and the temporary belief state for each user utterance. At the end of Conversation, the output contains also the Final Belief State. The purpose of this conversation is to fill in the fields of the trigger-action rule at each step, this must be done using the trigger-action rule provided as input.
-    The system must not explicitly ask for that field to be completed. The belief state fields must contain exactly the fields of the input trigger-action rule. Utterances must not refer to the fields of the trigger-action rule. Avoid generating the same statements if the fields of the trigger-action rule have already been processed. 
+    By processing the current input, it generates an incremental conversation, between the system and the user, and the temporary belief state for each user utterance. 
+    At the end of Conversation, the output contains also the Final Belief State. Iniatial belief state is at the beginning of the Conversation, so all its fields must be empty. 
+    Otherwise, Final belief state is at the end of the Conversation and it corresponds to the last belief state contained in the Conversation.The purpose of this conversation is to fill in the fields of the trigger-action rule at each step, 
+    this must be done using the trigger-action rule provided as input. The system must not explicitly ask for that field to be completed. The belief state fields must contain exactly the fields of the input trigger-action rule. 
+    Utterances must not refer to the fields of the trigger-action rule. Avoid generating the same statements if the fields of the trigger-action rule have already been processed. 
     """
 
     # try:
