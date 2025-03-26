@@ -33,7 +33,9 @@ for entry in dataset:
     action_fields = entry["action_fields"]
 
 
-    prompt_rules ="""Trigger Action Rules refers to an event-based system. When a specific event occurs, it triggers a predefined action. This helps connect different services so they can work together without manual effort.Trigger Action Rules refers to an event-based system. When a specific event occurs, it triggers a predefined action. This helps connect different services so they can work together without manual effort.
+    prompt_rules ="""Trigger Action Rules refers to an event-based system. When a specific event occurs, it triggers a predefined action. 
+    This helps connect different services so they can work together without manual effort.Trigger Action Rules refers to an event-based system. 
+    When a specific event occurs, it triggers a predefined action. This helps connect different services so they can work together without manual effort.
     The trigger-action rule is divided into two subparts, trigger and action, both containing channel, title and fields.
     The key concepts are:
     - trigger_channel: an entity providing various services.
@@ -52,7 +54,8 @@ for entry in dataset:
     Fields depend on the specified titles and channels.
     Recalling that the trigger-action rule is divided into two subparts, trigger and action, so this natural sequence of steps can begin with the action or the trigger. This choice is defined by the first user statement.
 
-    Each user utterance is associated with a belief state. The belief state is the current state of the frame completion that tracks the progress of the conversation. It contains the various fields of the trigger-action rule, using a frame structure. Here is an example:
+    Each user utterance is associated with a belief state. The belief state is the current state of the frame completion that tracks the progress of the conversation.
+    It contains the various fields of the trigger-action rule, using a frame structure. Temporal belief state must be associated only with user statements, not system statements. Here is an example:
     Frame(trigger_channel = ''; trigger_title = ''; action_channel = 'Facebook'; action_title = 'Publish a post'; trigger_fields = ''; action_fields = '')
     """
 
@@ -100,9 +103,10 @@ for entry in dataset:
 
     """
 
-    prompt_completo = f"""Generate an example of an incremental conversation between user and system. In such a conversation, the goal is to complete one field of the action activation rule at each step. The trigger-action rule on which to generate the conversation is provided as input.
-    The system must ask questions that are related to and consistent with the completion of the various fields in the activation rule. Conversely, the user must provide the values needed to complete the fields.
-    The output must contain the utterances between the user and the system, as well as the temporary belief state for each user utterance.
+    prompt_completo = f"""Generate an example of an incremental conversation between user and system. In such a conversation, the goal is to complete one field of the action activation rule at each step. 
+    The trigger-action rule on which to generate the conversation is provided as input. The system must ask questions that are related to and consistent with the completion of the various fields in the activation rule.
+    Conversely, the user must provide the values needed to complete the fields. The output must contain the utterances between the user and the system, as well as the temporary belief state for each user utterance.
+    Iniatial belief state is at the beginning of the Conversation, so all its fields must be empty. Otherwise, Final belief state is at the end of the Conversation and it corresponds to the last belief state contained in the Conversation.
 
 
     ### RULES 
