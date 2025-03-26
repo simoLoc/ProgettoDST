@@ -1,0 +1,36 @@
+## Conversation
+
+**Frame(trigger_channel = 'YouTube'; trigger_title = ''; trigger_fields = ''; action_channel = ''; action_title = '';  action_fields = '')** 
+
+- **User:** I want to create a link post on Facebook every time someone likes a video on YouTube.
+    - **Belief state:**  trigger_channel = 'YouTube', trigger_title = '', trigger_fields = '' , action_channel = '', action_title = '', action_fields = '' 
+
+- **System:**  Understood! I will help you set up this rule. Where would you like to link the Facebook post from?
+    - **Belief state:** trigger_channel = 'YouTube', trigger_title = '', trigger_fields = '', action_channel = '', action_title = '', action_fields = '' 
+
+- **User:**  I want to link the posts to the YouTube channel page.
+   - **Belief State:** trigger_channel = 'YouTube', trigger_title = 'New liked video', trigger_fields = '', action_channel = 'Facebook Pages', action_title = 'Create a link post', action_fields = 'Link URL (Text input > Link), Message (Text input)'
+
+- **System:** Great choice! Now, what kind of message would you like to include in the Facebook post? 
+   - **Belief State:** trigger_channel = 'YouTube', trigger_title = 'New liked video', trigger_fields = '', action_channel = 'Facebook Pages', action_title = 'Create a link post', action_fields = 'Link URL (Text input > Link), Message (Text input)'
+
+
+---
+**Final Belief State:** 
+
+- **trigger_channel = 'YouTube'; trigger_title = 'New liked video'; trigger_fields = ''; action_channel = 'Facebook Pages'; action_title = 'Create a link post'; action_fields = 'Link URL (Text input > Link), Message (Text input)'**
+  
+ 
+
+**Explanation:** 
+
+
+- **User Input:** The user starts by stating their desired outcome - linking YouTube likes to Facebook posts.
+- **System Confirmation:** The system clarifies its understanding of the request and asks for the target channel, ensuring clarity in the next step. 
+- **Step-by-step completion:** The conversation focuses on completing one field at a time (trigger_channel, trigger_title, action_channel, action_title) as it progresses towards the desired outcome.
+ -  **Final Belief State:** The final belief state reflects the complete fields of the trigger-action rule after fulfilling each step in the conversation. 
+
+
+
+
+Let me know if you would like to see a continuation of the conversation or explore other examples!

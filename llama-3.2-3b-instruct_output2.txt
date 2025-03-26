@@ -1,0 +1,84 @@
+Here is an example of an incremental conversation between the user and the system, as described:
+
+### Initial Belief State
+Frame(trigger_channel = ''; trigger_title = ''; trigger_fields = ''; action_channel = ''; action_title = '';  action_fields = '')
+
+### User Utterance 1
+User: I would like to receive notifications when my Home Connect Cookit device is started.
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = ''; action_channel = ''; action_title = ''; action_fields = '')
+
+### System Utterance 1
+System: Got it! To set up this rule, I need to know which device you want to use as the trigger. Do you have a specific one in mind?
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = ''; action_channel = ''; action_title = ''; action_fields = '')
+
+### User Utterance 2
+User: Yes, I have an Android device.
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = ''; action_channel = 'Android Device'; action_title = ''; action_fields = '')
+
+### System Utterance 2
+System: Great choice! What do you want to use to track when the Cookit device is started? Would you like me to check a specific button or feature?
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = ''; action_channel = 'Android Device'; action_title = ''; action_fields = '')
+
+### User Utterance 3
+User: I would like to track when the "Start" button is pressed.
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = ''; action_fields = '')
+
+### System Utterance 3
+System: Perfect! Now, on the Android device, what should I be looking for in your notifications to enable sending a music command?
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### User Utterance 4
+User: I would like to receive a notification when the "Start" button is pressed.
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### System Utterance 4
+System: Great, I will monitor your Home Connect Cookit device for the "Start" button press. On the Android device, would you like to play a specific type of music or just start a music player?
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### User Utterance 5
+User: I would like to play a specific type of music.
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### System Utterance 5
+System: Fine, I will play a specific type of music. What kind would you like to hear?
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### User Utterance 6
+User: I would like to play some relaxing music.
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### System Utterance 6
+System: Great, I will play some relaxing music. Can you please provide the title of your preferred song or artist?
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### User Utterance 7
+User: I don't have a specific song in mind, just play some relaxing music.
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### System Utterance 7
+System: Perfect! I will play some relaxing music on the Android device. Is there anything else you want to specify?
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### User Utterance 8
+User: No, that's all.
+    Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+### Final Belief State
+Frame(trigger_channel = 'Home Connect Cookit'; trigger_title = 'Cookit started'; trigger_fields = 'Ha ID (Dropdown list)'; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+- Ha ID: unknown (optional)
+- Tweet (Text input): New Facebook post: {post text} (optional)
+- Photo URL (Text input > Photo): {photo URL} (optional)
+
+### Output
+User Utterances:
+1. I would like to receive notifications when my Home Connect Cookit device is started.
+2. Yes, I have an Android device.
+3. I would like to track when the "Start" button is pressed.
+4. I don't have a specific song in mind, just play some relaxing music.
+
+System Utterances:
+1. Got it! To set up this rule, I need to know which device you want to use as the trigger. Do you have a specific one in mind?
+2. Great choice! What do you want to use to track when the Cookit device is started? Would you like me to check a specific button or feature?
+3. Perfect! Now, on the Android device, what should I be looking for in your notifications to enable sending a music command?
+4. Great, I will play some relaxing music on the Android device. Is there anything else you want to specify?
+5. Fine, I will play a specific type of music. What kind would you like to hear?

@@ -1,0 +1,65 @@
+## Conversation
+
+**Frame:** (trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = ''; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+
+- **User:** I want to post a tweet every hour.
+    **Frame:** (trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = ''; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+- **System:** Okay, how about the time? Would you like me to specify it in HH:MM format? 
+    **Frame:** (trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = ''; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+- **User:** Let's do it at 09:00.
+    **Frame:** (trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+
+- **System:**  Great! What should your tweets say? 
+    **Frame:** (trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+- **User:** I want the tweets to be simple, just "Tweet time!". 
+    **Frame:** (trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = 'Tweet (Text input)')
+
+
+- **System:** Perfect, it will be "Tweet time!" every 09:00 on Twitter. Is there anything else you'd like me to add?
+    **Frame:** (trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = ''; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+
+- **User:** No, that's all. 
+    **Frame:** (trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = ''; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+
+
+## Final Belief State:
+
+```json
+{
+"trigger_channel": "Date & Time",
+"trigger_title": "Every hour at",
+"trigger_fields": {
+"Time (Text input)": "" 
+},
+"action_channel": "Twitter",
+"action_title": "Post a tweet",
+"action_fields": {
+"Tweet (Text input)": "", 
+}
+}
+```
+
+
+
+
+
+**Explanation:**
+
+- The conversation starts with the user stating their goal - posting tweets every hour.
+- The system clarifies that it needs the time for the trigger.
+- The user provides the desired time as "09:00". 
+- Finally, the user confirms everything is set and the final belief state reflects this.
+
+
+This conversation exemplifies how to use an incremental conversational approach to fill out trigger-action rule fields one at a time. It demonstrates how the system interacts with the user in a natural way through dialogue.
+
+
+
+

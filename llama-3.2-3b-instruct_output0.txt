@@ -1,0 +1,51 @@
+Here is an example of an incremental conversation between a user and a system based on the provided trigger-action rules:
+
+**Initial Belief State**
+Frame(trigger_channel = ''; trigger_title = ''; trigger_fields = ''; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**User Utterance 1**
+- User: I would like every time it's an hour, a post is automatically tweeted.
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = ''; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**System Utterance 1**
+- System: Got it! I can help you set up this rule. What do you want to use to track the time intervals?
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = ''; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**User Utterance 2**
+- User: I use a digital clock.
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**System Utterance 2**
+- System: Good choice. What time would you like the post to be tweeted every hour?
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**User Utterance 3**
+- User: I would like it to be tweeted every hour.
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**System Utterance 3**
+- System: Perfect, I will monitor the digital clock for every hour. On Twitter, would you like to share only the text of the post or also the associated photo?
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**User Utterance 4**
+- User: I would like to share both the text and the photo.
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**System Utterance 4**
+- System: Fine, I will share both the text and the photo. What should I write in the tweet? Do you want to use the same text as the digital clock reading or add something specific?
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**User Utterance 5**
+- User: Write "It's [time]".
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**System Utterance 5**
+- System: Great, the tweet will be "It's [time]". The photo will automatically be added to the tweet. Is there anything else you want to specify?
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**User Utterance 6**
+- User: No, that's fine.
+    Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = '')
+
+**Final Belief State**
+Frame(trigger_channel = 'Date & Time'; trigger_title = 'Every hour at'; trigger_fields = 'Time (Text input)'; action_channel = 'Twitter'; action_title = 'Post a tweet'; action_fields = 'Tweet (Text input), Photo URL (Text input > Photo)')

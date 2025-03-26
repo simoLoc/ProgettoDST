@@ -1,0 +1,63 @@
+## Conversation
+
+**Initial Belief State:**
+```json
+{
+  "trigger_channel": "",
+  "trigger_title": "Cookit started",
+  "trigger_fields": {}, 
+  "action_channel": "Android Device", 
+  "action_title": "Play music",
+  "action_fields": {} 
+}
+```
+
+**User:** Hey, can you help me set up a rule that plays music when my Cookit starts? 
+
+
+**System:** Sure!  What type of Ha ID should be used to trigger this action? Choose from the list below.
+
+
+**User:** I'd like to play the music when it starts on a **Ha 123**.
+
+**System:** Great! You specified that you want to trigger the music playback with a "Ha 123" starting event.  Which device should this action be sent to?
+    
+**User:** It should be sent to my smart speaker.
+
+
+**System:** Excellent! What kind of music would you like to play when your Cookit starts on Ha 123? You can select an existing playlist or start a new one by choosing the "New Playlist" option.
+
+**User:**  I'd like to play a playlist called "My Happy Hits".
+
+
+**System:**  Alright, we have that playlist ready! To activate this rule, you need to confirm it. 
+
+**User:** Okay, I confirm that my rule is set correctly.
+ 
+
+**Final Belief State:**
+```json
+{
+  "trigger_channel": "Home Connect Cookit",
+  "trigger_title": "Cookit started",
+  "trigger_fields": {
+    "Ha ID": "123"
+  },
+  "action_channel": "Android Device", 
+  "action_title": "Play music",
+  "action_fields": {"Playlist Name": "My Happy Hits"} 
+}
+```
+
+
+
+**Explanation:**
+
+* We begin with an initial belief state reflecting the provided rules.
+* The user provides information about the Ha ID and the desired playlist name.
+* The system confirms the settings.
+* Finally, we update the belief state to reflect these changes in order for future utterances to be processed appropriately.  
+
+
+
+ 
