@@ -1,0 +1,47 @@
+[
+    {
+        "trigger_channel": "Department of Agriculture",
+        "trigger_title": "New open recall",
+        "trigger_fields": "Query (Text input > Other)",
+        "action_channel": "Email",
+        "action_title": "Send me an email",
+        "action_fields": "Subject (Text input > Title), Body (Text input > HTML)",
+        "descrizione": "Get an email when the USDA posts a new open recall due to allergens. Allergy-proof your diet  this Applet searches new USDA recalls for the term 'allergens' and will send you an email with the details if there's something you might want to purge from your fridge. "
+    },
+    {
+        "trigger_channel": "Home Connect Cookit",
+        "trigger_title": "Cookit started",
+        "trigger_fields": "Ha ID (Dropdown list)",
+        "action_channel": "Android Device",
+        "action_title": "Play music",
+        "action_fields": "",
+        "descrizione": "Play music when starting to prepare a recipe. Play music on your Android device when your Cookit started with preparing the recipe."
+    },
+    {
+        "trigger_channel": "Weather Underground",
+        "trigger_title": "Tomorrow's weather report",
+        "trigger_fields": "Time (Text input), Location (Location input > Point)",
+        "action_channel": "Gmail",
+        "action_title": "Send an email",
+        "action_fields": "To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)",
+        "descrizione": " every day weather report to any.do.  every day weather report to any.do"
+    },
+    {
+        "trigger_channel": "Weather Underground",
+        "trigger_title": "Today's weather report",
+        "trigger_fields": "Time (Text input), Location (Location input > Point)",
+        "action_channel": "Notifications",
+        "action_title": "Send a notification from the IFTTT app",
+        "action_fields": "Message (Text input)",
+        "descrizione": "Every day at 07:00 AM, get IF notification with weather conditions and forecast for today in F.. Every day at 07:00 AM, get IF notification with weather conditions and forecast for today in F."
+    },
+    {
+        "trigger_channel": "Pocket",
+        "trigger_title": "Any new item",
+        "trigger_fields": "",
+        "action_channel": "Twitter",
+        "action_title": "Post a tweet with image",
+        "action_fields": "Tweet (Text input), Photo URL (Text input > Photo)",
+        "descrizione": "Pocket to Twitter. Posts a tweet whenever a link is added to Pocket"
+    }
+]

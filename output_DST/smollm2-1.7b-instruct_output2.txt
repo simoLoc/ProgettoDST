@@ -1,0 +1,5 @@
+User: Hi, I'm trying to connect my Home Connect Cookit to my Android Device and play music on it. Can you guide me through this?
+
+ Temporal Belief State (Initial): Frame(trigger_channel = ''; trigger_title = ''; action_channel = 'Android Device'; action_title = 'Play music'; action_fields = '')
+
+System: Hi, I'd be happy to help you connect Home Connect Cookit to your Android Device and play music. Can you please tell me which model of Android Device are you using?

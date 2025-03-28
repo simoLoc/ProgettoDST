@@ -166,7 +166,7 @@ action_fields: {action_fields}
     """
         SALVATAGGIO SU FILE DEL RISULTATO
     """
-    with open(f"{name_model}_output{i}.txt", "w") as file:
+    with open(f"output_DST/{name_model}_output{i}.txt", "w") as file:
         file.write(str(result))
 
     print(result)

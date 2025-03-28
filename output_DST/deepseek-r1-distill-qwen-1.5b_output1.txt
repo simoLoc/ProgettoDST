@@ -1,0 +1,45 @@
+<think>
+Okay, so I'm trying to figure out how to generate an incremental conversation based on the given trigger-action rule. Let me start by understanding all the parts.
+
+The current input provides a trigger and action with their respective channels, titles, fields, etc. The system needs to ask questions related to completing these fields step by step. Each user utterance should address one or more fields in the trigger or action.
+
+First, looking at the trigger: YouTube is the channel, "New liked video" is the title, and there are no fields provided for this part. Then, the action is Facebook Pages with "Create a link post" as the title and "Link URL (Text input > Link), Message (Text input)" as the fields.
+
+So, I need to ask questions about both trigger and action fields first. The system should not directly specify which fields to complete but can ask about them in general. For example, asking if it's about creating a link post or whether the user likes a video on YouTube before triggering.
+
+Next, once the action field is set with a link URL or message, the user might need to provide more details like entering a text input for that link. So I can ask the user to enter the text input after they've chosen the link.
+
+I should make sure each question is about a different part of the rules and doesn't go back once fields are filled. Also, ensure that the system asks questions related only to the trigger and action parts without mentioning any intermediate steps.
+
+Let me outline the possible conversation flow:
+
+1. Ask if the user wants to create a link post or whether they like a new video on YouTube before triggering.
+2. Then, after providing the link URL or message, ask for the text input to complete it.
+3. Finally, maybe check if the system is ready to process further steps beyond this.
+
+I need to structure each question clearly so that the user fills in the necessary fields step by step without getting confused. Also, ensure that the belief state stays on track with all the required fields from both trigger and action parts.
+</think>
+
+### Incremental Conversation Between User and System
+
+**System's Questions:**
+
+1. Has the user expressed a desire to create a link post or is they are asking whether it would be useful to like a new video from YouTube before triggering?
+
+2. Have you provided either a link URL or message with the action field? If so, what text input has been specified for that link.
+
+**User's Responses:**
+
+1. I would like to create a link post and check if it would help me share my liked videos on YouTube.
+
+2. Yes, I have chosen the following fields for the link post: Link URL is 'https://example.com', and there's no mention of any message input yet. I will enter this text input after providing the link URL.
+
+**Final Belief State**
+
+- Trigger Channel: Facebook Pages
+- Trigger Title: Create a link post
+- Trigger Fields: Link URL (Text input > Link), Message (Text input)
+
+- Action Channel: Facebook Pages
+- Action Title: Create a link post
+- Action Fields: Link URL (Text input > Link), Message (Text input)
