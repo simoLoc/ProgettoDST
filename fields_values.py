@@ -1,25 +1,12 @@
 import lmstudio as lms
-from openai import OpenAI
 import json
+from tqdm import tqdm
+import os
 
 
 name_model = "gemma-2-2b-it"
 
 model = lms.llm(name_model)
-
-# Usando l'API gpt4-all
-# Token esaurito (DA MODIFICARE)
-# client = OpenAI(api_key="g4a-bKeS8JvQiSrnUFyIKKJrYcZNHbuDvNv75pv", base_url="https://api.gpt4-all.xyz/v1")
-
-# def get_response(prompt):
-#     response = client.chat.completions.create(
-#         model="gpt-4o-mini",
-#         messages=[{"role": "user", "content": prompt}],
-#         stream=False,
-#         # n = 3
-#     )
-
-#     return response
 
 """
     PROMPT STATICO
@@ -68,6 +55,7 @@ action_fileds_values: ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'Thi
 
 prompt_end = """
 Thus, considering channel, title and fields, for both trigger and action, generates a possible value for fields_values. In particular, the values of trigger_fields_values and action_fields_values must be consistent with trigger_channel, trigger_title, action_channel and action_title, respecting the type given in trigger_fields and action_fields. Furthermore, the values generated must not alter the meaning of the trigger-action rule provided as input.
+Furthermore, the data to be generated must be as if written by a human, i.e. the field to be generated must appear as real as possible. For example, when considering a URL, a fictitious URL must be generated that looks as real as possible.
 """
 
 # Carica il Dataset
@@ -75,7 +63,7 @@ with open("dataset/values_prova.json", "r", encoding="ISO-8859-1") as f:
     dataset = json.load(f)
 
 
-for i, entry in enumerate(dataset):
+for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
     # Mappa i campi del JSON ai campi del prompt
     trigger_channel = entry["trigger_channel"]
     trigger_title = entry["trigger_title"]
@@ -110,27 +98,18 @@ action_fields: '{action_fields}'
 {prompt_end}
     """
 
-    # try:
-    #         # print('Producing response...')
-    #         response = get_response(prompt_completo)
-    #         # print("Pipeline executed successfully.")
-    # except Exception as e:
-    #         print("Error occurred:")
-    #         print(e)
-
-    # new_edus = [c.message.content.strip("'") for c in response.choices]
-
-    # print(new_edus)
-
-    print(f"Regola Trigger-Action {i}\n")
-
     result = model.respond(prompt_completo)
 
     
     """
         SALVATAGGIO SU FILE DEL RISULTATO
     """
-    with open(f"output_values/{name_model}_output{i}.txt", "w") as file:
-        file.write(str(result))
+    # Percorso del file
+    file_path = f"output_DST/{name_model}/output{i}.txt"
 
-    print(result)
+    # Crea la directory se non esiste
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    # Scrivi il file
+    with open(file_path, "w") as file:
+        file.write(str(result))
