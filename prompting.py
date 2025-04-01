@@ -1,6 +1,7 @@
 import lmstudio as lms
 from openai import OpenAI
 import json
+import os
 
 
 name_model = "gemma-2-2b-it"
@@ -101,6 +102,7 @@ At the end of Conversation, the output contains also the Final Belief State. Ini
 Otherwise, Final belief state is at the end of the Conversation and it corresponds to the last belief state contained in the Conversation.The purpose of this conversation is to fill in the fields of the trigger-action rule at each step, 
 this must be done using the trigger-action rule provided as input. The system must not explicitly ask for that field to be completed. The belief state fields must contain exactly the fields of the input trigger-action rule. 
 Utterances must not refer to the fields of the trigger-action rule. Avoid generating the same statements if the fields of the trigger-action rule have already been processed. 
+Furthermore, the data to be generated must be as if written by a human, i.e. the field to be generated must appear as real as possible. For example, when considering a URL, a fictitious URL must be generated that looks as real as possible.
 """
 
 # Carica il Dataset
@@ -166,7 +168,14 @@ action_fields: {action_fields}
     """
         SALVATAGGIO SU FILE DEL RISULTATO
     """
-    with open(f"output_DST/{name_model}_output{i}.txt", "w") as file:
+    # Percorso del file
+    file_path = f"output_DST/{name_model}/output{i}.txt"
+
+    # Crea la directory se non esiste
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    # Scrivi il file
+    with open(file_path, "w") as file:
         file.write(str(result))
 
-    print(result)
+    # print(result)
