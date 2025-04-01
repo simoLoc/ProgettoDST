@@ -1,26 +1,13 @@
 import lmstudio as lms
-from openai import OpenAI
 import json
 import os
+from tqdm import tqdm
 
 
 name_model = "gemma-2-2b-it"
 
 model = lms.llm(name_model)
 
-# Usando l'API gpt4-all
-# Token esaurito (DA MODIFICARE)
-# client = OpenAI(api_key="g4a-bKeS8JvQiSrnUFyIKKJrYcZNHbuDvNv75pv", base_url="https://api.gpt4-all.xyz/v1")
-
-# def get_response(prompt):
-#     response = client.chat.completions.create(
-#         model="gpt-4o-mini",
-#         messages=[{"role": "user", "content": prompt}],
-#         stream=False,
-#         # n = 3
-#     )
-
-#     return response
 
 """
     PROMPT STATICO
@@ -110,7 +97,7 @@ with open("dataset\prova.json", "r", encoding="ISO-8859-1") as f:
     dataset = json.load(f)
 
 
-for i, entry in enumerate(dataset):
+for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
     # Mappa i campi del JSON ai campi del prompt
     trigger_channel = entry["trigger_channel"]
     trigger_title = entry["trigger_title"]
@@ -148,20 +135,8 @@ action_fields: {action_fields}
 {prompt_end}
     """
 
-    # try:
-    #         # print('Producing response...')
-    #         response = get_response(prompt_completo)
-    #         # print("Pipeline executed successfully.")
-    # except Exception as e:
-    #         print("Error occurred:")
-    #         print(e)
-
-    # new_edus = [c.message.content.strip("'") for c in response.choices]
-
-    # print(new_edus)
 
     # print(prompt_completo)
-    print(f"Regola Trigger-Action {i}\n")
 
     result = model.respond(prompt_completo)
 
