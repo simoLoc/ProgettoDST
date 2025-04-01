@@ -93,7 +93,7 @@ Furthermore, the data to be generated must be as if written by a human, i.e. the
 """
 
 # Carica il Dataset
-with open("dataset\prova.json", "r", encoding="ISO-8859-1") as f:
+with open("dataset/values_prova.json", "r", encoding="ISO-8859-1") as f:
     dataset = json.load(f)
 
 
@@ -144,7 +144,7 @@ action_fields: {action_fields}
         SALVATAGGIO SU FILE DEL RISULTATO
     """
     # Percorso del file
-    file_path = f"output_DST/{name_model}/output{i}.txt"
+    file_path = f"output_values/{name_model}/output{i}.txt"
 
     # Crea la directory se non esiste
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
