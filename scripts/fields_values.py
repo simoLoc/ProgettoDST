@@ -105,7 +105,7 @@ action_fields: '{action_fields}'
         SALVATAGGIO SU FILE DEL RISULTATO
     """
     # Percorso del file
-    file_path = f"output_DST/{name_model}/output{i}.txt"
+    file_path = f"output_values/{name_model}/output{i}.txt"
 
     # Crea la directory se non esiste
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
