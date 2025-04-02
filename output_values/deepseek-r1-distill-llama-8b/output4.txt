@@ -1,0 +1,31 @@
+<think>
+Okay, so I need to help this user generate trigger_fields_values and action_fields_values based on the given trigger-action rules. Let me start by understanding what they're asking for.
+
+First, looking at the example provided. The input had an empty trigger_fields, so the output was also empty with trigger_fields_values as ''. Similarly for action_fields, since it's a list of fields like 'Link URL (Text input > Link), Message (Text input)', the values are generated accordingly. So, I need to make sure that when trigger_fields is empty, trigger_fields_values stays empty.
+
+Now, applying this to their current input: 
+
+Trigger-channel is Pocket, trigger-title is Any new item. Trigger_fields is empty, so trigger_fields_values should be empty.
+
+Action-channel is Twitter, action-title is Post a tweet with image. Action_fields are 'Tweet (Text input), Photo URL (Text input > Photo)'. So I need to generate plausible values for these fields.
+
+For the Tweet field, it's a Text input, but more specifically, a Text input where the value should be something that makes sense in a real-world context. Maybe something like "Just found this cool product! 🚀 #productreview". It needs to be engaging and realistic.
+
+For the Photo URL, since it's a Text input expecting a photo link, I should generate a URL that looks legitimate. Maybe using a placeholder domain, like 'example.com', and a random image name. So something like 'https://example.com/products/cool-product-123.jpg'.
+
+Putting it all together, action_fields_values would be an array containing these two generated URLs. Also, since the trigger_fields are empty, their values remain empty.
+
+I should ensure that the output is clear and follows the structure provided in the example. Each field's value must be consistent with what a human would generate, making them look as real as possible without being too specific to avoid any privacy or security issues.
+</think>
+
+# Trigger-action rules
+
+trigger_channel: 'Pocket'  
+trigger_title: 'Any new item'  
+trigger_fields: ''  
+trigger_fields_values: ''  
+
+action_channel: 'Twitter'  
+action_title: 'Post a tweet with image'  
+action_fields: 'Tweet (Text input), Photo URL (Text input > Photo)'  
+action_fields_values: ['Just found this cool product! 🚀 #productreview', 'https://example.com/products/cool-product-123.jpg']
