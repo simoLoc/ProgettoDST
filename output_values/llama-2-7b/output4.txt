@@ -1,0 +1,3 @@
+
+Trigger Action Rules refers to an event-based system. When a specific event occurs, it triggers a predefined action. 
+This helps connect different services so they can work together without manual effort. Trigger Action Rules refers to an event-based system. The trigger-action rule is divided into two subparts, trigger and action, both containing channel, title and fields.
