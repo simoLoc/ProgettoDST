@@ -50,7 +50,7 @@ trigger_fields_values: ''
 action_channel: 'Facebook Pages'
 action_title: 'Create a link post'
 action_fields: 'Link URL (Text input > Link), Message (Text input)'
-action_fileds_values: ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!'']
+action_fields_values: ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!'']
 """
 
 prompt_end = """
