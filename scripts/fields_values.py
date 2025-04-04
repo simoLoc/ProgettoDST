@@ -25,6 +25,7 @@ action_channel: the entity that provides the action service resulting from the t
 action_title: a specific action_channel functionality that is executed when the trigger is activated.
 action_fields: type parameters required to define the behaviour of the action executed by the action_title.
 When the trigger is activated, the system automatically executes the associated action.
+The trigger_fields and action_fields contain the type of data to be generated. In addition to the type, they may have a specific format, which is preceded by the symbol “>”. In this case, the data to be generated must also respect the specific format.
 """
 
 prompt_exception = """
@@ -54,8 +55,7 @@ action_fields_values: ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'Thi
 """
 
 prompt_end = """
-Thus, considering channel, title and fields, for both trigger and action, generates a possible value for fields_values. In particular, the values of trigger_fields_values and action_fields_values must be consistent with trigger_channel, trigger_title, action_channel and action_title, respecting the type given in trigger_fields and action_fields. Furthermore, the values generated must not alter the meaning of the trigger-action rule provided as input.
-Furthermore, the data to be generated must be as if written by a human, i.e. the field to be generated must appear as real as possible. For example, when considering a URL, a fictitious URL must be generated that looks as real as possible.
+Thus, considering channel, title and fields, for both trigger and action, generates a possible value for fields_values, maintaining the same format as the output of the example. In particular, the values of trigger_fields_values and action_fields_values must be consistent with trigger_channel, trigger_title, action_channel and action_title, respecting the type given in trigger_fields and action_fields. Furthermore, the values generated must not alter the meaning of the trigger-action rule provided as input. Furthermore, the data to be generated must be as if written by a human, i.e. the field to be generated must appear as real as possible. For example, when considering a URL, a fictitious URL must be generated that looks as real as possible.
 """
 
 # Carica il Dataset
@@ -73,7 +73,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
     action_fields = entry["action_fields"]
 
 
-    prompt_completo = f"""Generates trigger_fields_values and action_fields_values considering the type assumed by trigger_fields and action_fields respectively. The values to be generated must be consistent with the trigger-action rule provided as input. Accordingly, the values of trigger_fields_values and action_fields_values must not alter the meaning of the trigger-action rule.
+    prompt_completo = f"""Generates trigger_fields_values and action_fields_values considering the type assumed by trigger_fields and action_fields respectively. The values to be generated must be consistent with the trigger-action rule provided as input. Accordingly, the values of trigger_fields_values and action_fields_values must not alter the meaning of the trigger-action rule. The values to be generated must be as real as possible, simulating human ones. In particular, inside fields_values there must be no fields left to fill in.
 
 ### RULES 
 {prompt_rules}
