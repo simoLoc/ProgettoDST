@@ -1,18 +1,18 @@
-## INPUT
-# Trigger-action rules
-trigger_channel: 'YouTube'
-trigger_title: 'New liked video'
-trigger_fields: ''
-action_channel: 'Facebook Pages'
-action_title: 'Create a link post'
-action_fields: 'Link URL (Text input > Link), Message (Text input)',
-
-## OUTPUT
-trigger_channel: 'YouTube'
-trigger_title: 'New liked video'
-trigger_fields: ''
-trigger_fields_values: ''
-action_channel: 'Facebook Pages'
-action_title: 'Create a link post'
-action_fields: 'Link URL (Text input > Link), Message (Text input)',
-action_fileds_values: ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!'']
+```json
+[
+  {
+    "Trigger Channel": "Weather Underground",
+    "Trigger Title": "Tomorrow's weather report",
+    "Trigger Fields": 'Time (Text input), Location (Location input > Point)',
+    "Action Channel": "Gmail",
+    "Action Title": "Send an email"
+  },
+  {
+    "Trigger Channel": "YouTube",
+    "Trigger Title": "New liked video",
+    "Trigger Fields": '',
+    "Action Channel": "Facebook Pages",
+    "Action Title": "Create a link post"
+  }
+]
+```

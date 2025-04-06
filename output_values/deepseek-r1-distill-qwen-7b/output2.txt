@@ -1,472 +1,70 @@
 <think>
-Alright, so I need to figure out how to generate the trigger_fields_values and action_fields_values based on the given input trigger and action fields. Let me start by understanding the problem step by step.
+Okay, I need to help generate trigger_fields_values and action_fields_values based on the given Trigger-Action Rule. Let's break down the problem step by step.
 
-First, looking at the example provided:
+First, looking at the current input:
 
-**Input Trigger:**
-- Channel: YouTube
-- Title: New liked video
-- Fields: '' (empty)
-So, trigger_fields_values is also empty as per the exception rule.
+Trigger Channel: 'Weather Underground'
+Trigger Title: 'Tomorrow's weather report'
+Trigger Fields: Time (Text input), Location (Location input > Point)
 
-**Action:**
-- Channel: Facebook Pages
-- Title: Create a link post
-- Fields: Link URL (Text input > Link), Message (Text input)
+So, trigger_fields is a list of fields with their types. The format requires each field to be represented as "Field Name (Input Type) > Format". For example, the output in the example had 'Link URL (Text input > Link)'.
 
-In the output, action_fields_values has two values: one URL and one message. They're placeholders that look realistic but not real data.
+The action side has:
 
-Now, my task is to apply this logic to the current input provided:
+Action Channel: 'Gmail'
+Action Title: 'Send an email'
+Action Fields: To (Text input), Cc (Text input), Bcc (Text input), Subject (Text input), Body (Text input > HTML), Attachment URL (Text input > File)
 
-**Current Trigger:**
-- Channel: Weather Underground
-- Title: Tomorrow's weather report
-- Fields: Time (Text input), Location (Location input > Point)
+I need to generate plausible values for each of these fields, ensuring that the data makes sense and looks realistic. Also, I have to maintain consistency in the format.
 
-So, trigger_fields_values should be empty because trigger_fields is an empty string. But wait, in the example, when trigger_fields were empty, fields_values were also empty. So I think that part is clear.
+Starting with trigger_fields_values:
+- Time: Let's pick a time in 24-hour format, say "15:30". It should be formatted as per the input type.
+- Location: A place like "New York City".
 
-**Current Action:**
-- Channel: Gmail
-- Title: Send an email
-- Fields: To (Text input), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)
+For action_fields_values:
+- To: A recipient email, something common like "John Doe <john.doe@example.com>"
+- Cc and Bcc can have some dummy addresses. Maybe Cc to a colleague and Bcc to an admin.
+- Subject should be relevant, like "Tomorrow's Weather Report".
+- Body needs to look like a typical weather report message. Perhaps starting with the location and time, then providing key points like temperature range and conditions.
+- Attachment URL: A realistic-looking link, maybe using a fake service or random placeholder.
 
-So, I need to generate realistic values for each of these fields. Let me break them down one by one.
+I also need to ensure that each field value is appropriately formatted as per their type (Text input > Other for To, Cc, Bcc; Title and > Title for Subject; HTML for Body). The values should be filled in without altering the trigger-action rule's meaning. 
 
-1. **To:** This is the recipient's email address. It should be a valid-looking email. Maybe something like john.doe@email.com or a longer one with name and domain, e.g., johndoe_juniper2019@weatherunderground.com.
+Wait, I should make sure that when fields are optional or empty, their values reflect that. But since both triggers and actions have non-empty fields here, they must have corresponding values.
 
-2. **Cc (Carbon Copy):** Similar to To but perhaps less important. Maybe a shorter address, like jane.smith@email.com.
+Double-checking:
 
-3. **Bcc ( blind carbon copy ):** Longer than Cc, maybe including more people. For example, ann_martinez_juniper2019@weatherunderground.com.
+Trigger_fields_values:
+- Time: 15:30 (Text input)
+- Location: New York City (Location input > Point)
 
-4. **Subject:** A meaningful subject related to the weather report. Something like "Weather Report: Tomorrow's Weather Summary".
+Action_fields_values:
+- To: John Doe <john.doe@example.com> (Text input > Other)
+- Cc: Jane Smith <jane.smith@example.com>
+- Bcc: Mike Johnson <mike.johnson@example.com>
+- Subject: Tomorrow's Weather Report in New York City at 1530H
+- Body: "Looking ahead to tomorrow's weather forecast for New York City at 1530H. Expect moderate rain with temperatures ranging from 18°C to 24°C. Winds will be light, around 10 km/h..."
+- Attachment URL: Using a placeholder like "https://fakeweather.com/weather-report"
 
-5. **Body (HTML):** This should be an email body formatted in HTML for better readability. I'll need a realistic message with placeholders or dummy data, perhaps including a weather icon and a link to a website.
-
-6. **Attachment URL:** A relevant URL that looks like it's hosted by Weather Underground. Something like "https://www.weatherunderground.com/api/condition/2023-12-01?lat=40.7128&lon=-74.0060".
-
-I should ensure that each of these placeholders makes sense and looks realistic. For example, the To field can't be empty because you need to send an email somewhere.
-
-Wait, in the exception rules, if trigger_fields is empty, then trigger_fields_values must also be empty. So since trigger_fields here are "Time (Text input), Location (Location input > Point)", which aren't empty, their fields_values shouldn't be empty either. Hmm, but maybe I misinterpreted that part.
-
-Looking back: the exception rules say if trigger_fields is empty, then trigger_fields_values must also be empty. But in this case, trigger_fields are present but perhaps have default values or placeholders. So maybe my initial thought was correct—the trigger fields don't require action unless they're mandatory. Wait, no—the trigger's fields define what parameters the trigger needs to function. Since the example provided had an empty trigger_fields and the fields_values were also empty, it seems that if trigger_fields is empty (or not present), then trigger_fields_values must be empty.
-
-But in this case, the trigger has two fields: Time and Location. So those are required for the trigger to work properly. Therefore, their values shouldn't be empty because they're part of the trigger's configuration.
-
-Wait a minute, maybe I'm confusing the trigger and action parts. The exception rule says if trigger_fields is empty, then trigger_fields_values must also be empty. But in this case, trigger_fields are present but perhaps not mandatory? Or perhaps all fields are mandatory by default unless specified otherwise. Hmm.
-
-Looking back at the example:
-
-Trigger fields were '' (empty), so fields_values were ''. In our current case, trigger_fields is "Time (Text input), Location (Location input > Point)", which are both text inputs. So perhaps these need to have values because they're required for the trigger's action to occur.
-
-Wait, but in the example, trigger_fields being empty resulted in trigger_fields_values also being empty. So if we have non-empty trigger_fields, do we still generate fields_values? Or is it that only when trigger_fields are present and not empty, their fields_values should be generated?
-
-In the example, since the trigger's fields were empty, fields_values were empty.
-
-But in our case, trigger_fields has two fields. So perhaps these need to have default or placeholder values because they're required for the trigger action (which is sending an email) to occur.
-
-Therefore, I think that even though the exception rule states that if trigger_fields are empty, their fields_values must be empty, but when trigger_fields are present and non-empty, we still generate their fields_values as placeholders. So in our case, each of those two fields should have a placeholder value.
-
-But wait, maybe the trigger's fields are not part of this problem because the current input only provides trigger_fields as 'Time (Text input), Location (Location input > Point)'. But looking back, perhaps I misread: the example had empty trigger_fields and an empty fields_values. So in our case, since trigger_fields is non-empty, we need to generate their fields_values.
-
-Wait no—looking at the problem statement again:
-
-The exception rules say that if trigger_fields = '' then trigger_fields_values must be ''. But in our current input, trigger_fields are present ("Time (Text input), Location (Location input > Point)"), so they're not empty. Therefore, we don't have to make fields_values for them—wait no, because the example had an empty trigger_fields and empty fields_values, but when trigger_fields were non-empty in another case, perhaps their fields_values should be present.
-
-Wait, maybe I'm overcomplicating. Let me clarify:
-
-The exception rules state that if trigger_fields is empty (i.e., ''), then trigger_fields_values must also be empty (''). So in our current input, since trigger_fields are not empty, we don't have to worry about their fields_values being empty—instead, they can have values.
-
-But looking at the problem statement again: it says "the generated values must be consistent with the trigger-action rule provided as input." So perhaps even if trigger_fields is present and non-empty, their fields_values should also be present but empty. Wait no, because in the example, when trigger_fields were empty, fields_values were empty.
-
-Wait, maybe I'm confusing something else. Let me read the exception rules again:
-
-If trigger_fields = '' then trigger_fields_values must also be ''. So if trigger_fields is non-empty (like Time and Location), their fields_values should not necessarily be empty because they are required by the trigger's action to occur.
-
-So perhaps in our case, since trigger_fields have two fields, we need to generate values for them. But looking at the example given:
-
-In the example, trigger_fields were '', so fields_values were ''. But when trigger_fields had some values (like Time and Location), I think that their fields_values should be present as well.
-
-Wait no, maybe in our case, since the trigger's fields are non-empty, we have to generate corresponding fields_values. So for each field in trigger_fields, we need to provide a value.
-
-But looking at the example, perhaps it's better to understand that when trigger_fields is empty, their values should be empty; otherwise, they should have placeholder values as per the trigger's requirements.
-
-So applying this:
-
-- If trigger_fields are present and non-empty (like Time and Location), then we need to generate fields_values for them. So each field will have a dummy value.
-
-But in the current input, I'm given only up to action_fields, not sure about trigger_fields beyond what's provided. Wait, no—the user provides both triggers and actions with their respective fields.
-
-Wait, perhaps the problem is that I was considering trigger_fields as non-empty because they were present, so we have to generate their values as well. Therefore, for each field in trigger_fields, like Time and Location, we need to provide a dummy value.
-
-But wait, looking back at the current input:
-
-Current Trigger:
-- Trigger_channel: 'Weather Underground'
-- Trigger_title: 'Tomorrow's weather report'
-- Trigger_fields: 'Time (Text input), Location (Location input > Point)'
-
-So trigger_fields is non-empty. Therefore, we need to generate fields_values for them.
-
-Similarly, action_fields are present and non-empty:
-
-Action:
-- Action_channel: 'Gmail'
-- Action_title: 'Send an email'
-- Action_fields: To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)
-
-So for each of these action fields, we need to generate dummy values.
-
-But wait, in the exception rules, if trigger_fields are empty, then their fields_values must be empty. So since our trigger_fields are non-empty, perhaps their fields_values don't have to be empty.
-
-Wait, but maybe the problem is that when trigger_fields are present, even if they're not required (like optional), we still need to provide dummy values because without them, the trigger won't execute properly.
-
-Therefore, in this case:
-
-Trigger_fields: Time and Location. So we can generate dummy times and locations as placeholders.
-
-Action_fields: To, Cc, Bcc, Subject, Body, Attachment URL.
-
-So let's think about each action field:
-
-- **To:** A recipient email address.
-- **Cc:** Another email address for carbon copy.
-- **Bcc:** Yet another email address for blind carbon copy.
-- **Subject:** The subject line of the email.
-- **Body (HTML):** An HTML-formatted body with placeholders or dummy content, perhaps including a weather icon and link to a website.
-- **Attachment URL:** A dummy URL that looks like it's hosted by Weather Underground.
-
-I need to make sure each placeholder is realistic but not real data. For example:
-
-To: john.doe@weatherunderground.com
-
-Cc: jane.smith@weatherunderground.com
-
-Bcc: ann_martinez@weatherunderground.com
-
-Subject: Tomorrow's Weather Summary
-
-Body (HTML): <html><body>Weather forecast for tomorrow: <strong>Tonight’s weather in New York City</strong>. Check out our new app at <a href="https://www.weatherunderground.com" target="_blank">www.weatherunderground.com</a>.</body></html>
-
-Wait, but maybe the attachment URL should be more specific to the trigger's context. Since the trigger is Weather Underground, perhaps using a placeholder like "https://weatherunderground.com/api/summary/2023-12-01?city=New+York" as an example.
-
-Alternatively, I can use a format that includes the relevant parameters for each field.
-
-But maybe it's better to make them look more realistic. For instance:
-
-To: [email@weatherunderground.com]
-
-Cc: [email@weatherunderground.com]
-
-Bcc: [email@weatherunderground.com]
-
-Subject: Weather Summary
-
-Body (HTML): <html><body>Weather summary for [date]. Check out our tools at <a href="https://www.weatherunderground.com" target="_blank">weatherunderground.com</a>.</body></html>
-
-Wait, but the trigger's fields are Time and Location. So perhaps including those in the body would be good.
-
-So maybe:
-
-Body (HTML): <html><body>Here’s your weather forecast for [Time] at [Location]. Check out our new app at <a href="https://www.weatherunderground.com" target="_blank">weatherunderground.com</a>.</body></html>
-
-But then the Subject should reflect this.
-
-Subject: Weather Forecast for [Date]
-
-Also, the To field might include a placeholder name and location. For example:
-
-To: John Doe <john.doe@weatherunderground.com>
-
-Similarly, Cc could have another dummy address like Jane Smith.
-
-Wait, perhaps it's better to make each field as generic as possible but still look realistic for an email.
-
-Let me try drafting each action field:
-
-1. **To:** [John Doe] at [WeatherUnderground Example Email]
-   - John.doe@weatherunderground.com
-
-2. **Cc:** Jane Smith
-   - jane.smith@weatherunderground.com
-
-3. **Bcc:** Ann Martinez
-   - ann_martinez@weatherunderground.com
-
-4. **Subject:** Tomorrow's Weather Summary
-   - "Tomorrow's Weather Summary"
-
-5. **Body (HTML):** <html><body>Weather forecast for tomorrow: [Time] at [Location]. Check out our new app at <a href="https://www.weatherunderground.com" target="_blank">weatherunderground.com</a>.</body></html>
-
-6. **Attachment URL:** "https://www.weatherunderground.com/api/summary/2023-12-01?city=New+York"
-
-But wait, the trigger's fields include Location (Location input > Point). So perhaps the body should reference that.
-
-Alternatively, I can make it generic without including specific data since they are placeholders.
-
-Wait, but in the example given in the problem statement, even with a URL and text inputs, dummy values were provided. So maybe for each action field:
-
-- To: A simple email address.
-- Cc: Another email.
-- Bcc: Yet another.
-- Subject: A title that's relevant to the trigger.
-- Body (HTML): An HTML snippet that includes placeholders or dummy data but looks realistic.
-- Attachment URL: A placeholder with a domain and parameters.
-
-I think this approach makes sense. So, let's put it all together.
-
-For Trigger:
-
-- Trigger_channel: 'Weather Underground'
-- Trigger_title: 'Tomorrow's weather report'
-- Trigger_fields: 'Time (Text input), Location (Location input > Point)'
-- Trigger_fields_values: ['[Time]', '[Location]']  // Placeholder for actual values
-
-Wait, but according to the exception rules, when trigger_fields are empty, fields_values must be empty. But in this case, since trigger_fields is non-empty, their fields_values shouldn't necessarily be empty because they're required by the trigger's action.
-
-But I think that if the trigger_fields are present (even as placeholders), then the system should generate corresponding fields_values for them to make sure the trigger can execute properly. So perhaps we need to provide dummy values for Time and Location as well, even though in reality, these would be filled with actual data.
-
-So, let's proceed:
-
-Trigger_fields_values: ['[Time]', '[Location]']
-
-But maybe it's better to use specific placeholder strings like '2023-12-01' for the time and a dummy location string like 'New York City, NY'.
-
-Wait, but without real data, perhaps using asterisks or other placeholders is acceptable as per the problem statement.
-
-However, in the example provided by the user, action_fields_values included URLs and text inputs with dummy content. So maybe it's better to follow that pattern.
-
-For Time: * (as a placeholder for date)
-Location: * (as a placeholder for location)
-
-So:
-
-Trigger_fields_values: ['*', '*']
-
-But wait, since trigger_fields are non-empty, perhaps their fields_values shouldn't be empty because the trigger needs those values. So maybe it's correct to provide placeholders.
-
-Now, moving on to action_fields_values as per each field:
-
-To: [John Doe] at [WeatherUnderground Example Email]
-Wait, but in the problem statement's example output, the To and Cc fields were just single email addresses. So perhaps each field is represented by a single string value. Therefore, for To, it's one email address.
-
-Similarly, Cc could be another single email, Bcc another, etc.
-
-So:
-
-- To: [John Doe] at [WeatherUnderground Example Email]
-   - john.doe@weatherunderground.com
-
-But perhaps more accurately, each field is a string. For example:
-
-To: john.doe@weatherunderground.com
-
-Cc: jane.smith@weatherunderground.com
-
-Bcc: ann_martinez@weatherunderground.com
-
-Subject: Tomorrow's Weather Summary
-
-Body (HTML): <html><body>Weather forecast for tomorrow: [Time] at [Location]. Check out our new app at <a href="https://www.weatherunderground.com" target="_blank">weatherunderground.com</a>.</body></html>
-
-Attachment URL: https://www.weatherunderground.com/api/summary/2023-12-01?city=New+York
-
-Wait, but the trigger's fields are Time and Location. So perhaps including those in the body would be good.
-
-So updating Body (HTML):
-
-Body (HTML): <html><body>Here’s your weather forecast for [Time] at [Location]. Check out our new app at <a href="https://www.weatherunderground.com" target="_blank">weatherunderground.com</a>.</body></html>
-
-Subject: Weather Forecast Summary
-
-But wait, in the example given by the user, action_fields_values included specific URLs and text inputs with dummy content.
-
-Wait, looking back:
-
-In the example input, action_fields were 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'
-
-And in output, the action_fields_values was a list with URLs and text inputs.
-
-Specifically:
-
-['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!']
-
-Wait, but that's only two values. Hmm, perhaps each field corresponds to one value in a list. So To would be the first element, Cc second? No, because in action_fields, there are six fields: To, Cc, Bcc, Subject, Body, Attachment URL.
-
-But in the example output provided by the user, only two values were given, but according to the current problem statement's example, it was for the action_fields:
-
-In example input:
-action_fields: 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'
-
-Example output action_fields_values was ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!']
-
-Wait, that seems conflicting. Let me check the user's example:
-
-The current input after example had trigger and action fields.
-
-In the example input provided by the user:
-Trigger fields: ''
-action_fields: 'Link URL (Text input > Link), Message (Text input)'
-
-Action_fields_values output was ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!']
-
-Wait, that's two values for three action_fields (To, Cc, Bcc etc.)?
-
-Hmm, perhaps the example had only two fields in action_fields. Wait no:
-
-In their example, trigger_fields: '', action_fields was 'Link URL, Message'.
-
-So action_fields were Link URL and Message.
-
-Therefore, the output action_fields_values was a list with two elements, each corresponding to one field's value.
-
-Wait, but when we have six action fields (To, Cc, Bcc, Subject, Body, Attachment URL), then their values should be six strings in a list. But perhaps the user example only had two because it was for the sample input.
-
-But according to the problem statement:
-
-"the values of trigger_fields_values and action_fields_values must be consistent with the trigger-action rule provided as input."
-
-And "the data to be generated must be as if written by a human, i.e. the field to be generated must appear as real as possible. For example, when considering a URL, a fictitious URL must be generated that looks as real as possible."
-
-So, for each action_field in the list, we need to generate one value.
-
-In our current problem:
-
-action_fields: To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)
-
-So action_fields is a list of six fields, each with their type.
-
-Therefore, the action_fields_values should be a list of six strings, each corresponding to one field's value.
-
-Wait, but in the user example, for two action_fields, they had two values. So perhaps that was correct.
-
-In our case, we have six action_fields, so the action_fields_values will be a list with six elements: To, Cc, Bcc, Subject, Body, Attachment URL.
-
-Therefore, let's generate dummy values accordingly:
-
-To: john.doe@example.com
-Cc: jane.smith@example.com
-Bcc: ann_martinez@example.com
-Subject: Tomorrow’s Weather Forecast
-Body (HTML): <html><body>Weather forecast for tomorrow at [Location]. Check out our app at <a href="https://www.weatherunderground.com" target="_blank">weatherunderground.com</a>.</body></html>
-Attachment URL: https://www.weatherunderground.com/api/summary/2023-12-01?city=New+York
-
-But wait, the Body (HTML) needs to be a string in a list. So it would be:
-
-<html><body>...</body></html>
-
-As a single string.
-
-So action_fields_values would be a list of six elements:
-
-[
-  'john.doe@example.com',
-  'jane.smith@example.com',
-  'ann_martinez@example.com',
-  "Tomorrow's Weather Forecast",
-  '<html><body>Weather forecast for tomorrow at [Location]. Check out our app at <a href="https://www.weatherunderground.com" target="_blank">weatherunderground.com</a>.</body></html>',
-  'https://www.weatherunderground.com/api/summary/2023-12-01?city=New+York'
-]
-
-But according to the user example, action_fields_values was a list of two strings. So perhaps for each field in action_fields, we need to generate one value.
-
-So yes, with six fields, it's a list of six values.
-
-Wait, but looking at the user example again:
-
-Input action_fields: 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'
-
-Output action_fields_values was a list of two strings, but that seems inconsistent. Maybe the user example had only two action_fields because they were simplified for illustration.
-
-But according to our problem statement, we need to generate six values since there are six fields in action_fields.
-
-Wait, perhaps the example provided by the user was incorrect or incomplete. Let's proceed based on the current input and rules.
-
-So, for each field:
-
-1. To: john.doe@example.com
-2. Cc: jane.smith@example.com
-3. Bcc: ann_martinez@example.com
-4. Subject: Tomorrow's Weather Summary
-5. Body (HTML): <html><body>Weather forecast for tomorrow at [Location]. Check out our app at <a href="https://www.weatherunderground.com" target="_blank">weatherunderground.com</a>.</body></html>
-6. Attachment URL: https://www.weatherunderground.com/api/summary/2023-12-01?city=New+York
-
-But wait, the fields are:
-
-Trigger_fields: Time (Text input > Text), Location (Location input > Point)
-
-Action_fields:
-To (Text input > Other),
-Cc (Text input > Other),
-Bcc (Text input > Other),
-Subject (Text input > Title),
-Body (Text input > HTML),
-Attachment URL (Text input > File)
-
-So each action_field corresponds to one of these six, so the action_fields_values must have six elements.
-
-But in the user example output, action_fields_values was a list with two values. So perhaps that's an error on their part because for six fields, it should be a list of six strings.
-
-Therefore, in our case, we need to generate six string values for action_fields_values.
-
-Now, considering all this, let's structure the final JSON output as:
-
-trigger_channel: 'Weather Underground'
-trigger_title: 'Tomorrow's weather report'
-trigger_fields: ''
-trigger_fields_values: ''
-
-action_channel: 'Gmail'
-action_title: 'Send an email'
-action_fields: list of six strings
-action_fields_values: corresponding list.
-
-So, putting it all together.
+This should cover all fields correctly.
 </think>
 
-```json
-{
-  "trigger_channel": "Weather Underground",
-  "trigger_title": "Tomorrow's weather report",
-  "trigger_fields": "",
-  "trigger_fields_values": "",
-  "action_channel": "Gmail",
-  "action_title": "Send an email",
-  "action_fields": [
-    "Time (Text input > Text)",
-    "Location (Location input > Point)"
-  ],
-  "action_fields_values": [
-    "https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1",
-    "This is my favourite song!!!"
-  ]
-}
-```
+Here is the structured solution based on the provided Trigger-Action Rule:
 
-However, upon re-evaluating the structure and considering each field correctly:
+**Trigger Fields Values:**
+- Time (Text input > Other): 1530
+- Location (Location input > Point): New York City
 
-```json
-{
-  "trigger_channel": "Weather Underground",
-  "trigger_title": "Tomorrow's weather report",
-  "trigger_fields": "",
-  "trigger_fields_values": "",
-  "action_channel": "Gmail",
-  "action_title": "Send an email",
-  "action_fields": [
-    "To (Text input > Other)",
-    "Cc (Text input > Other)",
-    "Bcc (Text input > Other)",
-    "Subject (Text input > Title)",
-    "Body (Text input > HTML)",
-    "Attachment URL (Text input > File)"
-  ],
-  "action_fields_values": [
-    "john.doe@example.com",
-    "jane.smith@example.com",
-    "ann_martinez@example.com",
-    "Tomorrow's Weather Forecast",
-    "<html><body>Weather forecast for tomorrow at [Location]. Check out our app at <a href=\"https://www.weatherunderground.com\" target="_blank\">weatherunderground.com</a>.</body></html>",
-    "https://www.weatherunderground.com/api/summary/2023-12-01?city=New+York"
-  ]
-}
+**Action Fields Values:**
+- To (Text input > Other): John Doe <john.doe@example.com>
+- Cc (Text input > Other): Jane Smith <jane.smith@example.com>
+- Bcc (Text input > Other): Mike Johnson <mike.johnson@example.com>
+- Subject (Text input > Title): Tomorrow's Weather Report in New York City at 1530H
+- Body (Text input > HTML):  
+```html
+<h2>Tomorrow's Weather Report: New York City, 1530H</h2>
+<p>Looking ahead to tomorrow's weather forecast for New York City at 1530H. Expect moderate rain with temperatures ranging from 18°C to 24°C. Winds will be light, around 10 km/h.</p>
 ```
+- Attachment URL (Text input > File): https://fakeweather.com/weather-report
+
+This setup ensures that the trigger and action fields are filled with realistic placeholders while maintaining their respective data types and formats.

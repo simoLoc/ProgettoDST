@@ -1,9 +1,5 @@
-# Trigger-action rules
-trigger_channel: 'YouTube'
-trigger_title: 'New liked video'
-trigger_fields: ''
-trigger_fields_values: ''
-action_channel: 'Facebook Pages'
-action_title: 'Create a link post'
-action_fields: 'Link URL (Text input > Link), Message (Text input)'
-action_fileds_values: ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!'']
+
+| trigger_channel | trigger_title | trigger_fields | action_channel | action_title | action_fields | action_fields_values |
+| ----------------- | -------------- | -------------- | --------------- | ------------ | --------------- | ---------------- |
+| YouTube           | New liked video |                 | Facebook Pages  | Create a link post | Link URL (Text input), Message (Text input) | 'https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!' |
+| Weather Underground | Today's weather report  |                 | Notifications   | Send a notification from the IFTTT app    | Message (Text input)        | 'This is my favourite song!!!'. |

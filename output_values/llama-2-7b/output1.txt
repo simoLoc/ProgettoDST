@@ -1,1 +1,5 @@
-The system generates trigger_fields_values and action_fields_values considering the type assumed by trigger_fields and action_fields respectively. The values to be generated must be consistent with the trigger-action rule provided as input. Accordingly, the values of trigger_fields_values and action_fields_values must not alter the meaning of the trigger-action rule.
+
+Please enter the values for fields_values and action_fields_values of the trigger-action rule.
+The values generated for both trigger_fields_values and action_fields_values must not alter the meaning of the trigger-action rule provided as input. Furthermore, the data to be generated must be as if written by a human, i.e. the field to be generated must appear as real as possible. For example, when considering a URL, a fictitious URL must be generated that looks as real as possible.
+
+    

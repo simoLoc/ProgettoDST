@@ -1,3 +1,12 @@
+# Trigger-action rules
+trigger_channel: 'YouTube'
+trigger_title: 'New liked video'
+trigger_fields: ''
+trigger_fields_values: ''
+action_channel: 'Facebook Pages'
+action_title: 'Create a link post'
+action_fields: 'Link URL (Text input > Link), Message (Text input)'
+action_fields_values: ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!'
 
-Trigger Action Rules refers to an event-based system. When a specific event occurs, it triggers a predefined action. 
-This helps connect different services so they can work together without manual effort. Trigger Action Rules refers to an event-based system. The trigger-action rule is divided into two subparts, trigger and action, both containing channel, title and fields.
+
+---
