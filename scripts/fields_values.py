@@ -51,11 +51,11 @@ trigger_fields_values: ''
 action_channel: 'Facebook Pages'
 action_title: 'Create a link post'
 action_fields: 'Link URL (Text input > Link), Message (Text input)'
-action_fields_values: ['https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!'']
+action_fields_values: 'https://www.youtube.com/watch?v=yz_XGeAzn14&rco=1', 'This is my favourite song!!!'
 """
 
 prompt_end = """
-Thus, considering channel, title and fields, for both trigger and action, generates a possible value for fields_values, maintaining the same format as the output of the example. In particular, the values of trigger_fields_values and action_fields_values must be consistent with trigger_channel, trigger_title, action_channel and action_title, respecting the type given in trigger_fields and action_fields. Furthermore, the values generated must not alter the meaning of the trigger-action rule provided as input. Furthermore, the data to be generated must be as if written by a human, i.e. the field to be generated must appear as real as possible. For example, when considering a URL, a fictitious URL must be generated that looks as real as possible.
+Thus, considering channel, title and fields, for both trigger and action, generates a possible value for fields_values, maintaining the same format as the Output of the Example. In particular, the values of trigger_fields_values and action_fields_values must be consistent with trigger_channel, trigger_title, action_channel and action_title, respecting the type given in trigger_fields and action_fields. Furthermore, the values generated must not alter the meaning of the trigger-action rule provided as input. Furthermore, the data to be generated must be as if written by a human, i.e. the field to be generated must appear as real as possible. For example, when considering a URL, a fictitious URL must be generated that looks as real as possible.
 """
 
 # Carica il Dataset
@@ -81,7 +81,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
 ## EXCEPTION RULES
 {prompt_exception}
 
-### EXAMPLE TRIGGER-ACTION RULES
+### EXAMPLE
 {prompt_example}
 
 ---
