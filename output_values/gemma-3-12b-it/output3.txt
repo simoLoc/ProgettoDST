@@ -1,0 +1,12 @@
+```json
+{
+  "trigger_channel": "Weather Underground",
+  "trigger_title": "Today's weather report",
+  "trigger_fields": "Time (Text input), Location (Location input > Point)",
+  "trigger_fields_values": ["08:00 AM", "London, UK"],
+  "action_channel": "Notifications",
+  "action_title": "Send a notification from the IFTTT app",
+  "action_fields": "Message (Text input)",
+  "action_fields_values": ["Good morning! Today in London, expect sunny skies with a high of 22°C. Enjoy your day!" ]
+}
+```

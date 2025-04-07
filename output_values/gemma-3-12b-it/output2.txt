@@ -1,0 +1,19 @@
+```json
+{
+  "trigger_channel": "Weather Underground",
+  "trigger_title": "Tomorrow's weather report",
+  "trigger_fields": "Time (Text input), Location (Location input > Point)",
+  "trigger_fields_values": ["08:00", "40.7128° N, 74.0060° W"],
+  "action_channel": "Gmail",
+  "action_title": "Send an email",
+  "action_fields": "To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)",
+  "action_fields_values": [
+    "john.doe@example.com",
+    "",
+    "",
+    "Tomorrow's Weather in New York City",
+    "<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in New York City is sunny with a high of 75°F.</p><p>Best,<br>Your Weather Assistant</p>",
+    ""
+  ]
+}
+```

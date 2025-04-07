@@ -4,7 +4,7 @@ from tqdm import tqdm
 import os
 
 
-name_model = "deepseek-r1-distill-qwen-7b"
+name_model = "gemma-3-12b-it"
 
 model = lms.llm(name_model)
 
