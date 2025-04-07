@@ -5,4 +5,4 @@ trigger_fields_values: ''
 action_channel: 'Twitter'
 action_title: 'Post a tweet with image'
 action_fields: 'Tweet (Text input), Photo URL (Text input > Photo)'
-action_fields_values: ['Check out this interesting article I just saved to Pocket! ➡️ [link to article]", "https://images.unsplash.com/photo-1503023345310-bd7c91cffb5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlfGVufDB8fHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"]
+action_fields_values: 'Just saved this interesting article on Pocket! Check it out ➡️', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlfGVufDB8fDB8fHx8MA%3D%3D'

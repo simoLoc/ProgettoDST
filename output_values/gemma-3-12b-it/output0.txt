@@ -7,7 +7,7 @@ action_title: 'Send me an email'
 action_fields: 'Subject (Text input > Title), Body (Text input > HTML)'
 
 # Trigger Fields Values
-trigger_fields_values: ['Frozen Strawberries - Potential Listeria Contamination']
+trigger_fields_values: 'Frozen Strawberries - Potential Listeria Contamination'
 
 # Action Fields Values
-action_fields_values: ['Urgent Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>A new recall has been issued for frozen strawberries due to potential <em>Listeria</em> contamination. Please read the full details and safety recommendations on the Department of Agriculture website:</p><p><a href="https://www.exampleUSDArecallpage.gov/strawberry-listeria-2024">https://www.exampleUSDArecallpage.gov/strawberry-listeria-2024</a></p><p>Your cooperation in ensuring food safety is greatly appreciated.</p><p>Sincerely,<br/>The Department of Agriculture Recall Team</p>']
+action_fields_values: 'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'
