@@ -2,6 +2,17 @@ import lmstudio as lms
 import json
 from tqdm import tqdm
 import os
+import re
+
+def extract_fields_values(content):
+    modified_content = re.sub(r'"trigger_fields_values"', 'trigger_fields_values', content, flags=re.IGNORECASE)
+    modified_content = re.sub(r'"action_fields_values"', 'action_fields_values', modified_content, flags=re.IGNORECASE)
+    trigger_content = modified_content.split("trigger_fields_values: ")[1]
+    trigger_content = trigger_content.split("\n")[0]
+    action_content = modified_content.split("action_fields_values: ")[1]
+    action_content = action_content.split("\n")[0]
+
+    return trigger_content, action_content
 
 
 name_model = "gemma-3-12b-it"
@@ -104,12 +115,25 @@ action_fields: '{action_fields}'
     """
         SALVATAGGIO SU FILE DEL RISULTATO
     """
+
+    trigger_content, action_content = extract_fields_values(result)
+    entry.update({
+        "trigger_fields_values" : trigger_content,
+        "action_fields_values" : action_content
+    })
+
     # Percorso del file
-    file_path = f"output_values/{name_model}/output{i}.txt"
+    # file_path = f"output_values/{name_model}/output{i}.txt"
 
     # Crea la directory se non esiste
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    # os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     # Scrivi il file
-    with open(file_path, "w") as file:
-        file.write(str(result))
+    # with open(file_path, "w") as file:
+    #     file.write(str(result))
+
+
+
+
+with open("dataset/values_prova_completo.json", "w", encoding="utf-8") as f:
+    json.dump(dataset, f, ensure_ascii=False, indent=9)
