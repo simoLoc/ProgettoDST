@@ -1,0 +1,57 @@
+[
+         {
+                  "trigger_channel": "Department of Agriculture",
+                  "trigger_title": "New open recall",
+                  "trigger_fields": "Query (Text input > Other)",
+                  "action_channel": "Email",
+                  "action_title": "Send me an email",
+                  "action_fields": "Subject (Text input > Title), Body (Text input > HTML)",
+                  "descrizione": "Get an email when the USDA posts a new open recall due to allergens. Allergy-proof your diet Â this Applet searches new USDA recalls for the term 'allergens' and will send you an email with the details if there's something you might want to purge from your fridge. ",
+                  "trigger_fields_values": "'Frozen Strawberries - Potential Listeria Contamination'",
+                  "action_fields_values": "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'"
+         },
+         {
+                  "trigger_channel": "Home Connect Cookit",
+                  "trigger_title": "Cookit started",
+                  "trigger_fields": "Ha ID (Dropdown list)",
+                  "action_channel": "Android Device",
+                  "action_title": "Play music",
+                  "action_fields": "",
+                  "descrizione": "Play music when starting to prepare a recipe. Play music on your Android device when your Cookit started with preparing the recipe.",
+                  "trigger_fields_values": "'kitchen'",
+                  "action_fields_values": "''"
+         },
+         {
+                  "trigger_channel": "Weather Underground",
+                  "trigger_title": "Tomorrow's weather report",
+                  "trigger_fields": "Time (Text input), Location (Location input > Point)",
+                  "action_channel": "Gmail",
+                  "action_title": "Send an email",
+                  "action_fields": "To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)",
+                  "descrizione": " every day weather report to any.do.  every day weather report to any.do",
+                  "trigger_fields_values": "'08:00', '34.0522° N, 118.2437° W'",
+                  "action_fields_values": "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'"
+         },
+         {
+                  "trigger_channel": "Weather Underground",
+                  "trigger_title": "Today's weather report",
+                  "trigger_fields": "Time (Text input), Location (Location input > Point)",
+                  "action_channel": "Notifications",
+                  "action_title": "Send a notification from the IFTTT app",
+                  "action_fields": "Message (Text input)",
+                  "descrizione": "Every day at 07:00 AM, get IF notification with weather conditions and forecast for today in F.. Every day at 07:00 AM, get IF notification with weather conditions and forecast for today in F.",
+                  "trigger_fields_values": "'08:00', 'London, UK'",
+                  "action_fields_values": "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"
+         },
+         {
+                  "trigger_channel": "Pocket",
+                  "trigger_title": "Any new item",
+                  "trigger_fields": "",
+                  "action_channel": "Twitter",
+                  "action_title": "Post a tweet with image",
+                  "action_fields": "Tweet (Text input), Photo URL (Text input > Photo)",
+                  "descrizione": "Pocket to Twitter. Posts a tweet whenever a link is added to Pocket",
+                  "trigger_fields_values": "''",
+                  "action_fields_values": "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"
+         }
+]
