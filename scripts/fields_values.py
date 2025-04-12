@@ -70,7 +70,7 @@ Thus, considering channel, title and fields, for both trigger and action, genera
 """
 
 # Carica il Dataset
-with open("dataset/values_prova.json", "r", encoding="ISO-8859-1") as f:
+with open("dataset/dataset_6k.json", "r", encoding="ISO-8859-1") as f:
     dataset = json.load(f)
 
 
@@ -116,7 +116,7 @@ action_fields: '{action_fields}'
         SALVATAGGIO SU FILE DEL RISULTATO
     """
 
-    trigger_content, action_content = extract_fields_values(result)
+    trigger_content, action_content = extract_fields_values(str(result))
     entry.update({
         "trigger_fields_values" : trigger_content,
         "action_fields_values" : action_content
@@ -135,5 +135,5 @@ action_fields: '{action_fields}'
 
 
 
-with open("dataset/values_prova_completo.json", "w", encoding="utf-8") as f:
+with open("dataset/dataset_6k_completo.json", "w", encoding="utf-8") as f:
     json.dump(dataset, f, ensure_ascii=False, indent=9)
