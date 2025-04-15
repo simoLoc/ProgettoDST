@@ -1,9 +1,9 @@
 import  random
 
-# La struttura deve essere una lista per dare importanza all'ordine
-trigger = [['TC'], ['TC', 'TT'], ['TC', 'TT', 'TF'], ['TC', 'TT', 'TF', 'TFV']]
-action = [['AC'], ['AC', 'AT'], ['AC', 'AT', 'AF'], ['AC', 'AT', 'AF', 'AFV']]
-triggerAndAction = [['TC', 'AC'], ['TC', 'TT', 'AC'], ['TC', 'TT', 'AC', 'AT']]
+# La strutrigger_titleura deve essere una lista per dare importanza all'ordine
+trigger = [['trigger_channel'], ['trigger_channel', 'trigger_title'], ['trigger_channel', 'trigger_title', 'trigger_fields'], ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
+action = [['action_channel'], ['action_channel', 'action_title'], ['action_channel', 'action_title', 'action_fields'], ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
+triggerAndAction = [['trigger_channel', 'action_channel'], ['trigger_channel', 'trigger_title', 'action_channel'], ['trigger_channel', 'trigger_title', 'action_channel', 'action_title']]
 
 isAction = random.choice([0, 1])
 
