@@ -4,7 +4,7 @@ from tqdm import tqdm
 import lmstudio as lms
 from scripts.utils import *
 
-name_model = "gemma-3-12b-it"
+name_model = "gemma-3-27b-it"
 model = lms.llm(name_model)
 
 # La strutrigger_titleura deve essere una lista per dare importanza all'ordine
