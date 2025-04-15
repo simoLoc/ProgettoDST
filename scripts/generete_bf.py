@@ -3,6 +3,7 @@ import json
 from tqdm import tqdm
 import lmstudio as lms
 from scripts.utils import *
+import os
 
 name_model = "gemma-3-27b-it"
 model = lms.llm(name_model)
@@ -78,6 +79,19 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
             current_text += "\n" + str(bf_current) + "\n"
 
             str_trigger_action_past= str_trigger_action_current
+    
+    """
+        SALVATAGGIO SU FILE DEL RISULTATO
+    """
+    # Percorso del file
+    file_path = f"output_conversazione_incrementale/{name_model}/output{i}.txt"
+
+    # Crea la directory se non esiste
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    # Scrivi il file
+    with open(file_path, "w") as file:
+        file.write(str(current_text))
             
 
     
