@@ -98,25 +98,36 @@ The output must respect the format of the output given in the example.
 """
 
 
-def get_prompt(isFirst, dict_trigger_action_current, dict_trigger_action_past):
+def get_prompt(isFirst, trigger_action_current, trigger_action_past):
     if isFirst:
-        current_input = """
+        current_input = f"""
 ### CURRENT INPUT
 ## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
-
+{trigger_action_current}
 """
         prompt_inizio = prompt_prima_utterance_inizio
         prompt_fine = prompt_prima_utterance_fine
     else:
-        current_input = """
+        current_input = f"""
 ### CURRENT INPUT
 ## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
-
+{trigger_action_past}
 ## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
-
+{trigger_action_current}
 """
         prompt_inizio = prompt_incrementale_inizio
         prompt_fine = prompt_incrementale_fine
 
 
     return prompt_inizio + current_input + prompt_fine
+
+
+def get_prompt_input(lista_elementi, rule):
+    output = ""
+    bf = dict()
+    for item in lista_elementi:
+        if item in rule:
+            output += f"'{item}': '{rule[item]}' \n"
+            bf[item] = rule[item]
+
+    return bf, output
