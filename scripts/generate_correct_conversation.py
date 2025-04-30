@@ -9,8 +9,8 @@ name_model = "gemma-3-27b-it"
 model = lms.llm(name_model)
 
 # liste per la selezione dei campi da valutare
-trigger = [['trigger_channel'], ['trigger_channel', 'trigger_title'], ['trigger_channel', 'trigger_title', 'trigger_fields'], ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
-action = [['action_channel'], ['action_channel', 'action_title'], ['action_channel', 'action_title', 'action_fields'], ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
+trigger = [['trigger_channel'], ['trigger_channel', 'trigger_title'], ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
+action = [['action_channel'], ['action_channel', 'action_title'], ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
 triggerAndAction = [['trigger_channel', 'action_channel'], ['trigger_channel', 'trigger_title', 'action_channel'], ['trigger_channel', 'trigger_title', 'action_channel', 'action_title']]
 
 
@@ -39,7 +39,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
     # Chiamata al modello
     old_response = str(model.respond(prompt))
     current_text += old_response
-    current_text += "\n" + str(bf_current) + "\n"
+    current_text += str(bf_current) + "\n\n"
 
     str_trigger_action_past = str_trigger_action_current
 
@@ -63,7 +63,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
             # Chiamata al modello
             old_response = str(model.respond(prompt))
             current_text += old_response
-            current_text += "\n" + str(bf_current) + "\n"
+            current_text += str(bf_current) + "\n\n"
 
             str_trigger_action_past= str_trigger_action_current
 
@@ -85,7 +85,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
             # Chiamata al modello
             old_response = str(model.respond(prompt))
             current_text += old_response
-            current_text += "\n" + str(bf_current) + "\n"
+            current_text += "\n"+ str(bf_current) + "\n"
 
             str_trigger_action_past= str_trigger_action_current
     
