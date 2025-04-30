@@ -1,0 +1,22 @@
+- User: I want to create an automation based on events from my Home Connect Cookit appliance.
+
+{'trigger_channel': 'Home Connect Cookit'}
+System: What ID do you want to associate with the Cookit start event?
+User: I would like to use ID number 12345.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)'}
+System: Would you like me to specify a kitchen ID to start Cookit?
+User: Yes, I would like you to set the kitchen ID to kitchen.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+System: What music would you like me to play on your Android Device?
+User: Please play some kitchen-themed music.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_fields': '', 'action_channel': 'Android Device', 'action_title': 'Play music'}
+System: What music would you like me to play on your Android device?
+User: Please play my favorite playlist.
+
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_fields': '', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': "''"}
