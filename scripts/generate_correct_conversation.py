@@ -8,7 +8,6 @@ import os
 name_model = "gemma-3-27b-it"
 model = lms.llm(name_model)
 
-# La strutrigger_titleura deve essere una lista per dare importanza all'ordine
 trigger = [['trigger_channel'], ['trigger_channel', 'trigger_title'], ['trigger_channel', 'trigger_title', 'trigger_fields'], ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
 action = [['action_channel'], ['action_channel', 'action_title'], ['action_channel', 'action_title', 'action_fields'], ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
 triggerAndAction = [['trigger_channel', 'action_channel'], ['trigger_channel', 'trigger_title', 'action_channel'], ['trigger_channel', 'trigger_title', 'action_channel', 'action_title']]
