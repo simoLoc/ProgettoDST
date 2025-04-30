@@ -79,8 +79,8 @@ trigger_fields_values: ''#frase_poderosa'
 
 ## OUTPUT
 
-System: Would you like me to specify an hashtag to add in your Facebook post?
-User: Yes, I would like you to add the hashtag #frase_poderosa.
+- System: Would you like me to specify an hashtag to add in your Facebook post?
+- User: Yes, I would like you to add the hashtag #frase_poderosa.
 ---
 
 """
@@ -93,6 +93,7 @@ prompt_incrementale_fine = """
 By analysing the trigger action rule fields to be completed provided as input, it generates a system question and a user response.
 Fields already completed in the trigger-action rule refer to fields already known by the system. These are provided as context for the output to be produced.
 The system must not explicitly ask for that field to be completed.
+The system question does not have to specify the value of the field, but it should only be contained in the user response.
 The output must respect the format of the output given in the example.
 
 """
