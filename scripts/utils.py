@@ -77,6 +77,10 @@ trigger_title: 'New photo post by you with hashtag'
 trigger_fields: 'Hashtag (Text input)''
 trigger_fields_values: ''#frase_poderosa'
 
+## PREVIOUS UTTERANCES
+
+- User: Check all new Facebook photo posts containing a specific hashtag.
+
 ## OUTPUT
 
 - System: Would you like me to specify an hashtag to add in your Facebook post?
@@ -91,6 +95,7 @@ trigger_fields_values: ''#frase_poderosa'
 
 prompt_incrementale_fine = """
 By analysing the trigger action rule fields to be completed provided as input, it generates a system question and a user response.
+During generation also considers previous utterances to preserve coherence, as in a human dialogue.
 Fields already completed in the trigger-action rule refer to fields already known by the system. These are provided as context for the output to be produced.
 The system must not explicitly ask for that field to be completed.
 The system question does not have to specify the filling in of all the fields, but it should only be contained in the user response.
@@ -99,7 +104,7 @@ The output must respect the format of the output given in the example.
 """
 
 
-def get_prompt(isFirst, trigger_action_current, trigger_action_past):
+def get_prompt(isFirst, trigger_action_current, trigger_action_past, old_response = ""):
     if isFirst:
         current_input = f"""
 ### CURRENT INPUT
@@ -113,6 +118,10 @@ def get_prompt(isFirst, trigger_action_current, trigger_action_past):
 ### CURRENT INPUT
 ## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
 {trigger_action_past}
+
+## PREVIOUS UTTERANCES
+{old_response}
+
 ## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
 {trigger_action_current}
 """
