@@ -50,7 +50,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
 
             bf_new, str_trigger_action_current = get_prompt_input(new_elements, entry)
             
-            bf_current = bf_current | bf_new
+            bf_current = bf_current | bf_new   # bf_new è il dizionario di new_elements
 
             prompt = get_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, trigger_action_past = str_trigger_action_past)
             # Chiamata al modello
@@ -70,7 +70,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
 
             bf_new, str_trigger_action_current = get_prompt_input(new_elements, entry)
             
-            bf_current = bf_current | bf_new
+            bf_current = bf_current | bf_new # bf_new è il dizionario di new_elements
 
             prompt = get_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, trigger_action_past = str_trigger_action_past)
             # Chiamata al modello
