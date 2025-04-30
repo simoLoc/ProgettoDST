@@ -1,0 +1,10 @@
+- User: I want to receive a notification with today’s weather report from Weather Underground.
+
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
+System: Would you like a weather report from Weather Underground at 8:00 AM for London, UK?
+User: Yes, please send me today's weather report at 8:00 AM for London, UK.
+
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+System: Would you like me to send a notification from the IFTTT app with the message "☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!"?
+User: Yes, please send that notification.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}

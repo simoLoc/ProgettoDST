@@ -2,7 +2,7 @@ import  random
 import json
 from tqdm import tqdm
 import lmstudio as lms
-from scripts.utils import *
+from utils import *
 import os
 
 name_model = "gemma-3-27b-it"
@@ -25,10 +25,8 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
     isAction = random.choice([0, 1])
     if isAction:
         fields = random.choice(triggerAndAction)
-        print(fields)
     else:
         fields = random.choice(trigger)
-        print(fields)
 
     
     # fields è una lista con i campi selezionati fino a quel momento 
@@ -39,7 +37,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
     
     prompt = get_prompt(isFirst = True, trigger_action_current = str_trigger_action_current, trigger_action_past = "")
     # Chiamata al modello
-    current_text += model.respond(prompt)
+    current_text += str(model.respond(prompt))
     current_text += "\n" + str(bf_current) + "\n"
 
     str_trigger_action_past = str_trigger_action_current
@@ -61,7 +59,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
 
             prompt = get_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, trigger_action_past = str_trigger_action_past)
             # Chiamata al modello
-            current_text += model.respond(prompt)
+            current_text += str(model.respond(prompt))
             current_text += "\n" + str(bf_current) + "\n"
 
             str_trigger_action_past= str_trigger_action_current
@@ -81,7 +79,7 @@ for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
 
             prompt = get_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, trigger_action_past = str_trigger_action_past)
             # Chiamata al modello
-            current_text += model.respond(prompt)
+            current_text += str(model.respond(prompt))
             current_text += "\n" + str(bf_current) + "\n"
 
             str_trigger_action_past= str_trigger_action_current

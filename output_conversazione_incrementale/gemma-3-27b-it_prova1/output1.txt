@@ -1,0 +1,31 @@
+- User: I want to play some music on my Android device whenever my Cookit cooking program starts.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music'}
+System: What ID do you want to associate with the Cookit start event?
+User: I would like to use ID 12345.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_fields': 'Ha ID (Dropdown list)'}
+System: Would you like me to specify an Ha ID for this trigger?
+User: Yes, I would like it to be kitchen.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+Okay, I understand. Let's analyze the input and generate the System/User utterances.
+
+**Based on the provided information:**
+
+We know `trigger_fields_values` is already set to "kitchen". We need to determine what question the system should ask to fill in the missing `action_fields`. Since no details about trigger or action channels/titles are given, I'll make a reasonable assumption that this rule involves sending a notification.
+
+**Here's the output:**
+
+System: What kind of notification would you like to send?
+User: I want to send a text message.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_fields': ''}
+Okay, I understand. Here's the generated System question and User response based on the provided input:
+
+Since `action_fields` is empty, there are no specific fields to ask about. Therefore, the system will not generate any questions. 
+
+**System:** No further information needed at this time.
+**User:** Okay.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_fields': '', 'action_fields_values': "''"}

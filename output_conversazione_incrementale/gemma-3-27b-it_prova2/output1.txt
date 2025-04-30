@@ -1,0 +1,32 @@
+- User: I want to be notified whenever my Cookit cooking program starts.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+System: Would you like me to specify an ID for the Cookit start event?
+User: Yes, please set the ID.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)'}
+System: Would you like me to specify an Ha ID for this trigger?
+User: Yes, I would like it to be kitchen.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+## OUTPUT
+
+System: Which action would you like your Android Device to perform?
+User: I want my Android Device to send a notification.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device'}
+System: What music would you like to play on your Android Device?
+User: I want to play my favorite playlist.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music'}
+Okay, I understand. Here's the generated System question and User response based on the input:
+
+System: Since you want to play music, is there a specific artist or song you would like me to play?
+User: No, just play something random.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': ''}
+Okay, I understand. Since both `action_fields` and `action_fields_values` are currently empty, there's no specific information to base a question on.  I will generate a generic prompt to start gathering action details.
+
+**System:** What kind of action would you like to perform? Please specify the service or functionality you want to use.
+**User:** I want to send an email.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': "''"}

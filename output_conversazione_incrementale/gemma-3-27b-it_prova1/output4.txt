@@ -1,0 +1,9 @@
+- User: I want to be notified about any new item saved on Pocket.
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': "''"}
+System: To post a tweet with an image on Twitter, could you please provide the text for your tweet and the URL of the photo you'd like to include?
+User: Yes, the tweet should say "Check out this interesting article I saved!" and the photo URL is https://example.com/image.jpg.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': "''", 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
+System: Would you like me to post a tweet with an image and the message "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" along with the image from https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D?
+User: Yes, please do that!
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': "''", 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}

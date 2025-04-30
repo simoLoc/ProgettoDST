@@ -1,0 +1,16 @@
+- User: I want to receive an email notification based on weather updates from Weather Underground.
+
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail'}
+System: Would you like a daily weather report tomorrow at 8:00 AM for Los Angeles (34.0522° N, 118.2437° W)?
+User: Yes, please send me the weather report for that time and location.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_title': "Tomorrow's weather report"}
+System: Would you like me to send an email when tomorrow's weather report is available at 08:00 near 34.0522° N, 118.2437° W?
+User: Yes, please send me an email then.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email'}
+System: Would you like me to send an email to john.doe@example.com with the subject 'Tomorrow's Weather in Los Angeles'? The body will contain a weather forecast and include an attachment link. 
+User: Yes, please send the email as described.
+
+
+
+
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
