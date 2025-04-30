@@ -93,7 +93,7 @@ prompt_incrementale_fine = """
 By analysing the trigger action rule fields to be completed provided as input, it generates a system question and a user response.
 Fields already completed in the trigger-action rule refer to fields already known by the system. These are provided as context for the output to be produced.
 The system must not explicitly ask for that field to be completed.
-The system question does not have to specify the value of the field, but it should only be contained in the user response.
+The system question does not have to specify the filling in of all the fields, but it should only be contained in the user response.
 The output must respect the format of the output given in the example.
 
 """
