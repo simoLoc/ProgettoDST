@@ -70,21 +70,22 @@ Fields values depend on the type specified in fields.
 ### EXAMPLE TRIGGER-ACTION RULES
 ## INPUT
 ## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
-trigger_channel: 'Facebook'
-trigger_title: 'New photo post by you with hashtag'
-
-## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE]
 trigger_fields: 'Hashtag (Text input)''
 trigger_fields_values: ''#frase_poderosa'
 
 ## PREVIOUS UTTERANCES
 
-- User: Check all new Facebook photo posts containing a specific hashtag.
+- System: Would you like me to specify an hashtag to add in your Facebook post?
+- User: I would like you to add the hashtag #frase_poderosa.
+
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+action_channel: 'Twitter'
 
 ## OUTPUT
 
-- System: Would you like me to specify an hashtag to add in your Facebook post?
-- User: Yes, I would like you to add the hashtag #frase_poderosa.
+- System: After identifying the posts, what should I do?
+- User: I would like to share it on Twitter.
+
 ---
 
 """
