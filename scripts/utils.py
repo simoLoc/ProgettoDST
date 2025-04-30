@@ -96,6 +96,7 @@ action_channel: 'Twitter'
 
 prompt_incrementale_fine = """
 By analysing the trigger action rule fields to be completed provided as input, it generates a system question and a user response.
+The fields to be completed in the trigger-action rule may be more than one, in which case both the system question and the user response must refer to all the fields to be completed.
 During generation also considers previous utterances to preserve coherence, as in a human dialogue.
 Fields already completed in the trigger-action rule refer to fields already known by the system. These are provided as context for the output to be produced.
 The system must not explicitly ask for that field to be completed.
