@@ -19,7 +19,7 @@
                   "action_fields": "",
                   "descrizione": "Play music when starting to prepare a recipe. Play music on your Android device when your Cookit started with preparing the recipe.",
                   "trigger_fields_values": "'kitchen'",
-                  "action_fields_values": "''"
+                  "action_fields_values": ""
          },
          {
                   "trigger_channel": "Weather Underground",
@@ -51,7 +51,7 @@
                   "action_title": "Post a tweet with image",
                   "action_fields": "Tweet (Text input), Photo URL (Text input > Photo)",
                   "descrizione": "Pocket to Twitter. Posts a tweet whenever a link is added to Pocket",
-                  "trigger_fields_values": "''",
+                  "trigger_fields_values": "",
                   "action_fields_values": "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"
          }
 ]
