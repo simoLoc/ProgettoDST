@@ -1,0 +1,16 @@
+- User: I want to be notified whenever my Cookit cooking program starts.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+
+- System: So you want a notification when your Cookit cooking program starts, specifically for the kitchen appliance? 
+- User: Yes, I want to be notified whenever my Cookit cooking program starts and the ID is 'kitchen'.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+
+- System: Now that we've set up the trigger for when your Cookit starts, how would you like to be notified on your Android device? 
+- User: I want to receive a push notification on my Android device.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device'}
+
+- System: Great! Now that we're sending a notification to your Android device when Cookit starts, what kind of action would you like to perform on your device? For instance, do you want to play music?
+- User: Yes, I want to play music on my Android device. 
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+

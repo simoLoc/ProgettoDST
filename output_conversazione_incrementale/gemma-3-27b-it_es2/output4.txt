@@ -1,0 +1,23 @@
+- User: I want to create a rule that triggers when something new happens on my Pocket account.
+{'trigger_channel': 'Pocket'}
+
+- System: Great! So you want a rule triggered by Pocket. What kind of event on Pocket should activate this rule? 
+- User: I want to trigger the rule when any new item is saved to my Pocket account.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
+
+- System: Okay, now that we've defined the trigger event on Pocket, let’s configure what happens next. What action would you like to perform when a new item is saved to your Pocket?
+- User: I don't need any specific fields for this rule right now. Let's leave them empty.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+
+- System: Great! Now that we've set up the trigger from Pocket, where would you like me to share the content?
+- User: I would like to share it on Twitter. 
+
+
+
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter'}
+
+- System: Okay, great! Now that we're sharing from Pocket to Twitter, what tweet would you like to post and do you have a photo URL to include?
+- User: I want to post 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' with the image at 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+

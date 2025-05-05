@@ -41,7 +41,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             
             # Chiamata al modello
             response = str(model.respond(prompt))
-            current_text += response
+            current_text += response + "\n"
             current_text += str(bf_current) + "\n\n"
             old_response = response
 

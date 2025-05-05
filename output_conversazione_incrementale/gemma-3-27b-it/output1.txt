@@ -1,3 +1,0 @@
-- User: I want to play music on my Android device whenever my Cookit starts cooking, specifically monitoring the appliance with ID 'kitchen'.
-
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_fields': '', 'action_title': 'Play music', 'action_fields_values': "''"}

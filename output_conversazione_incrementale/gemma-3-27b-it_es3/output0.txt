@@ -1,0 +1,31 @@
+- User: I want to receive updates from the Department of Agriculture.
+{'trigger_channel': 'Department of Agriculture'}
+
+- System: Great! Now that you want updates from the Department of Agriculture, do you want to be notified about new open recalls?
+- User: Yes, please notify me when there's a new open recall from the Department of Agriculture. 
+
+
+
+
+{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
+
+- System: Okay, and what specific query would you like me to use for these recall notifications?
+- User: I want to receive notifications about "Frozen Strawberries - Potential Listeria Contamination". 
+
+
+
+
+{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
+
+- System: Great! Now that you want updates from the Department of Agriculture, how would you like to receive them? Specifically, what email address should I use?
+- User: Please send the updates to my email address at test@example.com. 
+
+
+
+
+{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_title': 'Send me an email', 'action_channel': 'Email'}
+
+- System: So you want me to send an email with a recall alert about frozen strawberries. Is the subject and body content I have here correct?
+- User: Yes, please use "Recall Alert: Frozen Strawberries" as the subject and this HTML for the body: `<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>`
+{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_title': 'Send me an email', 'action_channel': 'Email', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)'}
+

@@ -1,0 +1,17 @@
+- User: I want to connect my Home Connect Cookit appliance to send notifications to my Android device.
+{'trigger_channel': 'Home Connect Cookit', 'action_channel': 'Android Device'}
+
+- System: So, when your Cookit appliance starts, and considering the kitchen ID, what do you want me to do with your Android device?
+- User: I want notifications sent to my Android device when the Cookit appliance in the kitchen starts, using the kitchen ID as identifier. 
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'action_channel': 'Android Device', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)'}
+
+- System: Great! What kind of music would you like to play on your Android device when something happens with your Home Connect Cookit appliance?
+- User: I want to play relaxing music on my Android device. 
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'action_channel': 'Android Device', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+

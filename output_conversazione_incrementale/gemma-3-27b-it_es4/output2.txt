@@ -1,0 +1,11 @@
+- User: I want to receive an email notification based on weather updates from Weather Underground.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail'}
+
+- System: So you want a daily weather report from Weather Underground. What time would you like to receive this report and for which location?
+- User: I'd like it at 08:00 for Los Angeles, specifically at coordinates 34.0522° N, 118.2437° W.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report", 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)'}
+
+- System: Great! To finalize sending this email notification, could you please confirm the recipient's address, any CC or BCC recipients, and the subject line? Also, would you like to include an attachment with the weather report?
+- User: The recipient is john.doe@example.com, there are no CC or BCC recipients. The subject should be 'Tomorrow\'s Weather in Los Angeles'. And yes, please attach the report from https://www.example.com/weather_report.pdf. Finally, the body of the email will be: <p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report", 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_title': 'Send an email'}
+
