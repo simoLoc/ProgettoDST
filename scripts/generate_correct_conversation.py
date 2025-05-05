@@ -3,7 +3,7 @@ import  random
 import json
 from tqdm import tqdm
 import lmstudio as lms
-from utils import *
+from utils_correct_conversation import *
 import os
 
 
