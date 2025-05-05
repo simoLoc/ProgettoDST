@@ -1,3 +1,7 @@
+# ----
+#   PROMPT PER LA DESCRIZIONE INIZIALE
+# ----
+
 prompt_prima_utterance_inizio = """Generates a user's utterance, based on the trigger-action rule fields provided as input. 
 The utterance must be as human as possible and must be correlated and consistent with the completion of the various fields of the trigger-action rule.
 The output must contain user's utterance on completing of the fields provided as input of the trigger-action rule.
@@ -34,14 +38,15 @@ trigger_title: 'New photo post by you with hashtag'
 ---
 """
 
-
-### CURRENT INPUT
-## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
-
 prompt_prima_utterance_fine = """
 By analysing the trigger action rule fields to be completed provided as input, it generates a user's utterance.
 The output must respect the format of the output given in the example.
 """
+
+
+# ----
+#   PROMPT PER LE SYSTEM QUESTION E USER RESPONSE
+# ----
 
 prompt_incrementale_inizio = """ Generates a question provided by the system and a corresponding response from the user, based on the trigger-action rule fields provided as input.
 The system must ask questions that are related to and consistent with the completion of the various fields in the trigger-action rule.
@@ -62,7 +67,7 @@ action_channel: the entity that provides the action service resulting from the t
 action_title: a specific action_channel functionality that is executed when the trigger is activated.
 action_fields: type parameters required to define the behaviour of the action executed by the action_title.
 action_fields_values: i valori assunti concordanti con il tipo contenuto in action_fields.
-When the trigger is activated, the system automatically executes the associated action. The trigger_fields and action_fields can be empty, and consequently fields_values are also empty. Therefore, in the output you should not generate utterances that complete these fields.
+When the trigger is activated, the system automatically executes the associated action. The trigger_fields and action_fields can be empty, and consequently fields_values are also empty. Therefore, in the output you must not generate utterances that complete these fields. 
 Titles depend on the specified channels.
 Fields depend on the specified titles and channels.
 Fields values depend on the type specified in fields.
@@ -91,12 +96,10 @@ action_channel: 'Twitter'
 """
 
 
-
-
-
 prompt_incrementale_fine = """
 By analysing the trigger action rule fields to be completed provided as input, it generates a system question and a user response.
 The fields to be completed in the trigger-action rule may be more than one, in which case both the system question and the user response must refer to all the fields to be completed.
+The 'fields' and 'fields_values' may be empty. If this is the case, you must not complete these fields when generating the system question and a user response.
 During generation also considers previous utterances to preserve coherence, as in a human dialogue.
 Fields already completed in the trigger-action rule refer to fields already known by the system. These are provided as context for the output to be produced.
 The system must not explicitly ask for that field to be completed.
