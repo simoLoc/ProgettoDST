@@ -1,19 +1,19 @@
-- User: I want to receive tomorrow’s weather report via email.
-{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail'}
+- User: I want to receive an email notification based on weather updates from Weather Underground.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail'}
 
-- System: So you want to receive tomorrow’s weather report at 8:00 AM for Los Angeles?
-- User: Yes, I would like to receive tomorrow’s weather report at 08:00 for location 34.0522° N, 118.2437° W.
-{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+- System: So you want an email notification based on weather updates from Weather Underground. Which specific report are you interested in? 
+- User: I would like to receive Tomorrow's weather report.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report"}
 
-- System: Great! Now that I know you want to receive tomorrow’s weather report, who should I send the email to?
-- User: Please send the email to my address, example@email.com. 
+- System: Great! To set up your Tomorrow's weather report from Weather Underground, what time and location are you interested in receiving this information for?
+- User: I would like to receive it at 08:00 for Los Angeles, which is located at 34.0522° N, 118.2437° W.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
 
+- System: Great! Now that we've established you want email notifications from Weather Underground, what specifically would you like to include in the email? 
+- User: I’d like to use the “Send an email” functionality on Gmail.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_title': 'Send an email'}
 
-
-
-{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_title': 'Send an email'}
-
-- System: Okay, I have the recipient and content for the email. Is there anything else you’d like to add – perhaps a CC or BCC address, or an attachment?
-- User: Yes, please send a copy (CC) to jane.doe@example.com and no need for a BCC. The attachment URL is correct.
-{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_title': 'Send an email', 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'"}
+- System: Okay, so you want to send an email via Gmail. To finalize this, could you confirm the recipient, CC and BCC addresses, the subject line, the body content, and if you'd like to include any attachments with a URL?
+- User: The recipient is john.doe@example.com, there’s no CC or BCC, the subject is 'Tomorrow\'s Weather in Los Angeles', the body is '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', and the attachment URL is https://www.example.com/weather_report.pdf.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_title': 'Send an email', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
 
