@@ -1,0 +1,11 @@
+- User: I want to receive tomorrow’s weather report via email.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail'}
+
+- System: So you want to receive tomorrow’s weather report at 8:00 AM for Los Angeles?
+- User: Yes, I would like to receive tomorrow’s weather report at 08:00 for 34.0522° N, 118.2437° W and send it via Gmail.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+
+- System: Great! To finalize sending this email via Gmail, could you please confirm the recipient, CC and BCC addresses, the subject line, the body content, and if you'd like to include an attachment?
+- User: The recipient is john.doe@example.com, there’s no CC or BCC, the subject is 'Tomorrow's Weather in Los Angeles', the body is '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', and the attachment URL is https://www.example.com/weather_report.pdf.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_title': 'Send an email'}
+

@@ -1,0 +1,24 @@
+- User: I want to receive notifications based on weather updates from Weather Underground.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Notifications'}
+
+- System: Great! Now that we've established you want notifications from Weather Underground, what specific weather information are you interested in receiving today? 
+- User: I would like to receive Today’s weather report from Weather Underground.
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Notifications', 'trigger_title': "Today's weather report"}
+
+- System: Okay, so you want today's weather report. What time would you like to receive this report and for which location?
+- User: I’d like it at 08:00 for London, UK.
+
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Notifications', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+- System: Great! Now that we've established you want notifications from Weather Underground, how would you like those notifications to be delivered?
+- User: I’d like to receive a notification from the IFTTT app. 
+
+
+
+
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Notifications', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}
+
+- System: Perfect! What message would you like to include in the notification sent from the IFTTT app?
+- User: The message should be “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Notifications', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}
+

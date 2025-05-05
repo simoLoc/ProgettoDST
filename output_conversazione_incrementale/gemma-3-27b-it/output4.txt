@@ -1,0 +1,35 @@
+- User: I want to create a rule that triggers when something new happens on my Pocket account.
+{'trigger_channel': 'Pocket'}
+
+- System: Great! So you want a rule triggered by Pocket. What specifically on Pocket should trigger this rule? For instance, do you want to trigger when any new item is saved?
+- User: Yes, I would like to trigger it when any new item is saved to my Pocket account.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
+
+- System: Okay, now that we've set up the trigger for new items saved to Pocket, what action do you want to perform?
+- User: There are no specific fields to configure for this trigger, so let’s move on to setting up the action. 
+
+
+
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+
+- System: Great! Now that we've set up the trigger from Pocket, what action would you like to perform?
+- User: I would like to share new saved items on Twitter. 
+
+
+
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter'}
+
+- System: Okay, you want to share new saved items on Twitter. What text or image would you like to include in your tweet?
+- User: I'd like to post a tweet with the image and the text "Check out this interesting article!". 
+
+
+
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+
+- System: Great! So you want to post a tweet with the text "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" and the image from 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'. Is that correct?
+- User: Yes, please post the tweet with that text and image.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+
