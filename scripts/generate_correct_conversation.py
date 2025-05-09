@@ -40,7 +40,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
                 trigger_action_past = str_trigger_action_past, old_response = old_response)
             
             # Chiamata al modello
-            response = str(model.respond(prompt))
+            response = str(model.respond(prompt, config={"temperature": 0.6}))
             current_text += response + "\n"
             current_text += str(bf_current) + "\n\n"
             old_response = response
@@ -58,9 +58,25 @@ if __name__ == "__main__":
     model = lms.llm(name_model)
 
     # liste per la selezione dei campi da valutare
-    trigger = [['trigger_channel'], ['trigger_channel', 'trigger_title'], ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
-    action = [['action_channel'], ['action_channel', 'action_title'], ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
-    triggerAndAction = [['trigger_channel', 'action_channel'], ['trigger_channel', 'trigger_title', 'action_channel'], ['trigger_channel', 'trigger_title', 'action_channel', 'action_title']]
+    trigger = [['trigger_channel'], 
+               ['trigger_title'], 
+               ['trigger_channel', 'trigger_title'], 
+               ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
+    action = [['action_channel'], 
+              ['action_title'], 
+              ['action_channel', 'action_title'], 
+              ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
+    triggerAndAction = [['trigger_channel', 'action_channel'],
+                        ['trigger_title', 'action_title'],
+                        ['trigger_channel', 'action_title'],
+                        ['trigger_title', 'action_channel'],
+                        ['trigger_channel', 'trigger_title', 'action_channel'], 
+                        ['trigger_channel', 'trigger_title', 'action_title'],
+                        ['trigger_channel', 'action_channel', 'action_title'],
+                        ['trigger_title', 'action_channel', 'action_title'],                     
+                        ['trigger_channel', 'trigger_title', 'action_channel', 'action_title'],
+                        ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values', 'action_channel', 'action_title', 'action_fields', 'action_fields_values']
+                        ]
 
 
     with open("dataset/values_prova_completo.json", "r", encoding="utf-8") as f:
@@ -90,18 +106,30 @@ if __name__ == "__main__":
         prompt = get_prompt(isFirst = True, trigger_action_current = str_trigger_action_current, trigger_action_past = "")
 
         # Chiamata al modello
-        response = str(model.respond(prompt))
+        response = str(model.respond(prompt, config={"temperature": 0.6}))
         current_text += response
         current_text += str(bf_current) + "\n\n"
 
+        # scegliere se completare prima i campi action o trigger
+        actionStart = random.choice([0, 1])
         
-        # trigger
-        fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
-                                                                                                str_trigger_action_current, response, isAction=False)
+        if actionStart:
+            # action
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
+                                                                                                    str_trigger_action_current, response, isAction=True)
 
-        # action
-        fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
-                                                                                                str_trigger_action_current, response, isAction=True)
+            # trigger
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
+                                                                                                    str_trigger_action_current, response, isAction=False)
+        
+        else: 
+            # trigger
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
+                                                                                                    str_trigger_action_current, response, isAction=False)
+
+            # action
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
+                                                                                                    str_trigger_action_current, response, isAction=True)
         
         """
             SALVATAGGIO SU FILE DEL RISULTATO
