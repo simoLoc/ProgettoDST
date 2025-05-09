@@ -1,0 +1,23 @@
+- User: I want every time I save an article on Pocket, you automatically post a tweet with the article link and a landscape image.
+{'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+
+- System: Great! So you want this automation to start when something happens in Pocket. Is that correct?
+- User: Yes, I would like to trigger this automation every time I save an article on Pocket. 
+
+
+
+
+{'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_channel': 'Pocket'}
+
+- System: So you want this automation to trigger when any new item is saved on Pocket. Is that correct?
+- User: Yes, I would like to trigger this automation every time a new item is saved on Pocket. 
+
+
+
+
+{'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
+
+- System: Great! Now that we've set up the trigger for new items saved on Pocket, let’s define what action to take when a new item is saved. What would you like me to do?
+- User: I don't have any specific fields to configure for this trigger right now; let's proceed without filling them in.
+{'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+

@@ -1,0 +1,19 @@
+- User: I want to create an automation based on events from my Home Connect Cookit device.
+{'trigger_channel': 'Home Connect Cookit'}
+
+- System: So, when your Cookit starts, do you want me to trigger an action based on the device ID "kitchen"?
+- User: Yes, I want to create a rule that triggers when my Cookit with ID “kitchen” starts. 
+
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'trigger_title': 'Cookit started'}
+
+- System: So, you want me to play music on your Android device when something happens with your Home Connect Cookit? 
+- User: Yes, I would like to play music on my Android device whenever an event occurs on my Home Connect Cookit.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music'}
+
+- System: Great! Is there anything specific you'd like me to configure about playing music on your Android device? For instance, a particular playlist or song?
+- User: No, just play any music on my Android device when an event occurs on my Home Connect Cookit. I don’t need to specify further details.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+

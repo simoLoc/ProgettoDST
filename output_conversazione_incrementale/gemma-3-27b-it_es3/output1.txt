@@ -1,0 +1,22 @@
+- User: I want to create a rule that triggers when my Cookit appliance starts cooking, specifically for the kitchen appliance.{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+
+- System: Great! Now that we've set up the trigger for when your Cookit appliance starts cooking in the kitchen, what kind of music would you like to play?
+- User: I want to play music on Spotify when my Cookit appliance starts cooking in the kitchen. Let’s say a playlist called “Cooking Vibes”.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music'}
+
+- System: Okay, and on which Android device would you like the music to play? 
+- User: I want the music to play on my phone. Let's say it’s a Samsung Galaxy S23.
+
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_channel': 'Android Device'}
+
+- System: Great! Now that I know the music will play on your Samsung Galaxy S23, is there anything else you'd like me to do?
+- User: No, that’s all. Let’s proceed without specifying any further details for this action.
+
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_channel': 'Android Device', 'action_fields_values': '', 'action_fields': ''}
+

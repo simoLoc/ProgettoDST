@@ -1,6 +1,0 @@
-- User: I want to receive an email notification when the trigger is activated.
-
-
-
-{'action_title': 'Send me an email'}
-

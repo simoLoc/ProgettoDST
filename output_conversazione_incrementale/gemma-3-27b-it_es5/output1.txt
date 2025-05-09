@@ -1,0 +1,23 @@
+- User: I want to create a rule that triggers when Cookit starts running.
+{'trigger_title': 'Cookit started'}
+
+- System: So Cookit has started running. What ID do you want me to monitor for this trigger?
+- User: I would like to monitor the kitchen ID. 
+
+
+
+
+{'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)'}
+
+- System: So, when Cookit starts running, what music would you like me to play on your Android device?
+- User: I want to play relaxing piano music on my Android device when Cookit starts.
+{'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'action_title': 'Play music', 'action_channel': 'Android Device'}
+
+- System: Great! Is there anything else I can help you with regarding playing relaxing piano music on your Android device when Cookit starts?
+- User: No, that’s all for now. Let's leave the other action fields empty. 
+
+
+
+
+{'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'action_title': 'Play music', 'action_channel': 'Android Device', 'action_fields_values': '', 'action_fields': ''}
+

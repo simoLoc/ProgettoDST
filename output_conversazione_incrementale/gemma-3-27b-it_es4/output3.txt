@@ -1,0 +1,11 @@
+- User: I want to receive an IFTTT notification whenever the trigger is activated.
+{'action_title': 'Send a notification from the IFTTT app'}
+
+- System: So you want to receive an IFTTT notification with a specific message when the trigger activates? What message would you like to send?
+- User: I’d like the notification message to be “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”.
+{'action_title': 'Send a notification from the IFTTT app', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'", 'action_channel': 'Notifications', 'action_fields': 'Message (Text input)'}
+
+- System: So you want an IFTTT notification every day at 8 AM when the weather report for London is available? Is that correct?
+- User: Yes, please set the trigger to send me a daily IFTTT notification with the Weather Underground's Today’s weather report for London, UK at 08:00.
+{'action_title': 'Send a notification from the IFTTT app', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'", 'action_channel': 'Notifications', 'action_fields': 'Message (Text input)', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report"}
+

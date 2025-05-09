@@ -1,3 +1,11 @@
-- User: I want every time I save an article on Pocket, you automatically post a tweet with the article link and a landscape image.
-{'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+- User: I want to automatically post a tweet with an image whenever I save something to Pocket.
+{'trigger_channel': 'Pocket', 'action_title': 'Post a tweet with image'}
+
+- System: So, when a new item is saved on Pocket, would you like me to post this tweet with image on Twitter? 
+- User: Yes, please post "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" along with the image from 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D' to Twitter.
+{'trigger_channel': 'Pocket', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+
+- System: So you want to trigger a tweet with image every time something new is saved on Pocket, is that correct? 
+- User: Yes, I want to automatically post a tweet with an image whenever any new item is saved to my Pocket account. There are no specific settings for the trigger itself.
+{'trigger_channel': 'Pocket', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
 

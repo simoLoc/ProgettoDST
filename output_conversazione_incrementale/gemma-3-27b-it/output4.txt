@@ -1,3 +1,0 @@
-- User: I want every time I save an item on Pocket, you automatically post a tweet with the associated image.
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
-
