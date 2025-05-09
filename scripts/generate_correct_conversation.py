@@ -143,23 +143,23 @@ if __name__ == "__main__":
         current_text += response
         current_text += str(bf_current) + "\n\n"
         
-        # if actionStart:
-        #     # action
-        #     fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
-        #                                                                                             str_trigger_action_current, response, isAction=True)
+        if actionStart:
+            # action
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
+                                                                                                    str_trigger_action_current, response, isAction=True)
 
-        #     # trigger
-        #     fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
-        #                                                                                             str_trigger_action_current, response, isAction=False)
+            # trigger
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
+                                                                                                    str_trigger_action_current, response, isAction=False)
         
-        # else: 
-        #     # trigger
-        #     fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
-        #                                                                                             str_trigger_action_current, response, isAction=False)
+        else: 
+            # trigger
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
+                                                                                                    str_trigger_action_current, response, isAction=False)
 
-        #     # action
-        #     fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
-        #                                                                                             str_trigger_action_current, response, isAction=True)
+            # action
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
+                                                                                                    str_trigger_action_current, response, isAction=True)
         
         """
             SALVATAGGIO SU FILE DEL RISULTATO
