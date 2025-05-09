@@ -1,0 +1,3 @@
+- User: I want to create a rule based on Weather Underground updates.
+{'trigger_channel': 'Weather Underground'}
+
