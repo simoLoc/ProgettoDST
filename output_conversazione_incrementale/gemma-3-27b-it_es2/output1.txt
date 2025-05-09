@@ -1,23 +1,3 @@
-- User: I want to be notified whenever my Cookit cooking program starts.
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
-
-- System: So you want a notification when your Cookit cooking program starts. Which Kitchen ID would you like me to use for this trigger?
-- User: I'd like to associate it with kitchen ID "kitchen".
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
-
-- System: Now that we've set up the trigger for when your Cookit starts, how would you like me to notify you?
-- User: I want to receive a notification on my Android device.
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device'}
-
-- System: Great! Now that I know you want a notification on your Android device, what kind of action do you want to perform? 
-- User: I would like to play music on my Android device.
-
-
-
-
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music'}
-
-- System: Perfect! Now that we've set up playing music as the action, are there any specific details about *how* you’d like the music to play? For instance, do you have a preferred playlist or artist?
-- User: No further details at this time. Just play music.
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+- User: I want to play music on my Android device whenever my Cookit starts cooking.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music'}
 

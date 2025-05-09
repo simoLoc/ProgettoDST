@@ -1,15 +1,3 @@
 - User: I want to create a rule based on events from my Home Connect Cookit appliance.
 {'trigger_channel': 'Home Connect Cookit'}
 
-- System: So, when your Cookit appliance starts cooking, do you want me to associate a specific ID with this event?
-- User: Yes, I would like to set the ID to 'kitchen'. 
-
-
-
-
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)'}
-
-- System: So, when something happens with your Home Connect Cookit appliance, would you like me to play music on your Android Device?
-- User: Yes, please play music on my Android device when an event occurs on my Home Connect Cookit appliance.
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)', 'action_fields': '', 'action_title': 'Play music', 'action_fields_values': '', 'action_channel': 'Android Device'}
-

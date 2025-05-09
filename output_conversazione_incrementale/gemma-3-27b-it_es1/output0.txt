@@ -1,15 +1,3 @@
-- User: I want to be notified about any new open recalls from the Department of Agriculture specifically regarding “Frozen Strawberries - Potential Listeria Contamination”.
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
-
-- System: So, when a new open recall regarding “Frozen Strawberries - Potential Listeria Contamination” is issued by the Department of Agriculture, how would you like to be notified?
-- User: I want you to send me an email notification. 
-
-
-
-
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_title': 'Send me an email', 'action_channel': 'Email'}
-
-- System: Great! To finalize this email notification, could you confirm the subject and body content?
-- User: The subject will be 'Recall Alert: Frozen Strawberries' and the body will be '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'.
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_title': 'Send me an email', 'action_channel': 'Email', 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'"}
+- User: I want to receive an email notification when there’s new information available from the Department of Agriculture.
+{'trigger_channel': 'Department of Agriculture', 'action_channel': 'Email', 'action_title': 'Send me an email'}
 

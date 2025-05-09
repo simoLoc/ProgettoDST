@@ -1,11 +1,3 @@
-- User: Whenever I save a new item on Pocket, I want you to automatically post a tweet with the associated image.
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
-
-- System: Great! Is there anything specific about the items saved on Pocket that you'd like me to consider when posting the tweet? For instance, do you want to filter by tags or any other criteria?
-- User: No, just post a tweet with the image for every new item I save on Pocket. There are no specific criteria.
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': ''}
-
-- System: So, when I post a tweet with an image from Pocket, what text would you like me to include along with the link and photo?
-- User: Please use this text: 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and this is the photo URL: 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': '', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
+- User: I want to connect this automation with my Twitter account.
+{'action_channel': 'Twitter'}
 

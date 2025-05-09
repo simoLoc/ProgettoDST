@@ -1,11 +1,3 @@
-- User: I want to automatically share any new item saved on Pocket to my Twitter account.
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter'}
-
-- System: Great! So any new item saved on Pocket will trigger an action. Is there anything specific you'd like me to do with those items?
-- User: No further configuration is needed, just share them directly on Twitter as we discussed before.
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'trigger_fields_values': '', 'trigger_fields': ''}
-
-- System: So, when posting a tweet with an image, what text and photo URL would you like to use?
-- User: I want the tweet to say 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and the photo URL to be 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'trigger_fields_values': '', 'trigger_fields': '', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+- User: I want every time I save an article on Pocket, you automatically post a tweet with the article link and a landscape image.
+{'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
 
