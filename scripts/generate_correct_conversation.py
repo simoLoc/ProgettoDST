@@ -86,12 +86,45 @@ if __name__ == "__main__":
     for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
         current_text = ""   # stringa di output contenente tutta la conversazione
 
-        # scelta di iniziare o meno con i campi action
-        isAction = random.choice([0, 1])
+        trigger_fields = entry.get('trigger_fields')
+        action_fields = entry.get('action_fields')
+
+        if isinstance(trigger_fields, str):
+            # Rimuove le virgolette iniziali e finali
+            cleaned = trigger_fields.strip('"')
+
+            # Split solo se ci sono più elementi
+            items = [item.strip() for item in cleaned.split(',') if item.strip()]
+            num_trigger_fields = len(items)
+        else:
+            num_trigger_fields = 0
+
+        if isinstance(action_fields, str):
+            # Rimuove le virgolette iniziali e finali
+            cleaned = action_fields.strip('"')
+            
+            # Split solo se ci sono più elementi
+            items = [item.strip() for item in cleaned.split(',') if item.strip()]
+            num_action_fields = len(items)
+        else:
+            num_action_fields = 0
+
+        # scelta di iniziare o meno con i campi sia trigger che action
+        isTriggerAction = random.choice([0, 1])
+
+        # scegliere se completare prima i campi action o trigger
+        actionStart = random.choice([0, 1])
         
-        if isAction:
-            index = random.randint(0, len(triggerAndAction) - 1)
-            new_fields = triggerAndAction[index]
+        if isTriggerAction:
+            if num_trigger_fields <= 1 and num_action_fields <= 1:
+                index = random.randint(0, len(triggerAndAction) - 1)
+                new_fields = triggerAndAction[index]
+            else:
+                index = random.randint(0, len(triggerAndAction) - 2)
+                new_fields = triggerAndAction[index]
+        elif actionStart:
+            index = random.randint(0, len(action) - 1)
+            new_fields = action[index]
         else:
             index = random.randint(0, len(trigger) - 1)
             new_fields = trigger[index]
@@ -109,27 +142,24 @@ if __name__ == "__main__":
         response = str(model.respond(prompt, config={"temperature": 0.6}))
         current_text += response
         current_text += str(bf_current) + "\n\n"
-
-        # scegliere se completare prima i campi action o trigger
-        actionStart = random.choice([0, 1])
         
-        if actionStart:
-            # action
-            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
-                                                                                                    str_trigger_action_current, response, isAction=True)
+        # if actionStart:
+        #     # action
+        #     fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
+        #                                                                                             str_trigger_action_current, response, isAction=True)
 
-            # trigger
-            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
-                                                                                                    str_trigger_action_current, response, isAction=False)
+        #     # trigger
+        #     fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
+        #                                                                                             str_trigger_action_current, response, isAction=False)
         
-        else: 
-            # trigger
-            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
-                                                                                                    str_trigger_action_current, response, isAction=False)
+        # else: 
+        #     # trigger
+        #     fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
+        #                                                                                             str_trigger_action_current, response, isAction=False)
 
-            # action
-            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
-                                                                                                    str_trigger_action_current, response, isAction=True)
+        #     # action
+        #     fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
+        #                                                                                             str_trigger_action_current, response, isAction=True)
         
         """
             SALVATAGGIO SU FILE DEL RISULTATO
