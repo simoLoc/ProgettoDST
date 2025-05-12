@@ -1,0 +1,10 @@
+- System: Great! Now that we've connected Pocket and Twitter, how would you like me to post on Twitter?
+- User: I would like you to post a tweet with image.
+{'trigger_channel': 'Pocket', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+
+- System: Perfect! Now, what tweet text and image URL would you like to use for your Twitter post?
+- User: I want the tweet to say 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and the image URL is 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.{'trigger_channel': 'Pocket', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+
+- System: So you want to share any new item saved on Pocket automatically? 
+- User: Yes, I want to share any new item saved on Pocket to Twitter. No additional settings are needed.{'trigger_channel': 'Pocket', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_fields': '', 'trigger_fields_values': '', 'trigger_title': 'Any new item'}
+

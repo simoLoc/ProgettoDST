@@ -1,0 +1,13 @@
+- System: Great! Now that we know you want to play music when the trigger activates, on which Android device do you want the music to play? 
+- User: I would like it to play on my phone.{'action_title': 'Play music', 'action_fields': '', 'action_channel': 'Android Device', 'action_fields_values': ''}
+
+- System: So, when the Cookit starts, would you like me to play music? Is that correct?
+- User: Yes, I want to play music whenever my Home Connect Cookit starts. 
+
+
+
+{'action_title': 'Play music', 'action_fields': '', 'action_channel': 'Android Device', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+
+- System: So, when your Cookit starts and plays music, do you want this to happen for a specific kitchen ID?
+- User: Yes, please set the Kitchen ID to 'kitchen'.{'action_title': 'Play music', 'action_fields': '', 'action_channel': 'Android Device', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+

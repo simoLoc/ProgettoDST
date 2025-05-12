@@ -1,0 +1,6 @@
+- System: So, what message would you like to include in the notification sent from the IFTTT app?
+- User: Please send a notification with this message: “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”{'trigger_title': "Today's weather report", 'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}
+
+- System: So you want a daily weather report at a specific time for a particular location? Could you please confirm the time and location for this notification?
+- User: Yes, I would like to receive it at 08:00 for London, UK.{'trigger_title': "Today's weather report", 'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_channel': 'Weather Underground', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
