@@ -5,6 +5,61 @@ from tqdm import tqdm
 import lmstudio as lms
 from utils_correct_conversation import *
 import os
+import re
+
+
+def get_system_user_utterances(user = True, response = ""):
+    """
+        Metodo per estrarre system o user utterance dalla risposta del modello.
+    """
+    if user:
+        match = re.search(r'- User: (.*)', response, re.DOTALL)
+        utterance = match.group(1).strip() if match else ''
+    else:
+        match = re.search(r'- System: (.*?)\n- User:', response, re.DOTALL)
+        utterance = match.group(1).strip() if match else ''
+    
+    print(f"Utterance (user =) {user}: {utterance}")
+
+    return utterance
+
+
+def validate_prompt(response, str_trigger_action_current, current_text):
+    """
+        Metodo per validare se la user response generata contiene tutti i campi richiesti.        
+    """
+    # Estrazione della user utterance
+    user_utterance = get_system_user_utterances(response = response)
+
+    i = 0 
+    validation_result = False
+
+    # Validazione della user utterance
+    while i <= 3:
+        validation_prompt = get_validation_prompt(user_utterance = user_utterance, trigger_action_current = str_trigger_action_current)
+        validation_response = str(model.respond(validation_prompt, config={"temperature": 0.6}))
+        # Controllare se lo split fatto va bene 
+        if validation_response.split("Result:")[1].strip() == 1:
+            print("Validazione ok")
+            validation_result = True
+            break
+        else:
+            i += 1
+
+    if not validation_result:
+        print("Correzione della risposta in corso...")
+        system_utterance = get_system_user_utterances(user = False, response = response)
+
+        correction_prompt = get_utterance_correction_prompt(system_utterance = system_utterance, trigger_action_current = str_trigger_action_current)
+        correction_response = str(model.respond(correction_prompt, config={"temperature": 0.6}))
+
+        current_text += "- System: " + system_utterance + "\n" + correction_response + "\n"
+        old_response = "- System: " + system_utterance + "\n" + correction_response
+    else:
+        current_text += response
+        old_response = response
+
+    return current_text, old_response
 
 
 def generate_question_and_answer(fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False):
@@ -41,9 +96,13 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             
             # Chiamata al modello
             response = str(model.respond(prompt, config={"temperature": 0.6}))
-            current_text += response + "\n"
+            
+            # Validazione della risposta
+            current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text)
+
+            # current_text += response + "\n"
             current_text += str(bf_current) + "\n\n"
-            old_response = response
+            # old_response = response
 
             str_trigger_action_past = str_trigger_action_current
 
@@ -140,8 +199,8 @@ if __name__ == "__main__":
 
         # Chiamata al modello
         response = str(model.respond(prompt, config={"temperature": 0.6}))
-        current_text += response
-        current_text += str(bf_current) + "\n\n"
+
+        # Aggiungere validazione della risposta (in questo caso è la prima utterance)
         
         if actionStart:
             # action
