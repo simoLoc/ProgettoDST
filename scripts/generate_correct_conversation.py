@@ -35,15 +35,18 @@ def validate_prompt(response, str_trigger_action_current, current_text):
     validation_result = False
 
     # Validazione della user utterance
-    while i <= 3:
+    while i <= 2:
         validation_prompt = get_validation_prompt(user_utterance = user_utterance, trigger_action_current = str_trigger_action_current)
         validation_response = str(model.respond(validation_prompt, config={"temperature": 0.6}))
+
+        validation_response = validation_response.strip()
 
         print(f"Risposta alla validazione: {validation_response}")
         # Controllare se lo split fatto va bene 
         # if validation_response.split("Result:")[1].strip() == 1:
+
         
-        if validation_response == "1":
+        if validation_response == "1" or validation_response == "Result: 1":
             print("Validazione ok")
             validation_result = True
             break
