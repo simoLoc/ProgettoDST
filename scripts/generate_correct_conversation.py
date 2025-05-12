@@ -43,7 +43,7 @@ def validate_prompt(response, str_trigger_action_current, current_text):
         # Controllare se lo split fatto va bene 
         # if validation_response.split("Result:")[1].strip() == 1:
         
-        if validation_response.split("Result:")[1].strip() == "1":
+        if validation_response == "1":
             print("Validazione ok")
             validation_result = True
             break
