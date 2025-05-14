@@ -1,0 +1,12 @@
+- User: I want to receive an IFTTT notification with today’s weather report from Weather Underground.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_title': 'Send a notification from the IFTTT app'}
+
+- System: So you want a daily weather report at 8 AM for London? Is that correct?
+- User: Yes, I would like to receive today’s weather report from Weather Underground every day at 08:00 for London, UK and get notified via the IFTTT app.{'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_title': 'Send a notification from the IFTTT app', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+- System: Great! Now that we've set up the weather report trigger from Weather Underground, do you want me to configure how this notification will appear on your device?
+- User: Yes, I would like to receive Notifications from the IFTTT app.{'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_title': 'Send a notification from the IFTTT app', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_channel': 'Notifications'}
+
+- System: Great! Now that we've set up the weather report trigger from Weather Underground and you want to receive Notifications from the IFTTT app, what message would you like to be sent with your notification?
+- User: I would like the message to say “☀️ Good morning! Today in London, it’s going to be sunny with a high of 25°C. Enjoy your day!”{'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_title': 'Send a notification from the IFTTT app', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_channel': 'Notifications', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}
+

@@ -1,0 +1,19 @@
+- User: I want you to post a tweet whenever the trigger is activated, including an image.
+{'action_title': 'Post a tweet with image'}
+
+- System: Great! Now that you've specified posting a tweet with an image, do you want me to post it on your main Twitter account or a specific one? 
+- User: I would like to post it on my main Twitter account. So the action channel is Twitter.{'action_title': 'Post a tweet with image', 'action_channel': 'Twitter'}
+
+- System: Perfect! Now that we've set up the tweet content and image, are you happy with the message "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" along with this image: https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D for your tweet on Twitter?
+- User: Yes, that's exactly what I want. The Tweet is "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" and the Photo URL is https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D.{'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+
+- System: From which channel do you want to monitor for new items?
+- User: I want to monitor any new item from Facebook. {'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_title': 'Any new item'}
+
+- System: Now that we're monitoring Facebook for any new item, from which channel do you want to import items?
+- User: I would like to import items from Pocket. 
+
+
+
+{'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'trigger_channel': 'Pocket'}
+

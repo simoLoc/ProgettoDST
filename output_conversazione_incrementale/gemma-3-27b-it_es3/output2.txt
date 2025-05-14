@@ -1,0 +1,16 @@
+- User: I want to receive tomorrow’s weather report via email.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail'}
+
+- System: Great! Now that I know you want to receive the weather report via email, who should I send it to?
+- User: Please send the email to my address, example@email.com. 
+
+
+
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email'}
+
+- System: Okay, I have the recipient and subject for your email. Do you want to add anyone in the 'Cc' or 'Bcc' field, include an attachment, or is the body as it is sufficient? 
+- User: Please keep the 'Cc' and 'Bcc' fields empty, use the provided body, and attach the file at this URL: https://www.example.com/weather_report.pdf. The recipient is john.doe@example.com and the subject is "Tomorrow's Weather in Los Angeles".{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email', 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'"}
+
+- System: So, you want to receive tomorrow’s weather report for a specific location at a specific time. Is that correct?
+- User: Yes, I would like to receive it at 08:00 for Los Angeles, which is located at 34.0522° N, 118.2437° W.{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email', 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+
