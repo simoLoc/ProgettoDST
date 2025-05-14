@@ -129,6 +129,7 @@ Result: 1
 prompt_validazione_fine = """
 By analysing the trigger action rule fields and the utterance, it assesses whether or not the utterance
 contains all the required fields.
+The output is 1 if the utterance contains all the required fields and 0 otherwise. 
 The output must respect the format of the output given in the example.
 """
 
