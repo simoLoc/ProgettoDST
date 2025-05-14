@@ -1,11 +1,26 @@
-- User: I want to set up an alert so that when certain weather conditions are met according to Weather Underground, you send me an email.
-{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'action_title': 'Send an email'}
+- System: 
+Okay, I need the System's Question to generate a relevant utterance. Since it's missing, I will assume a logical question based on the provided fields:
 
-- System: So you want a daily weather report for a specific location delivered via email. Could you please provide the time and location for which you'd like to receive this report?
-- User: I would like the report at 08:00 for coordinates 34.0522° N, 118.2437° W.
-{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)'}
+**Assumed System Question:** "Do you want me to send weather updates from Weather Underground to your Gmail account?"
 
-- System: Great! Now, to finalize sending the email via Gmail, could you please provide the recipient's address, any CC or BCC recipients, a subject for the email, the body content (you can use HTML), and optionally, a URL for an attachment?
-- User: The recipient is john.doe@example.com. There are no CC or BCC recipients. The subject will be 'Tomorrow\'s Weather in Los Angeles'. The body is '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>' and the attachment URL is https://www.example.com/weather_report.pdf.
-{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
+## OUTPUT
+- User: Yes, please send weather updates from Weather Underground to my Gmail account.
+
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail'}
+
+- System: Do you want me to send weather updates from Weather Underground to your Gmail account?
+- User: Yes, please send me tomorrow's weather report from Weather Underground to my Gmail account.
+
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report"}
+
+- System: So you want a weather report tomorrow at 8:00 AM for Los Angeles? Is that correct?
+- User: Yes, please send me tomorrow's weather report at 8:00 AM for Los Angeles - latitude 34.0522° N and longitude 118.2437° W.{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+
+- System: Do you want me to send weather updates from Weather Underground to your Gmail account?
+- User: Yes, please send an email with the weather updates from Weather Underground to my Gmail account.
+
+{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_title': 'Send an email'}
+
+- System: Great! So, to finalize sending this email, could you confirm the recipient, CC and BCC addresses, subject line, body content, and attachment URL?
+- User: The recipient is john.doe@example.com, there's no CC or BCC, the subject is 'Tomorrow\'s Weather in Los Angeles', the body is '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', and the attachment URL is https://www.example.com/weather_report.pdf.{'trigger_channel': 'Weather Underground', 'action_channel': 'Gmail', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_title': 'Send an email', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
 

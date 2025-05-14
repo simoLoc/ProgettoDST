@@ -24,7 +24,7 @@ def get_system_user_utterances(user = True, response = ""):
     return utterance
 
 
-def validate_prompt(response, str_trigger_action_current, current_text):
+def validate_prompt(response, str_trigger_action_current, current_text, isFirst = True, old_response = "", str_trigger_action_past = ""):
     """
         Metodo per validare se la user response generata contiene tutti i campi richiesti.        
     """
@@ -41,17 +41,35 @@ def validate_prompt(response, str_trigger_action_current, current_text):
 
         validation_response = validation_response.strip()
 
+
+        print(f"BF - state: {str_trigger_action_current}")
         print(f"Risposta alla validazione: {validation_response}")
+
         # Controllare se lo split fatto va bene 
         # if validation_response.split("Result:")[1].strip() == 1:
 
-        
+
         if validation_response == "1" or validation_response == "Result: 1":
             print("Validazione ok")
             validation_result = True
             break
         else:
             i += 1
+            # Output new questions e response
+            # stringa del prompot
+
+            if isFirst:
+                prompt = get_prompt(isFirst=True, trigger_action_current=str_trigger_action_current, trigger_action_past = "")
+            else:
+                prompt = get_prompt(isFirst=False, trigger_action_current=str_trigger_action_current,
+                                    trigger_action_past=str_trigger_action_past, old_response=old_response)
+
+            # Chiamata al modello
+            response = str(model.respond(prompt, config={"temperature": 0.6}))
+            user_utterance = get_system_user_utterances(response=response)
+
+
+
 
     if not validation_result:
         print("Correzione della risposta in corso...")
@@ -105,7 +123,8 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             response = str(model.respond(prompt, config={"temperature": 0.6}))
             
             # Validazione della risposta
-            current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text)
+            current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
+                                                         isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
 
             # current_text += response + "\n"
             current_text += str(bf_current) + "\n\n"
@@ -209,6 +228,7 @@ if __name__ == "__main__":
 
         # Validazione della risposta (in questo caso è la prima utterance)
         current_text, response = validate_prompt(response, str_trigger_action_current, current_text)
+        current_text += str(bf_current) + "\n\n"
         
         if actionStart:
             # action

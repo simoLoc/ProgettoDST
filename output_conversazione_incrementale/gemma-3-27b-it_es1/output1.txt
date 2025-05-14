@@ -1,28 +1,13 @@
-Okay, I understand. Here's a user utterance based on the provided `action_channel`:
+- User: I want to receive a notification on my Android device whenever my Cookit cooking program starts.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}
 
-- User: I want to send notifications to my Android device when a trigger event occurs.
+- System: So, when your Cookit cooking program starts, would you like me to play some music on your Android device? 
+- User: Yes, please play music on my Android device when the Cookit starts.{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 
-
-
-{'action_channel': 'Android Device'}
-
-- System: Great! Now that we've set up notifications for your Android device, what kind of action would you like to perform on it? 
-- User: I want to play music on my Android device when the trigger event occurs.
-{'action_channel': 'Android Device', 'action_title': 'Play music'}
-
-- System: Perfect! Now that we've decided to play music on your Android device when triggered, are there any specific details about *how* you’d like the music to be played? For example, do you have a preferred playlist or application?
-- User: No further specifications needed. Just play some music. 
+- System: So your Cookit program has started in the kitchen. Is that correct?
+- User: Yes, my Cookit program started in the kitchen. I want to receive a notification on my Android device whenever it starts there. 
 
 
 
-
-{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
-
-- System: Great! Now that we know you want notifications on your Android device, what event from Cookit would you like to trigger these notifications? 
-- User: I want to receive a notification when a new recipe is started in Cookit – so when 'Cookit started' happens.
-{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_title': 'Cookit started'}
-
-- System: So you want notifications when a recipe starts in Cookit for your kitchen. Is that correct? 
-- User: Yes, I would like to receive a notification when a new recipe is started in Cookit with ID 'kitchen'.
-{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields_values': "'kitchen'"}
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)'}
 

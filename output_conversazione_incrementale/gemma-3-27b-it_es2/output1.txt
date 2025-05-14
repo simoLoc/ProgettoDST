@@ -1,15 +1,16 @@
-- User: I want to play some music on my Android device whenever Cookit starts.
-{'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music'}
+- User: I want to connect my Home Connect Cookit appliance to send notifications to my Android device.
+{'trigger_channel': 'Home Connect Cookit', 'action_channel': 'Android Device'}
 
-- System: Okay, so whenever Cookit starts I will play music on your Android device. Is there a specific song or playlist you’d like to play?
-- User: Please play my "Workout Mix" playlist.
-{'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+- System: So your Cookit appliance has ID 'kitchen'. When it starts, what do you want me to do with your Android device?
+- User: I want my Android device to receive a notification when the Cookit with ID kitchen starts.{'trigger_channel': 'Home Connect Cookit', 'action_channel': 'Android Device', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'trigger_title': 'Cookit started'}
 
-- System: So when Cookit starts, do you want me to play music on your Android device based on a specific ID?
-- User: Yes, please set the ID to 'kitchen'. 
-
+- System: So you want me to send a notification to your Android device when something happens with your Home Connect Cookit appliance. What kind of action would you like to perform on your Android Device?
+- User: I’d like it to play music. 
 
 
 
-{'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': '', 'trigger_fields_values': "'kitchen'", 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)'}
+{'trigger_channel': 'Home Connect Cookit', 'action_channel': 'Android Device', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'trigger_title': 'Cookit started', 'action_title': 'Play music'}
+
+- System: Great! Now that we've decided to play music, is there anything else I can help you with regarding this action?
+- User: No, that’s all. Let’s proceed without specifying further details for now.{'trigger_channel': 'Home Connect Cookit', 'action_channel': 'Android Device', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'trigger_title': 'Cookit started', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
 
