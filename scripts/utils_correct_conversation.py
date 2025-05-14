@@ -156,6 +156,7 @@ trigger_fields_values: ''#frase_poderosa'
 prompt_correction_fine = """
 By analysing the fields to be completed in the response and the system question, it generates a user
 response that is consistent with the question and contains all the fields.
+The system question can be null, in which case it is sufficient to consider all the fields to be completed in the generated answer.
 The output must respect the format of the output given in the example.
 """
 

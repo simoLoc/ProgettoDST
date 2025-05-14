@@ -125,13 +125,13 @@ if __name__ == "__main__":
 
     # liste per la selezione dei campi da valutare
     trigger = [['trigger_channel'], 
-               ['trigger_title'], 
-               ['trigger_channel', 'trigger_title'], 
-               ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
+                ['trigger_title'], 
+                ['trigger_channel', 'trigger_title'], 
+                ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
     action = [['action_channel'], 
-              ['action_title'], 
-              ['action_channel', 'action_title'], 
-              ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
+                ['action_title'], 
+                ['action_channel', 'action_title'], 
+                ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
     triggerAndAction = [['trigger_channel', 'action_channel'],
                         ['trigger_title', 'action_title'],
                         ['trigger_channel', 'action_title'],
@@ -156,7 +156,7 @@ if __name__ == "__main__":
         action_fields = entry.get('action_fields')
 
         if isinstance(trigger_fields, str):
-            # Rimuove le virgolette iniziali e finali
+            # Rimuove le virgolette " iniziali e finali
             cleaned = trigger_fields.strip('"')
 
             # Split solo se ci sono più elementi
@@ -166,7 +166,7 @@ if __name__ == "__main__":
             num_trigger_fields = 0
 
         if isinstance(action_fields, str):
-            # Rimuove le virgolette iniziali e finali
+            # Rimuove le virgolette " iniziali e finali
             cleaned = action_fields.strip('"')
             
             # Split solo se ci sono più elementi
@@ -207,7 +207,8 @@ if __name__ == "__main__":
         # Chiamata al modello
         response = str(model.respond(prompt, config={"temperature": 0.6}))
 
-        # Aggiungere validazione della risposta (in questo caso è la prima utterance)
+        # Validazione della risposta (in questo caso è la prima utterance)
+        current_text, response = validate_prompt(response, str_trigger_action_current, current_text)
         
         if actionStart:
             # action
