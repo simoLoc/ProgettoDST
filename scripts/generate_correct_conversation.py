@@ -8,6 +8,8 @@ from utils_incorrect_conversation import *
 import os
 import re
 
+name_model = "gemma-3-27b-it"
+model = lms.llm(name_model)
 
 def get_system_user_utterances(user = True, response = ""):
     """
