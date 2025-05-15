@@ -1,121 +1,67 @@
-User utterance 0:I want to receive updates from the Department of Agriculture.
-BF - state:'trigger_channel': 'Department of Agriculture' 
-
-Risposta alla validazione: Result: 0
-User utterance 1:I want to receive updates from the Department of Agriculture.
-BF - state:'trigger_channel': 'Department of Agriculture' 
-
-Risposta alla validazione: Result: 0
-User utterance 2:I want to receive updates from the Department of Agriculture.
-BF - state:'trigger_channel': 'Department of Agriculture' 
-
-Risposta alla validazione: Result: 0
-User utterance 3:I want to set up an alert for any updates from the Department of Agriculture.
-Correzione della risposta in corso...
-- System: 
-## INPUT
-## SYSTEM'S QUESTION
-- System: Which department would you like me to contact?
-
-## FIELDS TO BE COMPLETED IN THE RESPONSE
-trigger_fields: 'Department of Agriculture' 
-trigger_fields_values: ''
-
-## OUTPUT
-- User: I would like you to contact the Department of Agriculture.
-
-{'trigger_channel': 'Department of Agriculture'}
-
-Utterance con errore
-Clarification question
-## OUTPUT
-- System: Ok, I understand you want to be notified about new recalls. But how should I send this notification - do you need more details in the email itself?
-- User: Yes, please send an email to me.
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
-
-User utterance 0:Yes, please send an email to me.
-BF - state:'trigger_title': 'New open recall' 
-
-Risposta alla validazione: Result: 0
-User utterance 1:Please monitor all new open recalls from the National Highway Traffic Safety Administration.
-BF - state:'trigger_title': 'New open recall' 
-
-Risposta alla validazione: Result: 0
-User utterance 2:Please notify me when a new open recall is issued.
-BF - state:'trigger_title': 'New open recall' 
+User utterance 0:I want to receive an email whenever the trigger is activated, with the subject 'Recall Alert: Frozen Strawberries' and the specified HTML body about the strawberry recall.
+BF - state:'action_channel': 'Email' 
+'action_title': 'Send me an email' 
+'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)' 
+'action_fields_values': ''Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'' 
 
 Risposta alla validazione: Result: 1
 Validazione ok
-## OUTPUT
-- System: Ok, I see you want notifications about new recalls from the National Highway Traffic Safety Administration. But what kind of event should trigger this notification? 
-- User: Please notify me when a new open recall is issued.
+- User: I want to receive an email whenever the trigger is activated, with the subject 'Recall Alert: Frozen Strawberries' and the specified HTML body about the strawberry recall.
+{'action_channel': 'Email', 'action_title': 'Send me an email', 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'"}
 
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
+User utterance 0:I want to get these alerts from the Food Safety Alerts and Recalls section of the Department of Agriculture.
+BF - state:'trigger_channel': 'Department of Agriculture' 
 
-User utterance 0:I want the query to be "Frozen Strawberries - Potential Listeria Contamination".
+Risposta alla validazione: Result: 0
+User utterance 1:I want to receive alerts from the Department of Agriculture.
+BF - state:'trigger_channel': 'Department of Agriculture' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I want to receive them from the Department of Agriculture's general recall alert system.
+BF - state:'trigger_channel': 'Department of Agriculture' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want this trigger to come from the Department of Agriculture's Food Safety Alerts feed.
+Correzione della risposta in corso...
+- System: From which Department of Agriculture service would you like to receive recall notifications?
+- User: I would like to receive recall notifications from the Department of Agriculture.
+
+
+{'action_channel': 'Email', 'action_title': 'Send me an email', 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'trigger_channel': 'Department of Agriculture'}
+
+Utterance con errore
+Clarification question
+- System: Ok, and from which source do you want to receive notifications about new open recalls?
+- User: I’d like to get them from the National Highway Traffic Safety Administration.
+{'action_channel': 'Email', 'action_title': 'Send me an email', 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
+
+User utterance 0:I’d like to get them from the National Highway Traffic Safety Administration.
+BF - state:'trigger_title': 'New open recall' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:The recall information comes from the NHTSA website.
+BF - state:'trigger_title': 'New open recall' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:It's an RSS feed from the NHTSA website.
+BF - state:'trigger_title': 'New open recall' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want this trigger to activate when a new open recall is published by NHTSA.
+Correzione della risposta in corso...
+- System: Ok, so you are receiving recall information via an RSS feed from NHTSA. Now, regarding this recall notification, what specific event triggers this rule? Are we looking at newly published recalls, updates to existing ones, or something else?
+- User: The rule is triggered by a new open recall.
+
+
+{'action_channel': 'Email', 'action_title': 'Send me an email', 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
+
+User utterance 0:The query should be "Frozen Strawberries - Potential Listeria Contamination".
 BF - state:'trigger_fields': 'Query (Text input > Other)' 
 'trigger_fields_values': ''Frozen Strawberries - Potential Listeria Contamination'' 
 
 Risposta alla validazione: Result: 1
 Validazione ok
-- System: Great! Now that we've set up notifications for new open recalls, can you tell me what specific query or keywords you’d like me to use to filter those recalls? For example, are you interested in a particular make and model or a specific issue?
-- User: I want the query to be "Frozen Strawberries - Potential Listeria Contamination".
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
-
-Utterance con errore
-Clarification question
-## OUTPUT
-- System: What kind of email notification would you like to send? 
-- User: I want to receive an email with event details.
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_channel': 'Email'}
-
-User utterance 0:I want to receive an email with event details.
-BF - state:'action_channel': 'Email' 
-
-Risposta alla validazione: Result: 0
-User utterance 1:I want the email to contain the author’s name, the date and time of the post, and the content of the post itself.
-BF - state:'action_channel': 'Email' 
-
-Risposta alla validazione: Result: 0
-User utterance 2:I want to receive an email notification when a new photo post with a specific hashtag is published on Facebook.
-BF - state:'action_channel': 'Email' 
-
-Risposta alla validazione: Result: 0
-User utterance 3:I want the email to contain a link to the Facebook photo post with the specific hashtag.
-Correzione della risposta in corso...
-- System: Ok, and what details should I include in this email notification?
-- User: I would like to send this notification via email.
-
-
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_channel': 'Email'}
-
-User utterance 0:I would like the action title to be 'Send me an email' with the subject "New post available!".
-BF - state:'action_title': 'Send me an email' 
-
-Risposta alla validazione: Result: 0
-User utterance 1:I want you to send me an email notification.
-BF - state:'action_title': 'Send me an email' 
-
-Risposta alla validazione: Result: 0
-User utterance 2:I want the action to be 'Send me an email' with the subject "New post available".
-BF - state:'action_title': 'Send me an email' 
-
-Risposta alla validazione: Result: 0
-User utterance 3:I’d like the subject line to be “New Post Alert” and send me an email when a new post is created.
-Correzione della risposta in corso...
-- System: Great, now that we've established email as the channel, what subject line would you like for this notification?
-- User: I would like the subject line to be "Send me an email".
-
-
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_channel': 'Email', 'action_title': 'Send me an email'}
-
-User utterance 0:The body of the email will be: `<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>`
-BF - state:'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)' 
-'action_fields_values': ''Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'' 
-
-Risposta alla validazione: Result: 1
-Validazione ok
-- System: Okay, now that we've defined the subject line, could you please provide the body of the email? 
-- User: The body of the email will be: `<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>`
-{'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_channel': 'Email', 'action_title': 'Send me an email', 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'"}
+- System: Great! Now that we've established the trigger is a new open recall, could you please provide the query to filter these recalls? Specifically, what keywords or terms should I look for when identifying relevant recalls?
+- User: The query should be "Frozen Strawberries - Potential Listeria Contamination".
+{'action_channel': 'Email', 'action_title': 'Send me an email', 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
 

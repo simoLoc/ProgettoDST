@@ -1,55 +1,135 @@
-User utterance 0:I want to be notified whenever my Home Connect Cookit starts cooking, specifically for the kitchen appliance.
-BF - state:'trigger_channel': 'Home Connect Cookit' 
-'trigger_title': 'Cookit started' 
-'trigger_fields': 'Ha ID (Dropdown list)' 
-'trigger_fields_values': ''kitchen'' 
-
-Risposta alla validazione: Result: 0
-User utterance 1:I want to be notified when my Cookit cooking program starts, specifically for the kitchen appliance.
-BF - state:'trigger_channel': 'Home Connect Cookit' 
-'trigger_title': 'Cookit started' 
-'trigger_fields': 'Ha ID (Dropdown list)' 
-'trigger_fields_values': ''kitchen'' 
-
-Risposta alla validazione: Result: 1
-Validazione ok
-- User: I want to be notified when my Cookit cooking program starts, specifically for the kitchen appliance.
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
-
-User utterance 0:I want to receive a push notification on my Android device.
+User utterance 0:I want to send notifications to my Android device when a trigger occurs.
 BF - state:'action_channel': 'Android Device' 
 
 Risposta alla validazione: Result: 0
-User utterance 1:I want to receive a push notification on my Android device.
+User utterance 1:I want to send notifications to my Android device when certain events happen.
 BF - state:'action_channel': 'Android Device' 
 
 Risposta alla validazione: Result: 0
-User utterance 2:I would like to receive a notification on my Android device.
+User utterance 2:I want to send notifications to my Android device when certain events occur.
 BF - state:'action_channel': 'Android Device' 
 
 Risposta alla validazione: Result: 0
-User utterance 3:I want to receive a notification on my Android device.
+User utterance 3:I want to send notifications to my Android device when a specific event happens.
 Correzione della risposta in corso...
-- System: Now that we've set up the trigger for when your Cookit starts, how would you like to be notified?
-- User: I would like to be notified on my Android Device.
+- System: 
+Okay, I understand. Here's a user utterance based on the provided input:
 
+- User: I am using an Android Device.
 
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device'}
+{'action_channel': 'Android Device'}
 
-User utterance 0:I would like it to play music.
+Utterance con errore
+Clarification question
+- System: Ok, I understand you want relaxing music. But which service do you use to play music?
+- User: Please use Spotify. 
+{'action_channel': 'Android Device', 'action_title': 'Play music'}
+
+User utterance 0:Please use Spotify.
 BF - state:'action_title': 'Play music' 
-'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Please play relaxing music.
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:Please play it on my Sonos speakers.
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Please play relaxing music.
+Correzione della risposta in corso...
+- System: Ok, I understand you want to play music on Sonos speakers. But what kind of music would you like me to play?
+- User: I want to play music.
+
+
+{'action_channel': 'Android Device', 'action_title': 'Play music'}
+
+User utterance 0:No preferences, just play something random.
+BF - state:'action_fields': '' 
 'action_fields_values': '' 
 
 Risposta alla validazione: Result: 0
-User utterance 1:I would like my Android Device to play music.
-BF - state:'action_title': 'Play music' 
-'action_fields': '' 
+User utterance 1:No, just play whatever is popular right now.
+BF - state:'action_fields': '' 
 'action_fields_values': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:No preferences, just play something random.
+BF - state:'action_fields': '' 
+'action_fields_values': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:No preferences, just play anything.
+Correzione della risposta in corso...
+- System: Great! Now that I know you want to play music on Sonos, do you have any specific preferences for what to play? Perhaps a genre, artist or playlist?
+- User: I don't have any specific preferences right now, you can play whatever you think is good.
+
+
+
+
+
+{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+
+Utterance con errore
+Clarification question
+- System: Ok, so the trigger should happen when a recipe finishes cooking on Home Connect Cookit. But what kind of event within Home Connect Cookit specifically triggers this? For example, is it about starting or completing a cooking program?
+- User: It's when a cooking program completes.
+{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit'}
+
+User utterance 0:It's when a cooking program completes.
+BF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I want to send a notification via Telegram.
+BF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I want it triggered when a cooking program completes.
+BF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want it triggered for any cooking program completion.
+Correzione della risposta in corso...
+- System: Ok, you want a Telegram notification when a cooking program completes on Home Connect Cookit. Is there anything specific *about* that completed program you’d like me to consider?
+- User: Yes, specifically regarding programs from Home Connect Cookit. 
+
+
+{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit'}
+
+Utterance con errore
+Clarification question
+- System: Ok, great! And on which channel should I monitor for Cookit starting?
+- User: Please monitor Home Connect.
+{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+
+User utterance 0:Please monitor Home Connect.
+BF - state:'trigger_title': 'Cookit started' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:When a cooking program is started on Home Connect.
+BF - state:'trigger_title': 'Cookit started' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:Monitor Home Connect.
+BF - state:'trigger_title': 'Cookit started' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Monitor when a new recipe is started within Cookit on Home Connect.
+Correzione della risposta in corso...
+- System: Ok, and when Cookit starts on Home Connect, what specifically should I monitor? Are there any specific details about this event?
+- User: I would like to monitor when Cookit started.
+
+{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+
+User utterance 0:Yes, I would like to monitor the kitchen with ID 'kitchen'.
+BF - state:'trigger_fields': 'Ha ID (Dropdown list)' 
+'trigger_fields_values': ''kitchen'' 
 
 Risposta alla validazione: Result: 1
 Validazione ok
-- System: Great! Now that you've chosen your Android device for notifications, what action do you want me to perform when Cookit starts? 
-- User: I would like my Android Device to play music.
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+- System: So, when Cookit starts, do you want me to monitor a specific kitchen ID? 
+- User: Yes, I would like to monitor the kitchen with ID 'kitchen'.
+
+{'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
 
