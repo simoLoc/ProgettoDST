@@ -5,95 +5,9 @@ from tqdm import tqdm
 import lmstudio as lms
 from utils_correct_conversation import *
 from utils_incorrect_conversation import *
+from generate_correct_conversation import validate_prompt
 import os
 import re
-
-
-def get_system_user_utterances(user = True, response = ""):
-    """
-        Metodo per estrarre system o user utterance dalla risposta del modello.
-    """
-    if user:
-        match = re.search(r'- User: (.*)', response, re.DOTALL)
-        utterance = match.group(1).strip() if match else ''
-    else:
-        match = re.search(r'- System: (.*?)\n- User:', response, re.DOTALL)
-        utterance = match.group(1).strip() if match else ''
-
-    # print(f"Utterance (user =) {user}: {utterance}")
-
-    return utterance
-
-
-def validate_prompt(response, str_trigger_action_current, current_text, isFirst = True, old_response = "", str_trigger_action_past = "",  isClarification = False):
-    """
-        Metodo per validare se la user response generata contiene tutti i campi richiesti.        
-    """
-    # Estrazione della user utterance
-    user_utterance = get_system_user_utterances(response = response)
-
-    current_text += "User utterance 0:" + user_utterance + "\n"
-
-
-    i = 0 
-    validation_result = False
-
-    # Validazione della user utterance
-    while i <= 2:
-        validation_prompt = get_validation_prompt(user_utterance = user_utterance, trigger_action_current = str_trigger_action_current)
-        validation_response = str(model.respond(validation_prompt, config={"temperature": 0.6}))
-
-        validation_response = validation_response.strip()
-
-
-        current_text += "BF - state:" + str_trigger_action_current + "\n"
-        current_text += "Risposta alla validazione: " + validation_response + "\n"
-        
-
-        if validation_response == "1" or validation_response == "Result: 1":
-            # print("Validazione ok")
-            current_text += "Validazione ok\n"
-            validation_result = True
-            break
-        else:
-            i += 1
-            # Output new questions e response
-            # stringa del prompot
-
-            if isFirst:
-                if isClarification:
-                    prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
-                else: 
-                    prompt = get_prompt(isFirst=True, trigger_action_current=str_trigger_action_current, trigger_action_past = "")
-            else:
-                if isClarification:
-                    prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
-                else:
-                    prompt = get_prompt(isFirst=False, trigger_action_current=str_trigger_action_current,
-                                    trigger_action_past=str_trigger_action_past, old_response=old_response)
-
-            # Chiamata al modello
-            response = str(model.respond(prompt, config={"temperature": 0.6}))
-            user_utterance = get_system_user_utterances(response=response)
-
-            current_text += f"User utterance {i}:" + user_utterance + "\n"
-
-
-    if not validation_result:
-        # print("Correzione della risposta in corso...")
-        current_text += "Correzione della risposta in corso...\n"
-        system_utterance = get_system_user_utterances(user = False, response = response)
-
-        correction_prompt = get_utterance_correction_prompt(system_utterance = system_utterance, trigger_action_current = str_trigger_action_current)
-        correction_response = str(model.respond(correction_prompt, config={"temperature": 0.6}))
-
-        current_text += "- System: " + system_utterance + "\n" + correction_response + "\n"
-        old_response = "- System: " + system_utterance + "\n" + correction_response
-    else:
-        current_text += response
-        old_response = response
-
-    return current_text, old_response
 
 
 def generate_question_and_answer(fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False):
@@ -119,21 +33,49 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             new_elements = list(new_elements)
             fields += new_elements  # si tiene traccia dei campi correnti
 
+
+            # ATTENZIONE -> Aggiungere il controllo che se i fields sono vuoti non ci deve essere il prompt con l'errore
+
             bf_new, str_trigger_action_current = get_prompt_input(new_elements, entry)
             
             # merge tra i dizionari
             bf_current = bf_current | bf_new   # bf_new è il dizionario di new_elements
 
-            # stringa del prompot
-            prompt = get_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, 
-                trigger_action_past = str_trigger_action_past, old_response = old_response)
+            # genero il numero casuale per vedere se l'utternace deve avere o no l'errore
+            isError = random.choice([0, 1])
+
+            if isError:
+                # stringa del prompt incorretto
+                prompt = get_incorrect_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, 
+                    trigger_action_past = str_trigger_action_past, old_response = old_response)
+            else:       
+                # stringa del prompt corretto 
+                prompt = get_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, 
+                    trigger_action_past = str_trigger_action_past, old_response = old_response)
             
             # Chiamata al modello
             response = str(model.respond(prompt, config={"temperature": 0.6}))
             
-            # Validazione della risposta
-            current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
-                                                         isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
+
+            # se ho l'errore allora devo correggere l'errore e poi 
+            if isError:
+                # stringa del prompt corretto 
+                prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
+            
+                # Chiamata al modello
+                response = str(model.respond(prompt, config={"temperature": 0.6}))
+
+                current_text += response
+                current_text += "\n" + str(bf_current) + "\n\n"
+
+                # Validazione della risposta - se l'utterance è corretta
+                current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
+                                                isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past,
+                                                isClarification = True)
+            else: 
+                # Validazione della risposta - se l'utterance è corretta
+                current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
+                                                isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
 
             # current_text += response + "\n"
             current_text += "\n" + str(bf_current) + "\n\n"
@@ -229,14 +171,37 @@ if __name__ == "__main__":
         # bf_current è un dizionario (chiave = nome del campo, valore = valore del campo)
         # str_trigger_action_current è la formattazione in str dell'entry, solo per i campi contenuti in fields
         bf_current, str_trigger_action_current = get_prompt_input(fields, entry)
-        
-        prompt = get_prompt(isFirst = True, trigger_action_current = str_trigger_action_current, trigger_action_past = "")
+
+
+        # genero il numero casuale per vedere se l'utternace deve avere o no l'errore
+        isError = random.choice([0, 1])
+
+        if isError:
+            prompt = get_incorrect_prompt(isFirst = True, trigger_action_current = str_trigger_action_current, trigger_action_past = "")
+        else:
+            prompt = get_prompt(isFirst = True, trigger_action_current = str_trigger_action_current, trigger_action_past = "")
 
         # Chiamata al modello
         response = str(model.respond(prompt, config={"temperature": 0.6}))
 
         # Validazione della risposta (in questo caso è la prima utterance)
-        current_text, response = validate_prompt(response, str_trigger_action_current, current_text)
+        if isError:
+            # stringa del prompt corretto 
+            prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
+            old_response = response
+        
+            # Chiamata al modello
+            response = str(model.respond(prompt, config={"temperature": 0.6}))
+
+            current_text += response
+            current_text += "\n" + str(bf_current) + "\n\n"
+
+            # Validazione della risposta - se l'utterance è corretta
+            current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text, isClarification = True)
+        else: 
+            current_text, response = validate_prompt(response, str_trigger_action_current, current_text)
+
+
         current_text += str(bf_current) + "\n\n"
         
         if actionStart:
@@ -261,7 +226,7 @@ if __name__ == "__main__":
             SALVATAGGIO SU FILE DEL RISULTATO
         """
         # Percorso del file
-        file_path = f"output_conversazione_incrementale/{name_model}/output{i}.txt"
+        file_path = f"output_conversazione_errata/{name_model}/output{i}.txt"
 
         # Crea la directory se non esiste
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
@@ -269,5 +234,3 @@ if __name__ == "__main__":
         # Scrivi il file
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(str(current_text))
-                
-
