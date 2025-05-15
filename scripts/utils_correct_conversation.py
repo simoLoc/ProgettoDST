@@ -110,7 +110,7 @@ required fields and 0 otherwise. The output can only be 0 or 1.
 
 {prompt_rules}
 
-### EXAMPLE TRIGGER-ACTION RULES
+### EXAMPLE 1 TRIGGER-ACTION RULES
 ## INPUT
 ## UTTERANCE
 - User: I want you to monitor all new Facebook posts that have a photo and a specific hashtag.
@@ -122,6 +122,19 @@ trigger_title: 'New photo post by you with hashtag'
 ## OUTPUT
 Result: 1
 
+
+### EXAMPLE 2 TRIGGER-ACTION RULES
+## INPUT
+## UTTERANCE
+- User: Please play my "Cooking Vibes" playlist.
+
+## FIELDS OF THE TRIGGER-ACTION RULE FOR UTTERANCE
+action_fields: ''
+action_fields_values: ''
+
+## OUTPUT
+Result: 0
+
 ---
 
 """
@@ -130,6 +143,7 @@ prompt_validazione_fine = """
 By analysing the trigger action rule fields and the utterance, it assesses whether or not the utterance
 contains all the required fields.
 The utterance may also contain other information or a field rephrasement, but the output must be 1 if the utterance contains at least all the required fields and 0 otherwise. 
+The utterance may contain more information, but this information must not be about completing empty fields. In particular, analyse whether the utterance, for the meaning of the fields provided, contains only such information as in example 2.
 The output must respect the format of the output given in the example.
 """
 
