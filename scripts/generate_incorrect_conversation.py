@@ -57,6 +57,8 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             # Chiamata al modello
             response = str(model.respond(prompt, config={"temperature": 0.6}))
             
+            current_text += response
+            current_text += "\n" + str(bf_current) + "\n\n"
 
             # se ho l'errore allora devo correggere l'errore e poi 
             if isError:
