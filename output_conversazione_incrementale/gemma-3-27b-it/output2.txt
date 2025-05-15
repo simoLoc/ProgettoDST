@@ -1,0 +1,43 @@
+User utterance 0:I want to receive tomorrow’s weather report from Weather Underground.
+BF - state:'trigger_channel': 'Weather Underground' 
+'trigger_title': 'Tomorrow's weather report' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want to receive tomorrow’s weather report from Weather Underground.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report"}
+
+User utterance 0:Yes, I would like to receive tomorrow’s weather report at 08:00 for the location 34.0522° N, 118.2437° W.
+BF - state:'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+'trigger_fields_values': ''08:00', '34.0522° N, 118.2437° W'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: So you want tomorrow’s weather report from Weather Underground at 8:00 AM for Los Angeles?
+- User: Yes, I would like to receive tomorrow’s weather report at 08:00 for the location 34.0522° N, 118.2437° W.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+
+User utterance 0:Please send the email to my address, test@example.com.
+BF - state:'action_channel': 'Gmail' 
+'action_title': 'Send an email' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Now that I know you want tomorrow’s weather report from Weather Underground, what email address should I send it to?
+- User: Please send the email to my address, test@example.com. 
+
+
+
+
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_channel': 'Gmail', 'action_title': 'Send an email'}
+
+User utterance 0:Sure! The subject should be 'Tomorrow's Weather in Los Angeles', the body is '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', and the attachment URL is 'https://www.example.com/weather_report.pdf'. I don’t need to add anyone in Cc or Bcc. Also, the recipient is john.doe@example.com.
+BF - state:'action_fields_values': ''john.doe@example.com', '', '', 'Tomorrow\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'' 
+'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Okay, I have the recipient address. Now, regarding the email content – could you confirm the subject, body, and attachment URL for this weather report?
+- User: Sure! The subject should be 'Tomorrow's Weather in Los Angeles', the body is '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', and the attachment URL is 'https://www.example.com/weather_report.pdf'. I don’t need to add anyone in Cc or Bcc. Also, the recipient is john.doe@example.com.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_channel': 'Gmail', 'action_title': 'Send an email', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
+

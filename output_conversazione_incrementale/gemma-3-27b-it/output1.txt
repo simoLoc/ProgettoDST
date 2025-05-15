@@ -1,0 +1,89 @@
+User utterance 0:I want to be notified whenever my Cookit cooking program starts.
+BF - state:'trigger_channel': 'Home Connect Cookit' 
+'trigger_title': 'Cookit started' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want to be notified whenever my Cookit cooking program starts.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+
+User utterance 0:Yes, the Kitchen ID is kitchen.
+BF - state:'trigger_fields': 'Ha ID (Dropdown list)' 
+'trigger_fields_values': ''kitchen'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: So your Cookit program has started. To confirm, is the Kitchen ID associated with this notification correct?
+- User: Yes, the Kitchen ID is kitchen. 
+
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+
+User utterance 0:I want to play some upbeat music on Spotify when my Cookit cooking program starts.
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I want to play relaxing music when my Cookit cooking program starts.
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I want to play relaxing music on Spotify when my Cookit cooking program starts.
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want you to play music on Spotify.
+Correzione della risposta in corso...
+- System: So, when the Cookit starts cooking, what kind of music would you like me to play?
+- User: I would like you to play music.
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music'}
+
+User utterance 0:I want to play the music on my phone.
+BF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I would like to play music on my phone.
+BF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I want the music to be played on my phone.
+BF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want to play the music on my phone.
+Correzione della risposta in corso...
+- System: Great! And on which Android device would you like me to play the music?
+- User: I would like you to play the music on my Android device.
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_channel': 'Android Device'}
+
+User utterance 0:I want my Android device to play music.
+BF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:No, that's all for now.
+BF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:No, that's all for now. Let’s proceed without specifying further details.
+BF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want to set a reminder.
+Correzione della risposta in corso...
+- System: Okay, and what specifically would you like me to do on your Android device?
+- User: I don't have a specific action in mind right now.
+
+
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_channel': 'Android Device', 'action_fields_values': '', 'action_fields': ''}
+

@@ -1,0 +1,49 @@
+User utterance 0:Can you send me a daily notification with today’s weather report using the IFTTT app?
+BF - state:'trigger_title': 'Today's weather report' 
+'action_channel': 'Notifications' 
+'action_title': 'Send a notification from the IFTTT app' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: Can you send me a daily notification with today’s weather report using the IFTTT app?
+{'trigger_title': "Today's weather report", 'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app'}
+
+User utterance 0:Weather Underground.
+BF - state:'trigger_channel': 'Weather Underground' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I'd like the weather report for Rome, Italy from Weather Underground.
+BF - state:'trigger_channel': 'Weather Underground' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I’d like the weather report for Rome, Italy from Weather Underground.
+BF - state:'trigger_channel': 'Weather Underground' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Yes, please use Weather Underground as the source for my daily weather report and send it to me via an IFTTT notification.
+Correzione della risposta in corso...
+- System: So you want a daily notification with today’s weather report from Weather Underground using the IFTTT app. Is that correct?
+- User: Yes, that's correct. I want a daily notification with today’s weather report from Weather Underground. 
+
+{'trigger_title': "Today's weather report", 'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'trigger_channel': 'Weather Underground'}
+
+User utterance 0:I'd like to receive it at 08:00 for London, UK.
+BF - state:'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+'trigger_fields_values': ''08:00', 'London, UK'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! To set up this daily weather report, what time would you like to receive it and for which location?
+- User: I'd like to receive it at 08:00 for London, UK. 
+{'trigger_title': "Today's weather report", 'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'trigger_channel': 'Weather Underground', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+User utterance 0:Please send a notification with this message: “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”
+BF - state:'action_fields_values': ''☀️ Good morning! Today in London, it\'s going to be sunny with a high of 25°C. Enjoy your day!'' 
+'action_fields': 'Message (Text input)' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! What message would you like to receive in your IFTTT notification? 
+- User: Please send a notification with this message: “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”
+{'trigger_title': "Today's weather report", 'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'trigger_channel': 'Weather Underground', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'", 'action_fields': 'Message (Text input)'}
+

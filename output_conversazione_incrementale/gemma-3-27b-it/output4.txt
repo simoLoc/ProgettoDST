@@ -1,0 +1,54 @@
+User utterance 0:I want you to automatically post a tweet with an image whenever I save something to Pocket.
+BF - state:'trigger_channel': 'Pocket' 
+'action_channel': 'Twitter' 
+'action_title': 'Post a tweet with image' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want you to automatically post a tweet with an image whenever I save something to Pocket.
+{'trigger_channel': 'Pocket', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+
+User utterance 0:Please use "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" as the tweet's text and "https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D" for the image URL.
+BF - state:'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: So, when I post a tweet with an image after you save something on Pocket, what text would you like to include and what image URL should I use? 
+- User: Please use "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" as the tweet's text and "https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D" for the image URL.
+{'trigger_channel': 'Pocket', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
+
+User utterance 0:Yes, please set the trigger to ‘Any new item’ on Pocket and then post it with image on Twitter.
+BF - state:'trigger_title': 'Any new item' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Yes, I want to trigger when any new item is saved to Pocket and post it with an image on Twitter.
+BF - state:'trigger_title': 'Any new item' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:Yes, please set the trigger to 'Any new item' on Pocket.
+BF - state:'trigger_title': 'Any new item' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Yes, I would like to set the trigger to 'Any new item' on Pocket.
+Correzione della risposta in corso...
+- System: So you want me to trigger an action whenever a new item is saved on Pocket. Is that correct?
+- User: Yes, that’s correct. I want to trigger an action whenever any new item is saved on Pocket.
+
+
+{'trigger_channel': 'Pocket', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'trigger_title': 'Any new item'}
+
+User utterance 0:I don't need any specific configuration for the trigger; just proceed with the default settings.
+BF - state:'trigger_fields': '' 
+'trigger_fields_values': '' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! Now, what action would you like to perform when a new item is saved on Pocket?
+- User: I don't need any specific configuration for the trigger; just proceed with the default settings. 
+
+
+
+
+{'trigger_channel': 'Pocket', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+
