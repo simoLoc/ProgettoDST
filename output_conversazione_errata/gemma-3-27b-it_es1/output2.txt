@@ -1,0 +1,54 @@
+User utterance 0:I want to receive an email with tomorrow’s weather report from Weather Underground.
+BF - state:'trigger_channel': 'Weather Underground' 
+'trigger_title': 'Tomorrow's weather report' 
+'action_title': 'Send an email' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want to receive an email with tomorrow’s weather report from Weather Underground.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email'}
+
+User utterance 0:Yes, I would like to receive an email with tomorrow’s weather report from Weather Underground at 08:00 for location 34.0522° N, 118.2437° W.
+BF - state:'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+'trigger_fields_values': ''08:00', '34.0522° N, 118.2437° W'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: So, you want to receive tomorrow’s weather report at 8:00 AM for Los Angeles?
+- User: Yes, I would like to receive an email with tomorrow’s weather report from Weather Underground at 08:00 for location 34.0522° N, 118.2437° W.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+
+- System: Ok, and what should be the subject line of the email you want to send to your sister? Also, do you need any specific content in the body of the message?
+- User: The subject line should be "Thinking of you", and the body should say "Hi! Just wanted to check in and see how you're doing."
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_channel': 'Gmail'}
+
+User utterance 0:The subject line should be "Thinking of you", and the body should say "Hi! Just wanted to check in and see how you're doing."
+BF - state:'action_channel': 'Gmail' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Please send an email.
+BF - state:'action_channel': 'Gmail' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:The recipient is john.doe@example.com, the subject is "New photo alert", and the body is "A new photo with a hashtag has been posted on Facebook".
+BF - state:'action_channel': 'Gmail' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:The sender is my Gmail account.
+Correzione della risposta in corso...
+- System: Ok, I understand you want to send an email when a new photo is posted on Facebook. But what about the sender? Who should this email come from?
+- User: The email should come from my Gmail account.
+
+
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_channel': 'Gmail'}
+
+User utterance 0:To: john.doe@example.com, Cc: , Bcc: , Subject: Tomorrow's Weather in Los Angeles, Body: <p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>, Attachment URL: https://www.example.com/weather_report.pdf
+BF - state:'action_fields_values': ''john.doe@example.com', '', '', 'Tomorrow\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'' 
+'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! Now that I know the email will come from your Gmail account, could you please provide the recipient's address, any CC or BCC recipients, a subject for the email, the body content (preferably in HTML), and optionally, a URL to an attachment?
+- User: To: john.doe@example.com, Cc: , Bcc: , Subject: Tomorrow's Weather in Los Angeles, Body: <p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>, Attachment URL: https://www.example.com/weather_report.pdf
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_channel': 'Gmail', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
+

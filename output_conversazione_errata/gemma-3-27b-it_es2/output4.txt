@@ -1,0 +1,54 @@
+User utterance 0:I want you to notify me whenever a new item is saved to my Pocket account.
+BF - state:'trigger_channel': 'Pocket' 
+'trigger_title': 'Any new item' 
+'trigger_fields': '' 
+'trigger_fields_values': '' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want you to notify me whenever a new item is saved to my Pocket account.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+
+User utterance 0:I would like to share it on Twitter.
+BF - state:'action_channel': 'Twitter' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I would like to share them on Twitter.
+BF - state:'action_channel': 'Twitter' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I would like to share it on Twitter.
+BF - state:'action_channel': 'Twitter' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I would like to share it on Twitter.
+Correzione della risposta in corso...
+- System: Now that a new Pocket item triggers the rule, what action would you like me to perform?
+- User: I would like you to post on Twitter.
+
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter'}
+
+User utterance 0:Yes, I would like to post a tweet *with* an image.
+BF - state:'action_title': 'Post a tweet with image' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! Now that you want to post on Twitter, do you want to include an image with your tweet? 
+- User: Yes, I would like to post a tweet *with* an image.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+
+- System: Ok, you want to tweet a message with an image. Could you please provide the URL for the photo?
+- User: The photo URL is https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
+
+User utterance 0:The photo URL is https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D.
+BF - state:'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Ok, you want to tweet a message with an image. Could you please provide the URL for the photo?
+- User: The photo URL is https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
+

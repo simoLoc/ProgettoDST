@@ -1,0 +1,89 @@
+User utterance 0:I want to be notified when my Cookit cooking program starts, specifically for the kitchen appliance.
+BF - state:'trigger_channel': 'Home Connect Cookit' 
+'trigger_title': 'Cookit started' 
+'trigger_fields': 'Ha ID (Dropdown list)' 
+'trigger_fields_values': ''kitchen'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want to be notified when my Cookit cooking program starts, specifically for the kitchen appliance.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+
+User utterance 0:I want to receive a push notification on my Android device.
+BF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I want to receive a push notification on my Android device when the cooking program starts on the kitchen appliance.
+BF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I want a push notification on my Android device whenever the cooking program starts in the kitchen appliance.
+BF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want to receive a notification on my Android device.
+Correzione della risposta in corso...
+- System: Now that we've set up the trigger for when your Cookit starts, how would you like me to notify you?
+- User: I would like to be notified on my Android Device.
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device'}
+
+- System: Ok, and on which channel do you want this action to happen?
+- User: I want it to play music on Spotify.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music'}
+
+User utterance 0:I want it to play music on Spotify.
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I want it to play a specific playlist.
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:Please play it on Spotify.
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Please play my 'Favorite Songs' playlist.
+Correzione della risposta in corso...
+- System: Ok, and what specifically do you want Spotify to play?
+- User: I want you to play music.
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music'}
+
+- System: Ok, I understand you want something relaxing played. But how should I configure Spotify to achieve that? For instance, do you have a preferred genre or mood for the music?
+- User: Play ambient music on Spotify. 
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+
+User utterance 0:Play ambient music on Spotify.
+BF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Just play ambient music directly on Spotify.
+BF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:Just play ambient music directly on Spotify.
+
+- System: Right. And to ensure everything works smoothly, could you tell me *where* you'd like this music to be played – which speaker or device should Spotify use?
+- User: Play it on my bedroom speaker.
+BF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Play it at 30% volume and for one hour.
+Correzione della risposta in corso...
+- System: Ok, I understand you want ambient music played on your bedroom speaker. But before proceeding, could you clarify what specifically should happen *when* this music starts playing? For instance, do you want it to play at a specific volume or for a certain duration?
+- User: I don't have any specific requirements regarding volume or duration; just start playing the music.
+
+
+
+
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+

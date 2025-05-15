@@ -1,0 +1,95 @@
+User utterance 0:I want to receive today’s weather report.
+BF - state:'trigger_title': 'Today's weather report' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I want to receive today’s weather report.
+BF - state:'trigger_title': 'Today's weather report' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I want to receive today’s weather report.
+BF - state:'trigger_title': 'Today's weather report' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want to receive today’s weather report.
+Correzione della risposta in corso...
+- System: 
+Okay, I understand. Here's a user utterance based on the provided input:
+
+- User: Yes, please provide today’s weather report.
+
+{'trigger_title': "Today's weather report"}
+
+User utterance 0:I would like to get it from Weather Underground.
+BF - state:'trigger_channel': 'Weather Underground' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I would like to get it from Weather Underground.
+BF - state:'trigger_channel': 'Weather Underground' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I would like to get it from Weather Underground.
+BF - state:'trigger_channel': 'Weather Underground' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I would like to get it from Weather Underground.
+Correzione della risposta in corso...
+- System: From which source would you like to receive today’s weather report?
+- User: I would like to receive today’s weather report from Weather Underground.
+
+
+{'trigger_title': "Today's weather report", 'trigger_channel': 'Weather Underground'}
+
+## OUTPUT
+- System: Ok, you mentioned "this morning", but I also need a specific location for the forecast. Could you please provide that?
+- User: London, UK.
+{'trigger_title': "Today's weather report", 'trigger_channel': 'Weather Underground', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+User utterance 0:London, UK.
+BF - state:'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+'trigger_fields_values': ''08:00', 'London, UK'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+## OUTPUT
+- System: Ok, you mentioned "this morning", but I also need a specific location for the forecast. Could you please provide that?
+- User: London, UK.
+{'trigger_title': "Today's weather report", 'trigger_channel': 'Weather Underground', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+User utterance 0:I want a notification sent from the IFTTT app.
+BF - state:'action_title': 'Send a notification from the IFTTT app' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! Now that you've requested today’s weather report, how would you like me to deliver it? 
+- User: I want a notification sent from the IFTTT app.
+{'trigger_title': "Today's weather report", 'trigger_channel': 'Weather Underground', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}
+
+User utterance 0:I want a notification sent from the Notifications channel with the content specified previously about today’s weather report.
+BF - state:'action_channel': 'Notifications' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I want a notification sent from Notifications with the content of today’s weather report.
+BF - state:'action_channel': 'Notifications' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I want a notification sent from the IFTTT app saying "Today's weather is [weather condition]".
+BF - state:'action_channel': 'Notifications' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Yes, please. I want to use Notifications channel and leave the default settings for the message content.
+Correzione della risposta in corso...
+- System: Perfect! Now that you've chosen to receive a notification via IFTTT, would you like me to customize the message content or any specific settings for this notification?
+- User: No, I'm happy with the default settings for Notifications.
+
+{'trigger_title': "Today's weather report", 'trigger_channel': 'Weather Underground', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app', 'action_channel': 'Notifications'}
+
+User utterance 0:I’d like the message to say “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”
+BF - state:'action_fields_values': ''☀️ Good morning! Today in London, it\'s going to be sunny with a high of 25°C. Enjoy your day!'' 
+'action_fields': 'Message (Text input)' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! So you've chosen Notifications. What message would you like to receive?
+- User: I’d like the message to say “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”
+{'trigger_title': "Today's weather report", 'trigger_channel': 'Weather Underground', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app', 'action_channel': 'Notifications', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'", 'action_fields': 'Message (Text input)'}
+

@@ -1,0 +1,74 @@
+User utterance 0:I want you to automatically post on Twitter whenever I save a new item to Pocket.
+BF - state:'trigger_channel': 'Pocket' 
+'trigger_title': 'Any new item' 
+'action_channel': 'Twitter' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want you to automatically post on Twitter whenever I save a new item to Pocket.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter'}
+
+- System: Ok, I understand you want engaging tweets with a summary. But before proceeding, could you tell me what information from Pocket should be included in the tweet besides the summary? For instance, do you want to include the article title or a specific hashtag?
+- User: Yes, please also include the article title and the hashtag #interestingreads in each tweet.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+
+User utterance 0:Yes, please also include the article title and the hashtag #interestingreads in each tweet.
+BF - state:'action_title': 'Post a tweet with image' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Please monitor my Pocket account for new saved articles.
+BF - state:'action_title': 'Post a tweet with image' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:Please use the image associated with the article from my Pocket account.
+BF - state:'action_title': 'Post a tweet with image' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Please use my Twitter account.
+Correzione della risposta in corso...
+- System: Ok, I understand you want to post a tweet with an image when a new article is saved on Pocket and include the article’s image. But before proceeding, could you specify which account should be used for posting the tweet?
+- User: I want to use my personal account to post a tweet with image.
+
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+
+- System: Ok, so you want to share a link about an article on Twitter. But I still need to know where the photo comes from - is it a URL or something else? Also, do you have any specific text for the tweet beyond just the link?
+- User: The photo will come from this url: https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D and the tweet text is: 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]'.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
+
+User utterance 0:The photo will come from this url: https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D and the tweet text is: 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]'.
+BF - state:'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Ok, so you want to share a link about an article on Twitter. But I still need to know where the photo comes from - is it a URL or something else? Also, do you have any specific text for the tweet beyond just the link?
+- User: The photo will come from this url: https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D and the tweet text is: 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]'.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
+
+User utterance 0:No, just share any new item I save to Pocket directly on Twitter as is.
+BF - state:'trigger_fields': '' 
+'trigger_fields_values': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:No, just post the item as is from Pocket to Twitter. I don’t need any extra information or formatting.
+BF - state:'trigger_fields': '' 
+'trigger_fields_values': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:No, just post them as they are; I don’t need to specify any particular criteria for the Pocket items.
+BF - state:'trigger_fields': '' 
+'trigger_fields_values': '' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:No, just post the item as is from Pocket to Twitter without any customization or hashtags.
+Correzione della risposta in corso...
+- System: Great! Is there anything specific about these Pocket items you'd like me to consider when posting on Twitter? For instance, do you want to customize the tweet content or add any particular hashtags?
+- User: No, you can post them as they are. I don't need any customization or hashtags.
+
+
+
+
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'trigger_fields': '', 'trigger_fields_values': ''}
+

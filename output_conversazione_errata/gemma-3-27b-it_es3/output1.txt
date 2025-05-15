@@ -1,0 +1,63 @@
+User utterance 0:I want to create a rule that triggers when Cookit starts.
+BF - state:'trigger_title': 'Cookit started' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:I want to create a rule that triggers when Cookit starts.
+BF - state:'trigger_title': 'Cookit started' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I want to create a rule that triggers when Cookit starts running.
+BF - state:'trigger_title': 'Cookit started' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want to create a rule that triggers when Cookit starts running.
+{'trigger_title': 'Cookit started'}
+
+User utterance 0:Yes, I want to create a rule that triggers when my Home Connect Cookit starts running.
+BF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Yes, I want to create a rule that triggers when my Home Connect Cookit starts running.
+BF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I would like to use Home Connect Cookit as the trigger channel.
+BF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:I want to use Home Connect Cookit as the trigger channel.
+Correzione della risposta in corso...
+- System: So Cookit has started running. What action do you want to perform?
+- User: I want to perform an action on Home Connect Cookit.
+
+
+{'trigger_title': 'Cookit started', 'trigger_channel': 'Home Connect Cookit'}
+
+User utterance 0:I’d like to set the Kitchen ID to ‘kitchen’.
+BF - state:'trigger_fields': 'Ha ID (Dropdown list)' 
+'trigger_fields_values': ''kitchen'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Ok, so Cookit is running and you want to perform an action. Which Kitchen ID would you like to use for this?
+- User: I’d like to set the Kitchen ID to ‘kitchen’.
+
+{'trigger_title': 'Cookit started', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+
+- System: Ok, relaxing tunes sound nice! But before we proceed, could you tell me what specifically about playing music on your Android Device is important for this rule? For instance, do you want to specify a playlist or a particular artist?
+- User: I want it to play my "Relaxing Vibes" playlist.
+{'trigger_title': 'Cookit started', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_channel': 'Android Device', 'action_fields_values': '', 'action_fields': ''}
+
+User utterance 0:I want it to play my "Relaxing Vibes" playlist.
+BF - state:'action_title': 'Play music' 
+'action_channel': 'Android Device' 
+'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Ok, relaxing tunes sound nice! But before we proceed, could you tell me what specifically about playing music on your Android Device is important for this rule? For instance, do you want to specify a playlist or a particular artist?
+- User: I want it to play my "Relaxing Vibes" playlist.
+{'trigger_title': 'Cookit started', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_channel': 'Android Device', 'action_fields_values': '', 'action_fields': ''}
+

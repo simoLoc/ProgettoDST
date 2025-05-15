@@ -1,0 +1,75 @@
+- System: Ok, I understand you want an email notification. But what specific event from the Department of Agriculture are you interested in?
+- User: I’d like to be notified about new reports on crop yields. 
+
+
+
+
+{'trigger_channel': 'Department of Agriculture', 'action_title': 'Send me an email'}
+
+User utterance 0:I’d like to be notified about new reports on crop yields.
+BF - state:'trigger_channel': 'Department of Agriculture' 
+'action_title': 'Send me an email' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Please send the email to my address, john.doe@example.com.
+BF - state:'trigger_channel': 'Department of Agriculture' 
+'action_title': 'Send me an email' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:I need a notification whenever a new report about wheat yield is published.
+BF - state:'trigger_channel': 'Department of Agriculture' 
+'action_title': 'Send me an email' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:The Department of Agriculture publishes those reports.
+Correzione della risposta in corso...
+- System: Ok, I understand you want an email notification when a new wheat yield report is published. But from which source should I retrieve these reports?
+- User: Please retrieve these reports from the Department of Agriculture and send me an email.
+
+{'trigger_channel': 'Department of Agriculture', 'action_title': 'Send me an email'}
+
+User utterance 0:Yes, please notify me via email about any new open recalls from the Department of Agriculture.
+BF - state:'trigger_title': 'New open recall' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Yes, please notify me via email whenever there's a new open recall on crop yields from the Department of Agriculture.
+BF - state:'trigger_title': 'New open recall' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:Yes, please notify me via email about any new open recalls on crop yields from the Department of Agriculture.
+BF - state:'trigger_title': 'New open recall' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Yes, please notify me via email about any new open recall reports regarding crop yields from the Department of Agriculture.
+Correzione della risposta in corso...
+- System: So you want to receive an email notification when the Department of Agriculture issues a new open recall report on crop yields. Is that correct?
+- User: Yes, that's correct. I want an email notification for new open recall reports on crop yields.
+
+
+{'trigger_channel': 'Department of Agriculture', 'action_title': 'Send me an email', 'trigger_title': 'New open recall'}
+
+User utterance 0:My query is “Frozen Strawberries - Potential Listeria Contamination”. This will help filter the recall reports accurately.
+BF - state:'trigger_fields': 'Query (Text input > Other)' 
+'trigger_fields_values': ''Frozen Strawberries - Potential Listeria Contamination'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! To ensure I'm monitoring for the right recalls, could you please confirm the specific query you’d like me to use? 
+- User: My query is “Frozen Strawberries - Potential Listeria Contamination”. This will help filter the recall reports accurately.
+{'trigger_channel': 'Department of Agriculture', 'action_title': 'Send me an email', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
+
+- System: Ok, I understand you want an email sent when a new report is available. But regarding the email itself, do you want me to change anything about *what* information is included in the subject or body?
+- User: Yes, please use 'Recall Alert: Frozen Strawberries' as the subject and include the provided HTML content for the body of the email.
+{'trigger_channel': 'Department of Agriculture', 'action_title': 'Send me an email', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_channel': 'Email', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)'}
+
+User utterance 0:Yes, please use 'Recall Alert: Frozen Strawberries' as the subject and include the provided HTML content for the body of the email.
+BF - state:'action_channel': 'Email' 
+'action_fields_values': ''Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'' 
+'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Ok, I understand you want an email sent when a new report is available. But regarding the email itself, do you want me to change anything about *what* information is included in the subject or body?
+- User: Yes, please use 'Recall Alert: Frozen Strawberries' as the subject and include the provided HTML content for the body of the email.
+{'trigger_channel': 'Department of Agriculture', 'action_title': 'Send me an email', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_channel': 'Email', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)'}
+
