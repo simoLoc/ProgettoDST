@@ -46,6 +46,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
 
             if isError:
                 # stringa del prompt incorretto
+                current_text += "Utterance con errore\n"
                 prompt = get_incorrect_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, 
                     trigger_action_past = str_trigger_action_past, old_response = old_response)
             else:       
@@ -59,6 +60,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
 
             # se ho l'errore allora devo correggere l'errore e poi 
             if isError:
+                current_text += "Clarification question\n"
                 # stringa del prompt corretto 
                 prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
             
