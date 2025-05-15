@@ -43,7 +43,7 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
     # Validazione della user utterance
     while i <= 2:
         validation_prompt = get_validation_prompt(user_utterance = user_utterance, trigger_action_current = str_trigger_action_current)
-        validation_response = str(model.respond(validation_prompt, config={"temperature": 0.6}))
+        validation_response = str(model.respond(validation_prompt, config={"temperature": 0.8}))
 
         validation_response = validation_response.strip()
 
@@ -75,7 +75,7 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
                                     trigger_action_past=str_trigger_action_past, old_response=old_response)
 
             # Chiamata al modello
-            response = str(model.respond(prompt, config={"temperature": 0.6}))
+            response = str(model.respond(prompt, config={"temperature": 0.8}))
             user_utterance = get_system_user_utterances(response=response)
 
             current_text += f"User utterance {i}:" + user_utterance + "\n"
