@@ -34,8 +34,6 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             fields += new_elements  # si tiene traccia dei campi correnti
 
 
-            # ATTENZIONE -> Aggiungere il controllo che se i fields sono vuoti non ci deve essere il prompt con l'errore
-
             bf_new, str_trigger_action_current = get_prompt_input(new_elements, entry)
             
             # merge tra i dizionari
@@ -43,6 +41,8 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
 
             # genero il numero casuale per vedere se l'utternace deve avere o no l'errore
             isError = random.choice([0, 1])
+            
+            # ATTENZIONE -> Aggiungere il controllo che se i fields sono vuoti non ci deve essere il prompt con l'errore
 
             if isError:
                 # stringa del prompt incorretto
