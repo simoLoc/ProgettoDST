@@ -1,0 +1,50 @@
+User utterance 0:I want to receive tomorrow’s weather report via email.
+BF - state:'trigger_channel': 'Weather Underground' 
+'trigger_title': 'Tomorrow's weather report' 
+'action_title': 'Send an email' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want to receive tomorrow’s weather report via email.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email'}
+
+User utterance 0:Please send it to my email address: example@gmail.com.
+BF - state:'action_channel': 'Gmail' 
+
+Risposta alla validazione: Result: 0
+User utterance 1:Please send the email to my account test@example.com.
+BF - state:'action_channel': 'Gmail' 
+
+Risposta alla validazione: Result: 0
+User utterance 2:Please send the email to my address test@example.com using my Gmail account.
+BF - state:'action_channel': 'Gmail' 
+
+Risposta alla validazione: Result: 0
+User utterance 3:Please send the email to my address test@example.com using Gmail.
+Correzione della risposta in corso...
+- System: Great! Which Gmail account should I use to send you the weather report?
+- User: I would like you to use Gmail.
+
+
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'action_channel': 'Gmail'}
+
+User utterance 0:I want to send it to john.doe@example.com, with the subject 'Tomorrow’s Weather in Los Angeles' and this body: <p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>. I also want to attach this file: https://www.example.com/weather_report.pdf, no CC or BCC needed.
+BF - state:'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)' 
+'action_fields_values': ''john.doe@example.com', '', '', 'Tomorrow\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: So you'd like me to send a weather report via Gmail. Could you please confirm the recipient, carbon copy, blind carbon copy, subject and body of the email, as well as any attachments?
+- User: I want to send it to john.doe@example.com, with the subject 'Tomorrow’s Weather in Los Angeles' and this body: <p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>. I also want to attach this file: https://www.example.com/weather_report.pdf, no CC or BCC needed.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'action_channel': 'Gmail', 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'"}
+
+User utterance 0:Yes, I would like to receive tomorrow’s weather report at 08:00 for location 34.0522° N, 118.2437° W.
+BF - state:'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+'trigger_fields_values': ''08:00', '34.0522° N, 118.2437° W'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: So, to confirm, you want to receive tomorrow’s weather report at 8:00 AM for Los Angeles?
+- User: Yes, I would like to receive tomorrow’s weather report at 08:00 for location 34.0522° N, 118.2437° W.
+{'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'action_channel': 'Gmail', 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+
