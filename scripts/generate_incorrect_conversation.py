@@ -10,7 +10,7 @@ import os
 import re
 
 
-def generate_question_and_answer(fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False):
+def generate_question_and_answer(model, fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False):
     """
         Metodo per generare question e answer tramite la selezione casuale dagli elementi nella lista 'fields_trigger_action'.
         fields_trigger_action -> campi della regola trigger-action
@@ -206,20 +206,20 @@ if __name__ == "__main__":
         
         if actionStart:
             # action
-            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(model, action, entry, fields, current_text, bf_current, 
                                                                                                     str_trigger_action_current, response, isAction=True)
 
             # trigger
-            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(model, trigger, entry, fields, current_text, bf_current, 
                                                                                                     str_trigger_action_current, response, isAction=False)
         
         else: 
             # trigger
-            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(model, trigger, entry, fields, current_text, bf_current, 
                                                                                                     str_trigger_action_current, response, isAction=False)
 
             # action
-            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
+            fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(model, action, entry, fields, current_text, bf_current, 
                                                                                                     str_trigger_action_current, response, isAction=True)
         
         """
