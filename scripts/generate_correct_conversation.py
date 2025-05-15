@@ -18,8 +18,8 @@ def get_system_user_utterances(user = True, response = ""):
     else:
         match = re.search(r'- System: (.*?)\n- User:', response, re.DOTALL)
         utterance = match.group(1).strip() if match else ''
-    
-    print(f"Utterance (user =) {user}: {utterance}")
+
+    # print(f"Utterance (user =) {user}: {utterance}")
 
     return utterance
 
@@ -30,6 +30,9 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
     """
     # Estrazione della user utterance
     user_utterance = get_system_user_utterances(response = response)
+
+    current_text += "User utterance 0:" + user_utterance + "\n"
+
 
     i = 0 
     validation_result = False
@@ -42,15 +45,13 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
         validation_response = validation_response.strip()
 
 
-        print(f"BF - state: {str_trigger_action_current}")
-        print(f"Risposta alla validazione: {validation_response}")
-
-        # Controllare se lo split fatto va bene 
-        # if validation_response.split("Result:")[1].strip() == 1:
-
+        current_text += "BF - state:" + str_trigger_action_current + "\n"
+        current_text += "Risposta alla validazione: " + validation_response + "\n"
+        
 
         if validation_response == "1" or validation_response == "Result: 1":
-            print("Validazione ok")
+            # print("Validazione ok")
+            current_text += "Validazione ok\n"
             validation_result = True
             break
         else:
@@ -68,11 +69,12 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
             response = str(model.respond(prompt, config={"temperature": 0.6}))
             user_utterance = get_system_user_utterances(response=response)
 
-
+            current_text += f"User utterance {i}:" + user_utterance + "\n"
 
 
     if not validation_result:
-        print("Correzione della risposta in corso...")
+        # print("Correzione della risposta in corso...")
+        current_text += "Correzione della risposta in corso...\n"
         system_utterance = get_system_user_utterances(user = False, response = response)
 
         correction_prompt = get_utterance_correction_prompt(system_utterance = system_utterance, trigger_action_current = str_trigger_action_current)
@@ -127,7 +129,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
                                                          isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
 
             # current_text += response + "\n"
-            current_text += str(bf_current) + "\n\n"
+            current_text += "\n" + str(bf_current) + "\n\n"
             # old_response = response
 
             str_trigger_action_past = str_trigger_action_current
