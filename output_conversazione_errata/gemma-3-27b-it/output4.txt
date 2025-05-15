@@ -1,64 +1,73 @@
-- System: Ok, so you want a notification when something new is saved on Pocket. Is there anything specific about those items that should trigger the notification?
-- User: No, just any new item saved to my Pocket account will do.
-
-
-
-
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
-
-User utterance 0:No, just any new item saved to my Pocket account will do.
-BF - state:'trigger_channel': 'Pocket' 
-'trigger_title': 'Any new item' 
-'trigger_fields': '' 
-'trigger_fields_values': '' 
+User utterance 0:I want you to automatically post a tweet including an image whenever the trigger is activated.
+BF - state:'action_title': 'Post a tweet with image' 
 
 Risposta alla validazione: Result: 1
 Validazione ok
-- System: Ok, so you want a notification when something new is saved on Pocket. Is there anything specific about those items that should trigger the notification?
-- User: No, just any new item saved to my Pocket account will do.
+- User: I want you to automatically post a tweet including an image whenever the trigger is activated.
+{'action_title': 'Post a tweet with image'}
 
+- System: So you want me to post this tweet with image on Twitter? Is that correct?
+- User: Yes, please post a tweet saying 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' along with the image at 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+{'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter'}
 
+User utterance 0:Yes, please post a tweet saying 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' along with the image at 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+BF - state:'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
+'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+'action_channel': 'Twitter' 
 
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: So you want me to post this tweet with image on Twitter? Is that correct?
+- User: Yes, please post a tweet saying 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' along with the image at 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+{'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter'}
 
 Utterance con errore
+- System: Considering you want me to post a tweet with an image, from which source should I retrieve the content for the tweet? 
+- User: I usually save interesting articles there.
+
+
+
+
+{'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter', 'trigger_channel': 'Pocket'}
+
 Clarification question
-- System: Ok, and which account should I use to post on Twitter? Also, do you want to include the article title or any specific text with the image?
-- User: Please use my personal Twitter account @MyTwitterHandle and include the article title in the tweet. 
+- System: Ok, so you save articles on Pocket. But what kind of event within Pocket should trigger this action? Are you interested in saved items with specific tags or something else?
+- User: I want to be notified when I save a new article with the tag 'important'.
 
+{'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter', 'trigger_channel': 'Pocket'}
 
-
-
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_title': 'Post a tweet with image'}
-
-User utterance 0:Please use my personal Twitter account @MyTwitterHandle and include the article title in the tweet.
-BF - state:'action_title': 'Post a tweet with image' 
+User utterance 0:I want to be notified when I save a new article with the tag 'important'.
+BF - state:'trigger_channel': 'Pocket' 
 
 Risposta alla validazione: Result: 0
-User utterance 1:Please use the image attached to the original Facebook post.
-BF - state:'action_title': 'Post a tweet with image' 
+User utterance 1:I want to receive a message on Telegram.
+BF - state:'trigger_channel': 'Pocket' 
 
 Risposta alla validazione: Result: 0
-User utterance 2:Please post the same text as the original Facebook post along with the image.
-BF - state:'action_title': 'Post a tweet with image' 
+User utterance 2:I want to be notified for all articles saved with the hashtag #important.
+BF - state:'trigger_channel': 'Pocket' 
 
 Risposta alla validazione: Result: 0
-User utterance 3:Please post on my personal Twitter account @MyTwitterHandle.
+User utterance 3:I want to receive a Telegram message.
 Correzione della risposta in corso...
-- System: Ok, and where should I post this tweet? Do you want a specific account or a default one?
-- User: I want you to post a tweet with image using my default account.
+- System: Ok, you want a notification when saving articles with #important on Pocket. But what specific action do you want me to perform?
+- User: I want you to save articles with #important on Pocket.
 
 
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_title': 'Post a tweet with image'}
+{'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter', 'trigger_channel': 'Pocket'}
 
-User utterance 0:I want the tweet to say 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and use the image at 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
-BF - state:'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
-'action_channel': 'Twitter' 
-'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+- System: So, you want me to trigger an action when a new item is saved on Pocket. Is that correct? 
+- User: Yes, I want to trigger when any new item is saved on Pocket and I don't have specific fields to define for this trigger.
+{'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter', 'trigger_channel': 'Pocket', 'trigger_fields_values': '', 'trigger_title': 'Any new item', 'trigger_fields': ''}
+
+User utterance 0:Yes, I want to trigger when any new item is saved on Pocket and I don't have specific fields to define for this trigger.
+BF - state:'trigger_fields_values': '' 
+'trigger_title': 'Any new item' 
+'trigger_fields': '' 
 
 Risposta alla validazione: Result: 1
 Validazione ok
-- System: Great! So, what tweet content and image would you like me to use for this post?
-- User: I want the tweet to say 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and use the image at 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
-{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+- System: So, you want me to trigger an action when a new item is saved on Pocket. Is that correct? 
+- User: Yes, I want to trigger when any new item is saved on Pocket and I don't have specific fields to define for this trigger.
+{'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter', 'trigger_channel': 'Pocket', 'trigger_fields_values': '', 'trigger_title': 'Any new item', 'trigger_fields': ''}
 
