@@ -48,7 +48,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
                 isError = random.choice([0, 1])
             
             # La generazione con errori non viene effettuata per i campi fields e fields_values se questi sono vuoti
-            if(new_elements.issubset(empty_fields_list)):
+            if(set(new_elements).issubset(empty_fields_list)):
                 isError = 0
 
             if isError:
