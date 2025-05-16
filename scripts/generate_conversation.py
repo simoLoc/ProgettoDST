@@ -188,6 +188,9 @@ def generate_conversation(entry, correct = False):
     # Chiamata al modello
     response = str(model.respond(prompt, config={"temperature": 0.6}))
 
+    current_text += response
+    current_text += "\n" + str(bf_current) + "\n\n"
+
     # Validazione della risposta (in questo caso è la prima utterance)
     if isError:
         # stringa del prompt corretto 
@@ -215,7 +218,7 @@ def generate_conversation(entry, correct = False):
 
         # trigger
         fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
-                                                                                                str_trigger_action_current, response, isAction=False, correct = correct)
+                                                                                                str_trigger_action_past, response, isAction=False, correct = correct)
     
     else: 
         # trigger
@@ -224,7 +227,7 @@ def generate_conversation(entry, correct = False):
 
         # action
         fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
-                                                                                            str_trigger_action_current, response, isAction=True, correct = correct)
+                                                                                            str_trigger_action_past, response, isAction=True, correct = correct)
     
     return current_text
         
