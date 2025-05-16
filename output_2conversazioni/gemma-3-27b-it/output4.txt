@@ -1,0 +1,90 @@
+Conversazione corretta
+User utterance 0:I want to automatically share any new item saved on Pocket to Twitter.
+BF - state:'trigger_channel': 'Pocket' 
+'trigger_title': 'Any new item' 
+'action_channel': 'Twitter' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want to automatically share any new item saved on Pocket to Twitter.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter'}
+
+- System: Great! Is there anything specific about these Pocket items you'd like me to consider before sharing them on Twitter? For instance, do you want to modify the message or add any details?
+- User: No, just share the items as they are from Pocket to Twitter without modifications.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'trigger_fields': '', 'trigger_fields_values': ''}
+
+User utterance 0:No, just share the items as they are from Pocket to Twitter without modifications.
+BF - state:'trigger_fields': '' 
+'trigger_fields_values': '' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! Is there anything specific about these Pocket items you'd like me to consider before sharing them on Twitter? For instance, do you want to modify the message or add any details?
+- User: No, just share the items as they are from Pocket to Twitter without modifications.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'trigger_fields': '', 'trigger_fields_values': ''}
+
+- System: Great! So you want to share new Pocket items on Twitter with a specific tweet and image. Is that correct? 
+- User: Yes, I’d like the tweet to say 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and use this image URL: 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'trigger_fields': '', 'trigger_fields_values': '', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+
+User utterance 0:Yes, I’d like the tweet to say 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and use this image URL: 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+BF - state:'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
+'action_title': 'Post a tweet with image' 
+'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! So you want to share new Pocket items on Twitter with a specific tweet and image. Is that correct? 
+- User: Yes, I’d like the tweet to say 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and use this image URL: 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'trigger_fields': '', 'trigger_fields_values': '', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+
+Conversazione NON corretta
+User utterance 0:I want to be notified whenever a new item is saved to Pocket.
+BF - state:'trigger_channel': 'Pocket' 
+'trigger_title': 'Any new item' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- User: I want to be notified whenever a new item is saved to Pocket.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
+
+- System: Great! Now that we've set up the trigger for new Pocket items, what action would you like to perform?
+- User: I don’t need any further configuration for this rule. Let’s proceed without specifying additional fields.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+
+User utterance 0:I don’t need any further configuration for this rule. Let’s proceed without specifying additional fields.
+BF - state:'trigger_fields': '' 
+'trigger_fields_values': '' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Great! Now that we've set up the trigger for new Pocket items, what action would you like to perform?
+- User: I don’t need any further configuration for this rule. Let’s proceed without specifying additional fields.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+
+Utterance con errore
+- System: So, when a new item is saved to Pocket, you want me to post something on Twitter. What message and image would you like to include in the tweet?
+- User: I’d like it to say "Check this out!" and maybe use a landscape picture.
+
+
+
+
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter'}
+
+Clarification question
+- System: Ok, you want to post a tweet with an image when something is saved on Pocket. Could you please confirm if the message "Check this out!" and a landscape picture are sufficient for all articles, or would you like me to customize them based on the article content?
+- User: Just use “Check this out!” and any landscape picture will do.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter'}
+
+User utterance 0:Just use “Check this out!” and any landscape picture will do.
+BF - state:'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
+'action_title': 'Post a tweet with image' 
+'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+'action_channel': 'Twitter' 
+
+Risposta alla validazione: Result: 1
+Validazione ok
+- System: Ok, you want to post a tweet with an image when something is saved on Pocket. Could you please confirm if the message "Check this out!" and a landscape picture are sufficient for all articles, or would you like me to customize them based on the article content?
+- User: Just use “Check this out!” and any landscape picture will do.
+{'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_title': 'Post a tweet with image', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_channel': 'Twitter'}
+
