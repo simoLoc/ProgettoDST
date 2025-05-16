@@ -1,4 +1,8 @@
 Conversazione corretta
+- User: I want to play music on my Android device whenever cooking starts on my Kitchen Cookit.
+
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+
 User utterance 0:I want to play music on my Android device whenever cooking starts on my Kitchen Cookit.
 BF - state:'trigger_channel': 'Home Connect Cookit' 
 'trigger_title': 'Cookit started' 
@@ -15,140 +19,25 @@ Validazione ok
 {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 
 Conversazione NON corretta
-- System: Ok, I understand you want music to play when your cooking session starts. But which service should I use to start playing the music?
-- User: Please use Spotify to play music.
+- User: I’d like to do something when my Cookit starts cooking. Maybe play some music on my phone?
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 
-{'trigger_title': 'Cookit started', 'action_title': 'Play music'}
+- System: Ok, so you want music to play when your Cookit starts. What kind of music would you like to play? Also, can you confirm which kitchen appliance this rule applies to?
+- User: I’d like it to play my “Kitchen Vibes” playlist and apply the rule to my KitchenAid Cookit.
+{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 
-User utterance 0:Please use Spotify to play music.
-BF - state:'trigger_title': 'Cookit started' 
-'action_title': 'Play music' 
-
-Risposta alla validazione: Result: 0
-User utterance 1:The cooking session starts on Cookit.
-BF - state:'trigger_title': 'Cookit started' 
-'action_title': 'Play music' 
-
-Risposta alla validazione: Result: 0
-User utterance 2:It's when a new cookit session is started.
-BF - state:'trigger_title': 'Cookit started' 
-'action_title': 'Play music' 
-
-Risposta alla validazione: Result: 0
-User utterance 3:I would like the music to play on Spotify, specifically starting my "Cooking Vibes" playlist.
-Correzione della risposta in corso...
-- System: Ok, and on which platform do you want the music to play? Also, could you tell me which specific action within Spotify you’d like to trigger – starting a playlist, playing a particular song, or something else?
-- User: I want Cookit started to play music.
-
-
-
-
-{'trigger_title': 'Cookit started', 'action_title': 'Play music'}
-
-- System: Great! Now that we've linked Cookit to Spotify, do you want me to identify when a cooking session starts on your Home Connect Cookit?
-- User: Yes, please identify when my Cookit is started on Home Connect. 
-
-
-
-
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
-
-User utterance 0:Yes, please identify when my Cookit is started on Home Connect.
+User utterance 0:I’d like it to play my “Kitchen Vibes” playlist and apply the rule to my KitchenAid Cookit.
 BF - state:'trigger_channel': 'Home Connect Cookit' 
-
-Risposta alla validazione: Result: 1
-Validazione ok
-- System: Great! Now that we've linked Cookit to Spotify, do you want me to identify when a cooking session starts on your Home Connect Cookit?
-- User: Yes, please identify when my Cookit is started on Home Connect. 
-
-
-
-
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
-
-- System: Okay, so we're tracking when your Cookit cooking session starts. Which kitchen ID would you like me to use for this trigger?
-- User: I want to use the kitchen ID 'kitchen'. 
-
-
-
-
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
-
-User utterance 0:I want to use the kitchen ID 'kitchen'.
-BF - state:'trigger_fields': 'Ha ID (Dropdown list)' 
+'trigger_title': 'Cookit started' 
+'trigger_fields': 'Ha ID (Dropdown list)' 
 'trigger_fields_values': ''kitchen'' 
+'action_channel': 'Android Device' 
+'action_title': 'Play music' 
+'action_fields': '' 
+'action_fields_values': '' 
 
 Risposta alla validazione: Result: 1
 Validazione ok
-- System: Okay, so we're tracking when your Cookit cooking session starts. Which kitchen ID would you like me to use for this trigger?
-- User: I want to use the kitchen ID 'kitchen'. 
-
-
-
-
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
-
-Utterance con errore
-- System: Now that we’ve linked Spotify for playing music when Cookit starts, do you want me to control the volume or select a specific playlist on your Android Device?
-- User: Just start playing something upbeat! I trust your judgment.
-
-
-
-
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device'}
-
-Clarification question
-- System: Ok, I understand you want me to play something upbeat on your Android Device. But what action do you want me to perform *on* that device specifically? 
-- User: Please send a notification when Cookit starts playing music.
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device'}
-
-User utterance 0:Please send a notification when Cookit starts playing music.
-BF - state:'action_channel': 'Android Device' 
-
-Risposta alla validazione: Result: 0
-User utterance 1:When Cookit starts playing any music.
-BF - state:'action_channel': 'Android Device' 
-
-Risposta alla validazione: Result: 0
-User utterance 2:Send me a notification on my phone.
-BF - state:'action_channel': 'Android Device' 
-
-Risposta alla validazione: Result: 0
-User utterance 3:Yes, please set the title of the notification to "Cookit is Playing" and the message to "Music has started!".
-Correzione della risposta in corso...
-- System: Ok, I understand you want a notification on your Android Device when Cookit starts playing music. But what specifically about this notification? Do you want to customize its content or appearance?
-- User: I want the notification on my Android Device. 
-
-
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device'}
-
-- System: Great! So you want a notification on your Android Device when Cookit starts playing music. Is there anything else I can help you with regarding this notification? 
-- User: No, that’s all. Let's proceed without customizing further details for the notification.
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_fields': '', 'action_fields_values': ''}
-
-User utterance 0:No, that’s all. Let's proceed without customizing further details for the notification.
-BF - state:'action_fields': '' 
-'action_fields_values': '' 
-
-Risposta alla validazione: Result: 0
-User utterance 1:No, that's all. I don’t need to customize it further.
-BF - state:'action_fields': '' 
-'action_fields_values': '' 
-
-Risposta alla validazione: Result: 0
-User utterance 2:No, that’s all. Just send the notification as is.
-BF - state:'action_fields': '' 
-'action_fields_values': '' 
-
-Risposta alla validazione: Result: 0
-User utterance 3:No, that's all. Just send the notification as is.
-Correzione della risposta in corso...
-- System: Great! So you want a notification on your Android Device when Cookit starts playing music. Is there anything else I can help you with regarding this notification?
-- User: No, that’s all. Thank you.
-
-
-
-
-
-{'trigger_title': 'Cookit started', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_fields': '', 'action_fields_values': ''}
+- System: Ok, so you want music to play when your Cookit starts. What kind of music would you like to play? Also, can you confirm which kitchen appliance this rule applies to?
+- User: I’d like it to play my “Kitchen Vibes” playlist and apply the rule to my KitchenAid Cookit.{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 
