@@ -180,7 +180,7 @@ def extract_utterances(conversation: str) -> str:
 
 
 
-def parse_conversation_to_json(text: str) -> list:
+def parse_conversation_to_json(text: str, id: int) -> list:
     """
     Estrae dai blocchi separati da una riga vuota le parti:
     - righe che iniziano con "- Ruolo: testo"
@@ -189,7 +189,7 @@ def parse_conversation_to_json(text: str) -> list:
     """
     # Splitting in blocchi separati da riga vuota
     blocks = re.split(r'\n\s*\n', text.strip())
-    result = []
+    conversation = []
 
     for block in blocks:
         entry = {}
@@ -206,9 +206,9 @@ def parse_conversation_to_json(text: str) -> list:
 
         # Aggiungi all’elenco solo se abbiamo trovato almeno un ruolo
         if entry:
-            result.append(entry)
+            conversation.append(entry)
 
-    return result
+    return {f"dialogue {id}": conversation}
 
 
 def save_to_json_lines(data, filename):
@@ -244,8 +244,8 @@ if __name__ == "__main__":
             SALVATAGGIO DEL JSONL
         """
 
-        json_correct = parse_conversation_to_json(correct_conversation)
-        json_incorrect = parse_conversation_to_json(incorrect_conversation)
+        json_correct = parse_conversation_to_json(correct_conversation, i)
+        json_incorrect = parse_conversation_to_json(incorrect_conversation, i)
 
         save_to_json_lines(json_correct, file_path_correct)
         save_to_json_lines(json_incorrect, file_path_incorrect)
