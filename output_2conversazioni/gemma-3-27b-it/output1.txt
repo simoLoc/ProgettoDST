@@ -1,43 +1,136 @@
-Conversazione corretta
-- User: I want to play music on my Android device whenever cooking starts on my Kitchen Cookit.
-
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
-
-User utterance 0:I want to play music on my Android device whenever cooking starts on my Kitchen Cookit.
-BF - state:'trigger_channel': 'Home Connect Cookit' 
-'trigger_title': 'Cookit started' 
-'trigger_fields': 'Ha ID (Dropdown list)' 
-'trigger_fields_values': ''kitchen'' 
-'action_channel': 'Android Device' 
-'action_title': 'Play music' 
-'action_fields': '' 
-'action_fields_values': '' 
-
-Risposta alla validazione: Result: 1
-Validazione ok
-- User: I want to play music on my Android device whenever cooking starts on my Kitchen Cookit.
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
-
 Conversazione NON corretta
-- User: I’d like to do something when my Cookit starts cooking. Maybe play some music on my phone?
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+- User: I want to create a rule based on events from my Home Connect Cookit device.
 
-- System: Ok, so you want music to play when your Cookit starts. What kind of music would you like to play? Also, can you confirm which kitchen appliance this rule applies to?
-- User: I’d like it to play my “Kitchen Vibes” playlist and apply the rule to my KitchenAid Cookit.
-{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+Belief State: {'trigger_channel': 'Home Connect Cookit'}
 
-User utterance 0:I’d like it to play my “Kitchen Vibes” playlist and apply the rule to my KitchenAid Cookit.
 BF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+Validazione 0 noBF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+Validazione 1 noBF - state:'trigger_channel': 'Home Connect Cookit' 
+
+Risposta alla validazione: Result: 0
+Validazione 2 noCorrezione della risposta in corso...
+- System: 
+## INPUT
+## SYSTEM'S QUESTION
+- System: Which channel do you want to use?
+
+## FIELDS TO BE COMPLETED IN THE RESPONSE
+trigger_fields: 'trigger_channel'
+trigger_fields_values: 'Home Connect Cookit'
+
+## OUTPUT
+- User: I would like to use Home Connect Cookit.
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit'}
+
+Utterance con errore
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'trigger_channel': 'Home Connect Cookit' 
+
+## PREVIOUS UTTERANCES
+- System: Which channel do you want to use?
+- User: I would like to use Home Connect Cookit.
+
+## FIELDS TO BE NOT COMPLETED IN THE TRIGGER-ACTION RULE
 'trigger_title': 'Cookit started' 
-'trigger_fields': 'Ha ID (Dropdown list)' 
 'trigger_fields_values': ''kitchen'' 
-'action_channel': 'Android Device' 
-'action_title': 'Play music' 
-'action_fields': '' 
-'action_fields_values': '' 
+'trigger_fields': 'Ha ID (Dropdown list)' 
+
+
+## OUTPUT
+- System: When the cookit starts, do you want to specify an ID and a kitchen?
+- User: Yes, when it starts I want something to happen.
+ERROR: trigger_title: 'Cookit started', trigger_fields: 'Ha ID (Dropdown list)', trigger_fields_values: ''kitchen''
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)'}
+
+Clarification question
+## OUTPUT
+- System: Ok, so you want something to happen when Cookit starts. Do you need to specify a particular kitchen and ID for this event?
+- User: Yes, I would like to monitor cookit starting in the kitchen and with a specific ID.
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)'}
+
+BF - state:'trigger_title': 'Cookit started' 
+'trigger_fields_values': ''kitchen'' 
+'trigger_fields': 'Ha ID (Dropdown list)' 
 
 Risposta alla validazione: Result: 1
-Validazione ok
-- System: Ok, so you want music to play when your Cookit starts. What kind of music would you like to play? Also, can you confirm which kitchen appliance this rule applies to?
-- User: I’d like it to play my “Kitchen Vibes” playlist and apply the rule to my KitchenAid Cookit.{'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+Validazione 0 ok## OUTPUT
+- System: Ok, so you want something to happen when Cookit starts. Do you need to specify a particular kitchen and ID for this event?
+- User: Yes, I would like to monitor cookit starting in the kitchen and with a specific ID.
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)'}
+
+- System: Ok, so you want something to happen when Cookit starts in a specific kitchen and with a particular ID. What do you want me to do on your Android Device when that happens?
+- User: I would like to receive a notification on my Android device.
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)', 'action_channel': 'Android Device'}
+
+BF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+Validazione 0 noBF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+Validazione 1 noBF - state:'action_channel': 'Android Device' 
+
+Risposta alla validazione: Result: 0
+Validazione 2 noCorrezione della risposta in corso...
+- System: Great, so we're set up to trigger when Cookit starts in a specific kitchen with an ID. Now, what device would you like to use for the action?
+- User: I would like to use my Android Device.
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)', 'action_channel': 'Android Device'}
+
+- System: Okay, and what would you like your Android device to do when triggered? 
+- User: I want it to play music.
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)', 'action_channel': 'Android Device', 'action_title': 'Play music'}
+
+BF - state:'action_title': 'Play music' 
+
+Risposta alla validazione: Result: 1
+Validazione 0 ok- System: Okay, and what would you like your Android device to do when triggered? 
+- User: I want it to play music.
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)', 'action_channel': 'Android Device', 'action_title': 'Play music'}
+
+
+## NON GENERO L'ERRORE PERCHE' I FIELDS SONO VUOTI
+'action_fields_values': '' 
+'action_fields': '' 
+
+
+- System: Great! Is there anything else you'd like me to configure regarding playing music? 
+- User: No, that’s all. I don’t have any other specifications for this action.
+
+
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+
+BF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+Validazione 0 noBF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+Validazione 1 noBF - state:'action_fields_values': '' 
+'action_fields': '' 
+
+Risposta alla validazione: Result: 0
+Validazione 2 noCorrezione della risposta in corso...
+- System: Great! Are there any specific details regarding how you'd like the music to be played? For instance, a playlist or artist?
+- User: No, there are no specific details. Just play some music.
+
+
+
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields_values': "'kitchen'", 'trigger_fields': 'Ha ID (Dropdown list)', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
 
