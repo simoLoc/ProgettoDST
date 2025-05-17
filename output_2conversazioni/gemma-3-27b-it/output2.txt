@@ -1,94 +1,82 @@
+Conversazione corretta
+- System: 
+## INPUT
+## SYSTEM'S QUESTION
+- System: Which channel would you like me to use to send the email?
+
+## FIELDS TO BE COMPLETED IN THE RESPONSE
+'action_channel': 'Gmail' 
+
+## OUTPUT
+- User: I would like you to use Gmail.
+
+
+Belief State: {'action_channel': 'Gmail'}
+
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'action_channel': 'Gmail' 
+
+## PREVIOUS UTTERANCES
+- System: Which channel would you like me to use to send the email?
+- User: I would like you to use Gmail.
+
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+'action_title': 'Send an email' 
+
+## OUTPUT
+- System: What do you want me to do with Gmail?
+- User: I want you to send an email.
+Belief State: {'action_channel': 'Gmail', 'action_title': 'Send an email'}
+
+- System: Now that I know you want to send an email with Gmail, could you please provide the recipient addresses, subject, body and any attachments?
+- User: To: john.doe@example.com, Cc:, Bcc:, Subject: Tomorrow's Weather in Los Angeles, Body: <p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>, Attachment URL: https://www.example.com/weather_report.pdf
+Belief State: {'action_channel': 'Gmail', 'action_title': 'Send an email', 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'"}
+
+- System: Great! Now that I have all the email details, can you tell me what event on Weather Underground should trigger this email? Specifically, are you interested in a daily, weekly or custom weather report?
+- User: I'd like to set it up for Tomorrow's weather report on Weather Underground.
+Belief State: {'action_channel': 'Gmail', 'action_title': 'Send an email', 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'trigger_title': "Tomorrow's weather report", 'trigger_channel': 'Weather Underground'}
+
+- System: Okay, so you want a Tomorrow's weather report from Weather Underground. To set this up, could you please provide the time and location for which you’d like to receive the report?
+- User: I would like the report at 08:00 for Los Angeles, located at 34.0522° N, 118.2437° W.
+Belief State: {'action_channel': 'Gmail', 'action_title': 'Send an email', 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'trigger_title': "Tomorrow's weather report", 'trigger_channel': 'Weather Underground', 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+
 Conversazione NON corretta
-- User: I'd like to get notified about the weather and have something sent to my email when it happens.
-ERROR: 'trigger_title': 'Tomorrow\'s weather report', 'action_channel': None, 'action_fields': None
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email'}
+- User: Can you tell me what the weather will be like tomorrow?
+ERROR: 'trigger_channel': 'Weather Underground' 
 
-- System: Ok, I understand you want an email notification about the weather. But which service should I use to send that email?
-- User: Please send the email through Gmail.
 
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email'}
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report"}
 
-BF - state:'trigger_channel': 'Weather Underground' 
-'trigger_title': 'Tomorrow's weather report' 
-'action_title': 'Send an email' 
+- System: Ok, I understand you want tomorrow’s weather report for Rome, Italy and are interested in the maximum temperature. What specifically about tomorrow’s weather are you interested in?
+- User: I'd like a Tomorrow's weather report from Weather Underground.
 
-Risposta alla validazione: Result: 0
-Validazione 0 noBF - state:'trigger_channel': 'Weather Underground' 
-'trigger_title': 'Tomorrow's weather report' 
-'action_title': 'Send an email' 
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report"}
 
-Risposta alla validazione: Result: 1
-Validazione 1 ok- System: Ok, I understand you want an email sent via Gmail when there’s a weather report. But what exactly about tomorrow's forecast are you interested in?
-- User: I need to know the high and low temperatures for tomorrow.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email'}
+- System: So, you're requesting tomorrow’s weather report from Weather Underground for a specific time and location. Can you confirm the time as 08:00 and the location coordinates are 34.0522° N, 118.2437° W?
+- User: Yes, I want to receive the Tomorrow's weather report at 08:00 for the location with coordinates 34.0522° N, 118.2437° W.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
 
-Utterance con errore
-- System: So, regarding tomorrow’s weather report, do you have a specific time and location in mind for which you want this information?
-- User: I usually check the forecast around noon. 
-ERROR: trigger_fields_values: '08:00', '34.0522° N, 118.2437° W' , trigger_fields: 'Time (Text input), Location (Location input > Point)'
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)'}
+- System: Now that we have the time and location for the weather report, how would you like me to handle the information? Should I send it somewhere or perhaps display it differently? 
+- User: Just let me know when the weather is going to be nice.
+ERROR: action_channel: 'Gmail', action_title: 'Send an email'
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
 
-Clarification question
-- System: You mentioned checking the forecast around noon. Is there a specific location you’re interested in?
-- User: Yes, I want the weather for Los Angeles.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)'}
-
-BF - state:'trigger_fields_values': ''08:00', '34.0522° N, 118.2437° W'' 
-'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
-
-Risposta alla validazione: Result: 1
-Validazione 0 ok- System: You mentioned checking the forecast around noon. Is there a specific location you’re interested in?
-- User: Yes, I want the weather for Los Angeles.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)'}
-
-Utterance con errore
-- System: So, you want a notification at 8:00 AM for Los Angeles. What do you want me to do with this information?
-- User: Send an email when it rains.
-ERROR: action_channel: 'Gmail'
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'action_channel': 'Gmail'}
-
-Clarification question
-- System: Ok, you want me to send an email when it rains. But what specifically about this rain event should trigger the email?
-- User: Send an email with details about the rainfall amount and location.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'action_channel': 'Gmail'}
-
-BF - state:'action_channel': 'Gmail' 
-
-Risposta alla validazione: Result: 0
-Validazione 0 noBF - state:'action_channel': 'Gmail' 
-
-Risposta alla validazione: Result: 0
-Validazione 1 noBF - state:'action_channel': 'Gmail' 
-
-Risposta alla validazione: Result: 0
-Validazione 2 noCorrezione della risposta in corso...
-- System: Ok, you want me to send an email to alert@example.com via Gmail when it rains with subject "Rainfall Alert - [Location]". But what about the content of the email? What should I write in the body?
-- User: Please use Gmail to send the email with the specified subject and alert@example.com as recipient. Now tell me what content you'd like to include in the body of the email.
+- System: Okay, and who should this email be sent to? Also, what subject line would you like for it?
+- User: Send the email to my friend at friend@example.com with the subject "Nice weather alert!". 
 
 
 
 
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
 
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'action_channel': 'Gmail'}
+- System: Great! Now, regarding the email details - would you like to add anyone in the 'Cc' or 'Bcc' field, and do you have any attachments you’d like to include? Also, are there any specific formatting preferences for the email body?
+- User: I think it's fine as is. Just send it to my friend. 
+ERROR: action_fields: 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'"}
 
-Utterance con errore
-- System: So, we’re setting up Gmail to send an email with the subject "Rainfall Alert - [Location]" to alert@example.com. Besides the recipient and subject, would you like to specify any CC or BCC addresses, a detailed body for the message, or attach a file?
-- User: Yes, please include a nice greeting in the email body and maybe a link to our website. 
-
-ERROR: action_fields_values: 'john.doe@example.com', '', '', 'Tomorrow's Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'
-
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'action_channel': 'Gmail', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
-
-Clarification question
-- System: Ok, you mentioned adding a greeting and website link to the email body. However, I still need to know who should receive this email – could you please specify the recipient addresses for 'To', 'Cc' and 'Bcc'?
-- User: The email should be sent to john.doe@example.com. There are no CC or BCC recipients.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'action_channel': 'Gmail', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
-
-BF - state:'action_fields_values': ''john.doe@example.com', '', '', 'Tomorrow\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'' 
-'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)' 
-
-Risposta alla validazione: Result: 1
-Validazione 0 ok- System: Ok, you mentioned adding a greeting and website link to the email body. However, I still need to know who should receive this email – could you please specify the recipient addresses for 'To', 'Cc' and 'Bcc'?
-- User: The email should be sent to john.doe@example.com. There are no CC or BCC recipients.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_title': 'Send an email', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'action_channel': 'Gmail', 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'", 'action_fields': 'To (Text input > Other), Cc (Text input > Other), Bcc (Text input > Other), Subject (Text input > Title), Body (Text input > HTML), Attachment URL (Text input > File)'}
+## OUTPUT
+- System: Ok, I see you’ve specified an email recipient. Just to confirm, are these details for the entire email – subject, body, and attachment – correct as they are?
+- User: Yes, everything looks good. Please send the email with those settings to jane.doe@example.com.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'", 'action_fields_values': "'john.doe@example.com', '', '', 'Tomorrow\\'s Weather in Los Angeles', '<p>Hi John,</p><p>Just wanted to let you know the weather forecast for tomorrow in Los Angeles:</p><p>Expect sunny skies with a high of 75°F and a low of 60°F.</p><p>Have a great day!</p>', 'https://www.example.com/weather_report.pdf'"}
 

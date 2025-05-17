@@ -1,45 +1,164 @@
-Conversazione NON corretta
-- User: I want you to automatically post a tweet with an image every time I save a new item on Pocket.
+Conversazione corretta
+- System: 
+## INPUT
+## SYSTEM'S QUESTION
+- System: Would you like me to share this article on Pocket?
 
-Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+## FIELDS TO BE COMPLETED IN THE RESPONSE
+trigger_fields: 'Pocket (Confirmation)'
+trigger_fields_values: 'yes'
 
-BF - state:'trigger_channel': 'Pocket' 
+## OUTPUT
+- User: Yes, please share it on Pocket.
+
+
+Belief State: {'trigger_channel': 'Pocket'}
+
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'trigger_channel': 'Pocket' 
+
+## PREVIOUS UTTERANCES
+- System: Would you like me to share this article on Pocket?
+- User: Yes, please share it on Pocket.
+
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
 'trigger_title': 'Any new item' 
+
+## OUTPUT
+- System: Great! Now, should I trigger the action every time a new item appears in your Pocket?
+- User: Yes, trigger the action for any new item.
+
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
+
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'trigger_channel': 'Pocket' 
+'trigger_title': 'Any new item' 
+
+## PREVIOUS UTTERANCES
+- System: Great! Now, should I trigger the action every time a new item appears in your Pocket?
+- User: Yes, trigger the action for any new item.
+
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+'trigger_fields': '' 
+'trigger_fields_values': '' 
+
+
+## OUTPUT
+- System: Perfect! Now that we’ve set up the trigger, what action would you like to perform when a new item is added to your Pocket?
+- User: There are no specific fields for this trigger, so let’s move on to setting up the action.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': ''}
+
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'trigger_channel': 'Pocket' 
+'trigger_title': 'Any new item' 
+
+## PREVIOUS UTTERANCES
+- System: Great! Now, should I trigger the action every time a new item appears in your Pocket?
+- User: Yes, trigger the action for any new item.
+
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
 'action_channel': 'Twitter' 
+
+
+## OUTPUT
+- System: Perfect! Now that we’ve set up the trigger, what action would you like to perform when a new item is added to your Pocket?
+- User: I would like to share it on Twitter.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter'}
+
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'trigger_channel': 'Pocket' 
+'trigger_title': 'Any new item'
+'action_channel': 'Twitter'
+
+## PREVIOUS UTTERANCES
+- System: Great! Now, should I trigger the action every time a new item appears in your Pocket?
+- User: Yes, trigger the action for any new item.
+- System: Perfect! Now that we’ve set up the trigger, what action would you like to perform when a new item is added to your Pocket?
+- User: I would like to share it on Twitter.
+
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
 'action_title': 'Post a tweet with image' 
 
-Risposta alla validazione: Result: 1
-Validazione 0 ok- User: I want you to automatically post a tweet with an image every time I save a new item on Pocket.
 
-Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+## OUTPUT
+- System: Okay, and what should the content of the Tweet be? Would you like to post a tweet with an image from the new Pocket item?
+- User: Yes, I want to post a tweet with image.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+
+- System: Great! So you want me to post a tweet with an image whenever you save a new item on Pocket. What text would you like to accompany the image in your Tweet, and can you provide the URL for the image? 
+- User: The Tweet should say 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and the photo URL is 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+
+Conversazione NON corretta
+- System: 
+## INPUT
+## SYSTEM'S QUESTION
+- System: Where do you want me to post?
+
+## FIELDS TO BE COMPLETED IN THE RESPONSE
+'action_channel': 'Twitter' 
+
+## OUTPUT
+- User: I would like you to post on Twitter.
 
 
-## NON GENERO L'ERRORE PERCHE' I FIELDS SONO VUOTI
-'trigger_fields_values': '' 
-'trigger_fields': '' 
+Belief State: {'action_channel': 'Twitter'}
 
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'action_channel': 'Twitter' 
 
-- System: Great! Now that I know you want to share new Pocket items on Twitter with an image, is there anything specific about these items you'd like me to include in the tweet?
-- User: No, just post the item as it appears on Pocket. There are no additional fields to specify for this rule.
-Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'trigger_fields_values': '', 'trigger_fields': ''}
+## PREVIOUS UTTERANCES
+- System: Where do you want me to post?
+- User: I would like you to post on Twitter.
 
-BF - state:'trigger_fields_values': '' 
-'trigger_fields': '' 
-
-Risposta alla validazione: Result: 1
-Validazione 0 ok- System: Great! Now that I know you want to share new Pocket items on Twitter with an image, is there anything specific about these items you'd like me to include in the tweet?
-- User: No, just post the item as it appears on Pocket. There are no additional fields to specify for this rule.
-Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'trigger_fields_values': '', 'trigger_fields': ''}
-
-- System: So, to finalize sharing your Pocket items on Twitter, would you like me to include a specific tweet and photo URL?
-- User: Yes, please use this tweet: 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and this photo URL: 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
-Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'trigger_fields_values': '', 'trigger_fields': '', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
-
-BF - state:'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
+'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+'action_title': 'Post a tweet with image' 
 
-Risposta alla validazione: Result: 1
-Validazione 0 ok- System: So, to finalize sharing your Pocket items on Twitter, would you like me to include a specific tweet and photo URL?
-- User: Yes, please use this tweet: 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and this photo URL: 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
-Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'trigger_fields_values': '', 'trigger_fields': '', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)'}
+## OUTPUT
+- System: What would you like the content of the tweet and the URL of the photo to be?
+- User: I want the tweet to say "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" and use this photo: https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D.
+Belief State: {'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_title': 'Post a tweet with image'}
+
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
+'action_fields_values': ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'' 
+'action_title': 'Post a tweet with image' 
+
+
+## PREVIOUS UTTERANCES
+- System: Where do you want me to post?
+- User: I would like you to post on Twitter.
+
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+'trigger_title': 'Any new item' 
+'trigger_channel': 'Pocket' 
+
+
+## OUTPUT
+- System: Considering a new item in Pocket, should this trigger the tweet with image?
+- User: Yes, whenever I save something interesting.
+ERROR: trigger_title: 'Any new item', trigger_channel: 'Pocket'
+Belief State: {'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_title': 'Post a tweet with image'}
+
+## OUTPUT
+- System: So, you want a tweet with image whenever something new is saved on Pocket? Is that correct?
+- User: Yes, exactly! Whenever I save an article to Pocket, post a tweet with the link and a preview image. 
+
+
+Belief State: {'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_title': 'Post a tweet with image'}
+
+## OUTPUT
+
+- System: Great! Now, considering a new item saved on Pocket, what action would you like me to take? 
+- User: There are no specific fields I want to configure for this trigger right now, just proceed with the default settings and execute the associated action.
+
+Belief State: {'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': ''}
 
