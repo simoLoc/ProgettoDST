@@ -10,6 +10,15 @@ from generate_correct_conversation import validate_prompt
 import os
 import re
 
+
+
+def count_fields(field_str):
+    if isinstance(field_str, str) and field_str.strip():
+        return len([item.strip() for item in field_str.strip('"').split(',') if item.strip()])
+    return 0
+
+
+
 def generate_question_and_answer(fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False, correct = True):
     """
         Metodo per generare question e answer tramite la selezione casuale dagli elementi nella lista 'fields_trigger_action'.
@@ -55,7 +64,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             
             # La generazione con errori non viene effettuata per i campi fields e fields_values se questi sono vuoti
             if (set(new_elements).issubset(empty_fields_list)) and all(bf_new[element] == '' for element in new_elements):
-                current_text += "\n" + "## NON GENERO L'ERRORE PERCHE' I FIELDS SONO VUOTI"
+                current_text += "\n" + "## NON GENERO L'ERRORE PERCHE' I FIELDS SONO VUOTI" + "\n"
                 current_text += str_trigger_action_current + "\n\n"
                 isError = 0
 
@@ -103,7 +112,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             str_trigger_action_past = str_trigger_action_current
 
 
-    return fields, current_text, bf_current, str_trigger_action_past
+    return fields, current_text, bf_current, str_trigger_action_past, old_response
 
 
 def generate_conversation(entry, correct = False):
@@ -137,28 +146,12 @@ def generate_conversation(entry, correct = False):
     # stringa di output contenente tutta la conversazione
     current_text = ""  
 
-    trigger_fields = entry.get('trigger_fields')
-    action_fields = entry.get('action_fields')
+    num_trigger_fields = count_fields(entry.get('trigger_fields'))
+    num_action_fields = count_fields(entry.get('action_fields'))
 
-    if isinstance(trigger_fields, str):
-        # Rimuove le virgolette " iniziali e finali
-        cleaned = trigger_fields.strip('"')
-
-        # Split solo se ci sono più elementi
-        items = [item.strip() for item in cleaned.split(',') if item.strip()]
-        num_trigger_fields = len(items)
-    else:
-        num_trigger_fields = 0
-
-    if isinstance(action_fields, str):
-        # Rimuove le virgolette " iniziali e finali
-        cleaned = action_fields.strip('"')
-        
-        # Split solo se ci sono più elementi
-        items = [item.strip() for item in cleaned.split(',') if item.strip()]
-        num_action_fields = len(items)
-    else:
-        num_action_fields = 0
+    print(entry)
+    print(num_trigger_fields)
+    print(num_action_fields)
 
     # scelta di iniziare o meno con i campi sia trigger che action
     isTriggerAction = random.choice([0, 1])
@@ -238,22 +231,30 @@ def generate_conversation(entry, correct = False):
     if actionStart:
         # si generano prima le componenti action
         # action
-        fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
-                                                                                                str_trigger_action_current, response, isAction=True, correct = correct)
+        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields, 
+                                                                                                                current_text=current_text, bf_current=bf_current, 
+                                                                                                                str_trigger_action_past=str_trigger_action_current, 
+                                                                                                                old_response=response, isAction=True, correct = correct)
 
         # trigger
-        fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
-                                                                                                str_trigger_action_past, response, isAction=False, correct = correct)
+        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields, 
+                                                                                                                current_text=current_text, bf_current=bf_current, 
+                                                                                                                str_trigger_action_past=str_trigger_action_past, 
+                                                                                                                old_response=old_response, isAction=False, correct = correct)
     
     else: 
         # si generano prima le componenti trigger
         # trigger
-        fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
-                                                                                                str_trigger_action_current, response, isAction=False, correct = correct)
+        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields, 
+                                                                                                                current_text=current_text, bf_current=bf_current, 
+                                                                                                                str_trigger_action_past=str_trigger_action_current, 
+                                                                                                                old_response=response, isAction=False, correct = correct)
 
         # action
-        fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
-                                                                                            str_trigger_action_past, response, isAction=True, correct = correct)
+        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields, 
+                                                                                                                current_text=current_text, bf_current=bf_current, 
+                                                                                                                str_trigger_action_past=str_trigger_action_past, 
+                                                                                                                old_response=old_response, isAction=True, correct = correct)
     
     return current_text
         
