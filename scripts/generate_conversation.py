@@ -82,7 +82,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             response = str(model.respond(prompt, config={"temperature": 0.6}))
             
             current_text += response
-            current_text += "\n" + str(bf_current) + "\n\n"
+            current_text += "\nBelief State: " + str(bf_current) + "\n\n"
 
             # se ho l'errore allora devo correggere l'errore e poi 
             if isError:
@@ -94,7 +94,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
                 response = str(model.respond(prompt, config={"temperature": 0.6}))
 
                 current_text += response
-                current_text += "\n" + str(bf_current) + "\n\n"
+                current_text += "\nBelief State: " + str(bf_current) + "\n\n"
 
                 # Validazione della risposta - se l'utterance è corretta
                 current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
@@ -106,7 +106,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
                                                 isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
 
             # current_text += response + "\n"
-            current_text += "\n" + str(bf_current) + "\n\n"
+            current_text += "\nBelief State: " + str(bf_current) + "\n\n"
             # old_response = response
 
             str_trigger_action_past = str_trigger_action_current
@@ -140,8 +140,7 @@ def generate_conversation(entry, correct = False):
                         ['trigger_channel', 'action_channel', 'action_title'],
                         ['trigger_title', 'action_channel', 'action_title'],                     
                         ['trigger_channel', 'trigger_title', 'action_channel', 'action_title'],
-                        ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values', 'action_channel', 'action_title', 'action_fields', 'action_fields_values']
-                        ]
+                        ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values', 'action_channel', 'action_title', 'action_fields', 'action_fields_values']]
 
     # stringa di output contenente tutta la conversazione
     current_text = ""  
@@ -199,7 +198,7 @@ def generate_conversation(entry, correct = False):
 
     # salvataggio temporanero della risposta e del belief state correlato
     current_text += response
-    current_text += "\n" + str(bf_current) + "\n\n"
+    current_text += "\nBelief State: " + str(bf_current) + "\n\n"
 
     # Validazione della risposta (in questo caso è la prima utterance)
     if isError:
@@ -212,7 +211,7 @@ def generate_conversation(entry, correct = False):
 
         # salvataggio temporanero della risposta e del belief state correlato
         current_text += response
-        current_text += "\n" + str(bf_current) + "\n\n"
+        current_text += "\nBelief State: " + str(bf_current) + "\n\n"
 
         # Validazione della generazione del modello, nel caso si riesegue get_clarification_prompt
         current_text, response = validate_prompt(response, str_trigger_action_current, current_text, isClarification = True)
@@ -222,7 +221,7 @@ def generate_conversation(entry, correct = False):
         current_text, response = validate_prompt(response, str_trigger_action_current, current_text)
 
     # salvataggio del belief state dopo la validazione della risposta
-    current_text += str(bf_current) + "\n\n"
+    current_text += "\nBelief State: " + str(bf_current) + "\n\n"
     
     if actionStart:
         # si generano prima le componenti action
