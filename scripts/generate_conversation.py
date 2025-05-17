@@ -180,7 +180,7 @@ def extract_utterances(conversation: str) -> str:
 
 
 
-def parse_conversation_to_json(text: str) -> str:
+def parse_conversation_to_json(text: str) -> list:
     """
     Estrae dai blocchi separati da una riga vuota le parti:
     - righe che iniziano con "- Ruolo: testo"
@@ -208,8 +208,7 @@ def parse_conversation_to_json(text: str) -> str:
         if entry:
             result.append(entry)
 
-    # Serializza in JSON
-    return json.dumps(result)
+    return result
 
 
 def save_to_json_lines(data, filename):
@@ -225,8 +224,8 @@ if __name__ == "__main__":
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
-    file_path_correct = "dataset/incremental_conversation_correct_prova.json"
-    file_path_incorrect = "dataset/incremental_conversation_incorrect_prova.json"
+    file_path_correct = "dataset/incremental_conversation_correct_prova.jsonl"
+    file_path_incorrect = "dataset/incremental_conversation_incorrect_prova.jsonl"
 
     with open("dataset/values_prova_completo.json", "r", encoding="utf-8") as f:
         dataset = json.load(f)
