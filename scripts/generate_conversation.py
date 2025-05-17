@@ -8,6 +8,8 @@ from utils_correct_conversation import *
 from utils_incorrect_conversation import *
 from generate_correct_conversation import validate_prompt
 import os
+import ast
+import json
 import re
 
 
@@ -17,6 +19,40 @@ def count_fields(field_str):
         return len([item.strip() for item in field_str.strip('"').split(',') if item.strip()])
     return 0
 
+
+def update_bf_error(text: str, bf_current: dict) -> dict:
+    """
+    - text: la stringa contenente 'ERROR:' seguito da coppie chiave: 'valore'(,'valore2')...
+    - bf_current: dizionario di partenza; ne vengono rimosse le chiavi trovate nel testo
+    Restituisce bf_current modificato.
+    """
+    # 1) Estrai la parte dopo 'ERROR:'
+    parts = text.split('ERROR:', 1)
+    if len(parts) < 2:
+        return bf_current
+    error_part = parts[1]
+
+    # 2) Trova tutte le coppie chiave: 'valore'(,'valore2')...
+    pattern = r"(\w+):\s*('(?:[^']|\\')*'(?:\s*,\s*'(?:[^']|\\')*')*)"
+    matches = re.findall(pattern, error_part)
+
+    # 3) Per ogni coppia, ricostruisci il valore (singolo o multiplo)
+    parsed = {}
+    for key, val_block in matches:
+        # Estrai tutte le stringhe tra apici
+        values = re.findall(r"'((?:[^']|\\')*)'", val_block)
+        if len(values) > 1:
+            # Unisci in un’unica stringa con virgole e apici
+            joined = ", ".join(f"'{v}'" for v in values)
+            parsed[key] = joined
+        else:
+            parsed[key] = values[0]
+
+    # 4) Rimuovi da bf_current tutte le chiavi che compaiono in parsed
+    for k in parsed:
+        bf_current.pop(k, None)
+
+    return bf_current
 
 
 def generate_question_and_answer(fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False, correct = True):
@@ -64,13 +100,10 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             
             # La generazione con errori non viene effettuata per i campi fields e fields_values se questi sono vuoti
             if (set(new_elements).issubset(empty_fields_list)) and all(bf_new[element] == '' for element in new_elements):
-                current_text += "\n" + "## NON GENERO L'ERRORE PERCHE' I FIELDS SONO VUOTI" + "\n"
-                current_text += str_trigger_action_current + "\n\n"
                 isError = 0
 
             if isError:
                 # stringa del prompt incorretto
-                current_text += "Utterance con errore\n"
                 prompt = get_incorrect_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, 
                     trigger_action_past = str_trigger_action_past, old_response = old_response)
             else:       
@@ -81,20 +114,27 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             # Chiamata al modello
             response = str(model.respond(prompt, config={"temperature": 0.6}))
             
-            current_text += response
-            current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+            # current_text += response
+            # current_text += "\nBelief State: " + str(bf_current) + "\n\n"
 
             # se ho l'errore allora devo correggere l'errore e poi 
             if isError:
-                current_text += "Clarification question\n"
+                # aggiornamento del belief state rimuovendo gli errori generati
+                bf_current = update_bf_error(response, bf_current)
+                
+                # salvataggio della risposta con errore
+                current_text += response
+                current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+
+                # current_text += "Clarification question\n"
                 # stringa del prompt corretto 
                 prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
             
                 # Chiamata al modello
                 response = str(model.respond(prompt, config={"temperature": 0.6}))
 
-                current_text += response
-                current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+                # current_text += response
+                # current_text += "\nBelief State: " + str(bf_current) + "\n\n"
 
                 # Validazione della risposta - se l'utterance è corretta
                 current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
@@ -196,22 +236,21 @@ def generate_conversation(entry, correct = False):
     # Chiamata al modello per generare la prima utterance
     response = str(model.respond(prompt, config={"temperature": 0.6}))
 
-    # salvataggio temporanero della risposta e del belief state correlato
-    current_text += response
-    current_text += "\nBelief State: " + str(bf_current) + "\n\n"
-
     # Validazione della risposta (in questo caso è la prima utterance)
     if isError:
+        # aggiornamento del belief state rimuovendo gli errori generati
+        bf_current = update_bf_error(response, bf_current)
+
+        # salvataggio della risposta con errore
+        current_text += response
+        current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+
         # se la risposta contiene l'errore, allora si deve generare la clarification question
         # stringa del prompt per la clarification question
         prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
     
         # Chiamata al modello per generare la clarification question
         response = str(model.respond(prompt, config={"temperature": 0.6}))
-
-        # salvataggio temporanero della risposta e del belief state correlato
-        current_text += response
-        current_text += "\nBelief State: " + str(bf_current) + "\n\n"
 
         # Validazione della generazione del modello, nel caso si riesegue get_clarification_prompt
         current_text, response = validate_prompt(response, str_trigger_action_current, current_text, isClarification = True)
@@ -252,7 +291,39 @@ def generate_conversation(entry, correct = False):
                                                                                                                 old_response=old_response, isAction=True, correct = correct)
     
     return current_text
-        
+
+
+
+def parse_conversation_to_json(text: str) -> str:
+    """
+    Estrae dai blocchi separati da una riga vuota le parti:
+    - righe che iniziano con "- Ruolo: testo"
+    - la riga "Belief State: {…}"
+    e restituisce un JSON indentato.
+    """
+    # Splitting in blocchi separati da riga vuota
+    blocks = re.split(r'\n\s*\n', text.strip())
+    result = []
+
+    for block in blocks:
+        entry = {}
+        # Estrai tutte le linee "- Ruolo: testo"
+        for role, utterance in re.findall(r'^- (\w+): (.+)$', block, re.MULTILINE):
+            entry[role] = utterance.strip()
+
+        # Estrai il dizionario della Belief State e convertilo in dict Python
+        match = re.search(r"Belief State:\s*(\{.*\})", block)
+        if match:
+            # ast.literal_eval per sicurezza, trasforma la stringa in dict
+            belief_state = ast.literal_eval(match.group(1))
+            entry['Belief State'] = belief_state
+
+        # Aggiungi all’elenco solo se abbiamo trovato almeno un ruolo
+        if entry:
+            result.append(entry)
+
+    # Serializza in JSON
+    return json.dumps(result)
 
 
 

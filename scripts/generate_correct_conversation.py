@@ -46,21 +46,21 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
 
         validation_response = validation_response.strip()
 
-        current_text += "BF - state:" + str_trigger_action_current + "\n"
-        current_text += "Risposta alla validazione: " + validation_response + "\n"
+        # current_text += "BF - state:" + str_trigger_action_current + "\n"
+        # current_text += "Risposta alla validazione: " + validation_response + "\n"
 
         # effettuo lo split della risposta valutando il risultato dopo il potenziale l'esempio (fornito nel prompt)
         parts = validation_response.split("### EXAMPLE 1 TRIGGER-ACTION RULES\n## INPUT\n## UTTERANCE\n\nUser: I want you to monitor all new Facebook posts that have a photo and a specific hashtag.\n## FIELDS OF THE TRIGGER-ACTION RULE FOR UTTERANCE\ntrigger_channel: 'Facebook'\ntrigger_title: 'New photo post by you with hashtag'\n\n## OUTPUT\nResult: 1")
 
         # Se la validazione è corretta allora "1" sarà contenuto nell'ultimo elemento di parts
         if "1" in parts[len(parts)-1]:
-            print(f"Validazione {i} ok")
-            current_text += f"Validazione {i} ok"
+            # print(f"Validazione {i} ok")
+            # current_text += f"Validazione {i} ok"
             validation_result = True
             break
         else:
-            print(f"Validazione {i} no")
-            current_text += f"Validazione {i} no"
+            # print(f"Validazione {i} no")
+            # current_text += f"Validazione {i} no"
             i += 1
             
             # se la validazione non è corretta devo rieseguire la generazione (del clarification prompt o del prompt corretto)
@@ -85,7 +85,7 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
     if not validation_result:
         # se dopo tre tentativi il risultato della validazione non è corretto, allora si genera la risposta con il prompt di correzione
         # print("Correzione della risposta in corso...")
-        current_text += "Correzione della risposta in corso...\n"
+        # current_text += "Correzione della risposta in corso...\n"
         system_utterance = get_system_user_utterances(user = False, response = response)
 
         correction_prompt = get_utterance_correction_prompt(system_utterance = system_utterance, trigger_action_current = str_trigger_action_current)
