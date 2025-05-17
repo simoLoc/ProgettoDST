@@ -1,0 +1,434 @@
+channel	frequency
+Twitter	1232
+Email	529
+Weather Underground	497
+Notifications	429
+Date & Time	368
+Instagram	366
+Facebook Pages	328
+RSS Feed	318
+Android Device	315
+Evernote	306
+Google Sheets	276
+Philips Hue	273
+Google Calendar	264
+Pocket	256
+Dropbox	246
+Facebook	223
+IFTTT	216
+WordPress	204
+Location	203
+YouTube	185
+reddit	172
+Gmail	171
+iOS Photos	150
+Android SMS	131
+Slack	125
+Feedly	120
+Todoist	116
+Google Drive	111
+Spotify	106
+Button widget	91
+WeMo Smart Plug	88
+Buffer	88
+SoundCloud	85
+Email Digest	84
+Android Phone Call	84
+Pushbullet	80
+Flickr	79
+Space	78
+Trello	77
+iOS Reminders	76
+Fitbit	64
+LIFX	63
+Instapaper	60
+OneNote	55
+SmartThings	55
+Telegram	50
+Google Docs	50
+Android Photos	50
+Apilio	49
+Phone Call (US only)	47
+iOS Contacts	45
+Bitly	43
+Finance	39
+The New York Times	36
+Box	36
+eWeLink Smart Home	35
+WeMo Light Switch	35
+Pushover	35
+OneDrive	35
+Netatmo Weather Station	34
+Foursquare	34
+ecobee	33
+Smart Life	32
+Ring	31
+Diigo	30
+Arlo	29
+GitHub	29
+Note widget	28
+Wyze	27
+Vimeo	27
+SMS	25
+TP-Link Kasa	24
+WeMo Insight Switch	23
+Weebly	22
+Inoreader	21
+Day One	21
+Qapital	20
+Sonos	20
+WiZ	19
+Wireless Tag	19
+Wear OS	19
+Scout Alarm	17
+Monzo	17
+Google Wifi	16
+Camera widget	16
+Toodledo	16
+Pinboard	15
+Blink	15
+SpotCam	15
+LINE	15
+NewsBlur	15
+Wink: Shortcuts	15
+Medium	14
+Google Contacts	14
+RescueTime	14
+littleBits	14
+Flic	13
+Mailchimp	13
+August	13
+Giphy	13
+Beeminder	13
+WeMo Lighting	11
+GroupMe	11
+Das Keyboard Q	10
+VoIP Calls	10
+MyQ	10
+SkyBell HD	9
+Twitch	9
+Android Battery	9
+abode	9
+Stockimo	9
+Muslim Prayer Time	9
+WeMo Motion	9
+Home Connect Coffee Machine	9
+Knocki	9
+Heatzy	9
+Smappee	9
+Hubitat	9
+MagicHue	9
+iDevices	9
+woopla phone calls	8
+ComEd	8
+SwitchBot	8
+Yeelight	8
+iOS Calendar	8
+Home Connect Oven	8
+Home Connect Washer	7
+Garadget	7
+put.io	7
+Harmony	7
+iHome Enhance	7
+Withings Sleep	7
+Withings Home	7
+BrainyQuote	7
+Home Connect Dryer	7
+Amazon Cloud Drive	7
+ThingaOS	7
+MESH	6
+HomeSeer	6
+Litter-Robot by Whisker	6
+Garageio	6
+Remember The Milk	6
+Airtable	6
+Heatmiser	6
+Uplink Remote	6
+Brilliant Nexus	6
+Strava	6
+Asana	6
+AL-KO Smart Garden	6
+MeisterTask	6
+Home Connect Dishwasher	6
+Harvest	6
+Aquanta	6
+Honeywell Home	5
+Welltory	5
+Honeywell Single-zone Thermostat	5
+Fanimation	5
+blink(1)	5
+Discord	5
+Lytmi	5
+Jotform	5
+TP-Link Router	5
+My Leviton	5
+OhmConnect	5
+Honeywell Total Connect Comfort	5
+Zoom	5
+UbiBot	5
+Invoxia Triby	5
+iRobot	5
+LightwaveRF Power	5
+Nanoleaf Smarter Series	4
+AiDot	4
+Bouncie	4
+Apple App Store	4
+NPR	4
+Phyn	4
+Microsoft Teams	4
+Zoho Cliq (Australia)	4
+Zoho Cliq	4
+BroadLink	4
+iSecurity+	4
+Department of Agriculture	4
+LinkedIn	4
+Home Connect Cookit	4
+EasyFTP	4
+LightwaveRF Lighting	4
+LaMetric	4
+Kaiterra	4
+Tumblr	4
+iOS Reading List	4
+Angelcam	4
+Home Connect Fridge Freezer	4
+Boxcar 2	4
+WeMo Maker	4
+AduroSmart	4
+Glance clock	4
+GarageWiFi & Gates	4
+Lexi	4
+EZVIZ	4
+Home Connect Hood	4
+Amba	4
+ClickSend SMS	4
+WeMo Coffeemaker	4
+MyMilan	4
+Wink: Aros	4
+Agile Octopus	4
+Verizon Cloud	4
+Wink: Nimbus	4
+Orion - Voice for Teams	4
+Sensibo	4
+data.world	3
+Zubie	3
+Fort Collins Utilities Time of Day Pricing	3
+Kronaby	3
+Noonlight	3
+Swann Security	3
+Lennox iComfort	3
+Zuluhood	3
+Nexx	3
+Futurehome	3
+PAVLOK	3
+Zoho Cliq (Europe)	3
+Works With Cavius	3
+Energenie Mi|Home	3
+Aqara Home for US	3
+Honeywell evohome	3
+Brilliant Smart	3
+nemy	3
+Automate Shades V2	3
+Lutron CasÃ©ta and RA2 Select	3
+Mysa Thermostat	3
+ThermoSmart	3
+Adafruit	3
+FL-1000 Leak Detector	3
+Husqvarna AutomowerÂ®	3
+SL-BUS Technology	3
+SimCam	3
+True Energy Smart Home Norway	3
+ClinicalTrials.gov	3
+ATLANTIC Cozytouch	3
+Imwork	3
+Hacker News	3
+True Energy Smart Home Denmark	3
+SurveyMonkey	3
+Coinbase	3
+Unforgettable Me	3
+Netro	3
+Nexia	3
+AC Cloud Control	3
+Ballotpedia	3
+Chatwork	3
+Lotus Watches	3
+TMT Chow	3
+uSign	3
+Dailymotion	3
+Vimar VIEW	3
+Airthings	3
+Mitsubishi Electric kumo cloud	3
+SkylinkNet	3
+Caavo	3
+Blue by ADT	3
+Smitch	3
+Google Tasks	3
+Raindrop.io	3
+YoLink	3
+Oco Camera	2
+Watts	2
+Jaguar Watches	2
+Wink: Egg Minder	2
+Centers for Disease Control and Prevention	2
+AQUAREA Smart Cloud	2
+Somfy Protect	2
+TaHoma	2
+Zoho Notebook	2
+mydlink	2
+Ambient Weather	2
+King County Metro	2
+AirTouch	2
+RoosterMoney	2
+U.S. Independence Day	2
+Fing	2
+Invoxia GPS Tracker	2
+Alexa Voice Monkey	2
+Ergomotion Smart Bed	2
+RainMachine	2
+QNAP	2
+We Work Remotely	2
+TaHoma North America	2
+Telldus Live!	2
+GE Appliances Cooking	2
+Home Connect Roxxter	2
+Gideon Smart Home	2
+Ivideon	2
+BOCCO	2
+Indego Connect	2
+Homey	2
+Automate Shades	2
+Wiser Air	2
+Home Connect Cooktop	2
+Warmup Smart Thermostat	2
+Envoy	2
+Caltrain	2
+Notion	2
+smanos connect	2
+Zoho Cliq (China)	2
+Dozens	2
+Fox News	2
+beam	2
+iOS Health	2
+Routee	2
+Genius Hub	2
+D-Link Wi-Fi Router	2
+LightwaveRF Events	2
+LightwaveRF Heating	2
+Library of Congress	2
+Moodo & Moodo AIR	2
+Xtactor	2
+Neato	2
+FiltreteÂ Smart	2
+Ai-Sync	2
+GE Appliances Washer	2
+Total Connect 2.0	2
+RATOC Remocon	2
+LinkJapan eHome	2
+Blink (Europe)	2
+openHAB	2
+Zoom Phone	2
+Powered by Viva	2
+Logitech POP	2
+Department of Defense	2
+GE Appliances GeoSpringÂ	2
+Swidget	2
+nVent Nuheat Signature Thermostat	2
+Longreads	2
+Wink: Porkfolio	2
+Intuiface	2
+Mapeheat Thermo Connect	2
+Pebblebee	2
+Nice	2
+SAUTER Cozytouch	2
+Smart Home Solution	2
+Eight	2
+Gogogate	2
+FIBARO	2
+Fleep	2
+BOSMA	2
+NAACP	1
+myUplink	1
+Link My Pet	1
+Connexoon Asia & Oceania	1
+Bbox Miami	1
+Caleo	1
+Dribbble Job Board	1
+Kubu Smart	1
+Optoma	1
+coqon	1
+THERMOR Cozytouch	1
+Chicago Transit Authority	1
+National Science Foundation	1
+Vybit Push Notifications	1
+Federal Communications Commission	1
+Wiser	1
+INSTAR	1
+Pew Research Center	1
+Hive Active PlugÂ	1
+Yelp	1
+FollowUp.cc	1
+Hive Active HeatingÂ - UK and Europe	1
+Tecan Connect	1
+Tailwind	1
+Trakt	1
+NetHome Plus AC	1
+GE Appliances Window AC	1
+Energy Information Administration	1
+BG Home	1
+sRemo	1
+AT&T M2X	1
+International Monetary Fund	1
+Department of Labor	1
+Confio	1
+CallMeBot Phone Call	1
+Sesame by CANDY HOUSE	1
+Air Quality by IQAir AirVisual	1
+Niko Home Control	1
+Thinga	1
+EasyControl of Bosch	1
+Myfox HomeControl	1
+AICO	1
+Connector	1
+Equal Rights Advocates	1
+Withings	1
+WIFIPLUG	1
+USA.gov	1
+SFGATE	1
+GE Appliances Dryer	1
+domovea	1
+Wink: Pivot Power Genius	1
+Link Shades	1
+remo+	1
+Electronic Frontier Foundation	1
+B9	1
+Camio	1
+IoT Podcast	1
+Podio	1
+Musaic	1
+Ambi Climate	1
+Livy	1
+Epion	1
+Vestaboard	1
+BOCCO emo	1
+Cloud Intelligence	1
+Microsoft To Do	1
+iHome Control	1
+HAVEN IAQ	1
+Alexa Actions by mkZense	1
+Notion.so	1
+simplehuman	1
+Wink: Spotter	1
+RemoteLync	1
+Bureau of Economic Analysis	1
+EasyCSV	1
+Hopscotch Social Media Management	1
+Alpaca	1
+ASUS Router	1
+Sighthound Video	1
+Beseye	1
+Aura	1
+ShopYourWay	1
+Moonside Light	1
+Webhooks	1
+MobiLinc	1
+MagicLight WiFi	1
+myStrom	1

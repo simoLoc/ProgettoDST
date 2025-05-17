@@ -1,0 +1,130 @@
+trigger_channel	action_channel	frequency
+Weather Underground	Notifications	6
+Instagram	Twitter	6
+IFTTT	Email	6
+Twitter	Twitter	5
+Facebook Pages	Twitter	4
+Date & Time	Twitter	3
+RSS Feed	Twitter	3
+Instagram	Facebook Pages	3
+Twitter	Google Sheets	3
+Date & Time	Android Device	2
+iOS Photos	Google Drive	2
+Facebook	Twitter	2
+Date & Time	Philips Hue	2
+Twitter	Facebook Pages	2
+WordPress	Twitter	2
+RSS Feed	Email	2
+reddit	Android Device	2
+RSS Feed	Evernote	2
+Twitter	Notifications	2
+Facebook	Google Drive	2
+Google Calendar	Evernote	2
+RSS Feed	Notifications	2
+iOS Contacts	Google Sheets	2
+Space	Android Device	2
+Twitter	Pocket	2
+Todoist	Google Calendar	2
+Weather Underground	Google Calendar	2
+Instagram	Dropbox	2
+Location	Android Device	2
+Android SMS	Google Sheets	2
+YouTube	Twitter	2
+Instagram	WordPress	2
+Feedly	Evernote	2
+Spotify	Spotify	2
+Twitter	Evernote	2
+Weather Underground	WeMo Smart Plug	2
+Weather Underground	Philips Hue	2
+Weather Underground	Gmail	2
+IFTTT	Notifications	2
+RSS Feed	Pocket	2
+Fitbit	Google Sheets	2
+Twitter	Email	2
+Weather Underground	Email	2
+YouTube	WordPress	2
+Location	Philips Hue	2
+Android SMS	Android Device	2
+RSS Feed	Facebook Pages	2
+Facebook	Evernote	2
+RSS Feed	Pushbullet	2
+iOS Photos	Box	2
+YouTube	Facebook Pages	1
+Email	WeMo Smart Plug	1
+iOS Reminders	Evernote	1
+Facebook	Facebook Pages	1
+Email	Dropbox	1
+The New York Times	Email	1
+reddit	Email Digest	1
+RSS Feed	Gmail	1
+Twitter	Dropbox	1
+Date & Time	Email	1
+RSS Feed	Buffer	1
+Location	Android SMS	1
+Pocket	Twitter	1
+Android Device	Android Device	1
+Flickr	Dropbox	1
+Dropbox	Google Drive	1
+Date & Time	Notifications	1
+Twitter	Email Digest	1
+Date & Time	WeMo Smart Plug	1
+Pocket	Evernote	1
+Feedly	Pocket	1
+iOS Photos	Dropbox	1
+SoundCloud	Dropbox	1
+Instagram	Google Drive	1
+Finance	Email	1
+Email	Philips Hue	1
+Date & Time	Slack	1
+RSS Feed	Pushover	1
+Android Device	Notifications	1
+RSS Feed	Instapaper	1
+Google Calendar	Todoist	1
+iOS Photos	Email	1
+Weather Underground	Pushbullet	1
+WordPress	Facebook Pages	1
+Instagram	Evernote	1
+Twitter	Slack	1
+Android Phone Call	Google Calendar	1
+iOS Reminders	Todoist	1
+reddit	Notifications	1
+Android Phone Call	Google Sheets	1
+Trello	Todoist	1
+Android Phone Call	Email	1
+Date & Time	Evernote	1
+Twitter	Google Docs	1
+Twitter	Telegram	1
+Feedly	Gmail	1
+RSS Feed	WordPress	1
+Location	Notifications	1
+Weather Underground	Twitter	1
+Facebook	Dropbox	1
+Fitbit	Notifications	1
+Weather Underground	LIFX	1
+Date & Time	LIFX	1
+Twitter	Gmail	1
+SoundCloud	Google Drive	1
+Twitter	Buffer	1
+iOS Photos	iOS Photos	1
+Feedly	Twitter	1
+Instagram	Flickr	1
+Google Calendar	Google Sheets	1
+Weather Underground	Slack	1
+Facebook Pages	Buffer	1
+Android Phone Call	Android SMS	1
+Google Calendar	Twitter	1
+Instagram	Gmail	1
+Pocket	Dropbox	1
+RSS Feed	Diigo	1
+Space	Email	1
+Twitter	WordPress	1
+reddit	Email	1
+reddit	Pocket	1
+iOS Reminders	Google Calendar	1
+reddit	Pushbullet	1
+iOS Photos	Evernote	1
+Foursquare	Google Calendar	1
+Pocket	Gmail	1
+Space	iOS Photos	1
+SoundCloud	Twitter	1
+Weather Underground	Wink: Shortcuts	1

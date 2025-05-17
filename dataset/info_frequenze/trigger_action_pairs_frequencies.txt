@@ -1,0 +1,1953 @@
+trigger_channel	action_channel	frequency
+IFTTT	Email	183
+Instagram	Twitter	180
+Weather Underground	Notifications	146
+Twitter	Twitter	127
+Facebook Pages	Twitter	75
+Date & Time	Twitter	68
+Weather Underground	Philips Hue	66
+Date & Time	Android Device	60
+Twitter	Google Sheets	59
+Instagram	Facebook Pages	49
+RSS Feed	Twitter	46
+reddit	Android Device	44
+Weather Underground	Email	44
+Facebook	Twitter	43
+Date & Time	Philips Hue	40
+Twitter	Facebook Pages	40
+WordPress	Twitter	38
+Twitter	Notifications	38
+Instagram	Dropbox	38
+Location	Android Device	38
+Facebook	Dropbox	36
+Pocket	Evernote	33
+YouTube	Facebook Pages	32
+WordPress	Facebook Pages	32
+RSS Feed	Email	28
+Twitter	Email	28
+iOS Photos	Google Drive	25
+Spotify	Spotify	25
+RSS Feed	Notifications	23
+Twitter	Pocket	23
+Twitter	Evernote	23
+RSS Feed	Pocket	23
+Space	Android Device	22
+YouTube	Twitter	22
+Android SMS	Google Sheets	21
+Weather Underground	WeMo Smart Plug	21
+RSS Feed	Evernote	20
+Google Calendar	Evernote	19
+Feedly	Evernote	18
+Android SMS	Android Device	18
+RSS Feed	Facebook Pages	18
+Facebook	Google Drive	17
+iOS Contacts	Google Sheets	17
+Weather Underground	Gmail	17
+Todoist	Google Calendar	15
+Weather Underground	Google Calendar	15
+Instagram	WordPress	15
+IFTTT	Notifications	15
+Fitbit	Google Sheets	15
+YouTube	WordPress	15
+Location	Philips Hue	15
+Facebook	Evernote	15
+RSS Feed	Pushbullet	15
+iOS Photos	Box	15
+Android Device	Notifications	14
+Pocket	Twitter	13
+Android Device	Android Device	13
+Date & Time	Notifications	13
+SoundCloud	Dropbox	13
+Weather Underground	Twitter	13
+Facebook	Facebook Pages	12
+reddit	Email Digest	12
+RSS Feed	Buffer	12
+Feedly	Pocket	12
+Finance	Email	12
+Date & Time	Slack	12
+RSS Feed	Instapaper	12
+Android Phone Call	Google Calendar	12
+reddit	Notifications	12
+Android Phone Call	Google Sheets	12
+RSS Feed	WordPress	12
+Location	Notifications	12
+Facebook Pages	Buffer	12
+Google Calendar	Twitter	12
+RSS Feed	Gmail	11
+Dropbox	Google Drive	11
+iOS Photos	Dropbox	11
+RSS Feed	Pushover	11
+Google Calendar	Todoist	11
+Twitter	Slack	11
+Date & Time	Evernote	11
+Instagram	Flickr	11
+reddit	Email	11
+The New York Times	Email	10
+Date & Time	Email	10
+Location	Android SMS	10
+Twitter	Email Digest	10
+Instagram	Google Drive	10
+Weather Underground	Pushbullet	10
+iOS Reminders	Todoist	10
+Twitter	Buffer	10
+iOS Photos	iOS Photos	10
+iOS Photos	Evernote	10
+Email	WeMo Smart Plug	9
+Email	Dropbox	9
+Twitter	Dropbox	9
+Instagram	Evernote	9
+Feedly	Gmail	9
+Date & Time	LIFX	9
+Twitter	Gmail	9
+SoundCloud	Google Drive	9
+Android Phone Call	Android SMS	9
+Instagram	Gmail	9
+RSS Feed	Diigo	9
+Space	Email	9
+reddit	Pocket	9
+iOS Reminders	Google Calendar	9
+Weather Underground	Wink: Shortcuts	9
+iOS Reminders	Evernote	8
+Flickr	Dropbox	8
+Date & Time	WeMo Smart Plug	8
+Email	Philips Hue	8
+iOS Photos	Email	8
+Trello	Todoist	8
+Android Phone Call	Email	8
+Twitter	Google Docs	8
+Twitter	Telegram	8
+Fitbit	Notifications	8
+Weather Underground	LIFX	8
+Feedly	Twitter	8
+Google Calendar	Google Sheets	8
+Weather Underground	Slack	8
+Pocket	Dropbox	8
+Twitter	WordPress	8
+reddit	Pushbullet	8
+Foursquare	Google Calendar	8
+Pocket	Gmail	8
+Space	iOS Photos	8
+SoundCloud	Twitter	8
+Facebook	iOS Photos	7
+Dropbox	Flickr	7
+reddit	Twitter	7
+Facebook	Gmail	7
+Android Photos	Google Drive	7
+SoundCloud	Spotify	7
+Android Phone Call	Evernote	7
+Date & Time	Android SMS	7
+Finance	Notifications	7
+Android Photos	Email	7
+Button widget	Philips Hue	7
+Facebook	OneDrive	7
+Instagram	OneDrive	7
+YouTube	Pocket	7
+Facebook	Pocket	7
+Space	Twitter	7
+Google Calendar	Android Device	7
+Feedly	WordPress	7
+iOS Reminders	Gmail	7
+iOS Photos	Flickr	7
+YouTube	Spotify	7
+Twitter	Feedly	7
+YouTube	reddit	6
+Feedly	Buffer	6
+Pocket	OneNote	6
+RSS Feed	Email Digest	6
+Facebook	Philips Hue	6
+Weather Underground	Smart Life	6
+Google Calendar	Notifications	6
+eWeLink Smart Home	Apilio	6
+Weather Underground	WeMo Light Switch	6
+Facebook	Flickr	6
+Todoist	Google Sheets	6
+Pocket	Buffer	6
+Location	LIFX	6
+reddit	Google Drive	6
+Weather Underground	Android SMS	6
+RSS Feed	Bitly	6
+Instagram	Buffer	6
+Google Calendar	Philips Hue	6
+Android SMS	Email	6
+Date & Time	Trello	6
+YouTube	SoundCloud	6
+RSS Feed	Weebly	6
+Weather Underground	Qapital	6
+Email	Google Drive	6
+Facebook Pages	WordPress	6
+Facebook	WordPress	6
+Netatmo Weather Station	Philips Hue	6
+Location	Gmail	6
+Date & Time	Gmail	6
+Google Calendar	Gmail	5
+Ring	Philips Hue	5
+YouTube	Weebly	5
+RSS Feed	Slack	5
+Fitbit	Google Calendar	5
+Trello	Google Sheets	5
+Spotify	Twitter	5
+Feedly	Email	5
+reddit	Google Sheets	5
+Twitter	OneNote	5
+Feedly	Email Digest	5
+Fitbit	Qapital	5
+YouTube	Diigo	5
+YouTube	Gmail	5
+RSS Feed	Google Calendar	5
+Location	TP-Link Kasa	5
+Space	Dropbox	5
+SoundCloud	Notifications	5
+Location	Google Sheets	5
+Trello	Evernote	5
+Apilio	Wyze	5
+ecobee	Notifications	5
+Foursquare	Evernote	5
+Todoist	Evernote	5
+Location	eWeLink Smart Home	5
+Location	Google Calendar	5
+iOS Photos	Gmail	5
+Facebook	Box	5
+Giphy	Email Digest	5
+Android Device	Google Sheets	5
+Pocket	Google Sheets	5
+Android Photos	Dropbox	5
+reddit	Evernote	5
+Weather Underground	Pushover	5
+Weather Underground	Android Device	5
+RSS Feed	OneNote	5
+Facebook Pages	Google Sheets	5
+Email	Twitter	5
+Twitter	Diigo	5
+Trello	Slack	5
+Android Phone Call	Pushbullet	5
+Evernote	Slack	5
+YouTube	Bitly	5
+YouTube	Evernote	5
+Android Phone Call	Todoist	5
+Pocket	Pinboard	5
+GitHub	Todoist	5
+Weather Underground	Wear OS	5
+Spotify	Slack	5
+Feedly	Google Sheets	5
+Apilio	eWeLink Smart Home	4
+Instapaper	Dropbox	4
+YouTube	OneNote	4
+YouTube	Google Docs	4
+Email	Evernote	4
+Date & Time	Phone Call (US only)	4
+Twitter	reddit	4
+YouTube	Buffer	4
+WordPress	Bitly	4
+RSS Feed	Telegram	4
+Evernote	Google Docs	4
+YouTube	Notifications	4
+SmartThings	SmartThings	4
+Android Photos	Evernote	4
+Feedly	Notifications	4
+Google Contacts	Google Sheets	4
+Spotify	Google Sheets	4
+Weather Underground	eWeLink Smart Home	4
+Location	Wyze	4
+YouTube	Google Sheets	4
+The New York Times	Pocket	4
+RSS Feed	Google Sheets	4
+Weather Underground	Todoist	4
+Evernote	Dropbox	4
+Netatmo Weather Station	Notifications	4
+littleBits	Notifications	4
+Apilio	Heatmiser	4
+WordPress	Buffer	4
+Email	Phone Call (US only)	4
+iOS Contacts	Google Calendar	4
+Twitter	Flickr	4
+Date & Time	Pushbullet	4
+Pocket	Slack	4
+littleBits	Gmail	4
+Wireless Tag	SMS	4
+Instapaper	Evernote	4
+GitHub	Slack	4
+SmartThings	Google Sheets	4
+Twitter	Pushbullet	4
+BrainyQuote	Twitter	4
+iOS Contacts	Google Contacts	4
+RSS Feed	Google Docs	4
+Vimeo	Email Digest	4
+Email	iOS Reminders	4
+Twitter	Philips Hue	4
+Facebook	Google Sheets	4
+Evernote	OneNote	4
+Date & Time	WeMo Light Switch	4
+Facebook	LIFX	4
+Evernote	WordPress	4
+YouTube	Instapaper	4
+Pocket	Google Calendar	4
+Todoist	Slack	4
+Google Calendar	Google Calendar	4
+Flickr	Twitter	4
+Android SMS	Philips Hue	4
+Monzo	Monzo	4
+Spotify	Notifications	4
+Android Phone Call	Android Device	4
+Android Phone Call	Notifications	4
+Vimeo	Twitter	4
+Finance	Gmail	4
+GitHub	Notifications	4
+WordPress	reddit	4
+SmartThings	Amba	4
+Location	Slack	4
+Trello	Gmail	4
+Google Calendar	OneNote	4
+iOS Contacts	Evernote	4
+Weather Underground	MagicHue	4
+Weather Underground	TP-Link Kasa	4
+Pocket	Feedly	4
+Home Connect Oven	Philips Hue	4
+Arlo	Philips Hue	4
+YouTube	Dropbox	4
+WeMo Smart Plug	Philips Hue	4
+WordPress	Evernote	4
+Location	ecobee	3
+Todoist	Gmail	3
+SoundCloud	Slack	3
+Dropbox	Gmail	3
+Weather Underground	WiZ	3
+Dropbox	Email	3
+ComEd	Phone Call (US only)	3
+Email	Notifications	3
+Apple App Store	Notifications	3
+Date & Time	Scout Alarm	3
+Twitch	Twitter	3
+Date & Time	ecobee	3
+Android Photos	OneDrive	3
+Android Photos	Pushbullet	3
+SoundCloud	Google Sheets	3
+Android Phone Call	LIFX	3
+Camera widget	Evernote	3
+Evernote	Todoist	3
+Google Calendar	Slack	3
+IFTTT	Email Digest	3
+Flickr	Google Drive	3
+Space	Google Drive	3
+RSS Feed	Dropbox	3
+Works With Cavius	Philips Hue	3
+Bitly	Google Sheets	3
+Evernote	Evernote	3
+Smart Life	Smart Life	3
+Space	Pocket	3
+Android SMS	Google Calendar	3
+Weather Underground	Yeelight	3
+Department of Agriculture	Email	3
+YouTube	NewsBlur	3
+WeMo Smart Plug	WeMo Smart Plug	3
+Location	WeMo Smart Plug	3
+Space	Pushbullet	3
+Button widget	Sonos	3
+Weather Underground	Automate Shades V2	3
+Phone Call (US only)	Evernote	3
+Flickr	Android Device	3
+Apilio	LightwaveRF Lighting	3
+Android Device	Philips Hue	3
+reddit	Dropbox	3
+Button widget	FL-1000 Leak Detector	3
+Button widget	Scout Alarm	3
+Stockimo	Notifications	3
+iOS Contacts	Email	3
+WeMo Smart Plug	Notifications	3
+Android Phone Call	Gmail	3
+iOS Contacts	Dropbox	3
+Google Wifi	Philips Hue	3
+Twitter	NewsBlur	3
+Flickr	Evernote	3
+Weather Underground	Telegram	3
+Medium	Pocket	3
+Google Calendar	Email	3
+Android Device	SL-BUS Technology	3
+WeMo Light Switch	Philips Hue	3
+Withings Sleep	Heatzy	3
+Google Calendar	Phone Call (US only)	3
+Instapaper	Pocket	3
+Android Battery	Android Device	3
+Fitbit	Philips Hue	3
+Email	Google Calendar	3
+ClinicalTrials.gov	Email	3
+Android Photos	iOS Photos	3
+Date & Time	Pushover	3
+SoundCloud	Pocket	3
+Button widget	Hubitat	3
+Button widget	eWeLink Smart Home	3
+Foursquare	Notifications	3
+Evernote	Trello	3
+Toodledo	Evernote	3
+Netatmo Weather Station	Apilio	3
+Date & Time	Smart Life	3
+Date & Time	Facebook Pages	3
+Todoist	Email Digest	3
+Android SMS	Slack	3
+Android Device	Wyze	3
+Android SMS	Evernote	3
+iOS Reminders	Email	3
+Facebook	Pushbullet	3
+Date & Time	Feedly	3
+Bitly	Facebook Pages	3
+WeMo Light Switch	WeMo Smart Plug	3
+RSS Feed	Android Device	3
+Google Calendar	Android SMS	3
+SoundCloud	WordPress	3
+Apilio	Philips Hue	3
+Pocket	Email	3
+Android Device	Email	3
+Android Photos	Box	3
+YouTube	Slack	3
+YouTube	Trello	3
+Button widget	TP-Link Kasa	3
+Facebook	Android Device	3
+Medium	Twitter	3
+The New York Times	Feedly	3
+Fitbit	Android SMS	3
+Twitter	Pushover	3
+Instagram	iOS Photos	3
+Google Calendar	Trello	3
+Spotify	SoundCloud	3
+Flickr	Gmail	3
+iOS Photos	OneDrive	3
+Location	Evernote	3
+Google Contacts	Mailchimp	3
+Weather Underground	Evernote	3
+Dropbox	OneDrive	3
+SpotCam	LIFX	3
+Space	Notifications	3
+Wireless Tag	Apilio	3
+Date & Time	SmartThings	3
+Giphy	Twitter	3
+Inoreader	Pocket	3
+Weather Underground	SmartThings	3
+The New York Times	Email Digest	3
+Location	WeMo Lighting	3
+Foursquare	Android Device	3
+WeMo Insight Switch	Notifications	3
+Twitter	Bitly	3
+YouTube	Toodledo	3
+Finance	Google Sheets	3
+iDevices	iDevices	3
+reddit	Gmail	3
+iOS Contacts	Google Docs	3
+Facebook	Notifications	3
+Fitbit	Dropbox	3
+Twitter	Pinboard	2
+IFTTT	Telegram	2
+Medium	Facebook Pages	2
+Pocket	Day One	2
+RSS Feed	Pinboard	2
+Fort Collins Utilities Time of Day Pricing	Philips Hue	2
+Bitly	Twitter	2
+Bouncie	Email	2
+Feedly	Google Docs	2
+Android Device	Pushbullet	2
+Mailchimp	Notifications	2
+Android SMS	Notifications	2
+Dropbox	SoundCloud	2
+Netatmo Weather Station	Garadget	2
+Swann Security	LIFX	2
+Dropbox	Google Sheets	2
+Flickr	Facebook Pages	2
+SmartThings	SpotCam	2
+WordPress	Dropbox	2
+Vimeo	Notifications	2
+SoundCloud	Box	2
+Instagram	Android Device	2
+Evernote	Notifications	2
+Location	Pushbullet	2
+Twitter	iOS Photos	2
+Vimeo	Weebly	2
+Evernote	Google Calendar	2
+Pocket	Email Digest	2
+Facebook	GroupMe	2
+Weather Underground	Google Sheets	2
+Google Calendar	GroupMe	2
+SmartThings	Notifications	2
+Arlo	Email	2
+Button widget	Nexx	2
+Arlo	LIFX	2
+Date & Time	PAVLOK	2
+Google Calendar	Google Docs	2
+Ring	Apilio	2
+Foursquare	Gmail	2
+Weather Underground	Energenie Mi|Home	2
+Stockimo	Gmail	2
+Pinboard	Dropbox	2
+Netatmo Weather Station	Email	2
+Dropbox	Todoist	2
+Twitch	Todoist	2
+Fitbit	Day One	2
+Weather Underground	Fanimation	2
+iOS Contacts	OneNote	2
+SwitchBot	Smart Life	2
+Finance	Pushbullet	2
+SkyBell HD	WeMo Light Switch	2
+Twitter	Discord	2
+Android Photos	Flickr	2
+WeMo Motion	Gmail	2
+Date & Time	Spotify	2
+Location	LINE	2
+Button widget	iSecurity+	2
+Smart Life	Lytmi	2
+nemy	Philips Hue	2
+Location	Brilliant Nexus	2
+iHome Enhance	Philips Hue	2
+Weather Underground	Lutron CasÃ©ta and RA2 Select	2
+Invoxia GPS Tracker	SMS	2
+Button widget	Harmony	2
+reddit	Flickr	2
+Strava	Qapital	2
+WordPress	NewsBlur	2
+Muslim Prayer Time	Alexa Voice Monkey	2
+Button widget	Home Connect Coffee Machine	2
+TP-Link Router	SpotCam	2
+Ring	SmartThings	2
+Facebook	Email	2
+SpotCam	LINE	2
+Fitbit	RescueTime	2
+Date & Time	Monzo	2
+reddit	Spotify	2
+Android SMS	Android SMS	2
+GitHub	Email	2
+Toodledo	Dropbox	2
+Instapaper	Gmail	2
+Google Wifi	Google Sheets	2
+iHome Enhance	My Leviton	2
+SoundCloud	Facebook Pages	2
+Location	Twitter	2
+Google Wifi	Apilio	2
+abode	Phone Call (US only)	2
+Wireless Tag	Phone Call (US only)	2
+reddit	Buffer	2
+Location	Blink	2
+WeMo Motion	LIFX	2
+Instapaper	Day One	2
+The New York Times	Twitter	2
+Netatmo Weather Station	Gmail	2
+Google Calendar	ecobee	2
+August	Brilliant Nexus	2
+Weather Underground	LaMetric	2
+The New York Times	Instapaper	2
+WordPress	Tumblr	2
+Android Photos	Gmail	2
+Date & Time	WiZ	2
+Weather Underground	WeMo Lighting	2
+Note widget	Twitter	2
+put.io	Telegram	2
+YouTube	OneDrive	2
+Garadget	Philips Hue	2
+Pocket	iOS Reading List	2
+Flickr	Beeminder	2
+Space	WordPress	2
+Google Calendar	BOCCO	2
+Android Device	LIFX	2
+Netatmo Weather Station	Indego Connect	2
+Google Calendar	Home Connect Fridge Freezer	2
+Button widget	WiZ	2
+YouTube	Telegram	2
+WeMo Maker	WeMo Maker	2
+Location	Wiser Air	2
+Google Calendar	iOS Reminders	2
+Facebook	Email Digest	2
+Location	Beeminder	2
+iOS Photos	Notifications	2
+Home Connect Cooktop	SMS	2
+Warmup Smart Thermostat	Philips Hue	2
+Note widget	Pushbullet	2
+Android Device	ATLANTIC Cozytouch	2
+SmartThings	ecobee	2
+August	LIFX	2
+Button widget	Blink	2
+Instagram	Qapital	2
+Date & Time	Wink: Shortcuts	2
+OhmConnect	Home Connect Dryer	2
+Google Calendar	LIFX	2
+Google Calendar	Heatzy	2
+WordPress	Email	2
+Apilio	TP-Link Kasa	2
+Netatmo Weather Station	Google Sheets	2
+Location	MagicHue	2
+Instagram	Box	2
+NewsBlur	Pocket	2
+IFTTT	Twitter	2
+WordPress	OneDrive	2
+Date & Time	Lexi	2
+UbiBot	WeMo Smart Plug	2
+Email	VoIP Calls	2
+SmartThings	Email	2
+Fitbit	iOS Health	2
+Inoreader	Notifications	2
+WordPress	Flickr	2
+Location	WeMo Insight Switch	2
+Medium	Google Sheets	2
+Pocket	Todoist	2
+Date & Time	Angelcam	2
+Date & Time	GarageWiFi & Gates	2
+Space	Evernote	2
+Note widget	Evernote	2
+RSS Feed	Box	2
+Button widget	Notifications	2
+Camera widget	WordPress	2
+UbiBot	Notifications	2
+WeMo Motion	Philips Hue	2
+reddit	Pushover	2
+Facebook	Buffer	2
+Google Calendar	Pushbullet	2
+YouTube	Todoist	2
+Date & Time	Chatwork	2
+Foursquare	Google Sheets	2
+iOS Photos	Stockimo	2
+YouTube	Email Digest	2
+Location	LightwaveRF Events	2
+Vimeo	Pocket	2
+ComEd	WeMo Smart Plug	2
+Ring	LIFX	2
+Trello	Trello	2
+Wireless Tag	Google Sheets	2
+Date & Time	TMT Chow	2
+reddit	Slack	2
+Email	WeMo Insight Switch	2
+Pocket	Instapaper	2
+iOS Calendar	Welltory	2
+WeMo Light Switch	WeMo Light Switch	2
+Arlo	VoIP Calls	2
+Android Device	Android SMS	2
+Android Phone Call	Philips Hue	2
+Heatzy	Philips Hue	2
+Note widget	Google Sheets	2
+Instagram	Google Calendar	2
+RSS Feed	Inoreader	2
+Android SMS	Das Keyboard Q	2
+Facebook	uSign	2
+Weather Underground	Phone Call (US only)	2
+Facebook	OneNote	2
+Arlo	Phone Call (US only)	2
+Todoist	Wear OS	2
+Buffer	Google Sheets	2
+Weather Underground	Home Connect Coffee Machine	2
+reddit	reddit	2
+Location	Scout Alarm	2
+Feedly	Dropbox	2
+Date & Time	LightwaveRF Power	2
+Twitter	Qapital	2
+Facebook Pages	Slack	2
+GitHub	Twitter	2
+Email	Facebook Pages	2
+Instapaper	OneNote	2
+Toodledo	Google Calendar	2
+Date & Time	Pocket	2
+Facebook	Google Calendar	2
+Location	Mysa Thermostat	2
+Buffer	Notifications	2
+OhmConnect	Smart Life	2
+Evernote	Pocket	2
+Instapaper	Slack	2
+IFTTT	Gmail	2
+Camera widget	Dropbox	2
+Withings Home	Philips Hue	2
+Dropbox	Facebook Pages	2
+ThingaOS	ThingaOS	2
+Instagram	Day One	2
+Trello	OneNote	2
+Instapaper	Email Digest	2
+Kronaby	Email	2
+Mitsubishi Electric kumo cloud	Email	2
+Date & Time	Wear OS	2
+Hubitat	Fanimation	2
+Space	Google Docs	2
+Android Device	Slack	2
+Button widget	Evernote	2
+RSS Feed	OneDrive	2
+Phyn	Phone Call (US only)	2
+Foursquare	Beeminder	2
+Android Device	ThermoSmart	2
+iOS Photos	iOS Reminders	2
+Pocket	Google Drive	2
+Note widget	Boxcar 2	2
+Department of Defense	Email Digest	2
+Wyze	Philips Hue	2
+Ring	WeMo Light Switch	2
+Knocki	Smart Life	2
+Twitter	Google Calendar	2
+reddit	OneNote	2
+Facebook Pages	Todoist	2
+Vimar VIEW	Telegram	2
+Date & Time	LINE	2
+Airthings	Notifications	2
+Weather Underground	iDevices	2
+RescueTime	Slack	2
+WeMo Light Switch	WeMo Insight Switch	2
+Foursquare	Twitter	2
+IFTTT	iOS Reminders	2
+iOS Reminders	WeMo Smart Plug	2
+Date & Time	Arlo	2
+Android Device	ecobee	2
+Email	Google Docs	2
+Finance	Slack	2
+Home Connect Hood	Email	2
+WeMo Smart Plug	Google Sheets	2
+Dropbox	iOS Photos	2
+Button widget	Twitter	2
+Facebook	LINE	2
+Weather Underground	Wyze	2
+Twitter	Google Drive	2
+Netatmo Weather Station	Twitter	2
+Google Calendar	Remember The Milk	2
+Home Connect Oven	Sonos	2
+iOS Reminders	Trello	2
+Pocket	Diigo	2
+Android Photos	Google Docs	2
+Date & Time	Smappee	2
+RSS Feed	Spotify	2
+Feedly	Facebook Pages	2
+iOS Reminders	OneNote	2
+GitHub	iOS Reminders	2
+Date & Time	littleBits	2
+Email	Pocket	2
+Twitch	Philips Hue	2
+Space	Slack	2
+Location	GroupMe	2
+iOS Reminders	Google Sheets	2
+YouTube	Email	2
+Instapaper	Buffer	2
+Pocket	Bitly	2
+Weather Underground	Wink: Nimbus	2
+Finance	Email Digest	2
+Weather Underground	WeMo Coffeemaker	2
+Android Battery	LightwaveRF Power	2
+Spotify	Facebook Pages	2
+Instagram	OneNote	2
+Inoreader	Evernote	2
+Feedly	Pushover	2
+Pocket	Trello	2
+Flickr	WordPress	2
+SmartThings	Phone Call (US only)	2
+Note widget	reddit	2
+Weather Underground	blink(1)	2
+SoundCloud	OneNote	2
+Date & Time	SoundCloud	2
+Weather Underground	Netro	2
+Foursquare	WeMo Smart Plug	2
+Facebook Pages	Dropbox	2
+Location	Wireless Tag	2
+Twitter	Trello	2
+Instagram	Philips Hue	2
+Location	Honeywell Total Connect Comfort	2
+YouTube	Google Drive	2
+Location	Sensibo	2
+iOS Photos	Amazon Cloud Drive	2
+Android SMS	Todoist	2
+Location	WiZ	1
+Flic	Nanoleaf Smarter Series	1
+Oco Camera	woopla phone calls	1
+NAACP	Instapaper	1
+Inoreader	Twitter	1
+Pocket	data.world	1
+Watts	Home Connect Washer	1
+myUplink	Philips Hue	1
+Zubie	Google Sheets	1
+Facebook Pages	Weebly	1
+Home Connect Washer	Google Sheets	1
+Weather Underground	MESH	1
+Finance	Google Docs	1
+Jaguar Watches	Email	1
+Date & Time	eWeLink Smart Home	1
+Button widget	AiDot	1
+Link My Pet	Evernote	1
+Google Wifi	Email	1
+Date & Time	Connexoon Asia & Oceania	1
+WeMo Smart Plug	Google Docs	1
+Todoist	Email	1
+Arlo	Notifications	1
+Wink: Egg Minder	Google Calendar	1
+Blink	Blink	1
+Location	HomeSeer	1
+Kronaby	Noonlight	1
+Android SMS	Bbox Miami	1
+Instapaper	Todoist	1
+August	SwitchBot	1
+SkyBell HD	SkyBell HD	1
+Home Connect Washer	Philips Hue	1
+Litter-Robot by Whisker	Wyze	1
+Apilio	Notifications	1
+Inoreader	Pushbullet	1
+Garageio	Email	1
+WeMo Light Switch	WeMo Lighting	1
+Apple App Store	Email	1
+Facebook Pages	Email	1
+Android Device	Caleo	1
+Facebook	Feedly	1
+Space	Facebook Pages	1
+RSS Feed	Remember The Milk	1
+Dribbble Job Board	Notifications	1
+Android Battery	TP-Link Kasa	1
+The New York Times	Notifications	1
+IFTTT	Google Sheets	1
+Bitly	WordPress	1
+Centers for Disease Control and Prevention	Notifications	1
+Android SMS	Pushover	1
+RSS Feed	LINE	1
+NPR	OneNote	1
+Phyn	Philips Hue	1
+iOS Reminders	Pocket	1
+Lennox iComfort	SMS	1
+Scout Alarm	WeMo Smart Plug	1
+Spotify	Buffer	1
+Space	Google Sheets	1
+Honeywell Home	Zuluhood	1
+Buffer	Pocket	1
+RescueTime	Notifications	1
+Date & Time	AQUAREA Smart Cloud	1
+Instapaper	Google Sheets	1
+put.io	Pushover	1
+The New York Times	Microsoft Teams	1
+Location	Email	1
+Kubu Smart	WiZ	1
+Date & Time	Optoma	1
+Somfy Protect	TaHoma	1
+coqon	Harmony	1
+Android Device	THERMOR Cozytouch	1
+Chicago Transit Authority	Slack	1
+Date & Time	Google Calendar	1
+Google Wifi	Blink	1
+YouTube	iOS Reminders	1
+Date & Time	Microsoft Teams	1
+Feedly	OneNote	1
+Space	Gmail	1
+Email	Pushbullet	1
+Futurehome	Philips Hue	1
+RSS Feed	Day One	1
+Note widget	Zoho Notebook	1
+Medium	Slack	1
+abode	Gmail	1
+Dropbox	Zoho Cliq (Europe)	1
+Dropbox	Zoho Cliq (Australia)	1
+Pocket	Welltory	1
+mydlink	Philips Hue	1
+Twitter	Zoho Cliq	1
+Twitter	Zoho Cliq (Australia)	1
+Apilio	BroadLink	1
+Date & Time	Honeywell Single-zone Thermostat	1
+iOS Contacts	Airtable	1
+RSS Feed	NewsBlur	1
+iSecurity+	Google Sheets	1
+Dropbox	Trello	1
+Ambient Weather	Philips Hue	1
+King County Metro	Slack	1
+YouTube	PAVLOK	1
+Instagram	LIFX	1
+Spotify	Email	1
+Aqara Home for US	Notifications	1
+iOS Reminders	Philips Hue	1
+Button widget	Home Connect Washer	1
+Date & Time	AirTouch	1
+Google Wifi	Notifications	1
+Muslim Prayer Time	Philips Hue	1
+SmartThings	Honeywell evohome	1
+iOS Reminders	Slack	1
+Camera widget	Buffer	1
+RoosterMoney	Philips Hue	1
+IFTTT	Feedly	1
+WeMo Lighting	WeMo Smart Plug	1
+Location	Brilliant Smart	1
+RSS Feed	reddit	1
+Smart Life	Google Calendar	1
+Buffer	Day One	1
+Facebook Pages	LinkedIn	1
+Home Connect Washer	Gmail	1
+Dropbox	Notifications	1
+Android SMS	Gmail	1
+RSS Feed	blink(1)	1
+Fitbit	RoosterMoney	1
+Buffer	reddit	1
+Twitter	LinkedIn	1
+U.S. Independence Day	GroupMe	1
+Feedly	Google Calendar	1
+Twitter	Day One	1
+Home Connect Coffee Machine	Google Sheets	1
+Uplink Remote	Notifications	1
+Wyze	LIFX	1
+Android Phone Call	WeMo Insight Switch	1
+Facebook Pages	Google Docs	1
+Home Connect Cookit	Android Device	1
+Honeywell Home	Honeywell Home	1
+Fing	Sonos	1
+Google Drive	EasyFTP	1
+Location	Nanoleaf Smarter Series	1
+Date & Time	data.world	1
+Wireless Tag	WeMo Smart Plug	1
+Jotform	Dropbox	1
+SmartThings	Mysa Thermostat	1
+Button widget	Airtable	1
+Button widget	ThermoSmart	1
+Dropbox	Twitter	1
+littleBits	Email	1
+Finance	Toodledo	1
+Location	Apilio	1
+Withings Sleep	Google Sheets	1
+Feedly	Slack	1
+Ergomotion Smart Bed	Sonos	1
+Date & Time	Yeelight	1
+Feedly	Pushbullet	1
+Asana	iOS Reminders	1
+Foursquare	Dropbox	1
+Knocki	Slack	1
+AL-KO Smart Garden	RainMachine	1
+Facebook	QNAP	1
+Vimeo	Diigo	1
+Weather Underground	Adafruit	1
+LaMetric	Phone Call (US only)	1
+We Work Remotely	Telegram	1
+Button widget	TaHoma North America	1
+Kaiterra	Philips Hue	1
+Facebook Pages	Bitly	1
+Withings Home	Email	1
+Date & Time	MeisterTask	1
+SmartThings	Gmail	1
+Date & Time	iSecurity+	1
+National Science Foundation	Pocket	1
+Weather Underground	Husqvarna AutomowerÂ®	1
+Email	Google Sheets	1
+Weather Underground	Honeywell Single-zone Thermostat	1
+Netatmo Weather Station	Evernote	1
+Twitter	Vybit Push Notifications	1
+OhmConnect	Philips Hue	1
+Muslim Prayer Time	Sonos	1
+Telldus Live!	WiZ	1
+Button widget	Pinboard	1
+Vimeo	Instapaper	1
+Facebook Pages	Facebook Pages	1
+Button widget	TaHoma	1
+iHome Enhance	LIFX	1
+Location	SwitchBot	1
+Evernote	Buffer	1
+GE Appliances Cooking	Google Sheets	1
+Home Connect Roxxter	Philips Hue	1
+Telegram	Twitter	1
+Weather Underground	My Leviton	1
+iOS Reminders	MeisterTask	1
+Vimeo	Todoist	1
+Trello	WordPress	1
+SMS	Todoist	1
+littleBits	Phone Call (US only)	1
+Smart Life	Gmail	1
+nemy	Notifications	1
+Date & Time	Harmony	1
+Federal Communications Commission	Notifications	1
+Buffer	Dropbox	1
+SimCam	BroadLink	1
+SmartThings	Android SMS	1
+iOS Calendar	OneNote	1
+Wyze	eWeLink Smart Home	1
+RSS Feed	LinkedIn	1
+Android Phone Call	blink(1)	1
+eWeLink Smart Home	eWeLink Smart Home	1
+Ring	iOS Photos	1
+Smappee	Gmail	1
+SmartThings	Gideon Smart Home	1
+True Energy Smart Home Norway	Home Connect Dryer	1
+Camera widget	Pushbullet	1
+Date & Time	Wiser	1
+Honeywell Home	Sonos	1
+iOS Photos	iOS Calendar	1
+Giphy	Slack	1
+Ivideon	WiZ	1
+TP-Link Router	Philips Hue	1
+abode	ecobee	1
+Fitbit	Email Digest	1
+GitHub	Gmail	1
+WeMo Smart Plug	Email	1
+August	Wink: Shortcuts	1
+Home Connect Coffee Machine	Das Keyboard Q	1
+SMS	Phone Call (US only)	1
+RSS Feed	iOS Photos	1
+The New York Times	Amazon Cloud Drive	1
+IFTTT	Slack	1
+Bitly	Dropbox	1
+SmartThings	Angelcam	1
+Location	AirTouch	1
+INSTAR	Notifications	1
+WordPress	Google Docs	1
+NPR	Gmail	1
+Camera widget	Telegram	1
+Trello	Notifications	1
+Flickr	OneDrive	1
+Instagram	Stockimo	1
+Vimeo	Evernote	1
+Pew Research Center	Email Digest	1
+Vimeo	Facebook Pages	1
+Arlo	Homey	1
+SpotCam	WeMo Insight Switch	1
+Button widget	Hive Active PlugÂ	1
+Android Battery	Notifications	1
+Mailchimp	Google Sheets	1
+Jotform	SMS	1
+Finance	Boxcar 2	1
+Yelp	Email	1
+Weather Underground	Automate Shades	1
+abode	Noonlight	1
+GitHub	Email Digest	1
+Inoreader	Feedly	1
+Instagram	Email Digest	1
+WeMo Smart Plug	Google Calendar	1
+Android Device	AduroSmart	1
+Withings Home	Google Sheets	1
+Netatmo Weather Station	Wear OS	1
+Buffer	Flickr	1
+YouTube	iOS Photos	1
+Feedly	Pinboard	1
+FollowUp.cc	Google Sheets	1
+Date & Time	Imwork	1
+YouTube	Feedly	1
+iOS Reminders	LIFX	1
+Netatmo Weather Station	Email Digest	1
+Date & Time	RescueTime	1
+RSS Feed	SMS	1
+Android Phone Call	Pushover	1
+Location	Google Docs	1
+Hacker News	Pocket	1
+ComEd	Honeywell Total Connect Comfort	1
+WordPress	Google Sheets	1
+SpotCam	WiZ	1
+Weather Underground	TaHoma North America	1
+YouTube	Tumblr	1
+reddit	Box	1
+Envoy	Google Calendar	1
+ecobee	Wink: Shortcuts	1
+Zoom	LIFX	1
+Blink	Philips Hue	1
+Facebook	Instapaper	1
+Home Connect Fridge Freezer	Notifications	1
+Weather Underground	Hive Active HeatingÂ - UK and Europe	1
+Home Connect Dishwasher	Philips Hue	1
+Pocket	WordPress	1
+AiDot	Google Calendar	1
+Facebook Pages	Diigo	1
+Tecan Connect	Email	1
+Todoist	Harvest	1
+BrainyQuote	Day One	1
+Camera widget	Google Sheets	1
+True Energy Smart Home Norway	Notifications	1
+WeMo Insight Switch	WeMo Insight Switch	1
+MeisterTask	MeisterTask	1
+SkyBell HD	Glance clock	1
+The New York Times	Google Sheets	1
+Twitch	Google Sheets	1
+GarageWiFi & Gates	Notifications	1
+True Energy Smart Home Denmark	Home Connect Dishwasher	1
+Caltrain	Notifications	1
+Todoist	Beeminder	1
+Button widget	Pushbullet	1
+Flic	WiZ	1
+Inoreader	Trello	1
+SurveyMonkey	Google Calendar	1
+Google Calendar	blink(1)	1
+Notion	Email	1
+SoundCloud	OneDrive	1
+smanos connect	Phone Call (US only)	1
+Android Photos	Wear OS	1
+Weather Underground	Tailwind	1
+Android Photos	Amazon Cloud Drive	1
+iOS Photos	EasyFTP	1
+Arlo	Arlo	1
+Facebook	Qapital	1
+Instagram	Beeminder	1
+Android SMS	Zoho Cliq (China)	1
+Spotify	Philips Hue	1
+Email	Email Digest	1
+RescueTime	Telegram	1
+Location	Withings Home	1
+AL-KO Smart Garden	Home Connect Coffee Machine	1
+Coinbase	Dozens	1
+reddit	Android SMS	1
+Buffer	Evernote	1
+Diigo	Pocket	1
+Bitly	Unforgettable Me	1
+Google Wifi	EZVIZ	1
+Fox News	Twitter	1
+Google Sheets	Zoho Cliq (China)	1
+Google Sheets	Zoho Cliq (Europe)	1
+Telegram	Philips Hue	1
+Harvest	Evernote	1
+My Leviton	Harmony	1
+Fitbit	WordPress	1
+Mailchimp	Zoho Cliq (Australia)	1
+Mailchimp	Zoho Cliq (Europe)	1
+Scout Alarm	beam	1
+Ambient Weather	Netro	1
+Hacker News	Email Digest	1
+Trakt	Discord	1
+Email	Box	1
+eWeLink Smart Home	Philips Hue	1
+Date & Time	Honeywell Total Connect Comfort	1
+Space	Flickr	1
+Google Wifi	Google Wifi	1
+Weather Underground	WeMo Insight Switch	1
+Google Calendar	Routee	1
+MyQ	NetHome Plus AC	1
+Location	Yeelight	1
+Zubie	Email	1
+SkyBell HD	Email	1
+Button widget	Android Device	1
+Foursquare	WordPress	1
+Nexia	Philips Hue	1
+Android Photos	Twitter	1
+Weather Underground	GE Appliances Window AC	1
+iOS Photos	Philips Hue	1
+Futurehome	Notifications	1
+Twitter	Invoxia Triby	1
+Weather Underground	Genius Hub	1
+Fort Collins Utilities Time of Day Pricing	TP-Link Kasa	1
+Energy Information Administration	Slack	1
+Netatmo Weather Station	AL-KO Smart Garden	1
+Zoom	iOS Calendar	1
+Pocket	reddit	1
+SoundCloud	Pushbullet	1
+Telegram	Imwork	1
+Date & Time	Todoist	1
+August	Philips Hue	1
+Instagram	Pocket	1
+Button widget	BG Home	1
+Scout Alarm	SmartThings	1
+Department of Agriculture	Email Digest	1
+Date & Time	sRemo	1
+Litter-Robot by Whisker	Asana	1
+Location	Home Connect Oven	1
+Note widget	Facebook Pages	1
+Diigo	Evernote	1
+Note widget	Android Device	1
+Wyze	Phone Call (US only)	1
+Button widget	AT&T M2X	1
+Weather Underground	Dropbox	1
+Airtable	Google Sheets	1
+Evernote	Day One	1
+Location	Automate Shades	1
+Weather Underground	AC Cloud Control	1
+International Monetary Fund	Trello	1
+Ballotpedia	Email Digest	1
+Strava	Day One	1
+mydlink	Email	1
+Note widget	GroupMe	1
+Withings Sleep	Home Connect Coffee Machine	1
+Department of Labor	Trello	1
+Date & Time	GroupMe	1
+Home Connect Dryer	Android Device	1
+Date & Time	BroadLink	1
+Note widget	Microsoft Teams	1
+YouTube	Day One	1
+D-Link Wi-Fi Router	Philips Hue	1
+Feedly	iOS Reading List	1
+Google Calendar	WeMo Smart Plug	1
+Fitbit	ecobee	1
+Google Calendar	Harvest	1
+Airtable	Todoist	1
+Instagram	Google Docs	1
+RSS Feed	Zoho Cliq (Australia)	1
+RSS Feed	Zoho Cliq	1
+Lotus Watches	LINE	1
+Button widget	Confio	1
+Medium	Buffer	1
+iOS Reminders	iOS Reminders	1
+Note widget	OneNote	1
+Todoist	Android SMS	1
+Wireless Tag	Notifications	1
+Todoist	Adafruit	1
+eWeLink Smart Home	CallMeBot Phone Call	1
+Sesame by CANDY HOUSE	Google Sheets	1
+The New York Times	Dropbox	1
+Home Connect Cookit	Home Connect Hood	1
+WeMo Light Switch	Notifications	1
+Fitbit	Beeminder	1
+Location	LightwaveRF Heating	1
+Twitter	Monzo	1
+Facebook	Trello	1
+Spotify	Email Digest	1
+iDevices	SMS	1
+Noonlight	Android SMS	1
+NPR	Slack	1
+Library of Congress	Email Digest	1
+Spotify	Android Device	1
+Email	Android SMS	1
+Ring	eWeLink Smart Home	1
+Flic	Twitter	1
+Air Quality by IQAir AirVisual	Moodo & Moodo AIR	1
+Google Calendar	Xtactor	1
+WeMo Motion	Notifications	1
+Moodo & Moodo AIR	SMS	1
+Litter-Robot by Whisker	Neato	1
+The New York Times	Google Docs	1
+FiltreteÂ Smart	WeMo Smart Plug	1
+Niko Home Control	iRobot	1
+Finance	Pushover	1
+iOS Reminders	Notifications	1
+TP-Link Router	Gmail	1
+RSS Feed	Todoist	1
+Location	Arlo	1
+Twitter	Android Device	1
+Jotform	Google Calendar	1
+Zoho Notebook	Twitter	1
+Android Device	Honeywell evohome	1
+ecobee	Fanimation	1
+ecobee	Ai-Sync	1
+Button widget	ecobee	1
+NewsBlur	Evernote	1
+GitHub	Dropbox	1
+Vimeo	Buffer	1
+Feedly	Todoist	1
+Date & Time	Honeywell Home	1
+Arlo	WeMo Smart Plug	1
+Google Wifi	Android Device	1
+Facebook	reddit	1
+Facebook	Bitly	1
+RainMachine	eWeLink Smart Home	1
+Finance	Android SMS	1
+Weather Underground	woopla phone calls	1
+Bitly	Pocket	1
+GE Appliances Washer	Android SMS	1
+Google Calendar	MeisterTask	1
+WeMo Smart Plug	Pushover	1
+Giphy	Weebly	1
+Android Device	Wear OS	1
+Thinga	Android Device	1
+Twitter	ClickSend SMS	1
+EasyControl of Bosch	Notifications	1
+Myfox HomeControl	Google Sheets	1
+Scout Alarm	ecobee	1
+YouTube	SwitchBot	1
+Twitter	AICO	1
+SmartThings	Philips Hue	1
+Total Connect 2.0	Philips Hue	1
+Flic	Philips Hue	1
+Flickr	Pushbullet	1
+Weather Underground	Connector	1
+Telldus Live!	Google Sheets	1
+SoundCloud	Tumblr	1
+Weather Underground	OneNote	1
+Buffer	Slack	1
+Location	Somfy Protect	1
+YouTube	WeMo Coffeemaker	1
+BrainyQuote	Notifications	1
+Flic	MagicHue	1
+Scout Alarm	LIFX	1
+Facebook	Wear OS	1
+Equal Rights Advocates	Twitter	1
+eWeLink Smart Home	VoIP Calls	1
+MESH	SMS	1
+Facebook	Android SMS	1
+Ring	MyMilan	1
+Dropbox	Google Docs	1
+BrainyQuote	Pocket	1
+Weather Underground	Futurehome	1
+Button widget	Angelcam	1
+Date & Time	Inoreader	1
+Apilio	ecobee	1
+Google Calendar	Telegram	1
+Pocket	Zoho Cliq	1
+Withings	Strava	1
+Dailymotion	Instapaper	1
+Envoy	Email	1
+Android Phone Call	Telegram	1
+Location	SpotCam	1
+Buffer	Facebook Pages	1
+Fitbit	iOS Calendar	1
+Weather Underground	AQUAREA Smart Cloud	1
+Knocki	Yeelight	1
+Vimar VIEW	Email	1
+Google Docs	Dropbox	1
+Weather Underground	Invoxia Triby	1
+Location	WIFIPLUG	1
+WeMo Light Switch	Android SMS	1
+Harvest	Google Sheets	1
+Weather Underground	Monzo	1
+Twitter	Android SMS	1
+Facebook Pages	Notifications	1
+Android Device	Wink: Aros	1
+Android Photos	Diigo	1
+WordPress	Day One	1
+RATOC Remocon	RATOC Remocon	1
+Android Device	TP-Link Kasa	1
+Button widget	Husqvarna AutomowerÂ®	1
+Phone Call (US only)	Google Sheets	1
+iOS Reminders	Toodledo	1
+Email	woopla phone calls	1
+GE Appliances Washer	Notifications	1
+Spotify	Qapital	1
+Ring	Google Sheets	1
+Button widget	HomeSeer	1
+Weather Underground	Gideon Smart Home	1
+iHome Enhance	Phone Call (US only)	1
+Button widget	LinkJapan eHome	1
+Location	LightwaveRF Lighting	1
+Date & Time	Blink (Europe)	1
+USA.gov	Twitter	1
+Mailchimp	Slack	1
+Withings Home	Routee	1
+Wyze	Google Sheets	1
+Android Device	Google Docs	1
+SFGATE	Slack	1
+Wireless Tag	Heatmiser	1
+Date & Time	openHAB	1
+Instagram	Weebly	1
+WeMo Insight Switch	Dropbox	1
+Netatmo Weather Station	Smart Life	1
+Bitly	Evernote	1
+Zoom Phone	Google Sheets	1
+GitHub	Pushover	1
+Bouncie	Philips Hue	1
+Ring	Android SMS	1
+iOS Photos	Todoist	1
+NewsBlur	Twitter	1
+Agile Octopus	Monzo	1
+Powered by Viva	WiZ	1
+Library of Congress	data.world	1
+Twitter	Box	1
+Litter-Robot by Whisker	Philips Hue	1
+Wyze	WeMo Light Switch	1
+Button widget	Adafruit	1
+Knocki	WeMo Light Switch	1
+Airthings	SMS	1
+Fitbit	Glance clock	1
+reddit	Instapaper	1
+Dropbox	Beeminder	1
+smanos connect	LINE	1
+Ballotpedia	Notifications	1
+Email	WordPress	1
+Netatmo Weather Station	Smappee	1
+GE Appliances Dryer	WiZ	1
+Uplink Remote	SMS	1
+Space	Email Digest	1
+Logitech POP	domovea	1
+Date & Time	SpotCam	1
+Ring	Phone Call (US only)	1
+The New York Times	Trello	1
+RescueTime	Evernote	1
+Medium	Instapaper	1
+Date & Time	SkylinkNet	1
+Location	Wink: Pivot Power Genius	1
+Hubitat	Arlo	1
+Vimeo	Google Sheets	1
+Date & Time	Link Shades	1
+Invoxia Triby	Invoxia Triby	1
+SkyBell HD	LIFX	1
+woopla phone calls	Email	1
+Google Calendar	Chatwork	1
+AL-KO Smart Garden	Spotify	1
+remo+	SMS	1
+Jaguar Watches	Google Sheets	1
+SmartThings	Glance clock	1
+Button widget	Arlo	1
+Ring	Caavo	1
+SkyBell HD	Gmail	1
+Instagram	Bitly	1
+Space	Google Calendar	1
+Mailchimp	Dropbox	1
+Hubitat	Blink	1
+Location	Aquanta	1
+Centers for Disease Control and Prevention	Facebook Pages	1
+Aquanta	WeMo Smart Plug	1
+Button widget	LIFX	1
+SoundCloud	LINE	1
+Wyze	TP-Link Kasa	1
+Dropbox	Android SMS	1
+Litter-Robot by Whisker	Android SMS	1
+Flic	WeMo Lighting	1
+Button widget	Lexi	1
+Android Device	Dropbox	1
+SoundCloud	Email	1
+Android Phone Call	Wear OS	1
+Weather Underground	iOS Reminders	1
+Asana	Google Calendar	1
+Camera widget	OneNote	1
+Aquanta	Aquanta	1
+Logitech POP	Garadget	1
+Garadget	Gmail	1
+Ring	Brilliant Nexus	1
+Beeminder	Notifications	1
+Trello	iOS Reminders	1
+Smappee	Google Docs	1
+Twitter	Harmony	1
+Instagram	Slack	1
+Android Photos	EasyFTP	1
+Kaiterra	Email	1
+WeMo Light Switch	Phone Call (US only)	1
+Android Phone Call	Welltory	1
+RescueTime	Google Sheets	1
+Giphy	Pocket	1
+Facebook Pages	Pocket	1
+SoundCloud	Google Docs	1
+The New York Times	Pushbullet	1
+The New York Times	Evernote	1
+eWeLink Smart Home	Telegram	1
+Hacker News	Email	1
+Diigo	Twitter	1
+WordPress	Pocket	1
+Button widget	GE Appliances GeoSpringÂ	1
+Google Calendar	Discord	1
+Weather Underground	Facebook Pages	1
+August	ecobee	1
+iOS Photos	Verizon Cloud	1
+Google Calendar	Day One	1
+IFTTT	Pushbullet	1
+Airtable	Telegram	1
+MESH	Twitter	1
+iOS Contacts	iOS Reminders	1
+Feedly	OneDrive	1
+True Energy Smart Home Denmark	Home Connect Washer	1
+True Energy Smart Home Norway	Home Connect Washer	1
+Twitter	LINE	1
+Blue by ADT	Honeywell Total Connect Comfort	1
+Wyze	HomeSeer	1
+Location	Monzo	1
+Note widget	Notifications	1
+Trello	Pushbullet	1
+Electronic Frontier Foundation	Email Digest	1
+SmartThings	Apilio	1
+Flickr	Google Sheets	1
+Swidget	Philips Hue	1
+Knocki	Sonos	1
+Remember The Milk	Google Docs	1
+Knocki	LIFX	1
+ecobee	Gmail	1
+Android Photos	Notifications	1
+Email	WeMo Light Switch	1
+Weather Underground	Das Keyboard Q	1
+Smitch	Dropbox	1
+MyMilan	Notifications	1
+Location	Honeywell evohome	1
+Instagram	Notifications	1
+Dropbox	Telegram	1
+RSS Feed	Philips Hue	1
+Button widget	nVent Nuheat Signature Thermostat	1
+Facebook	EasyFTP	1
+Button widget	LINE	1
+Home Connect Coffee Machine	Notifications	1
+Flic	Garadget	1
+FiltreteÂ Smart	LIFX	1
+B9	Pocket	1
+Facebook	Dozens	1
+The New York Times	Gmail	1
+Camera widget	GroupMe	1
+Android Device	MyQ	1
+Location	SkylinkNet	1
+Location	Camio	1
+Longreads	Email Digest	1
+Foursquare	Slack	1
+Facebook	Weebly	1
+Brilliant Smart	Brilliant Smart	1
+openHAB	Arlo	1
+Dailymotion	Weebly	1
+IFTTT	Wear OS	1
+WeMo Motion	WeMo Smart Plug	1
+Pocket	Facebook Pages	1
+Muslim Prayer Time	Google Tasks	1
+Wink: Egg Minder	Email	1
+Xtactor	Sonos	1
+Fing	Notifications	1
+Wink: Porkfolio	Wink: Nimbus	1
+Notion	SmartThings	1
+Weather Underground	WordPress	1
+Date & Time	Lytmi	1
+ThingaOS	SmartThings	1
+abode	abode	1
+Lytmi	Lytmi	1
+Google Tasks	Email Digest	1
+Blink	Apilio	1
+Ring	MagicHue	1
+Wyze	Hubitat	1
+The New York Times	Slack	1
+Note widget	Toodledo	1
+Agile Octopus	Sonos	1
+Date & Time	Smitch	1
+iOS Contacts	Gmail	1
+Location	Qapital	1
+woopla phone calls	Nexx	1
+Date & Time	MyQ	1
+iOS Photos	Intuiface	1
+August	WeMo Smart Plug	1
+Agile Octopus	Philips Hue	1
+Camera widget	Philips Hue	1
+Mapeheat Thermo Connect	Notifications	1
+Toodledo	Google Sheets	1
+Verizon Cloud	Google Contacts	1
+RescueTime	Dropbox	1
+Beeminder	Slack	1
+Home Connect Dishwasher	Notifications	1
+Foursquare	WeMo Light Switch	1
+Facebook Pages	Evernote	1
+Instagram	uSign	1
+Vimeo	Das Keyboard Q	1
+AduroSmart	Notifications	1
+Instapaper	Twitter	1
+ClickSend SMS	Gmail	1
+Ergomotion Smart Bed	Philips Hue	1
+Button widget	SwitchBot	1
+Home Connect Dryer	Philips Hue	1
+RSS Feed	Beeminder	1
+Weather Underground	HomeSeer	1
+Scout Alarm	Notifications	1
+Location	Sonos	1
+Wireless Tag	WeMo Insight Switch	1
+Google Calendar	SoundCloud	1
+MyQ	Blink	1
+Ring	Sonos	1
+Google Calendar	Google Drive	1
+Aquanta	SMS	1
+littleBits	Telegram	1
+Monzo	Philips Hue	1
+Button widget	RescueTime	1
+Pocket	Google Docs	1
+Coinbase	Google Sheets	1
+RSS Feed	Wear OS	1
+MyQ	Google Sheets	1
+Giphy	Wear OS	1
+WeMo Insight Switch	Philips Hue	1
+Weather Underground	beam	1
+Jotform	Trello	1
+Email	Gmail	1
+Pebblebee	Android Device	1
+WeMo Insight Switch	iOS Reminders	1
+Dropbox	Amazon Cloud Drive	1
+MESH	WeMo Insight Switch	1
+August	Scout Alarm	1
+Giphy	Amazon Cloud Drive	1
+Withings Sleep	Philips Hue	1
+IoT Podcast	Twitter	1
+Caavo	ecobee	1
+Evernote	Gmail	1
+YouTube	WeMo Insight Switch	1
+Vimeo	Day One	1
+Diigo	Gmail	1
+Podio	Email Digest	1
+Inoreader	Raindrop.io	1
+Muslim Prayer Time	LIFX	1
+Ivideon	Philips Hue	1
+Watts	Home Connect Dishwasher	1
+ThingaOS	Gmail	1
+SoundCloud	put.io	1
+Strava	Slack	1
+Fitbit	Gmail	1
+Android SMS	Google Docs	1
+Flic	Wink: Shortcuts	1
+Trello	Bitly	1
+Netatmo Weather Station	WeMo Insight Switch	1
+MyQ	SmartThings	1
+Location	MyQ	1
+Vimeo	Trello	1
+Facebook	Todoist	1
+Orion - Voice for Teams	WeMo Smart Plug	1
+Netatmo Weather Station	WeMo Smart Plug	1
+EZVIZ	Telegram	1
+GitHub	Google Sheets	1
+SoundCloud	Instapaper	1
+Button widget	Musaic	1
+We Work Remotely	Microsoft Teams	1
+Coinbase	Monzo	1
+SkylinkNet	Email	1
+SoundCloud	Evernote	1
+Foursquare	Flickr	1
+nVent Nuheat Signature Thermostat	Notifications	1
+Lotus Watches	Slack	1
+Google Calendar	RescueTime	1
+iOS Calendar	Trello	1
+Raindrop.io	Twitter	1
+iHome Enhance	Lutron CasÃ©ta and RA2 Select	1
+Wireless Tag	Email	1
+Jotform	OneDrive	1
+NPR	Twitter	1
+HomeSeer	Phone Call (US only)	1
+Swann Security	Gmail	1
+Feedly	Diigo	1
+woopla phone calls	Slack	1
+Button widget	Nice	1
+Buffer	Google Calendar	1
+Fitbit	Wink: Nimbus	1
+Telegram	Evernote	1
+Ambi Climate	Notifications	1
+Location	SAUTER Cozytouch	1
+GitHub	Trello	1
+Lotus Watches	Philips Hue	1
+WordPress	RescueTime	1
+SoundCloud	reddit	1
+Litter-Robot by Whisker	Sonos	1
+Ring	Smart Life	1
+Trello	RescueTime	1
+Google Drive	Slack	1
+Medium	Evernote	1
+woopla phone calls	Arlo	1
+Vimeo	Remember The Milk	1
+Smart Home Solution	Google Sheets	1
+Livy	LIFX	1
+Weather Underground	Mapeheat Thermo Connect	1
+SmartThings	SwitchBot	1
+WeMo Smart Plug	Harmony	1
+Pocket	Pushover	1
+Pebblebee	Android SMS	1
+Weather Underground	LightwaveRF Heating	1
+Bitly	Buffer	1
+Epion	Spotify	1
+Button widget	Email	1
+Twitter	Vestaboard	1
+Pocket	Amazon Cloud Drive	1
+Android Device	AC Cloud Control	1
+LaMetric	Philips Hue	1
+Google Calendar	Apilio	1
+Spotify	Gmail	1
+Date & Time	iRobot	1
+Flic	Google Sheets	1
+Camera widget	Email Digest	1
+Ring	WiZ	1
+EZVIZ	Philips Hue	1
+Smappee	Google Calendar	1
+MyMilan	VoIP Calls	1
+Android SMS	Unforgettable Me	1
+TMT Chow	Philips Hue	1
+Eight	Android Device	1
+Bitly	Box	1
+WordPress	Box	1
+YouTube	LIFX	1
+Weather Underground	Heatmiser	1
+Orion - Voice for Teams	Orion - Voice for Teams	1
+Google Sheets	BOCCO emo	1
+Note widget	iOS Reminders	1
+WeMo Lighting	WeMo Lighting	1
+reddit	Discord	1
+Twitter	Instapaper	1
+Apilio	SmartThings	1
+Withings Home	Notifications	1
+Google Calendar	Intuiface	1
+Stockimo	Google Drive	1
+Date & Time	Cloud Intelligence	1
+Instagram	GroupMe	1
+Dropbox	Das Keyboard Q	1
+Google Calendar	Microsoft To Do	1
+Note widget	VoIP Calls	1
+WordPress	Telegram	1
+Diigo	Slack	1
+Android Photos	Email Digest	1
+Android Phone Call	Google Contacts	1
+Feedly	Instapaper	1
+reddit	Telegram	1
+Monzo	SMS	1
+Ring	WeMo Smart Plug	1
+Uplink Remote	iHome Control	1
+Uplink Remote	Philips Hue	1
+Muslim Prayer Time	Yeelight	1
+Button widget	Gogogate	1
+Date & Time	Wyze	1
+Spotify	Dropbox	1
+Dropbox	Box	1
+Wireless Tag	Sensibo	1
+Instapaper	Google Docs	1
+Email	Slack	1
+Button widget	Blink (Europe)	1
+Ring	Home Connect Roxxter	1
+Heatzy	Notifications	1
+Muslim Prayer Time	Smitch	1
+abode	Arlo	1
+Button widget	Home Connect Dishwasher	1
+Powered by Viva	iRobot	1
+Button widget	iRobot	1
+Apilio	MagicHue	1
+Pocket	iOS Reminders	1
+SpotCam	Philips Hue	1
+Scout Alarm	Philips Hue	1
+Twitter	Nanoleaf Smarter Series	1
+YouTube	GitHub	1
+RSS Feed	Trello	1
+SimCam	Sonos	1
+Strava	Google Calendar	1
+Fitbit	Airtable	1
+Location	Husqvarna AutomowerÂ®	1
+IFTTT	Pocket	1
+Trello	Inoreader	1
+Inoreader	Pinboard	1
+Phone Call (US only)	SoundCloud	1
+FIBARO	FIBARO	1
+Instapaper	Bitly	1
+Facebook	Das Keyboard Q	1
+GitHub	LIFX	1
+Fox News	Pocket	1
+Longreads	Instapaper	1
+reddit	Bitly	1
+MeisterTask	Slack	1
+Agile Octopus	Email	1
+Google Calendar	MESH	1
+Phyn	SMS	1
+Date & Time	reddit	1
+Instagram	Verizon Cloud	1
+True Energy Smart Home Denmark	Home Connect Dryer	1
+Kaiterra	Google Sheets	1
+Location	LightwaveRF Power	1
+reddit	WordPress	1
+Fitbit	Wink: Aros	1
+Google Tasks	Google Sheets	1
+August	Google Calendar	1
+Button widget	Honeywell Single-zone Thermostat	1
+Twitter	Fleep	1
+Fitbit	AC Cloud Control	1
+Location	Honeywell Single-zone Thermostat	1
+Android SMS	Phone Call (US only)	1
+Fitbit	Slack	1
+Uplink Remote	Gmail	1
+Toodledo	Trello	1
+Android Phone Call	Lexi	1
+Flickr	OneNote	1
+Zoom	Evernote	1
+The New York Times	Facebook Pages	1
+HAVEN IAQ	TP-Link Kasa	1
+Phone Call (US only)	Twitter	1
+Instagram	Google Sheets	1
+Scout Alarm	TP-Link Kasa	1
+Date & Time	Brilliant Nexus	1
+Weather Underground	VoIP Calls	1
+put.io	Notifications	1
+Lennox iComfort	Philips Hue	1
+Phone Call (US only)	WeMo Smart Plug	1
+SmartThings	Smart Life	1
+August	SmartThings	1
+Verizon Cloud	Twitter	1
+Twitter	Inoreader	1
+Ballotpedia	Twitter	1
+Pocket	Pushbullet	1
+Vimeo	Pushover	1
+Pocket	Asana	1
+Button widget	Google Sheets	1
+Home Connect Oven	Home Connect Hood	1
+QNAP	Google Drive	1
+Mitsubishi Electric kumo cloud	TP-Link Kasa	1
+Date & Time	Instapaper	1
+iOS Calendar	Email Digest	1
+Swidget	Nanoleaf Smarter Series	1
+Flic	Sonos	1
+Muslim Prayer Time	Alexa Actions by mkZense	1
+Button widget	Smart Home Solution	1
+Google Calendar	Notion.so	1
+NewsBlur	WordPress	1
+SimCam	SmartThings	1
+iOS Contacts	Mailchimp	1
+Date & Time	Gogogate	1
+Ring	Arlo	1
+Google Sheets	Notifications	1
+RSS Feed	Flickr	1
+Button widget	Home Connect Fridge Freezer	1
+IFTTT	Pushover	1
+GarageWiFi & Gates	Google Sheets	1
+Date & Time	Wink: Aros	1
+Orion - Voice for Teams	Philips Hue	1
+Bitly	Weebly	1
+Date & Time	simplehuman	1
+iOS Contacts	Email Digest	1
+Harvest	Google Calendar	1
+Date & Time	Glance clock	1
+Zoom	Spotify	1
+Wink: Spotter	Wink: Aros	1
+Location	MyMilan	1
+Harvest	Slack	1
+Telegram	Dropbox	1
+Aqara Home for US	Aqara Home for US	1
+Home Connect Dryer	Notifications	1
+Date & Time	ThingaOS	1
+Zoom Phone	Asana	1
+Zoom	Smart Life	1
+Location	Telegram	1
+Weebly	Slack	1
+UbiBot	WiZ	1
+Ring	Google Wifi	1
+WordPress	Slack	1
+Button widget	WeMo Smart Plug	1
+Instapaper	WordPress	1
+Location	BOSMA	1
+Arlo	Zuluhood	1
+YouTube	put.io	1
+Twitter	Weebly	1
+Garageio	Google Sheets	1
+iOS Photos	Trello	1
+Finance	Philips Hue	1
+Google Drive	Box	1
+Home Connect Cookit	Homey	1
+Android Photos	Android Device	1
+WordPress	OneNote	1
+Kaiterra	Notifications	1
+YoLink	YoLink	1
+Button widget	Slack	1
+MyQ	Notifications	1
+Android Device	Sonos	1
+SurveyMonkey	Philips Hue	1
+Note widget	Day One	1
+reddit	Google Docs	1
+Location	Oco Camera	1
+ComEd	ecobee	1
+eWeLink Smart Home	TP-Link Kasa	1
+RemoteLync	Dropbox	1
+Weather Underground	Garageio	1
+SmartThings	eWeLink Smart Home	1
+Zubie	Garageio	1
+Google Calendar	SAUTER Cozytouch	1
+NewsBlur	Todoist	1
+Ring	Wear OS	1
+Weather Underground	Pocket	1
+YoLink	My Leviton	1
+Wink: Porkfolio	Email	1
+Total Connect 2.0	MyQ	1
+Inoreader	Inoreader	1
+Email	LIFX	1
+Home Connect Cookit	Sonos	1
+AiDot	AiDot	1
+ecobee	ecobee	1
+August	Wyze	1
+ecobee	TP-Link Kasa	1
+SmartThings	Google Calendar	1
+Fitbit	Email	1
+Telegram	Telegram	1
+WeMo Motion	SwitchBot	1
+Note widget	Fleep	1
+Bureau of Economic Analysis	Gmail	1
+MyQ	Blue by ADT	1
+EZVIZ	eWeLink Smart Home	1
+Garageio	Notifications	1
+Google Calendar	Feedly	1
+Date & Time	ATLANTIC Cozytouch	1
+ecobee	Aquanta	1
+Todoist	Dropbox	1
+Weather Underground	Ai-Sync	1
+put.io	Todoist	1
+iOS Photos	OneNote	1
+Raindrop.io	Telegram	1
+Blink	WeMo Smart Plug	1
+SurveyMonkey	Gmail	1
+Android Phone Call	Slack	1
+Trello	Google Calendar	1
+Google Contacts	Telegram	1
+Caltrain	Email	1
+WordPress	WordPress	1
+Bouncie	SMS	1
+EasyCSV	ClickSend SMS	1
+Button widget	BroadLink	1
+Hopscotch Social Media Management	Google Calendar	1
+SkyBell HD	abode	1
+SpotCam	Twitter	1
+Twitch	Das Keyboard Q	1
+Weather Underground	Boxcar 2	1
+Button widget	Heatzy	1
+Evernote	Welltory	1
+WeMo Light Switch	Google Sheets	1
+Finance	Twitter	1
+Button widget	Alpaca	1
+Vimeo	WordPress	1
+Button widget	TP-Link Router	1
+Note widget	Google Calendar	1
+Apilio	Apilio	1
+Invoxia Triby	Phone Call (US only)	1
+Uplink Remote	Email	1
+Location	Dropbox	1
+AL-KO Smart Garden	iRobot	1
+Weather Underground	AL-KO Smart Garden	1
+Todoist	Day One	1
+Dropbox	Evernote	1
+Nexia	Phone Call (US only)	1
+Todoist	iOS Reminders	1
+Telegram	Buffer	1
+Buffer	Bitly	1
+Android Device	Yeelight	1
+Date & Time	ASUS Router	1
+Android Device	Honeywell Single-zone Thermostat	1
+Mailchimp	Mailchimp	1
+Twitter	MESH	1
+Arlo	Twitter	1
+Knocki	WeMo Insight Switch	1
+Android Battery	WeMo Lighting	1
+reddit	iOS Photos	1
+Twitter	LIFX	1
+Weather Underground	AduroSmart	1
+Sighthound Video	Wink: Shortcuts	1
+Email	ClickSend SMS	1
+iOS Photos	Pushbullet	1
+Pocket	OneDrive	1
+Beseye	WiZ	1
+Date & Time	Das Keyboard Q	1
+Button widget	Zuluhood	1
+WordPress	Google Drive	1
+Location	D-Link Wi-Fi Router	1
+Google Calendar	Smart Life	1
+YouTube	LINE	1
+Google Drive	Facebook Pages	1
+Facebook Pages	Imwork	1
+Aura	Das Keyboard Q	1
+HomeSeer	WeMo Smart Plug	1
+ComEd	Philips Hue	1
+Apilio	Sensibo	1
+GitHub	Google Calendar	1
+Email	Android Device	1
+Location	Smappee	1
+Fitbit	OneNote	1
+Android Device	Smart Life	1
+Date & Time	GE Appliances GeoSpringÂ	1
+Button widget	Inoreader	1
+SmartThings	Telegram	1
+Blue by ADT	Sonos	1
+Smappee	Smappee	1
+Facebook	ShopYourWay	1
+Weebly	Notifications	1
+Note widget	LinkedIn	1
+Todoist	Zoho Cliq	1
+Blink	Email	1
+Arlo	Android Device	1
+Android SMS	Wear OS	1
+Location	Genius Hub	1
+littleBits	Philips Hue	1
+Date & Time	Blink	1
+Hubitat	Smart Life	1
+Note widget	Spotify	1
+GE Appliances Cooking	Philips Hue	1
+Flic	Eight	1
+Weather Underground	Moonside Light	1
+Webhooks	woopla phone calls	1
+Email	Telegram	1
+Telegram	VoIP Calls	1
+Camera widget	Pocket	1
+King County Metro	SMS	1
+LinkJapan eHome	Google Sheets	1
+Telegram	Remember The Milk	1
+Flic	Garageio	1
+Location	Nice	1
+Twitter	OneDrive	1
+MobiLinc	Phone Call (US only)	1
+Netatmo Weather Station	Android Device	1
+Location	AduroSmart	1
+Space	iOS Reading List	1
+Location	Lennox iComfort	1
+Twitter	Toodledo	1
+Google Calendar	Blink	1
+Spotify	Day One	1
+Buffer	WordPress	1
+WeMo Insight Switch	Pushbullet	1
+Note widget	Slack	1
+Date & Time	Energenie Mi|Home	1
+U.S. Independence Day	Trello	1
+Button widget	VoIP Calls	1
+Instagram	Trello	1
+Withings Sleep	WiZ	1
+SMS	iOS Reminders	1
+Fitbit	Twitter	1
+Location	MagicLight WiFi	1
+Nexia	Twitter	1
+Home Connect Dishwasher	Google Calendar	1
+Ring	Slack	1
+GitHub	Pushbullet	1
+Phone Call (US only)	OneNote	1
+Flic	TP-Link Kasa	1
+Android Photos	Unforgettable Me	1
+Dailymotion	Twitter	1
+Android SMS	Pushbullet	1
+Asana	Email Digest	1
+Email	Feedly	1
+Android Battery	Google Wifi	1
+Knocki	Philips Hue	1
+Google Calendar	Caavo	1
+Button widget	myStrom	1
+WeMo Coffeemaker	Email	1
+Facebook	Pinboard	1
+Android Phone Call	Neato	1
+Date & Time	BOSMA	1
