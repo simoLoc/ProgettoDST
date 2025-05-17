@@ -149,10 +149,6 @@ def generate_conversation(entry, correct = False):
     num_trigger_fields = count_fields(entry.get('trigger_fields'))
     num_action_fields = count_fields(entry.get('action_fields'))
 
-    print(entry)
-    print(num_trigger_fields)
-    print(num_action_fields)
-
     # scelta di iniziare o meno con i campi sia trigger che action
     isTriggerAction = random.choice([0, 1])
 
