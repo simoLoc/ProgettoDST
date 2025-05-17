@@ -22,7 +22,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
 
     empty_fields_list = ['trigger_fields', 'trigger_fields_values', 'action_fields', 'action_fields_values']
 
-    # Generazione solo delle trigger (prima trigger e poi action)
+    # Generazione solo delle componenti trigger o action
     # devono essere 4 stringhe con 'trigger'/'action' -> cioè i 4 campi della trigger/action
     while not (sum(s.startswith(str_descrizione) for s in fields) == 4):
         new_fields = []
@@ -30,25 +30,33 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
         index = random.randint(0, len(fields_trigger_action) - 1)
         new_fields = fields_trigger_action[index]
         
+        # controllo che i nuovi elementi non siano già presenti nella lista
         if not set(new_fields).issubset(fields):
+            # estrazione degli elementi non ancora generati
             new_elements = set(new_fields) - set(fields)
             new_elements = list(new_elements)
-            fields += new_elements  # si tiene traccia dei campi correnti
+            
+            # update di fields per tenere traccia dei campi generati
+            fields += new_elements  
 
-
+            # bf_new è il dizionario di new_elements
+            # str_trigger_action_current è la stringa per l'input del prompt
             bf_new, str_trigger_action_current = get_prompt_input(new_elements, entry)
             
             # merge tra i dizionari
-            bf_current = bf_current | bf_new   # bf_new è il dizionario di new_elements
+            bf_current = bf_current | bf_new   
 
-            # genero il numero casuale per vedere se l'utterance deve avere o no l'errore
             if correct:
+                # se la generazione deve essere corretta allora isError è fissato a  0
                 isError = 0
             else:
+                # genero il numero casuale per vedere se l'utterance deve avere o no l'errore
                 isError = random.choice([0, 1])
             
             # La generazione con errori non viene effettuata per i campi fields e fields_values se questi sono vuoti
-            if(set(new_elements).issubset(empty_fields_list)):
+            if (set(new_elements).issubset(empty_fields_list)) and all(bf_new[element] == '' for element in new_elements):
+                current_text += "\n" + "## NON GENERO L'ERRORE PERCHE' I FIELDS SONO VUOTI"
+                current_text += str_trigger_action_current + "\n\n"
                 isError = 0
 
             if isError:
@@ -99,16 +107,21 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
 
 
 def generate_conversation(entry, correct = False):
-
+    """
+        Entry del dataset contenente la regola trigger action
+        entry è la regola trigger-action presente nel dataset
+    """
     # liste per la selezione dei campi da valutare
     trigger = [['trigger_channel'], 
                 ['trigger_title'], 
                 ['trigger_channel', 'trigger_title'], 
                 ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values']]
+    
     action = [['action_channel'], 
                 ['action_title'], 
                 ['action_channel', 'action_title'], 
                 ['action_channel', 'action_title', 'action_fields', 'action_fields_values']]
+    
     triggerAndAction = [['trigger_channel', 'action_channel'],
                         ['trigger_title', 'action_title'],
                         ['trigger_channel', 'action_title'],
@@ -121,7 +134,8 @@ def generate_conversation(entry, correct = False):
                         ['trigger_channel', 'trigger_title', 'trigger_fields', 'trigger_fields_values', 'action_channel', 'action_title', 'action_fields', 'action_fields_values']
                         ]
 
-    current_text = ""   # stringa di output contenente tutta la conversazione
+    # stringa di output contenente tutta la conversazione
+    current_text = ""  
 
     trigger_fields = entry.get('trigger_fields')
     action_fields = entry.get('action_fields')
@@ -154,25 +168,29 @@ def generate_conversation(entry, correct = False):
     
     if isTriggerAction:
         if num_trigger_fields <= 1 and num_action_fields <= 1:
+            # se ci sono meno di 2 campi possiamo generare tutta la regola trigger action 
             index = random.randint(0, len(triggerAndAction) - 1)
             new_fields = triggerAndAction[index]
         else:
+            # se ci sono più di 1 campo trigger o action, generiamo la conversazione incrementale
             index = random.randint(0, len(triggerAndAction) - 2)
             new_fields = triggerAndAction[index]
+
     elif actionStart:
+        # iniziamo la generazione solo con la parte action
         index = random.randint(0, len(action) - 1)
         new_fields = action[index]
     else:
+        # iniziamo la generazione solo con la parte trigger
         index = random.randint(0, len(trigger) - 1)
         new_fields = trigger[index]
 
     fields = copy(new_fields)
-    # fields è una lista con i campi selezionati fino a quel momento 
-    # entry è la regola trigger-action presente nel dataset
-    # bf_current è un dizionario (chiave = nome del campo, valore = valore del campo)
-    # str_trigger_action_current è la formattazione in str dell'entry, solo per i campi contenuti in fields
-    bf_current, str_trigger_action_current = get_prompt_input(fields, entry)
 
+    # fields è una lista con i campi selezionati fino a quel momento 
+    # bf_current è un dizionario (chiave = nome del campo, valore = valore del campo)
+    # str_trigger_action_current è la formattazione dell'entry da passare al prompt, solo per i campi contenuti in fields
+    bf_current, str_trigger_action_current = get_prompt_input(fields, entry)
 
     # se la generazione è quella con errore, genero il numero casuale per vedere se l'utterance deve avere o no l'errore
     if correct:
@@ -181,37 +199,44 @@ def generate_conversation(entry, correct = False):
         isError = random.choice([0, 1])
     
     if isError:
+        # stringa del prompt per la gestione dell'errore - prima utterance
         prompt = get_incorrect_prompt(isFirst = True, trigger_action_current = str_trigger_action_current, trigger_action_past = "")
     else:
+        # stringa del prompt per la gestione della generazione corretta - prima utterance
         prompt = get_prompt(isFirst = True, trigger_action_current = str_trigger_action_current, trigger_action_past = "")
 
-    # Chiamata al modello
+    # Chiamata al modello per generare la prima utterance
     response = str(model.respond(prompt, config={"temperature": 0.6}))
 
+    # salvataggio temporanero della risposta e del belief state correlato
     current_text += response
     current_text += "\n" + str(bf_current) + "\n\n"
 
     # Validazione della risposta (in questo caso è la prima utterance)
     if isError:
-        # stringa del prompt corretto 
+        # se la risposta contiene l'errore, allora si deve generare la clarification question
+        # stringa del prompt per la clarification question
         prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
-        old_response = response
     
-        # Chiamata al modello
+        # Chiamata al modello per generare la clarification question
         response = str(model.respond(prompt, config={"temperature": 0.6}))
 
+        # salvataggio temporanero della risposta e del belief state correlato
         current_text += response
         current_text += "\n" + str(bf_current) + "\n\n"
 
-        # Validazione della risposta - se l'utterance è corretta
-        current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text, isClarification = True)
+        # Validazione della generazione del modello, nel caso si riesegue get_clarification_prompt
+        current_text, response = validate_prompt(response, str_trigger_action_current, current_text, isClarification = True)
     else: 
+        # se la risposta non contiene l'errore, allora si deve effettare la validazione
+        # validazione della generazione corretta
         current_text, response = validate_prompt(response, str_trigger_action_current, current_text)
 
-
+    # salvataggio del belief state dopo la validazione della risposta
     current_text += str(bf_current) + "\n\n"
     
     if actionStart:
+        # si generano prima le componenti action
         # action
         fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(action, entry, fields, current_text, bf_current, 
                                                                                                 str_trigger_action_current, response, isAction=True, correct = correct)
@@ -221,6 +246,7 @@ def generate_conversation(entry, correct = False):
                                                                                                 str_trigger_action_past, response, isAction=False, correct = correct)
     
     else: 
+        # si generano prima le componenti trigger
         # trigger
         fields, current_text, bf_current, str_trigger_action_past = generate_question_and_answer(trigger, entry, fields, current_text, bf_current, 
                                                                                                 str_trigger_action_current, response, isAction=False, correct = correct)
