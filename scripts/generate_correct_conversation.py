@@ -34,8 +34,7 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
     # Estrazione della user utterance
     user_utterance = get_system_user_utterances(response = response)
 
-    current_text += "User utterance 0:" + user_utterance + "\n"
-
+    # current_text += "User utterance 0:" + user_utterance + "\n"
 
     i = 0 
     validation_result = False
@@ -47,21 +46,24 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
 
         validation_response = validation_response.strip()
 
-
         current_text += "BF - state:" + str_trigger_action_current + "\n"
-        current_text += "Risposta alla validazione: " + validation_response + "\n"
-        
+        Current_text += "Risposta alla validazione: " + validation_response + "\n"
 
-        if validation_response == "1" or validation_response == "Result: 1":
-            # print("Validazione ok")
-            current_text += "Validazione ok\n"
+        # effettuo lo split della risposta valutando il risultato dopo il potenziale l'esempio (fornito nel prompt)
+        parts = validation_response.split("### EXAMPLE 1 TRIGGER-ACTION RULES\n## INPUT\n## UTTERANCE\n\nUser: I want you to monitor all new Facebook posts that have a photo and a specific hashtag.\n## FIELDS OF THE TRIGGER-ACTION RULE FOR UTTERANCE\ntrigger_channel: 'Facebook'\ntrigger_title: 'New photo post by you with hashtag'\n\n## OUTPUT\nResult: 1")
+
+        # Se la validazione è corretta allora "1" sarà contenuto nell'ultimo elemento di parts
+        if "1" in parts[len(parts)-1]:
+            print(f"Validazione {i} ok")
+            current_text += f"Validazione {i} ok"
             validation_result = True
             break
         else:
+            print(f"Validazione {i} no")
+            current_text += f"Validazione {i} no"
             i += 1
-            # Output new questions e response
-            # stringa del prompot
-
+            
+            # se la validazione non è corretta devo rieseguire la generazione (del clarification prompt o del prompt corretto)
             if isFirst:
                 if isClarification:
                     prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
@@ -74,14 +76,14 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
                     prompt = get_prompt(isFirst=False, trigger_action_current=str_trigger_action_current,
                                     trigger_action_past=str_trigger_action_past, old_response=old_response)
 
-            # Chiamata al modello
+            # Chiamata al modello per la i-esima volta
             response = str(model.respond(prompt, config={"temperature": 0.8}))
             user_utterance = get_system_user_utterances(response=response)
 
-            current_text += f"User utterance {i}:" + user_utterance + "\n"
-
+            # current_text += f"User utterance {i}:" + user_utterance + "\n"
 
     if not validation_result:
+        # se dopo tre tentativi il risultato della validazione non è corretto, allora si genera la risposta con il prompt di correzione
         # print("Correzione della risposta in corso...")
         current_text += "Correzione della risposta in corso...\n"
         system_utterance = get_system_user_utterances(user = False, response = response)
@@ -96,6 +98,11 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
         old_response = response
 
     return current_text, old_response
+
+
+"""
+    DA TOGLIERE
+"""
 
 
 def generate_question_and_answer(fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False):
@@ -135,7 +142,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             
             # Validazione della risposta
             current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
-                                                         isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
+                                                        isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
 
             # current_text += response + "\n"
             current_text += "\n" + str(bf_current) + "\n\n"
