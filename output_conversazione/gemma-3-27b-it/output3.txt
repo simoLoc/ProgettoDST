@@ -1,0 +1,52 @@
+Conversazione corretta
+- User: I want to receive a notification through the IFTTT app when the trigger is activated.
+
+Belief State: {'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app'}
+
+- System: So you want to receive a notification with specific content when the trigger is activated? What message would you like to include in that notification?
+- User: I would like the notification message to be “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”.
+Belief State: {'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}
+
+- System: Now that we've defined the message for the notification, from which service do you want to trigger this?
+- User: I want to trigger this notification from Weather Underground.
+
+
+Belief State: {'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'", 'trigger_channel': 'Weather Underground'}
+
+- System: Great! Now tell me, for which time and location do you want today's weather report from Weather Underground?
+- User: I would like to receive it at 08:00 for London, UK.
+
+Belief State: {'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'", 'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+Conversazione NON corretta
+- User: Can you give me an update on the weather?
+ERROR: 'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+
+
+
+
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+- System: Ok, I understand you want a weather update. But can you clarify what specifically triggers this update? For instance, at what time are you interested in receiving the report?
+- User: I'd like to receive it every day at 8:00 AM for London, UK.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+- System: Great! Now that we have the time and location for your weather report, how would you like me to deliver it? Should I send a notification or perhaps something else?
+- User: Just let me know when there's heavy rain. 
+ERROR: action_title: 'Send a notification from the IFTTT app'
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+- System: Ok, you want a notification via IFTTT when there is heavy rain in London. But what service should trigger this notification? Which platform are we monitoring for the heavy rain event?
+- User: Let's trigger the notification with a "Send a notification from the IFTTT app" action.
+
+
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+
+- System: Great! Now that we've set up the notification action via IFTTT, do you want me to configure any specific details for this notification? 
+- User: Yes, I would like to use Notifications as the channel for sending the alert.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_channel': 'Notifications'}
+
+- System: Okay, so you want to send a notification via IFTTT. What message would you like to include in that notification?
+- User: The message should be “☀️ Good morning! Today in London, it's going to be sunny with a high of 25°C. Enjoy your day!”.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_channel': 'Notifications', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}
+

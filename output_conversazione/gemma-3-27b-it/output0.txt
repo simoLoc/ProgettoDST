@@ -1,0 +1,57 @@
+Conversazione corretta
+- User: I want to be notified about any new open recalls from the Department of Agriculture, specifically regarding "Frozen Strawberries - Potential Listeria Contamination".
+
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
+
+- System: So, when a new open recall regarding "Frozen Strawberries - Potential Listeria Contamination" is issued by the Department of Agriculture, would you like me to send you an email with the subject and body details?
+- User: Yes, please send me an email with Subject “Recall Alert: Frozen Strawberries” and Body `<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>`.
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_fields': 'Subject (Text input > Title), Body (Text input > HTML)', 'action_title': 'Send me an email', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'action_channel': 'Email'}
+
+Conversazione NON corretta
+- System: 
+## INPUT
+## SYSTEM'S QUESTION
+- System: Which department would you like me to contact?
+
+## FIELDS TO BE COMPLETED IN THE RESPONSE
+trigger_fields: 'Department of Agriculture' 
+trigger_fields_values: ''
+
+## OUTPUT
+- User: I would like you to contact the Department of Agriculture.
+
+
+Belief State: {'trigger_channel': 'Department of Agriculture'}
+
+## INPUT
+## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+'trigger_channel': 'Department of Agriculture' 
+'trigger_title': 'New open recall' 
+'trigger_fields': 'Query (Text input > Other)' 
+'trigger_fields_values': ''Frozen Strawberries - Potential Listeria Contamination'' 
+
+
+## PREVIOUS UTTERANCES
+- System: Which department would you like me to contact?
+- User: I would like you to contact the Department of Agriculture.
+
+## OUTPUT
+- System: Regarding this recall, do you want me to perform any specific action or just monitor for updates?
+- User: Just let me know if there are any new recalls. 
+ERROR: trigger_fields: 'Query (Text input > Other)'
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
+
+## OUTPUT
+- System: Okay, and what specifically about these recalls are you interested in being notified about? For instance, do you want updates on specific brands or types of food?
+- User: I want to be notified about all new open recalls related to frozen fruits.
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
+
+- System: So, once a new open recall matching your query is found, how would you like me to notify you and what information should be included in that notification? 
+- User: I’d like an email sent when there's a new recall. It should mention the product being recalled.
+ERROR: action_fields: 'Subject (Text input > Title), Body (Text input > HTML)'
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_title': 'Send me an email', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'action_channel': 'Email'}
+
+- System: Ok, you want an email notification about new recalls. Could you please confirm the subject and body content for this email?
+- User: The subject should be 'Recall Alert: Frozen Strawberries' and the body should say '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'.
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'", 'action_title': 'Send me an email', 'action_fields_values': "'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>'", 'action_channel': 'Email'}
+

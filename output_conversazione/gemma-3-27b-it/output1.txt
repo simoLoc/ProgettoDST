@@ -1,0 +1,69 @@
+Conversazione corretta
+- User: I want you to notify me when my Cookit cooking program starts.
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+
+- System: So, when your Cookit cooking program starts, do you want me to identify a specific kitchen?
+- User: Yes, please use the 'kitchen' ID for this notification. 
+
+
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+
+- System: Now that we've identified the kitchen with ID 'kitchen', what action would you like me to take?
+- User: I want you to play some music.
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music'}
+
+- System: Great! Which Android device would you like me to play music on?
+- User: I would like you to play music on my Android device.
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_channel': 'Android Device'}
+
+- System: Okay, and what song would you like me to play on your Android device?
+- User: I would like you to play Bohemian Rhapsody.
+
+
+
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_channel': 'Android Device', 'action_fields': '', 'action_fields_values': ''}
+
+Conversazione NON corretta
+- User: I’d like to set something up with my smart oven.
+ERROR: 'trigger_channel': 'Home Connect Cookit'
+Belief State: {'trigger_channel': 'Home Connect Cookit'}
+
+- System: Ok, and what kind of event should trigger this notification regarding the 'Steam' program?
+- User: I would like this notification regarding 'Steam' to be triggered on Home Connect Cookit.
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit'}
+
+- System: Great! Now that we've set up the trigger on Home Connect Cookit, do you want me to notify you when the 'Steam' program starts cooking?
+- User: Yes, please notify me when the Cookit has started cooking with the Steam program. 
+
+
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+
+- System: Ok, and which kitchen ID do you want me to use for this Cookit trigger?
+- User: I would like to associate this trigger with the kitchen ID 'kitchen'. 
+
+
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+
+- System: Great! Now that we've set up the trigger with kitchen ID 'kitchen', what action do you want to perform when a new item is added to this kitchen?
+- User: I want to play music.
+
+
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music'}
+
+- System: Okay, so you want to play music on an Android device when a new item is added to the kitchen. Is that correct? 
+- User: Yes, please play music on my Android device when a new item is added to the kitchen. I don’t have any specific settings for this action right now.
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'", 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'action_channel': 'Android Device'}
+
