@@ -1,4 +1,3 @@
-
 from copy import copy
 import  random
 import json
@@ -6,159 +5,28 @@ from tqdm import tqdm
 import lmstudio as lms
 from utils_correct_conversation import *
 from utils_incorrect_conversation import *
-from generate_correct_conversation import validate_prompt
+from utils_generate_question_answer import validate_prompt, generate_question_and_answer, update_bf_error
 import os
 import ast
 import json
 import re
-
+from collections import OrderedDict
 
 
 def count_fields(field_str):
+    """
+        Metodo che conta il numero di elementi presenti nei fields
+    """
     if isinstance(field_str, str) and field_str.strip():
         return len([item.strip() for item in field_str.strip('"').split(',') if item.strip()])
     return 0
 
 
-def update_bf_error(text: str, bf_current: dict) -> dict:
-    """
-    - text: la stringa contenente 'ERROR:' seguito da coppie chiave: 'valore'(,'valore2')...
-    - bf_current: dizionario di partenza; ne vengono rimosse le chiavi trovate nel testo
-    Restituisce bf_current modificato.
-    """
-    # 1) Estrai la parte dopo 'ERROR:'
-    parts = text.split('ERROR:', 1)
-    if len(parts) < 2:
-        return bf_current
-    error_part = parts[1]
-
-    # 2) Trova tutte le coppie chiave: 'valore'(,'valore2')...
-    pattern = r"(\w+):\s*('(?:[^']|\\')*'(?:\s*,\s*'(?:[^']|\\')*')*)"
-    matches = re.findall(pattern, error_part)
-
-    # 3) Per ogni coppia, ricostruisci il valore (singolo o multiplo)
-    parsed = {}
-    for key, val_block in matches:
-        # Estrai tutte le stringhe tra apici
-        values = re.findall(r"'((?:[^']|\\')*)'", val_block)
-        if len(values) > 1:
-            # Unisci in un’unica stringa con virgole e apici
-            joined = ", ".join(f"'{v}'" for v in values)
-            parsed[key] = joined
-        else:
-            parsed[key] = values[0]
-
-    # 4) Rimuovi da bf_current tutte le chiavi che compaiono in parsed
-    for k in parsed:
-        bf_current.pop(k, None)
-
-    return bf_current
-
-
-def generate_question_and_answer(fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False, correct = True):
-    """
-        Metodo per generare question e answer tramite la selezione casuale dagli elementi nella lista 'fields_trigger_action'.
-        fields_trigger_action -> campi della regola trigger-action
-    """
-    if isAction:
-        str_descrizione = 'action'
-    else:
-        str_descrizione = 'trigger'
-
-    empty_fields_list = ['trigger_fields', 'trigger_fields_values', 'action_fields', 'action_fields_values']
-
-    # Generazione solo delle componenti trigger o action
-    # devono essere 4 stringhe con 'trigger'/'action' -> cioè i 4 campi della trigger/action
-    while not (sum(s.startswith(str_descrizione) for s in fields) == 4):
-        new_fields = []
-        # generazione casuale dell'elemento
-        index = random.randint(0, len(fields_trigger_action) - 1)
-        new_fields = fields_trigger_action[index]
-        
-        # controllo che i nuovi elementi non siano già presenti nella lista
-        if not set(new_fields).issubset(fields):
-            # estrazione degli elementi non ancora generati
-            new_elements = set(new_fields) - set(fields)
-            new_elements = list(new_elements)
-            
-            # update di fields per tenere traccia dei campi generati
-            fields += new_elements  
-
-            # bf_new è il dizionario di new_elements
-            # str_trigger_action_current è la stringa per l'input del prompt
-            bf_new, str_trigger_action_current = get_prompt_input(new_elements, entry)
-            
-            # merge tra i dizionari
-            bf_current = bf_current | bf_new   
-
-            if correct:
-                # se la generazione deve essere corretta allora isError è fissato a  0
-                isError = 0
-            else:
-                # genero il numero casuale per vedere se l'utterance deve avere o no l'errore
-                isError = random.choice([0, 1])
-            
-            # La generazione con errori non viene effettuata per i campi fields e fields_values se questi sono vuoti
-            if (set(new_elements).issubset(empty_fields_list)) and all(bf_new[element] == '' for element in new_elements):
-                isError = 0
-
-            if isError:
-                # stringa del prompt incorretto
-                prompt = get_incorrect_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, 
-                    trigger_action_past = str_trigger_action_past, old_response = old_response)
-            else:       
-                # stringa del prompt corretto 
-                prompt = get_prompt(isFirst = False, trigger_action_current = str_trigger_action_current, 
-                    trigger_action_past = str_trigger_action_past, old_response = old_response)
-            
-            # Chiamata al modello
-            response = str(model.respond(prompt, config={"temperature": 0.6}))
-            
-            # current_text += response
-            # current_text += "\nBelief State: " + str(bf_current) + "\n\n"
-
-            # se ho l'errore allora devo correggere l'errore e poi 
-            if isError:
-                # aggiornamento del belief state rimuovendo gli errori generati
-                bf_current = update_bf_error(response, bf_current)
-                
-                # salvataggio della risposta con errore
-                current_text += response
-                current_text += "\nBelief State: " + str(bf_current) + "\n\n"
-
-                # current_text += "Clarification question\n"
-                # stringa del prompt corretto 
-                prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
-            
-                # Chiamata al modello
-                response = str(model.respond(prompt, config={"temperature": 0.6}))
-
-                # current_text += response
-                # current_text += "\nBelief State: " + str(bf_current) + "\n\n"
-
-                # Validazione della risposta - se l'utterance è corretta
-                current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
-                                                isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past,
-                                                isClarification = True)
-            else: 
-                # Validazione della risposta - se l'utterance è corretta
-                current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
-                                                isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
-
-            # current_text += response + "\n"
-            current_text += "\nBelief State: " + str(bf_current) + "\n\n"
-            # old_response = response
-
-            str_trigger_action_past = str_trigger_action_current
-
-
-    return fields, current_text, bf_current, str_trigger_action_past, old_response
-
 
 def generate_conversation(entry, correct = False):
     """
-        Entry del dataset contenente la regola trigger action
-        entry è la regola trigger-action presente nel dataset
+        - entry: la regola trigger-action presente nel dataset
+        - correct: un bool che consente di valutare se la generazione ha o meno l'errore
     """
     # liste per la selezione dei campi da valutare
     trigger = [['trigger_channel'], 
@@ -293,6 +161,24 @@ def generate_conversation(entry, correct = False):
     return current_text
 
 
+def extract_utterances(conversation: str) -> str:
+    """
+        Cattura righe con - System:, - User:, oppure Belief State: {...}
+    """
+    pattern = re.compile(
+        r'^- (System|User): .+?$|^Belief State: \{.*?\}',
+        flags=re.MULTILINE
+    )
+
+    seen = OrderedDict()
+    for match in pattern.finditer(conversation):
+        line = match.group().strip()
+        if line not in seen:
+            seen[line] = None
+
+    return '\n\n'.join(seen.keys())
+
+
 
 def parse_conversation_to_json(text: str) -> str:
     """
@@ -326,12 +212,21 @@ def parse_conversation_to_json(text: str) -> str:
     return json.dumps(result)
 
 
+def save_to_json_lines(data, filename):
+    with open(filename, 'a', encoding='utf-8') as f:
+        for entry in data:
+            json_line = json.dumps(entry, ensure_ascii=False)
+            f.write(json_line + '\n')
+
+
 
 if __name__ == "__main__":
 
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
+    file_path_correct = "dataset/incremental_conversation_correct_prova.json"
+    file_path_incorrect = "dataset/incremental_conversation_incorrect_prova.json"
 
     with open("dataset/values_prova_completo.json", "r", encoding="utf-8") as f:
         dataset = json.load(f)
@@ -341,20 +236,27 @@ if __name__ == "__main__":
         correct_conversation = generate_conversation(entry, correct = True)
         incorrect_conversation = generate_conversation(entry, correct = False)
 
-        # Togliere tutti i vari commenti da current_text
-        # Salvataggio del risultato
+        # estrazione solo utterance 
+        correct_conversation = extract_utterances(correct_conversation)
+        incorrect_conversation = extract_utterances(incorrect_conversation)
 
-        conversation = "Conversazione corretta\n" + correct_conversation + "Conversazione NON corretta\n" + incorrect_conversation
 
         """
-            SALVATAGGIO SU FILE DEL RISULTATO
+            SALVATAGGIO DEL JSONL
         """
+
+        json_correct = parse_conversation_to_json(correct_conversation)
+        json_incorrect = parse_conversation_to_json(incorrect_conversation)
+
+        save_to_json_lines(json_correct, file_path_correct)
+        save_to_json_lines(json_incorrect, file_path_incorrect)
+
         # Percorso del file
-        file_path = f"output_2conversazioni/{name_model}/output{i}.txt"
+        # file_path = f"output_2conversazioni/{name_model}/output{i}.txt"
 
         # Crea la directory se non esiste
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        # os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
         # Scrivi il file
-        with open(file_path, "w", encoding="utf-8") as file:
-            file.write(str(conversation))
+        # with open(file_path, "w", encoding="utf-8") as file:
+        #     file.write(str(conversation))
