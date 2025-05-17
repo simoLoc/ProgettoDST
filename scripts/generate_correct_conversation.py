@@ -47,7 +47,7 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
         validation_response = validation_response.strip()
 
         current_text += "BF - state:" + str_trigger_action_current + "\n"
-        Current_text += "Risposta alla validazione: " + validation_response + "\n"
+        current_text += "Risposta alla validazione: " + validation_response + "\n"
 
         # effettuo lo split della risposta valutando il risultato dopo il potenziale l'esempio (fornito nel prompt)
         parts = validation_response.split("### EXAMPLE 1 TRIGGER-ACTION RULES\n## INPUT\n## UTTERANCE\n\nUser: I want you to monitor all new Facebook posts that have a photo and a specific hashtag.\n## FIELDS OF THE TRIGGER-ACTION RULE FOR UTTERANCE\ntrigger_channel: 'Facebook'\ntrigger_title: 'New photo post by you with hashtag'\n\n## OUTPUT\nResult: 1")
