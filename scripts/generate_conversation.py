@@ -267,19 +267,13 @@ if __name__ == "__main__":
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
-    # file_path_correct = "dataset/incremental_conversation_correct.jsonl"
-    # file_path_incorrect = "dataset/incremental_conversation_incorrect.jsonl"
+    file_path_correct = "dataset/conversation_correct_val.jsonl"
+    file_path_incorrect = "dataset/conversation_incorrect_val.jsonl"
     
 
-    # with open("dataset/dataset_train.json", "r", encoding="utf-8") as f:
-    #     dataset = json.load(f)
-
-    file_path_correct = "dataset/prova_correct.jsonl"
-    file_path_incorrect = "dataset/prova_incorrect.jsonl"
-    
-
-    with open("dataset/prova.json", "r", encoding="utf-8") as f:
+    with open("dataset/dataset_val.json", "r", encoding="utf-8") as f:
         dataset = json.load(f)
+
 
     for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
         
@@ -290,9 +284,6 @@ if __name__ == "__main__":
         correct_conversation = extract_utterances(correct_conversation)
         incorrect_conversation = extract_utterances(incorrect_conversation)
 
-        print(correct_conversation)
-        print("-------")
-        print(incorrect_conversation)
         """
             SALVATAGGIO DEL JSONL
         """
