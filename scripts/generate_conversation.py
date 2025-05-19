@@ -205,12 +205,18 @@ def extract_utterances(conversation: str) -> str:
     """
     pattern = re.compile(
         r'''
-        ^[ \t]*- User:.*?                # Inizio con '- User:' (obbligatorio)
-        (?:\r?\n[ \t]*- System:.*?)*?    # Opzionale '- System:' subito dopo
-        \r?\n[ \t]*Belief\ State:.*?     # Riga 'Belief State:' obbligatoria
-        (?:\r?\n.*?)*?                   # Righe intermedie qualsiasi
-        \r?\n[ \t]*End\ BF[ \t]*$        # Riga finale 'End BF'
-        ''', re.MULTILINE | re.DOTALL | re.VERBOSE | re.IGNORECASE)
+    (?:                                # Inizio gruppo alternativo
+        ^\s*-\ User:[\s\S]+?           # 1) blocco che parte con User:
+        |                              # oppure
+        ^\s*-\ System:[\s\S]+?         # 2) blocco che parte con System:
+        ^\s*-\ User:[\s\S]+?           # e subito dopo User:
+    )
+
+    (?:\r?\n)*                         # 0 o più newline prima del Belief State
+    ^\s*Belief\ state:.*\r?\n          # Riga 'Belief state:' con eventuali spazi
+    (?:.*?\r?\n)*?                     # contenuto belief state (non greedy)
+    ^\s*End\ BF\s*$                    # Fine con 'End BF' sulla propria riga
+    ''', re.MULTILINE | re.DOTALL | re.VERBOSE | re.IGNORECASE)
 
     blocks = [m.group().strip() for m in pattern.finditer(conversation)]
     return "\n\n".join(blocks)
