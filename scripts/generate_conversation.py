@@ -111,7 +111,7 @@ def generate_conversation(entry, correct = False):
 
         # salvataggio della risposta con errore
         current_text += response
-        current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+        current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
 
         # se la risposta contiene l'errore, allora si deve generare la clarification question
         # stringa del prompt per la clarification question
