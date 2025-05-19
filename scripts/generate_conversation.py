@@ -161,38 +161,63 @@ def generate_conversation(entry, correct = False):
     return current_text
 
 
+# def extract_utterances(conversation: str) -> str:
+#     """
+#         Cattura righe con - System:, - User:, oppure Belief State: {...}
+#     """
+#     pattern = re.compile(
+#         r'''(?mxs)                          # MULTILINE, VERBOSE, DOTALL
+#         ^- User:                            # riga che inizia con "- User:"
+#         [\s\S]+?                            # qualunque carattere (inclusi \n), min-greedy
+#         (?=                                 # fino a una delle due condizioni seguenti:
+#         \r?\n- System:                   #    una nuova riga "- System:"
+#         | \r?\nBelief\ State:              #  o direttamente la riga "Belief State:"
+#         )
+#         (?:                                 # blocco opzionale per il System
+#         \r?\n- System:                    # riga "- System:"
+#         [\s\S]+?                          # qualsiasi contenuto fino a...
+#         (?=\r?\nBelief\ State:)          # ...la riga "Belief State:"
+#         )?
+#         \r?\nBelief\ State:\ \{             # inizio del blocco dati
+#         [\s\S]+?                            # tutto il contenuto interno
+#         \}\r?\n                             
+#         End\ BF\r?\n                        # fine del blocco
+#         ''',
+#         flags=re.MULTILINE | re.DOTALL | re.VERBOSE
+#     )
+
+#     seen = OrderedDict()
+#     for match in pattern.finditer(conversation):
+#         line = match.group().strip()
+#         if line not in seen:
+#             seen[line] = None
+
+#     return '\n\n'.join(seen.keys())
+
+
 def extract_utterances(conversation: str) -> str:
     """
-        Cattura righe con - System:, - User:, oppure Belief State: {...}
+    Estrae blocchi di dialogo che seguono esattamente una di queste strutture:
+      1) '- User:' seguito da 'Belief state:' e 'End BF'
+      2) '- System:' + '- User:' seguito da 'Belief state:' e 'End BF'
+    Ogni blocco termina con la riga 'End BF'.
+    Restituisce i blocchi nell'ordine di apparizione, separati da due newline.
     """
     pattern = re.compile(
-        r'''(?mxs)                          # MULTILINE, VERBOSE, DOTALL
-        ^- User:                            # riga che inizia con "- User:"
-        [\s\S]+?                            # qualunque carattere (inclusi \n), min-greedy
-        (?=                                 # fino a una delle due condizioni seguenti:
-        \r?\n- System:                   #    una nuova riga "- System:"
-        | \r?\nBelief\ State:              #  o direttamente la riga "Belief State:"
+        r'''
+        (?:                                # inizio gruppo alternativo
+        ^\ *-\ User:[\s\S]+?               # 1) blocco che parte con User:
+        |                                  # o
+        ^\ *-\ System:[\s\S]+?             # 2) blocco che parte con System:
+        ^\ *-\ User:[\s\S]+?               # e immediatamente segue User:
         )
-        (?:                                 # blocco opzionale per il System
-        \r?\n- System:                    # riga "- System:"
-        [\s\S]+?                          # qualsiasi contenuto fino a...
-        (?=\r?\nBelief\ State:)          # ...la riga "Belief State:"
-        )?
-        \r?\nBelief\ State:\ \{             # inizio del blocco dati
-        [\s\S]+?                            # tutto il contenuto interno
-        \}\r?\n                             
-        End\ BF\r?\n                        # fine del blocco
-        ''',
-        flags=re.MULTILINE | re.DOTALL | re.VERBOSE
-    )
+        ^Belief\ state:.*?\r?\n            # Belief state sulla propria riga
+        [\s\S]*?                           # tutto il contenuto intermedio
+        ^End\ BF$                          # termine con End BF su riga propria
+    ''', re.MULTILINE | re.DOTALL | re.VERBOSE | re.IGNORECASE)
 
-    seen = OrderedDict()
-    for match in pattern.finditer(conversation):
-        line = match.group().strip()
-        if line not in seen:
-            seen[line] = None
-
-    return '\n\n'.join(seen.keys())
+    blocks = [m.group().strip() for m in pattern.finditer(conversation)]
+    return "\n\n".join(blocks)
 
 
 
@@ -239,11 +264,18 @@ if __name__ == "__main__":
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
-    file_path_correct = "dataset/incremental_conversation_correct.jsonl"
-    file_path_incorrect = "dataset/incremental_conversation_incorrect.jsonl"
+    # file_path_correct = "dataset/incremental_conversation_correct.jsonl"
+    # file_path_incorrect = "dataset/incremental_conversation_incorrect.jsonl"
     
 
-    with open("dataset/dataset_train.json", "r", encoding="utf-8") as f:
+    # with open("dataset/dataset_train.json", "r", encoding="utf-8") as f:
+    #     dataset = json.load(f)
+
+    file_path_correct = "dataset/prova_correct.jsonl"
+    file_path_incorrect = "dataset/prova_incorrect.jsonl"
+    
+
+    with open("dataset/prova.json", "r", encoding="utf-8") as f:
         dataset = json.load(f)
 
     for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
