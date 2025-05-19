@@ -229,15 +229,22 @@ def get_validation_prompt(user_utterance, trigger_action_current):
 
     return prompt_inizio + current_input + prompt_fine
 
-def get_utterance_correction_prompt(system_utterance, trigger_action_current):
+def get_utterance_correction_prompt(system_utterance, trigger_action_current, isFirst=False):
 
-    current_input = f"""
-    ### CURRENT INPUT
-    ## SYSTEM'S QUESTION
-    {system_utterance}
-    ## FIELDS TO BE COMPLETED IN THE RESPONSE
-    {trigger_action_current}
-    """
+    if isFirst:
+        current_input = f"""
+        ### CURRENT INPUT
+        ## FIELDS TO BE COMPLETED IN THE RESPONSE
+        {trigger_action_current}
+        """
+    else:    
+        current_input = f"""
+        ### CURRENT INPUT
+        ## SYSTEM'S QUESTION
+        {system_utterance}
+        ## FIELDS TO BE COMPLETED IN THE RESPONSE
+        {trigger_action_current}
+        """
 
     prompt_inizio = prompt_correction_inizio
     prompt_fine = prompt_correction_fine
