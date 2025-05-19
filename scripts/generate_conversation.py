@@ -224,13 +224,11 @@ if __name__ == "__main__":
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
-    # file_path_correct = "dataset/incremental_conversation_correct.jsonl"
-    # file_path_incorrect = "dataset/incremental_conversation_incorrect.jsonl"
+    file_path_correct = "dataset/incremental_conversation_correct.jsonl"
+    file_path_incorrect = "dataset/incremental_conversation_incorrect.jsonl"
     
-    file_path_correct = "dataset/prova_conversation_correct.jsonl"
-    file_path_incorrect = "dataset/prova_conversation_incorrect.jsonl"    
 
-    with open("dataset/values_prova_completo.json", "r", encoding="utf-8") as f:
+    with open("dataset/dataset_train.json", "r", encoding="utf-8") as f:
         dataset = json.load(f)
 
     for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
@@ -262,3 +260,5 @@ if __name__ == "__main__":
         # Scrivi il file
         # with open(file_path, "w", encoding="utf-8") as file:
         #     file.write(str(conversation))
+
+        
