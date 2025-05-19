@@ -149,10 +149,33 @@ The output must respect the format of the output given in the example.
 """
 
 # ----
-#   PROMPT PER LA CORREZIONE DELLE USER UTTERANCE A SEGUITO DI 3 VALIDAZIONI NEGATIVE
+#   PROMPT PER LA CORREZIONE DELLE USER UTTERANCE A SEGUITO DI 3 VALIDAZIONI NEGATIVE - PRIMA UTTERANCE
 # ----
 
-prompt_correction_inizio = f"""
+prompt_correction_inizio_prima = f"""
+Generates an utterance containing all the fields provided as input.
+
+### EXAMPLE
+## INPUT
+## FIELDS TO BE COMPLETED IN THE RESPONSE
+trigger_fields: 'Hashtag (Text input)''
+trigger_fields_values: ''#frase_poderosa'
+
+## OUTPUT
+- User: I would like you to add the hashtag #frase_poderosa.
+"""
+
+prompt_correction_fine_prima = """
+By analysing the fields to be completed in the response, it generates a user response that is consistent with all the fields.
+The output must respect the format of the output given in the example.
+"""
+
+
+# ----
+#   PROMPT PER LA CORREZIONE DELLE USER UTTERANCE A SEGUITO DI 3 VALIDAZIONI NEGATIVE - SYSTEM E USER UTTERANCE
+# ----
+
+prompt_correction_inizio_incrementale = f"""
 Generates an utterance containing all the fields provided as input. Through them, the user's utterance
 must be an answer consistent with the system's question.
 
@@ -169,7 +192,7 @@ trigger_fields_values: ''#frase_poderosa'
 - User: I would like you to add the hashtag #frase_poderosa.
 """
 
-prompt_correction_fine = """
+prompt_correction_fine_incrementale = """
 By analysing the fields to be completed in the response and the system question, it generates a user
 response that is consistent with the question and contains all the fields.
 The system question can be null, in which case it is sufficient to consider all the fields to be completed in the generated answer.
@@ -245,8 +268,11 @@ def get_utterance_correction_prompt(system_utterance, trigger_action_current, is
         ## FIELDS TO BE COMPLETED IN THE RESPONSE
         {trigger_action_current}
         """
-
-    prompt_inizio = prompt_correction_inizio
-    prompt_fine = prompt_correction_fine
+    if isFirst:
+        prompt_inizio = prompt_correction_inizio_prima
+        prompt_fine = prompt_correction_fine_prima
+    else:
+        prompt_inizio = prompt_correction_inizio_incrementale
+        prompt_fine = prompt_correction_fine_incrementale
 
     return prompt_inizio + current_input + prompt_fine
