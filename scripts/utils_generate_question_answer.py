@@ -218,7 +218,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             response = str(model.respond(prompt, config={"temperature": 0.6}))
             
             # current_text += response
-            # current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+            # current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
 
             # se ho l'errore allora devo correggere l'errore e poi 
             if isError:
@@ -227,7 +227,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
                 
                 # salvataggio della risposta con errore
                 current_text += response
-                current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+                current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
 
                 # current_text += "Clarification question\n"
                 # stringa del prompt corretto 
@@ -237,7 +237,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
                 response = str(model.respond(prompt, config={"temperature": 0.6}))
 
                 # current_text += response
-                # current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+                # current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
 
                 # Validazione della risposta - se l'utterance è corretta
                 current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text,
@@ -249,7 +249,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
                                                 isFirst = False, old_response = old_response, str_trigger_action_past = str_trigger_action_past)
 
             # current_text += response + "\n"
-            current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+            current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
             # old_response = response
 
             str_trigger_action_past = str_trigger_action_current

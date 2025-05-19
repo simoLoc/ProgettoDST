@@ -166,8 +166,24 @@ def extract_utterances(conversation: str) -> str:
         Cattura righe con - System:, - User:, oppure Belief State: {...}
     """
     pattern = re.compile(
-        r'^- (System|User): .+?$|^Belief State: \{.*?\}',
-        flags=re.MULTILINE
+        r'''(?mxs)                          # MULTILINE, VERBOSE, DOTALL
+        ^- User:                            # riga che inizia con "- User:"
+        [\s\S]+?                            # qualunque carattere (inclusi \n), min-greedy
+        (?=                                 # fino a una delle due condizioni seguenti:
+        \r?\n- System:                   #    una nuova riga "- System:"
+        | \r?\nBelief\ State:              #  o direttamente la riga "Belief State:"
+        )
+        (?:                                 # blocco opzionale per il System
+        \r?\n- System:                    # riga "- System:"
+        [\s\S]+?                          # qualsiasi contenuto fino a...
+        (?=\r?\nBelief\ State:)          # ...la riga "Belief State:"
+        )?
+        \r?\nBelief\ State:\ \{             # inizio del blocco dati
+        [\s\S]+?                            # tutto il contenuto interno
+        \}\r?\n                             
+        End\ BF\r?\n                        # fine del blocco
+        ''',
+        flags=re.MULTILINE | re.DOTALL | re.VERBOSE
     )
 
     seen = OrderedDict()
@@ -184,23 +200,22 @@ def parse_conversation_to_json(text: str, id: int) -> list:
     """
     Estrae dai blocchi separati da una riga vuota le parti:
     - righe che iniziano con "- Ruolo: testo"
-    - la riga "Belief State: {…}"
+    - la riga "Belief State: {…} ... End BF"
     e restituisce un JSON indentato.
     """
-    # Splitting in blocchi separati da riga vuota
     blocks = re.split(r'\n\s*\n', text.strip())
     conversation = []
 
     for block in blocks:
         entry = {}
+
         # Estrai tutte le linee "- Ruolo: testo"
         for role, utterance in re.findall(r'^- (\w+): (.+)$', block, re.MULTILINE):
             entry[role] = utterance.strip()
 
-        # Estrai il dizionario della Belief State e convertilo in dict Python
-        match = re.search(r"Belief State:\s*(\{.*\})", block)
+        # Estrai il dizionario della Belief State (multiline fino a End BF)
+        match = re.search(r"Belief State:\s*(\{[\s\S]*?\})\s*End\ BF", block)
         if match:
-            # ast.literal_eval per sicurezza, trasforma la stringa in dict
             belief_state = ast.literal_eval(match.group(1))
             entry['Belief State'] = belief_state
 
