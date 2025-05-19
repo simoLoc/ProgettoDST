@@ -128,7 +128,7 @@ def generate_conversation(entry, correct = False):
         current_text, response = validate_prompt(response, str_trigger_action_current, current_text)
 
     # salvataggio del belief state dopo la validazione della risposta
-    current_text += "\nBelief State: " + str(bf_current) + "\n\n"
+    current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
     
     if actionStart:
         # si generano prima le componenti action
@@ -205,17 +205,14 @@ def extract_utterances(conversation: str) -> str:
     """
     pattern = re.compile(
         r'''
-    (?:                                # Inizio gruppo alternativo
-        ^\s*-\ User:[\s\S]+?           # 1) blocco che parte con User:
-        |                              # oppure
-        ^\s*-\ System:[\s\S]+?         # 2) blocco che parte con System:
-        ^\s*-\ User:[\s\S]+?           # e subito dopo User:
-    )
-
-    (?:\r?\n)*                         # 0 o più newline prima del Belief State
-    ^\s*Belief\ state:.*\r?\n          # Riga 'Belief state:' con eventuali spazi
-    (?:.*?\r?\n)*?                     # contenuto belief state (non greedy)
-    ^\s*End\ BF\s*$                    # Fine con 'End BF' sulla propria riga
+        (?:                                # inizio gruppo alternativo
+        ^\ *-\ User:[\s\S]+?               # 1) blocco che parte con User:
+        |                                  # o
+        ^\ *-\ System:[\s\S]+?             # 2) blocco che parte con System:
+        ^\ *-\ User:[\s\S]+?               # e immediatamente segue User:
+        )
+        (?:\r?\n)*^\s*Belief\ state:.*\r?\n            # Belief state sulla propria riga
+        ^End\ BF$                          # termine con End BF su riga propria
     ''', re.MULTILINE | re.DOTALL | re.VERBOSE | re.IGNORECASE)
 
     blocks = [m.group().strip() for m in pattern.finditer(conversation)]
@@ -230,10 +227,14 @@ def parse_conversation_to_json(text: str, id: int) -> list:
     - la riga "Belief State: {…} ... End BF"
     e restituisce un JSON indentato.
     """
-    blocks = re.split(r'\n\s*\n', text.strip())
+    blocks = re.split(r'\n\s*End BF\s*\n', text.strip())
     conversation = []
 
     for block in blocks:
+        block = block.strip()
+        if not block:
+            continue
+        block += "\nEnd BF"  # aggiungi End BF rimosso dallo split
         entry = {}
 
         # Estrai tutte le linee "- Ruolo: testo"
@@ -241,7 +242,7 @@ def parse_conversation_to_json(text: str, id: int) -> list:
             entry[role] = utterance.strip()
 
         # Estrai il dizionario della Belief State (multiline fino a End BF)
-        match = re.search(r"Belief State:\s*(\{[\s\S]*?\})\s*End\ BF", block)
+        match = re.search(r"Belief State:\s*(\{[\s\S]*?\})\s*End\ BF", block, re.MULTILINE)
         if match:
             belief_state = ast.literal_eval(match.group(1))
             entry['Belief State'] = belief_state
@@ -289,7 +290,9 @@ if __name__ == "__main__":
         correct_conversation = extract_utterances(correct_conversation)
         incorrect_conversation = extract_utterances(incorrect_conversation)
 
-
+        print(correct_conversation)
+        print("-------")
+        print(incorrect_conversation)
         """
             SALVATAGGIO DEL JSONL
         """
