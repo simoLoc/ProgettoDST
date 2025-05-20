@@ -1,0 +1,52 @@
+- User: I want to automatically post a tweet with an image whenever I save a new item on Pocket.
+
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
+End BF
+- System: Great! To finalize this automation, which Twitter account should I use to post the tweet with the image from your saved Pocket items?
+- User: I would like you to use my Twitter account.
+
+
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter'}
+End BF
+- System: Okay, and what text would you like to include in the tweet along with the image from your saved Pocket items? Do you have a specific message or caption in mind?
+- User: I want it to be something catchy! Maybe just "New article!". 
+ERROR: action_fields: 'Tweet (Text input), Photo URL (Text input > Photo)'
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+End BF
+- System: Great! Now, regarding the tweet itself, are you happy with the current text and photo URL, or would you like me to adjust them before posting?
+- User: The text and the link are fine, please proceed.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+End BF
+- System: Now that we've finalized the tweet content for Twitter, is there anything specific you’d like me to monitor or look for to initiate this action? For example, a keyword or event on Pocket?
+- User: I want to trigger this when a new article is saved on Pocket.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_fields_values': '', 'trigger_fields': ''}
+End BF
+
+%%%%% AFTER REGEXP- User: I want to automatically post a tweet with an image whenever I save a new item on Pocket.
+
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
+End BF
+
+- System: Great! To finalize this automation, which Twitter account should I use to post the tweet with the image from your saved Pocket items?
+- User: I would like you to use my Twitter account.
+
+
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter'}
+End BF
+
+- System: Okay, and what text would you like to include in the tweet along with the image from your saved Pocket items? Do you have a specific message or caption in mind?
+- User: I want it to be something catchy! Maybe just "New article!". 
+ERROR: action_fields: 'Tweet (Text input), Photo URL (Text input > Photo)'
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+End BF
+
+- System: Great! Now, regarding the tweet itself, are you happy with the current text and photo URL, or would you like me to adjust them before posting?
+- User: The text and the link are fine, please proceed.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+End BF
+
+- System: Now that we've finalized the tweet content for Twitter, is there anything specific you’d like me to monitor or look for to initiate this action? For example, a keyword or event on Pocket?
+- User: I want to trigger this when a new article is saved on Pocket.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_fields_values': '', 'trigger_fields': ''}
+End BF
+ %%%% JSON{'id': 4, 'dialogue': [{'User': 'I want to automatically post a tweet with an image whenever I save a new item on Pocket.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}}, {'System': 'Great! To finalize this automation, which Twitter account should I use to post the tweet with the image from your saved Pocket items?', 'User': 'I would like you to use my Twitter account.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter'}}, {'System': 'Okay, and what text would you like to include in the tweet along with the image from your saved Pocket items? Do you have a specific message or caption in mind?', 'User': 'I want it to be something catchy! Maybe just "New article!".', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}}, {'System': 'Great! Now, regarding the tweet itself, are you happy with the current text and photo URL, or would you like me to adjust them before posting?', 'User': 'The text and the link are fine, please proceed.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}}, {'System': "Now that we've finalized the tweet content for Twitter, is there anything specific you’d like me to monitor or look for to initiate this action? For example, a keyword or event on Pocket?", 'User': 'I want to trigger this when a new article is saved on Pocket.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'action_channel': 'Twitter', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'", 'trigger_fields_values': '', 'trigger_fields': ''}}]}

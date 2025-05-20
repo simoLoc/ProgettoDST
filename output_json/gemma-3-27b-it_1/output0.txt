@@ -1,0 +1,91 @@
+- User: I would like you to send this through Email.
+
+
+Belief State: {'action_channel': 'Email'}
+End BF
+## OUTPUT
+- System: Considering you want to send something via Email, could you tell me who should receive it and what the subject line should be?
+- User: I want to notify my team about the update.
+ERROR: action_title: 'Send me an email'
+Belief State: {'action_channel': 'Email'}
+End BF
+## OUTPUT
+- System: Ok, and to whom should I send this email regarding the update? Also, what subject line would you like to use?
+- User: Send it to my team at updates@example.com with the subject "Important Update".
+
+Belief State: {'action_channel': 'Email'}
+End BF
+## OUTPUT
+- System: Great! Now that you’ve specified the recipient and subject, could you please provide the complete email body including any relevant details or attachments? 
+- User: I want to send a notification about the recall.
+
+ERROR: action_fields_values: 'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>' , action_fields: 'Subject (Text input > Title), Body (Text input > HTML)'
+Belief State: {'action_channel': 'Email'}
+End BF
+## OUTPUT
+- System: Ok, I understand you want to send a recall notification. However, it seems like some details are missing regarding the email content itself. Could you clarify what information should be included in the subject and body of the email?
+- User: The subject should be 'Recall Alert: Frozen Strawberries' and the body is '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>' .
+Belief State: {'action_channel': 'Email'}
+End BF
+## OUTPUT
+- System: Given that a new open recall has been detected, and considering you’ve provided the subject and body for the notification email, is there anything else regarding recipients or sending parameters I should be aware of?
+- User: Yes, please send it to all subscribers. 
+ERROR: trigger_title: 'New open recall'
+Belief State: {'action_channel': 'Email'}
+End BF
+## OUTPUT
+- System: Ok, and which channel should monitor for new open recalls? Also, do you need to specify any specific criteria related to the recall itself?
+- User: Please monitor the NHTSA website for new open recalls. I want to be notified about all of them. 
+Belief State: {'action_channel': 'Email'}
+End BF
+- System: Given the new open recall trigger, and focusing on the Department of Agriculture, what specific query would you like me to use? 
+- User: I want to monitor for "Frozen Strawberries - Potential Listeria Contamination".
+Belief State: {'action_channel': 'Email', 'trigger_channel': 'Department of Agriculture', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
+End BF
+
+%%%%% AFTER REGEXP- User: I would like you to send this through Email.
+
+
+Belief State: {'action_channel': 'Email'}
+End BF
+
+- System: Considering you want to send something via Email, could you tell me who should receive it and what the subject line should be?
+- User: I want to notify my team about the update.
+ERROR: action_title: 'Send me an email'
+Belief State: {'action_channel': 'Email'}
+End BF
+
+- System: Ok, and to whom should I send this email regarding the update? Also, what subject line would you like to use?
+- User: Send it to my team at updates@example.com with the subject "Important Update".
+
+Belief State: {'action_channel': 'Email'}
+End BF
+
+- System: Great! Now that you’ve specified the recipient and subject, could you please provide the complete email body including any relevant details or attachments? 
+- User: I want to send a notification about the recall.
+
+ERROR: action_fields_values: 'Recall Alert: Frozen Strawberries', '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>' , action_fields: 'Subject (Text input > Title), Body (Text input > HTML)'
+Belief State: {'action_channel': 'Email'}
+End BF
+
+- System: Ok, I understand you want to send a recall notification. However, it seems like some details are missing regarding the email content itself. Could you clarify what information should be included in the subject and body of the email?
+- User: The subject should be 'Recall Alert: Frozen Strawberries' and the body is '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>' .
+Belief State: {'action_channel': 'Email'}
+End BF
+
+- System: Given that a new open recall has been detected, and considering you’ve provided the subject and body for the notification email, is there anything else regarding recipients or sending parameters I should be aware of?
+- User: Yes, please send it to all subscribers. 
+ERROR: trigger_title: 'New open recall'
+Belief State: {'action_channel': 'Email'}
+End BF
+
+- System: Ok, and which channel should monitor for new open recalls? Also, do you need to specify any specific criteria related to the recall itself?
+- User: Please monitor the NHTSA website for new open recalls. I want to be notified about all of them. 
+Belief State: {'action_channel': 'Email'}
+End BF
+
+- System: Given the new open recall trigger, and focusing on the Department of Agriculture, what specific query would you like me to use? 
+- User: I want to monitor for "Frozen Strawberries - Potential Listeria Contamination".
+Belief State: {'action_channel': 'Email', 'trigger_channel': 'Department of Agriculture', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}
+End BF
+ %%%% JSON{'id': 0, 'dialogue': [{'User': 'I would like you to send this through Email.', 'Belief State': {'action_channel': 'Email'}}, {'System': 'Considering you want to send something via Email, could you tell me who should receive it and what the subject line should be?', 'User': 'I want to notify my team about the update.', 'Belief State': {'action_channel': 'Email'}}, {'System': 'Ok, and to whom should I send this email regarding the update? Also, what subject line would you like to use?', 'User': 'Send it to my team at updates@example.com with the subject "Important Update".', 'Belief State': {'action_channel': 'Email'}}, {'System': 'Great! Now that you’ve specified the recipient and subject, could you please provide the complete email body including any relevant details or attachments?', 'User': 'I want to send a notification about the recall.', 'Belief State': {'action_channel': 'Email'}}, {'System': 'Ok, I understand you want to send a recall notification. However, it seems like some details are missing regarding the email content itself. Could you clarify what information should be included in the subject and body of the email?', 'User': "The subject should be 'Recall Alert: Frozen Strawberries' and the body is '<p>Dear Recipient,</p><p>The Department of Agriculture has issued a recall for frozen strawberries due to potential Listeria contamination. Please see the attached link for more details and safety instructions.</p><p>Sincerely,<br/>Department of Agriculture Recall Notification System</p>' .", 'Belief State': {'action_channel': 'Email'}}, {'System': 'Given that a new open recall has been detected, and considering you’ve provided the subject and body for the notification email, is there anything else regarding recipients or sending parameters I should be aware of?', 'User': 'Yes, please send it to all subscribers.', 'Belief State': {'action_channel': 'Email'}}, {'System': 'Ok, and which channel should monitor for new open recalls? Also, do you need to specify any specific criteria related to the recall itself?', 'User': 'Please monitor the NHTSA website for new open recalls. I want to be notified about all of them.', 'Belief State': {'action_channel': 'Email'}}, {'System': 'Given the new open recall trigger, and focusing on the Department of Agriculture, what specific query would you like me to use?', 'User': 'I want to monitor for "Frozen Strawberries - Potential Listeria Contamination".', 'Belief State': {'action_channel': 'Email', 'trigger_channel': 'Department of Agriculture', 'trigger_fields': 'Query (Text input > Other)', 'trigger_fields_values': "'Frozen Strawberries - Potential Listeria Contamination'"}}]}

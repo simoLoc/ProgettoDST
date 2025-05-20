@@ -1,0 +1,74 @@
+- User: Can you give me an update on the weather?
+ERROR: 'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+End BF
+- System: Ok, I understand you want a weather update. But what specifically about today’s report are you interested in?
+- User: I would like an update at 08:00 for London, UK.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+End BF
+- System: Great! Now that we have the weather report details, how would you like me to deliver this information? Do you prefer a push notification or something else?
+- User: I’d like to receive it as soon as possible. 
+ERROR: action_channel: 'Notifications'
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+End BF
+- System: Ok, and what kind of notification do you want to send? For instance, a simple message or something more detailed?
+- User: I want to send a notification.
+
+
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+End BF
+- System: Great! Now, what message would you like to include in the notification sent from the IFTTT app?
+- User: I want to send a notification with the message "New post available!". 
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}
+End BF
+- System: Okay, and would you like to customize the notification sound or priority within the IFTTT app?
+- User: Just send it as a standard notification. 
+ERROR: action_fields: 'Message (Text input)' , action_fields_values: ''☀️ Good morning! Today in London, it\'s going to be sunny with a high of 25°C. Enjoy your day!''
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}
+End BF
+- System: Okay, and where should I send this message? Do you want me to send it to a specific channel?
+- User: Please send the message via SMS.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}
+End BF
+
+%%%%% AFTER REGEXP- User: Can you give me an update on the weather?
+ERROR: 'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+End BF
+
+- System: Ok, I understand you want a weather update. But what specifically about today’s report are you interested in?
+- User: I would like an update at 08:00 for London, UK.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+End BF
+
+- System: Great! Now that we have the weather report details, how would you like me to deliver this information? Do you prefer a push notification or something else?
+- User: I’d like to receive it as soon as possible. 
+ERROR: action_channel: 'Notifications'
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+End BF
+
+- System: Ok, and what kind of notification do you want to send? For instance, a simple message or something more detailed?
+- User: I want to send a notification.
+
+
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}
+End BF
+
+- System: Great! Now, what message would you like to include in the notification sent from the IFTTT app?
+- User: I want to send a notification with the message "New post available!". 
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}
+End BF
+
+- System: Okay, and would you like to customize the notification sound or priority within the IFTTT app?
+- User: Just send it as a standard notification. 
+ERROR: action_fields: 'Message (Text input)' , action_fields_values: ''☀️ Good morning! Today in London, it\'s going to be sunny with a high of 25°C. Enjoy your day!''
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}
+End BF
+
+- System: Okay, and where should I send this message? Do you want me to send it to a specific channel?
+- User: Please send the message via SMS.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}
+End BF
+ %%%% JSON{'id': 3, 'dialogue': [{'User': 'Can you give me an update on the weather?', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}}, {'System': 'Ok, I understand you want a weather update. But what specifically about today’s report are you interested in?', 'User': 'I would like an update at 08:00 for London, UK.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}}, {'System': 'Great! Now that we have the weather report details, how would you like me to deliver this information? Do you prefer a push notification or something else?', 'User': 'I’d like to receive it as soon as possible.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}}, {'System': 'Ok, and what kind of notification do you want to send? For instance, a simple message or something more detailed?', 'User': 'I want to send a notification.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'"}}, {'System': 'Great! Now, what message would you like to include in the notification sent from the IFTTT app?', 'User': 'I want to send a notification with the message "New post available!".', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}}, {'System': 'Okay, and would you like to customize the notification sound or priority within the IFTTT app?', 'User': 'Just send it as a standard notification.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}}, {'System': 'Okay, and where should I send this message? Do you want me to send it to a specific channel?', 'User': 'Please send the message via SMS.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', 'London, UK'", 'action_title': 'Send a notification from the IFTTT app'}}]}

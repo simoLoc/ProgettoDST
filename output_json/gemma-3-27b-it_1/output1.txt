@@ -1,0 +1,67 @@
+- User: I want to play music on my Android device whenever Cookit starts.
+
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music'}
+End BF
+- System: Great! Now that Cookit starting will trigger music playback on your Android device, is there anything else I can help you with regarding this automation? 
+- User: No, that's all for now. Let's leave the action fields empty as they are not necessary for simply playing music.
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+End BF
+- System: Considering we are leaving the action fields empty for this Cookit automation, do you want me to proceed without defining any specific parameters for the music playback?
+- User: Yes, just play the music when Cookit starts. I don't need to configure anything else right now. 
+ERROR: action_fields: '' , action_fields_values: ''
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
+End BF
+- System: Ok, so a cooking program starting on Home Connect Cookit will trigger a notification. What kind of cooking program are you interested in?
+- User: I'm interested in a cooking program on Home Connect Cookit.
+
+
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
+End BF
+- System: Great! Now that we know you’re interested in cooking programs on Home Connect Cookit, could you tell me which specific kitchen appliance ID are you looking for? 
+- User: I'm just starting to use it and haven't really set up any preferences yet.
+
+ERROR: trigger_fields_values: ''kitchen''
+ERROR: trigger_fields: 'Ha ID (Dropdown list)'
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
+End BF
+- System: Ok, I understand you are still exploring Home Connect Cookit. To help me set up this trigger, could you tell me what kind of ID you'd like to monitor? Is it a recipe ID, an appliance ID or something else?
+- User: It’s an appliance ID.
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
+End BF
+
+%%%%% AFTER REGEXP- User: I want to play music on my Android device whenever Cookit starts.
+
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music'}
+End BF
+
+- System: Great! Now that Cookit starting will trigger music playback on your Android device, is there anything else I can help you with regarding this automation? 
+- User: No, that's all for now. Let's leave the action fields empty as they are not necessary for simply playing music.
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}
+End BF
+
+- System: Considering we are leaving the action fields empty for this Cookit automation, do you want me to proceed without defining any specific parameters for the music playback?
+- User: Yes, just play the music when Cookit starts. I don't need to configure anything else right now. 
+ERROR: action_fields: '' , action_fields_values: ''
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
+End BF
+
+- System: Ok, so a cooking program starting on Home Connect Cookit will trigger a notification. What kind of cooking program are you interested in?
+- User: I'm interested in a cooking program on Home Connect Cookit.
+
+
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
+End BF
+
+- System: Great! Now that we know you’re interested in cooking programs on Home Connect Cookit, could you tell me which specific kitchen appliance ID are you looking for? 
+- User: I'm just starting to use it and haven't really set up any preferences yet.
+
+ERROR: trigger_fields_values: ''kitchen''
+ERROR: trigger_fields: 'Ha ID (Dropdown list)'
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
+End BF
+
+- System: Ok, I understand you are still exploring Home Connect Cookit. To help me set up this trigger, could you tell me what kind of ID you'd like to monitor? Is it a recipe ID, an appliance ID or something else?
+- User: It’s an appliance ID.
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}
+End BF
+ %%%% JSON{'id': 1, 'dialogue': [{'User': 'I want to play music on my Android device whenever Cookit starts.', 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music'}}, {'System': 'Great! Now that Cookit starting will trigger music playback on your Android device, is there anything else I can help you with regarding this automation?', 'User': "No, that's all for now. Let's leave the action fields empty as they are not necessary for simply playing music.", 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields_values': '', 'action_fields': ''}}, {'System': 'Considering we are leaving the action fields empty for this Cookit automation, do you want me to proceed without defining any specific parameters for the music playback?', 'User': "Yes, just play the music when Cookit starts. I don't need to configure anything else right now.", 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}}, {'System': 'Ok, so a cooking program starting on Home Connect Cookit will trigger a notification. What kind of cooking program are you interested in?', 'User': "I'm interested in a cooking program on Home Connect Cookit.", 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}}, {'System': 'Great! Now that we know you’re interested in cooking programs on Home Connect Cookit, could you tell me which specific kitchen appliance ID are you looking for?', 'User': "I'm just starting to use it and haven't really set up any preferences yet.", 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}}, {'System': "Ok, I understand you are still exploring Home Connect Cookit. To help me set up this trigger, could you tell me what kind of ID you'd like to monitor? Is it a recipe ID, an appliance ID or something else?", 'User': 'It’s an appliance ID.', 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device', 'action_title': 'Play music', 'trigger_channel': 'Home Connect Cookit'}}]}
