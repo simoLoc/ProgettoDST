@@ -223,11 +223,11 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             # se ho l'errore allora devo correggere l'errore e poi 
             if isError:
                 # aggiornamento del belief state rimuovendo gli errori generati
-                bf_current = update_bf_error(response, bf_current)
+                bf_current_error = update_bf_error(response, bf_current)
                 
                 # salvataggio della risposta con errore
                 current_text += response
-                current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
+                current_text += "\nBelief State: " + str(bf_current_error) + "\nEnd BF\n"
 
                 # current_text += "Clarification question\n"
                 # stringa del prompt corretto 
