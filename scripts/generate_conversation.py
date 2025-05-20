@@ -1,3 +1,4 @@
+from cmd import PROMPT
 from copy import copy
 import  random
 import json
@@ -211,7 +212,8 @@ def extract_utterances(conversation: str) -> str:
         ^\ *-\ System:[\s\S]+?             # 2) blocco che parte con System:
         ^\ *-\ User:[\s\S]+?               # e immediatamente segue User:
         )
-        (?:\r?\n)*^\s*Belief\ state:.*\r?\n            # Belief state sulla propria riga
+        (ERROR:[\s\S]+?)*
+        (\n)*^\s*Belief\ state:[\s\S]+?\n            # Belief state sulla propria riga
         ^End\ BF$                          # termine con End BF su riga propria
     ''', re.MULTILINE | re.DOTALL | re.VERBOSE | re.IGNORECASE)
 
@@ -267,41 +269,42 @@ if __name__ == "__main__":
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
-    file_path_correct = "dataset/conversation_correct_train.jsonl"
-    file_path_incorrect = "dataset/conversation_incorrect_train.jsonl"
+    file_path_correct = "dataset/conversation_correct_prova.jsonl"
+    file_path_incorrect = "dataset/conversation_incorrect_prova.jsonl"
 
 
-    with open("dataset/dataset_train.json", "r", encoding="utf-8") as f:
+    with open("dataset/values_prova_completo.json", "r", encoding="utf-8") as f:
         dataset = json.load(f)
 
 
     for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
         
-        correct_conversation = generate_conversation(entry, correct = True)
-        incorrect_conversation = generate_conversation(entry, correct = False)
+        # correct_conversation = generate_conversation(entry, correct = True)
+        incorrect_conversation_output = generate_conversation(entry, correct = False)
 
-        # estrazione solo utterance 
-        correct_conversation = extract_utterances(correct_conversation)
-        incorrect_conversation = extract_utterances(incorrect_conversation)
+        # estrazione solo utterance
+        # correct_conversation = extract_utterances(correct_conversation)
+        incorrect_conversation = extract_utterances(incorrect_conversation_output)
+        print(incorrect_conversation)
 
         """
             SALVATAGGIO DEL JSONL
         """
 
-        json_correct = parse_conversation_to_json(correct_conversation, i)
+        # json_correct = parse_conversation_to_json(correct_conversation, i)
         json_incorrect = parse_conversation_to_json(incorrect_conversation, i)
 
-        save_to_json_lines([json_correct], file_path_correct)
+        # save_to_json_lines([json_correct], file_path_correct)
         save_to_json_lines([json_incorrect], file_path_incorrect)
 
         # Percorso del file
-        # file_path = f"output_2conversazioni/{name_model}/output{i}.txt"
+        file_path = f"output_json/{name_model}/output{i}.txt"
 
         # Crea la directory se non esiste
-        # os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
         # Scrivi il file
-        # with open(file_path, "w", encoding="utf-8") as file:
-        #     file.write(str(conversation))
+        with open(file_path, "w", encoding="utf-8") as file:
+            file.write(str(incorrect_conversation_output) + "\n%%%%% AFTER REGEXP" + str(incorrect_conversation) + "\n %%%% JSON" + str(json_incorrect))
 
         

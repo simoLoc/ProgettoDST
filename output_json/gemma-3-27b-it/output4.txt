@@ -1,0 +1,78 @@
+- User: I need something done when a new event happens, and I want it posted on Twitter.
+ERROR: 'action_channel': 'Twitter'
+
+Belief State: {'action_channel': 'Twitter'}
+End BF
+- User: I would like you to post on Twitter.
+
+
+Belief State: {'action_channel': 'Twitter'}
+End BF
+- System: Considering you want to post on Twitter, do you have any preferences regarding the content or image for your tweet?
+- User: Yes, I would like to share a motivational message. 
+ERROR: action_title: 'Post a tweet with image'
+Belief State: {'action_channel': 'Twitter'}
+End BF
+- System: Ok, and what text do you want to include in the tweet along with the image?
+- User: I want to post a tweet with image. 
+
+
+
+Belief State: {'action_channel': 'Twitter'}
+End BF
+- System: Great! Now, regarding the tweet content and image, do you want me to use a specific message or photo for this post?
+- User: Yes, I would like to share an article with a nice landscape picture. 
+ERROR: action_fields: 'Tweet (Text input), Photo URL (Text input > Photo)' , action_fields_values: ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D''
+Belief State: {'action_channel': 'Twitter'}
+End BF
+- System: Ok, I understand you want to share an article and a landscape picture. However, could you please confirm if those values will be used as the tweet content and the photo URL respectively?
+- User: Yes, the text 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' should be the tweet content, and the image URL is 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+Belief State: {'action_channel': 'Twitter'}
+End BF
+- System: So, you want me to trigger an action whenever a new item is saved on Pocket? 
+- User: Yes, I want to trigger this rule for any new item saved on Pocket.
+Belief State: {'action_channel': 'Twitter', 'trigger_fields': '', 'trigger_title': 'Any new item', 'trigger_fields_values': '', 'trigger_channel': 'Pocket'}
+End BF
+
+%%%%% AFTER REGEXP- User: I need something done when a new event happens, and I want it posted on Twitter.
+ERROR: 'action_channel': 'Twitter'
+
+Belief State: {'action_channel': 'Twitter'}
+End BF
+
+- User: I would like you to post on Twitter.
+
+
+Belief State: {'action_channel': 'Twitter'}
+End BF
+
+- System: Considering you want to post on Twitter, do you have any preferences regarding the content or image for your tweet?
+- User: Yes, I would like to share a motivational message. 
+ERROR: action_title: 'Post a tweet with image'
+Belief State: {'action_channel': 'Twitter'}
+End BF
+
+- System: Ok, and what text do you want to include in the tweet along with the image?
+- User: I want to post a tweet with image. 
+
+
+
+Belief State: {'action_channel': 'Twitter'}
+End BF
+
+- System: Great! Now, regarding the tweet content and image, do you want me to use a specific message or photo for this post?
+- User: Yes, I would like to share an article with a nice landscape picture. 
+ERROR: action_fields: 'Tweet (Text input), Photo URL (Text input > Photo)' , action_fields_values: ''Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D''
+Belief State: {'action_channel': 'Twitter'}
+End BF
+
+- System: Ok, I understand you want to share an article and a landscape picture. However, could you please confirm if those values will be used as the tweet content and the photo URL respectively?
+- User: Yes, the text 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' should be the tweet content, and the image URL is 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
+Belief State: {'action_channel': 'Twitter'}
+End BF
+
+- System: So, you want me to trigger an action whenever a new item is saved on Pocket? 
+- User: Yes, I want to trigger this rule for any new item saved on Pocket.
+Belief State: {'action_channel': 'Twitter', 'trigger_fields': '', 'trigger_title': 'Any new item', 'trigger_fields_values': '', 'trigger_channel': 'Pocket'}
+End BF
+ %%%% JSON{'id': 4, 'dialogue': [{'User': 'I need something done when a new event happens, and I want it posted on Twitter.', 'Belief State': {'action_channel': 'Twitter'}}, {'User': 'I would like you to post on Twitter.', 'Belief State': {'action_channel': 'Twitter'}}, {'System': 'Considering you want to post on Twitter, do you have any preferences regarding the content or image for your tweet?', 'User': 'Yes, I would like to share a motivational message.', 'Belief State': {'action_channel': 'Twitter'}}, {'System': 'Ok, and what text do you want to include in the tweet along with the image?', 'User': 'I want to post a tweet with image.', 'Belief State': {'action_channel': 'Twitter'}}, {'System': 'Great! Now, regarding the tweet content and image, do you want me to use a specific message or photo for this post?', 'User': 'Yes, I would like to share an article with a nice landscape picture.', 'Belief State': {'action_channel': 'Twitter'}}, {'System': 'Ok, I understand you want to share an article and a landscape picture. However, could you please confirm if those values will be used as the tweet content and the photo URL respectively?', 'User': "Yes, the text 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' should be the tweet content, and the image URL is 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.", 'Belief State': {'action_channel': 'Twitter'}}, {'System': 'So, you want me to trigger an action whenever a new item is saved on Pocket?', 'User': 'Yes, I want to trigger this rule for any new item saved on Pocket.', 'Belief State': {'action_channel': 'Twitter', 'trigger_fields': '', 'trigger_title': 'Any new item', 'trigger_fields_values': '', 'trigger_channel': 'Pocket'}}]}
