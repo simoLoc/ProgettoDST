@@ -89,6 +89,7 @@ def generate_conversation(entry, correct = False):
     # str_trigger_action_current è la formattazione dell'entry da passare al prompt, solo per i campi contenuti in fields
     bf_current, str_trigger_action_current = get_prompt_input(fields, entry)
 
+    
     # se la generazione è quella con errore, genero il numero casuale per vedere se l'utterance deve avere o no l'errore
     if correct:
         isError = 0
@@ -108,11 +109,12 @@ def generate_conversation(entry, correct = False):
     # Validazione della risposta (in questo caso è la prima utterance)
     if isError:
         # aggiornamento del belief state rimuovendo gli errori generati
-        bf_current = update_bf_error(response, bf_current)
+        bf_current_error = update_bf_error(response, bf_current)
 
+        
         # salvataggio della risposta con errore
         current_text += response
-        current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
+        current_text += "\nBelief State: " + str(bf_current_error) + "\nEnd BF\n"
 
         # se la risposta contiene l'errore, allora si deve generare la clarification question
         # stringa del prompt per la clarification question
@@ -298,7 +300,7 @@ if __name__ == "__main__":
         save_to_json_lines([json_incorrect], file_path_incorrect)
 
         # Percorso del file
-        file_path = f"output_json/{name_model}/output{i}.txt"
+        file_path = f"output_json/{name_model}_1/output{i}.txt"
 
         # Crea la directory se non esiste
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
