@@ -1,12 +1,14 @@
-- User: I want to receive a notification on my Android device whenever Cookit starts running.
+- User: I would like you to play music.
 
-Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}
+
+Belief State: {'action_title': 'Play music'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want to receive a notification on my Android device whenever Cookit starts running.
+- User: I would like you to play music.
 
-Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}
+
+Belief State: {'action_title': 'Play music'}
 End BF
 %%%% JSON
-{'id': 1, 'dialogue': [{'User': 'I want to receive a notification on my Android device whenever Cookit starts running.', 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}}]}{"id": 2, "dialogue": [{"User": "I would like you to send an email through Weather Underground.", "Belief State": {"trigger_channel": "Weather Underground", "action_title": "Send an email"}}]}
+{'id': 1, 'dialogue': [{'User': 'I would like you to play music.', 'Belief State': {'action_title': 'Play music'}}]}

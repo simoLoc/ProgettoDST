@@ -1,31 +1,21 @@
-- User: I'd like something to happen when I save an article. Maybe post about it somewhere?
-ERROR: 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
-
-
-
-
-Belief State: {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+- User: I'd like something done whenever there’s a new update somewhere and then share it on Twitter with an image. 
+ERROR: 'trigger_channel', 'action_channel'
+Belief State: {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
 End BF
-- User: I would like you to post a tweet with image on Twitter, with the text 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and the photo URL 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
-
-
-Belief State: {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+- System: Ok, I understand you want to share updates on Twitter. But where are these updates coming from? Could you tell me which source should trigger this action?
+- User: The updates come from my RSS feed. So, monitor any new item in my RSS feed and then post a tweet with the image.
+Belief State: {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like something to happen when I save an article. Maybe post about it somewhere?
-ERROR: 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)' 
-
-
-
-
-Belief State: {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+- User: I'd like something done whenever there’s a new update somewhere and then share it on Twitter with an image. 
+ERROR: 'trigger_channel', 'action_channel'
+Belief State: {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
 End BF
 
-- User: I would like you to post a tweet with image on Twitter, with the text 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and the photo URL 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.
-
-
-Belief State: {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
+- System: Ok, I understand you want to share updates on Twitter. But where are these updates coming from? Could you tell me which source should trigger this action?
+- User: The updates come from my RSS feed. So, monitor any new item in my RSS feed and then post a tweet with the image.
+Belief State: {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
 End BF
 %%%% JSON
-{'id': 4, 'dialogue': [{'User': "I'd like something to happen when I save an article. Maybe post about it somewhere?", 'Belief State': {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}}, {'User': "I would like you to post a tweet with image on Twitter, with the text 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and the photo URL 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.", 'Belief State': {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}}]}
+{'id': 4, 'dialogue': [{'User': "I'd like something done whenever there’s a new update somewhere and then share it on Twitter with an image.", 'Belief State': {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}}, {'System': 'Ok, I understand you want to share updates on Twitter. But where are these updates coming from? Could you tell me which source should trigger this action?', 'User': 'The updates come from my RSS feed. So, monitor any new item in my RSS feed and then post a tweet with the image.', 'Belief State': {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}}]}

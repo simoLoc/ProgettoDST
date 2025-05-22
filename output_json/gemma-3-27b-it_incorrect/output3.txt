@@ -1,31 +1,29 @@
-- User: I'd like to get a little alert when something happens.
-ERROR: 'action_title': 'Send a notification from the IFTTT app'
+- User: Can you tell me if there's anything new happening with the weather?
+ERROR: 'trigger_title': 'Today\'s weather report', 'action_channel': 'Notifications'
 
 
 
 
-Belief State: {'action_title': 'Send a notification from the IFTTT app'}
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
 End BF
-- User: I would like you to send a notification from the IFTTT app.
-
-
-Belief State: {'action_title': 'Send a notification from the IFTTT app'}
+- System: Ok, I understand you want a notification about the weather. But what specifically about the weather are you interested in?
+- User: I’d like a daily notification with today’s weather report from Weather Underground.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like to get a little alert when something happens.
-ERROR: 'action_title': 'Send a notification from the IFTTT app'
+- User: Can you tell me if there's anything new happening with the weather?
+ERROR: 'trigger_title': 'Today\'s weather report', 'action_channel': 'Notifications'
 
 
 
 
-Belief State: {'action_title': 'Send a notification from the IFTTT app'}
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
 End BF
 
-- User: I would like you to send a notification from the IFTTT app.
-
-
-Belief State: {'action_title': 'Send a notification from the IFTTT app'}
+- System: Ok, I understand you want a notification about the weather. But what specifically about the weather are you interested in?
+- User: I’d like a daily notification with today’s weather report from Weather Underground.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
 End BF
 %%%% JSON
-{'id': 3, 'dialogue': [{'User': "I'd like to get a little alert when something happens.", 'Belief State': {'action_title': 'Send a notification from the IFTTT app'}}, {'User': 'I would like you to send a notification from the IFTTT app.', 'Belief State': {'action_title': 'Send a notification from the IFTTT app'}}]}{"id": 4, "dialogue": [{"User": "I'd like something to happen when I save an article. Maybe post about it somewhere?", "Belief State": {"action_channel": "Twitter", "action_title": "Post a tweet with image", "action_fields": "Tweet (Text input), Photo URL (Text input > Photo)", "action_fields_values": "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}}, {"User": "I would like you to post a tweet with image on Twitter, with the text 'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]' and the photo URL 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'.", "Belief State": {"action_channel": "Twitter", "action_title": "Post a tweet with image", "action_fields": "Tweet (Text input), Photo URL (Text input > Photo)", "action_fields_values": "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}}]}
+{'id': 3, 'dialogue': [{'User': "Can you tell me if there's anything new happening with the weather?", 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}}, {'System': 'Ok, I understand you want a notification about the weather. But what specifically about the weather are you interested in?', 'User': 'I’d like a daily notification with today’s weather report from Weather Underground.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}}]}

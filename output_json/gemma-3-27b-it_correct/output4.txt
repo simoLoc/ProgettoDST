@@ -1,12 +1,12 @@
-- User: I want you to notify me about any new item saved on Pocket.
+- User: I want you to notify me whenever I save a new item on Pocket.
 
 Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want you to notify me about any new item saved on Pocket.
+- User: I want you to notify me whenever I save a new item on Pocket.
 
 Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
 End BF
 %%%% JSON
-{'id': 4, 'dialogue': [{'User': 'I want you to notify me about any new item saved on Pocket.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}}]}
+{'id': 4, 'dialogue': [{'User': 'I want you to notify me whenever I save a new item on Pocket.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}}]}
