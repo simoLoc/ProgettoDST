@@ -121,7 +121,7 @@ def generate_conversation(entry, correct = False):
     # Validazione della risposta (in questo caso è la prima utterance)
     if isError:
         # aggiornamento del belief state rimuovendo gli errori generati
-        bf_current_error = update_bf_error(response, bf_current)
+        bf_current_error = update_bf_error(response, bf_current, copy(bf_current))
 
         
         # salvataggio della risposta con errore

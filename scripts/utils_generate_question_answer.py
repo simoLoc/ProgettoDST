@@ -115,9 +115,9 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
     return current_text, old_response
 
 
-def update_bf_error(text: str, bf_current: dict) -> dict:
+def update_bf_error(text: str, bf_current: dict, bf_new: dict) -> dict:
     """
-    - text: la stringa contenente 'ERROR:' seguito da coppie chiave: 'valore'
+    - text: la stringa contenente 'ERROR:' seguito da coppie chiave: 'valore' o sole chiavi
     - bf_current: dizionario di partenza; ne vengono rimosse le chiavi trovate nel testo
     Restituisce bf_current modificato.
     """
@@ -127,25 +127,36 @@ def update_bf_error(text: str, bf_current: dict) -> dict:
         return bf_current
     error_part = parts[1]
 
-    # Trova tutte le coppie chiave: 'valore'
-    pattern = r"(\w+):\s*('(?:[^']|\\')*'(?:\s*,\s*'(?:[^']|\\')*')*)"
+    # Trova tutte le occorrenze di chiave: 'valore' o solo chiave separate da virgola
+    # Gruppi: 1=chiave, 2=blocco valore (facoltativo)
+    pattern = r"(\w+)(?::\s*('(?:[^']|\\')*'(?:\s*,\s*'(?:[^']|\\')*')*))?"
     matches = re.findall(pattern, error_part)
 
     # Per ogni coppia, ricostruisci il valore 
     parsed = {}
     for key, val_block in matches:
-        # Estrai tutte le stringhe tra apici
-        values = re.findall(r"'((?:[^']|\\')*)'", val_block)
-        if len(values) > 1:
-            # Unisci in un’unica stringa con virgole e apici
-            joined = ", ".join(f"'{v}'" for v in values)
-            parsed[key] = joined
+        key = key.strip()
+        if not val_block:
+            parsed[key] = None
         else:
-            parsed[key] = values[0]
+            values = re.findall(r"'((?:[^']|\\')*)'", val_block)
+            if len(values) > 1:
+                parsed[key] = ", ".join(f"'{v}'" for v in values)
+            elif len(values) == 1:
+                parsed[key] = values[0]
+            else:
+                parsed[key] = None
 
-    # Rimuovi da bf_current tutte le chiavi che compaiono in parsed
-    for k in parsed:
-        bf_current.pop(k, None)
+    # Determina quali chiavi rimuovere:
+    found = [k for k in parsed if k in bf_current]
+    if found:
+        # Rimuovi solo quelle trovate
+        for k in found:
+            bf_current.pop(k, None)
+    else:
+        # Se nessuna trovata, rimuovi tutte le chiavi di bf_new
+        for k in bf_new:
+            bf_current.pop(k, None)
 
     return bf_current
 
@@ -223,7 +234,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             # se ho l'errore allora devo correggere l'errore e poi 
             if isError:
                 # aggiornamento del belief state rimuovendo gli errori generati
-                bf_current_error = update_bf_error(response, bf_current)
+                bf_current_error = update_bf_error(response, bf_current, bf_new)
                 
                 # salvataggio della risposta con errore
                 current_text += response
