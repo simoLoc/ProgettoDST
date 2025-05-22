@@ -234,7 +234,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             # se ho l'errore allora devo correggere l'errore e poi 
             if isError:
                 # aggiornamento del belief state rimuovendo gli errori generati
-                bf_current_error = update_bf_error(response, bf_current, bf_new)
+                bf_current_error = update_bf_error(response, copy(bf_current), bf_new)
                 
                 # salvataggio della risposta con errore
                 current_text += response
