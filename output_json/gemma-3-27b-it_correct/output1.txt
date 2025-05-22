@@ -1,14 +1,12 @@
-- User: I would like you to play music on Home Connect Cookit.
+- User: I want to be notified whenever my Cookit appliance starts cooking.
 
-
-Belief State: {'trigger_channel': 'Home Connect Cookit', 'action_title': 'Play music'}
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I would like you to play music on Home Connect Cookit.
+- User: I want to be notified whenever my Cookit appliance starts cooking.
 
-
-Belief State: {'trigger_channel': 'Home Connect Cookit', 'action_title': 'Play music'}
+Belief State: {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
 End BF
 %%%% JSON
-{'id': 1, 'dialogue': [{'User': 'I would like you to play music on Home Connect Cookit.', 'Belief State': {'trigger_channel': 'Home Connect Cookit', 'action_title': 'Play music'}}]}
+{'id': 1, 'dialogue': [{'User': 'I want to be notified whenever my Cookit appliance starts cooking.', 'Belief State': {'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}}]}

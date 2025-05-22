@@ -1,12 +1,12 @@
-- User: I want to receive a notification with today’s weather report from Weather Underground.
+- User: I want to receive an IFTTT notification with a personalized message every morning about the weather in London.
 
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
+Belief State: {'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want to receive a notification with today’s weather report from Weather Underground.
+- User: I want to receive an IFTTT notification with a personalized message every morning about the weather in London.
 
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
+Belief State: {'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}
 End BF
 %%%% JSON
-{'id': 3, 'dialogue': [{'User': 'I want to receive a notification with today’s weather report from Weather Underground.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}}]}
+{'id': 3, 'dialogue': [{'User': 'I want to receive an IFTTT notification with a personalized message every morning about the weather in London.', 'Belief State': {'action_channel': 'Notifications', 'action_title': 'Send a notification from the IFTTT app', 'action_fields': 'Message (Text input)', 'action_fields_values': "'☀️ Good morning! Today in London, it\\'s going to be sunny with a high of 25°C. Enjoy your day!'"}}]}

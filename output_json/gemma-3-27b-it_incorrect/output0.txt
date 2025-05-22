@@ -1,29 +1,21 @@
-- User: I'd like to get notified when there’s a food safety issue.
-ERROR: 'trigger_channel': 'Department of Agriculture', 'action_title': 'Send me an email' 
-
-
-
-
-Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}
+- User: I'd like to get notified when something new happens with agricultural data.
+ERROR: 'trigger_title': 'Not specified', 'trigger_fields': 'Not specified', 'action_fields': 'Not specified'
+Belief State: {}
 End BF
-- System: Ok, I understand you want a notification about food safety issues. To set this up, could you tell me what specifically triggers this notification from the Department of Agriculture?
-- User: I need to be notified when the Department of Agriculture announces a new open recall. Also, please send me an email when that happens.
-Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}
+- System: Ok, I understand you want an email notification about agricultural data. Could you tell me what specifically about that data triggers this notification? 
+- User: Notify me when new subsidy programs are announced by the Department of Agriculture.
+Belief State: {}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like to get notified when there’s a food safety issue.
-ERROR: 'trigger_channel': 'Department of Agriculture', 'action_title': 'Send me an email' 
-
-
-
-
-Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}
+- User: I'd like to get notified when something new happens with agricultural data.
+ERROR: 'trigger_title': 'Not specified', 'trigger_fields': 'Not specified', 'action_fields': 'Not specified'
+Belief State: {}
 End BF
 
-- System: Ok, I understand you want a notification about food safety issues. To set this up, could you tell me what specifically triggers this notification from the Department of Agriculture?
-- User: I need to be notified when the Department of Agriculture announces a new open recall. Also, please send me an email when that happens.
-Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}
+- System: Ok, I understand you want an email notification about agricultural data. Could you tell me what specifically about that data triggers this notification? 
+- User: Notify me when new subsidy programs are announced by the Department of Agriculture.
+Belief State: {}
 End BF
 %%%% JSON
-{'id': 0, 'dialogue': [{'User': "I'd like to get notified when there’s a food safety issue.", 'Belief State': {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}}, {'System': 'Ok, I understand you want a notification about food safety issues. To set this up, could you tell me what specifically triggers this notification from the Department of Agriculture?', 'User': 'I need to be notified when the Department of Agriculture announces a new open recall. Also, please send me an email when that happens.', 'Belief State': {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}}]}
+{'id': 0, 'dialogue': [{'User': "I'd like to get notified when something new happens with agricultural data.", 'Belief State': {}}, {'System': 'Ok, I understand you want an email notification about agricultural data. Could you tell me what specifically about that data triggers this notification?', 'User': 'Notify me when new subsidy programs are announced by the Department of Agriculture.', 'Belief State': {}}]}

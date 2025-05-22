@@ -1,12 +1,12 @@
-- User: I want to receive an email notification when the trigger is activated.
+- User: I want to receive an email whenever the trigger is activated.
 
-Belief State: {'action_title': 'Send me an email'}
+Belief State: {'action_channel': 'Email', 'action_title': 'Send me an email'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want to receive an email notification when the trigger is activated.
+- User: I want to receive an email whenever the trigger is activated.
 
-Belief State: {'action_title': 'Send me an email'}
+Belief State: {'action_channel': 'Email', 'action_title': 'Send me an email'}
 End BF
 %%%% JSON
-{'id': 0, 'dialogue': [{'User': 'I want to receive an email notification when the trigger is activated.', 'Belief State': {'action_title': 'Send me an email'}}]}
+{'id': 0, 'dialogue': [{'User': 'I want to receive an email whenever the trigger is activated.', 'Belief State': {'action_channel': 'Email', 'action_title': 'Send me an email'}}]}

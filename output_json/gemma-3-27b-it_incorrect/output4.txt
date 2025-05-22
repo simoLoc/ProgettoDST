@@ -1,21 +1,25 @@
-- User: I'd like something done whenever there’s a new update somewhere and then share it on Twitter with an image. 
-ERROR: 'trigger_channel', 'action_channel'
-Belief State: {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
+- User: I'd like something posted when an event happens.
+ERROR: 'action_channel': 'Twitter'
+
+Belief State: {}
 End BF
-- System: Ok, I understand you want to share updates on Twitter. But where are these updates coming from? Could you tell me which source should trigger this action?
-- User: The updates come from my RSS feed. So, monitor any new item in my RSS feed and then post a tweet with the image.
-Belief State: {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
+- User: I would like you to post on Twitter.
+
+
+Belief State: {}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like something done whenever there’s a new update somewhere and then share it on Twitter with an image. 
-ERROR: 'trigger_channel', 'action_channel'
-Belief State: {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
+- User: I'd like something posted when an event happens.
+ERROR: 'action_channel': 'Twitter'
+
+Belief State: {}
 End BF
 
-- System: Ok, I understand you want to share updates on Twitter. But where are these updates coming from? Could you tell me which source should trigger this action?
-- User: The updates come from my RSS feed. So, monitor any new item in my RSS feed and then post a tweet with the image.
-Belief State: {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
+- User: I would like you to post on Twitter.
+
+
+Belief State: {}
 End BF
 %%%% JSON
-{'id': 4, 'dialogue': [{'User': "I'd like something done whenever there’s a new update somewhere and then share it on Twitter with an image.", 'Belief State': {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}}, {'System': 'Ok, I understand you want to share updates on Twitter. But where are these updates coming from? Could you tell me which source should trigger this action?', 'User': 'The updates come from my RSS feed. So, monitor any new item in my RSS feed and then post a tweet with the image.', 'Belief State': {'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}}]}
+{'id': 4, 'dialogue': [{'User': "I'd like something posted when an event happens.", 'Belief State': {}}, {'User': 'I would like you to post on Twitter.', 'Belief State': {}}]}

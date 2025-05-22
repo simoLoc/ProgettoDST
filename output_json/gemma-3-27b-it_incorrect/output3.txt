@@ -1,29 +1,12 @@
-- User: Can you tell me if there's anything new happening with the weather?
-ERROR: 'trigger_title': 'Today\'s weather report', 'action_channel': 'Notifications'
+- User: I want to receive today’s weather report.
 
-
-
-
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
-End BF
-- System: Ok, I understand you want a notification about the weather. But what specifically about the weather are you interested in?
-- User: I’d like a daily notification with today’s weather report from Weather Underground.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
+Belief State: {'trigger_title': "Today's weather report"}
 End BF
 
 %%%%% AFTER REGEXP
-- User: Can you tell me if there's anything new happening with the weather?
-ERROR: 'trigger_title': 'Today\'s weather report', 'action_channel': 'Notifications'
+- User: I want to receive today’s weather report.
 
-
-
-
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
-End BF
-
-- System: Ok, I understand you want a notification about the weather. But what specifically about the weather are you interested in?
-- User: I’d like a daily notification with today’s weather report from Weather Underground.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
+Belief State: {'trigger_title': "Today's weather report"}
 End BF
 %%%% JSON
-{'id': 3, 'dialogue': [{'User': "Can you tell me if there's anything new happening with the weather?", 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}}, {'System': 'Ok, I understand you want a notification about the weather. But what specifically about the weather are you interested in?', 'User': 'I’d like a daily notification with today’s weather report from Weather Underground.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}}]}
+{'id': 3, 'dialogue': [{'User': 'I want to receive today’s weather report.', 'Belief State': {'trigger_title': "Today's weather report"}}]}

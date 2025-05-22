@@ -1,14 +1,21 @@
-- User: I would like you to play music.
-
-
-Belief State: {'action_title': 'Play music'}
+- User: I'd like something to happen when my cooking app starts, and send a notification to my phone.
+ERROR: 'trigger_channel', 'action_title', 'trigger_fields', 'action_fields'
+Belief State: {}
+End BF
+- System: Ok, I understand you want a notification on your phone when Cookit starts. But what triggers this event and where should the notification appear exactly?
+- User: The trigger is when the Cookit app starts on my Facebook account, and the notification must be sent to my Android Device.
+Belief State: {}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I would like you to play music.
+- User: I'd like something to happen when my cooking app starts, and send a notification to my phone.
+ERROR: 'trigger_channel', 'action_title', 'trigger_fields', 'action_fields'
+Belief State: {}
+End BF
 
-
-Belief State: {'action_title': 'Play music'}
+- System: Ok, I understand you want a notification on your phone when Cookit starts. But what triggers this event and where should the notification appear exactly?
+- User: The trigger is when the Cookit app starts on my Facebook account, and the notification must be sent to my Android Device.
+Belief State: {}
 End BF
 %%%% JSON
-{'id': 1, 'dialogue': [{'User': 'I would like you to play music.', 'Belief State': {'action_title': 'Play music'}}]}
+{'id': 1, 'dialogue': [{'User': "I'd like something to happen when my cooking app starts, and send a notification to my phone.", 'Belief State': {}}, {'System': 'Ok, I understand you want a notification on your phone when Cookit starts. But what triggers this event and where should the notification appear exactly?', 'User': 'The trigger is when the Cookit app starts on my Facebook account, and the notification must be sent to my Android Device.', 'Belief State': {}}]}
