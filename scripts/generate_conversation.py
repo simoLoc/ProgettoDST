@@ -75,11 +75,23 @@ def generate_conversation(entry, correct = False):
 
     elif actionStart:
         # iniziamo la generazione solo con la parte action
-        index = random.randint(0, len(action) - 1)
+        if num_action_fields <= 1:
+            # se ci sono meno di 1 campo non possiamo generare tutta la parte action
+            index = random.randint(0, len(action) - 1)
+        else:
+            # se ci sono più di 1 campo action, generiamo la conversazione incrementale di action
+            index = random.randint(0, len(action) - 2)
+        
         new_fields = action[index]
     else:
         # iniziamo la generazione solo con la parte trigger
-        index = random.randint(0, len(trigger) - 1)
+        if num_trigger_fields <= 1:
+            # se ci sono meno di 1 campo non possiamo generare tutta la parte trigger
+            index = random.randint(0, len(trigger) - 1)
+        else:
+            # se ci sono più di 1 campo trigger, generiamo la conversazione incrementale di trigger
+            index = random.randint(0, len(trigger) - 2)
+        
         new_fields = trigger[index]
 
     fields = copy(new_fields)
