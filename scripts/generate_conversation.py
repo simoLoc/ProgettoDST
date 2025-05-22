@@ -309,17 +309,17 @@ if __name__ == "__main__":
         save_to_json_lines([json_incorrect], file_path_json_incorrect)
 
         # Percorso del file
-        file_path_correct = f"output_json/{name_model}_correct/output{i}.txt"
-        file_path_incorrect = f"output_json/{name_model}_incorrect/output{i}.txt"
+        # file_path_correct = f"output_json/{name_model}_correct/output{i}.txt"
+        # file_path_incorrect = f"output_json/{name_model}_incorrect/output{i}.txt"
 
         # Crea la directory se non esiste
-        os.makedirs(os.path.dirname(file_path_correct), exist_ok=True)
-        os.makedirs(os.path.dirname(file_path_incorrect), exist_ok=True)
+        # os.makedirs(os.path.dirname(file_path_correct), exist_ok=True)
+        # os.makedirs(os.path.dirname(file_path_incorrect), exist_ok=True)
 
         # Scrivi il file
-        with open(file_path_correct, "w", encoding="utf-8") as file:
-            file.write(str(correct_conversation_output) + "\n%%%%% AFTER REGEXP\n" + str(correct_conversation) + "\n%%%% JSON\n" + str(json_correct))
+        # with open(file_path_correct, "w", encoding="utf-8") as file:
+        #     file.write(str(correct_conversation_output) + "\n%%%%% AFTER REGEXP\n" + str(correct_conversation) + "\n%%%% JSON\n" + str(json_correct))
 
-        with open(file_path_incorrect, "w", encoding="utf-8") as file:
-            file.write(str(incorrect_conversation_output) + "\n%%%%% AFTER REGEXP\n" + str(incorrect_conversation) + "\n%%%% JSON\n" + str(json_incorrect))
+        # with open(file_path_incorrect, "w", encoding="utf-8") as file:
+        #     file.write(str(incorrect_conversation_output) + "\n%%%%% AFTER REGEXP\n" + str(incorrect_conversation) + "\n%%%% JSON\n" + str(json_incorrect))
         
