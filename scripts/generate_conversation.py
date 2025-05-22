@@ -133,33 +133,33 @@ def generate_conversation(entry, correct = False):
     # salvataggio del belief state dopo la validazione della risposta
     current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
     
-    if actionStart:
-        # si generano prima le componenti action
-        # action
-        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields, 
-                                                                                                                current_text=current_text, bf_current=bf_current, 
-                                                                                                                str_trigger_action_past=str_trigger_action_current, 
-                                                                                                                old_response=response, isAction=True, correct = correct)
-
-        # trigger
-        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields, 
-                                                                                                                current_text=current_text, bf_current=bf_current, 
-                                                                                                                str_trigger_action_past=str_trigger_action_past, 
-                                                                                                                old_response=old_response, isAction=False, correct = correct)
-    
-    else: 
-        # si generano prima le componenti trigger
-        # trigger
-        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields, 
-                                                                                                                current_text=current_text, bf_current=bf_current, 
-                                                                                                                str_trigger_action_past=str_trigger_action_current, 
-                                                                                                                old_response=response, isAction=False, correct = correct)
-
-        # action
-        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields, 
-                                                                                                                current_text=current_text, bf_current=bf_current, 
-                                                                                                                str_trigger_action_past=str_trigger_action_past, 
-                                                                                                                old_response=old_response, isAction=True, correct = correct)
+    # if actionStart:
+    #     # si generano prima le componenti action
+    #     # action
+    #     fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields,
+    #                                                                                                             current_text=current_text, bf_current=bf_current,
+    #                                                                                                             str_trigger_action_past=str_trigger_action_current,
+    #                                                                                                             old_response=response, isAction=True, correct = correct)
+    #
+    #     # trigger
+    #     fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields,
+    #                                                                                                             current_text=current_text, bf_current=bf_current,
+    #                                                                                                             str_trigger_action_past=str_trigger_action_past,
+    #                                                                                                             old_response=old_response, isAction=False, correct = correct)
+    #
+    # else:
+    #     # si generano prima le componenti trigger
+    #     # trigger
+    #     fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields,
+    #                                                                                                             current_text=current_text, bf_current=bf_current,
+    #                                                                                                             str_trigger_action_past=str_trigger_action_current,
+    #                                                                                                             old_response=response, isAction=False, correct = correct)
+    #
+    #     # action
+    #     fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields,
+    #                                                                                                             current_text=current_text, bf_current=bf_current,
+    #                                                                                                             str_trigger_action_past=str_trigger_action_past,
+    #                                                                                                             old_response=old_response, isAction=True, correct = correct)
     
     return current_text
 
@@ -224,7 +224,7 @@ def extract_utterances(conversation: str) -> str:
 
 
 
-def parse_conversation_to_json(text: str, id: int) -> list:
+def parse_conversation_to_json(text: str, id: int) -> dict:
     """
     Estrae dai blocchi separati da una riga vuota le parti:
     - righe che iniziano con "- Ruolo: testo"
@@ -265,7 +265,6 @@ def save_to_json_lines(data, filename):
             f.write(json_line + '\n')
 
 
-
 if __name__ == "__main__":
 
     name_model = "gemma-3-27b-it"
@@ -281,32 +280,35 @@ if __name__ == "__main__":
 
     for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
         
-        # correct_conversation = generate_conversation(entry, correct = True)
+        correct_conversation_output = generate_conversation(entry, correct = True)
         incorrect_conversation_output = generate_conversation(entry, correct = False)
 
         # estrazione solo utterance
-        # correct_conversation = extract_utterances(correct_conversation)
+        correct_conversation = extract_utterances(correct_conversation_output)
         incorrect_conversation = extract_utterances(incorrect_conversation_output)
-        print(incorrect_conversation)
 
         """
             SALVATAGGIO DEL JSONL
         """
 
-        # json_correct = parse_conversation_to_json(correct_conversation, i)
+        json_correct = parse_conversation_to_json(correct_conversation, i)
         json_incorrect = parse_conversation_to_json(incorrect_conversation, i)
 
-        # save_to_json_lines([json_correct], file_path_correct)
+        save_to_json_lines([json_correct], file_path_correct)
         save_to_json_lines([json_incorrect], file_path_incorrect)
 
         # Percorso del file
-        file_path = f"output_json/{name_model}_1/output{i}.txt"
+        file_path_correct = f"output_json/{name_model}_correct/output{i}.txt"
+        file_path_incorrect = f"output_json/{name_model}_incorrect/output{i}.txt"
 
         # Crea la directory se non esiste
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        os.makedirs(os.path.dirname(file_path_correct), exist_ok=True)
+        os.makedirs(os.path.dirname(file_path_incorrect), exist_ok=True)
 
         # Scrivi il file
-        with open(file_path, "w", encoding="utf-8") as file:
-            file.write(str(incorrect_conversation_output) + "\n%%%%% AFTER REGEXP" + str(incorrect_conversation) + "\n %%%% JSON" + str(json_incorrect))
+        with open(file_path_correct, "w", encoding="utf-8") as file:
+            file.write(str(correct_conversation_output) + "\n%%%%% AFTER REGEXP\n" + str(correct_conversation) + "\n%%%% JSON\n" + str(json_correct))
 
+        with open(file_path_incorrect, "w", encoding="utf-8") as file:
+            file.write(str(incorrect_conversation_output) + "\n%%%%% AFTER REGEXP\n" + str(incorrect_conversation) + "\n%%%% JSON\n" + str(json_incorrect))
         
