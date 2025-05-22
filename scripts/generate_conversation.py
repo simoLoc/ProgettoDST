@@ -145,33 +145,33 @@ def generate_conversation(entry, correct = False):
     # salvataggio del belief state dopo la validazione della risposta
     current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
     
-    # if actionStart:
-    #     # si generano prima le componenti action
-    #     # action
-    #     fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields,
-    #                                                                                                             current_text=current_text, bf_current=bf_current,
-    #                                                                                                             str_trigger_action_past=str_trigger_action_current,
-    #                                                                                                             old_response=response, isAction=True, correct = correct)
-    #
-    #     # trigger
-    #     fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields,
-    #                                                                                                             current_text=current_text, bf_current=bf_current,
-    #                                                                                                             str_trigger_action_past=str_trigger_action_past,
-    #                                                                                                             old_response=old_response, isAction=False, correct = correct)
-    #
-    # else:
-    #     # si generano prima le componenti trigger
-    #     # trigger
-    #     fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields,
-    #                                                                                                             current_text=current_text, bf_current=bf_current,
-    #                                                                                                             str_trigger_action_past=str_trigger_action_current,
-    #                                                                                                             old_response=response, isAction=False, correct = correct)
-    #
-    #     # action
-    #     fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields,
-    #                                                                                                             current_text=current_text, bf_current=bf_current,
-    #                                                                                                             str_trigger_action_past=str_trigger_action_past,
-    #                                                                                                             old_response=old_response, isAction=True, correct = correct)
+    if actionStart:
+        # si generano prima le componenti action
+        # action
+        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields,
+                                                                                                                current_text=current_text, bf_current=bf_current,
+                                                                                                                str_trigger_action_past=str_trigger_action_current,
+                                                                                                                old_response=response, isAction=True, correct = correct)
+    
+        # trigger
+        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields,
+                                                                                                                current_text=current_text, bf_current=bf_current,
+                                                                                                                str_trigger_action_past=str_trigger_action_past,
+                                                                                                                old_response=old_response, isAction=False, correct = correct)
+    
+    else:
+        # si generano prima le componenti trigger
+        # trigger
+        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields,
+                                                                                                                current_text=current_text, bf_current=bf_current,
+                                                                                                                str_trigger_action_past=str_trigger_action_current,
+                                                                                                                old_response=response, isAction=False, correct = correct)
+    
+        # action
+        fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields,
+                                                                                                                current_text=current_text, bf_current=bf_current,
+                                                                                                                str_trigger_action_past=str_trigger_action_past,
+                                                                                                                old_response=old_response, isAction=True, correct = correct)
     
     return current_text
 
