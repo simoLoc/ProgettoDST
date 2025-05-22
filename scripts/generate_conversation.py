@@ -281,11 +281,11 @@ if __name__ == "__main__":
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
-    file_path_json_correct = "dataset/conversation_correct_prova.jsonl"
-    file_path_json_incorrect = "dataset/conversation_incorrect_prova.jsonl"
+    file_path_json_correct = "dataset/conversation_correct_val.jsonl"
+    file_path_json_incorrect = "dataset/conversation_incorrect_valjsonl"
 
 
-    with open("dataset/values_prova_completo.json", "r", encoding="utf-8") as f:
+    with open("dataset/dataset_val.json", "r", encoding="utf-8") as f:
         dataset = json.load(f)
 
 
