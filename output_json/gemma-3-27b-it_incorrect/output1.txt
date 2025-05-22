@@ -1,21 +1,21 @@
-- User: I'd like something to happen when my cooking app starts, and send a notification to my phone.
+- User: I’d like something to happen when my cooking app starts up, and send a notification to my phone.
 ERROR: 'trigger_channel', 'action_title', 'trigger_fields', 'action_fields'
 Belief State: {}
 End BF
-- System: Ok, I understand you want a notification on your phone when Cookit starts. But what triggers this event and where should the notification appear exactly?
-- User: The trigger is when the Cookit app starts on my Facebook account, and the notification must be sent to my Android Device.
-Belief State: {}
+- System: Ok, I understand you want a notification on your phone when your cooking app starts. But could you tell me which application is triggering this event?
+- User: The trigger is happening within the Cookit app. And I’d like to send the notification to my Android Device.
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like something to happen when my cooking app starts, and send a notification to my phone.
+- User: I’d like something to happen when my cooking app starts up, and send a notification to my phone.
 ERROR: 'trigger_channel', 'action_title', 'trigger_fields', 'action_fields'
 Belief State: {}
 End BF
 
-- System: Ok, I understand you want a notification on your phone when Cookit starts. But what triggers this event and where should the notification appear exactly?
-- User: The trigger is when the Cookit app starts on my Facebook account, and the notification must be sent to my Android Device.
-Belief State: {}
+- System: Ok, I understand you want a notification on your phone when your cooking app starts. But could you tell me which application is triggering this event?
+- User: The trigger is happening within the Cookit app. And I’d like to send the notification to my Android Device.
+Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}
 End BF
 %%%% JSON
-{'id': 1, 'dialogue': [{'User': "I'd like something to happen when my cooking app starts, and send a notification to my phone.", 'Belief State': {}}, {'System': 'Ok, I understand you want a notification on your phone when Cookit starts. But what triggers this event and where should the notification appear exactly?', 'User': 'The trigger is when the Cookit app starts on my Facebook account, and the notification must be sent to my Android Device.', 'Belief State': {}}]}
+{'id': 1, 'dialogue': [{'User': 'I’d like something to happen when my cooking app starts up, and send a notification to my phone.', 'Belief State': {}}, {'System': 'Ok, I understand you want a notification on your phone when your cooking app starts. But could you tell me which application is triggering this event?', 'User': 'The trigger is happening within the Cookit app. And I’d like to send the notification to my Android Device.', 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}}]}

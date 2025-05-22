@@ -1,12 +1,14 @@
-- User: I want to receive an email whenever the trigger is activated.
+- User: I would like to send information through Email to the Department of Agriculture.
 
-Belief State: {'action_channel': 'Email', 'action_title': 'Send me an email'}
+
+Belief State: {'trigger_channel': 'Department of Agriculture', 'action_channel': 'Email'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want to receive an email whenever the trigger is activated.
+- User: I would like to send information through Email to the Department of Agriculture.
 
-Belief State: {'action_channel': 'Email', 'action_title': 'Send me an email'}
+
+Belief State: {'trigger_channel': 'Department of Agriculture', 'action_channel': 'Email'}
 End BF
 %%%% JSON
-{'id': 0, 'dialogue': [{'User': 'I want to receive an email whenever the trigger is activated.', 'Belief State': {'action_channel': 'Email', 'action_title': 'Send me an email'}}]}
+{'id': 0, 'dialogue': [{'User': 'I would like to send information through Email to the Department of Agriculture.', 'Belief State': {'trigger_channel': 'Department of Agriculture', 'action_channel': 'Email'}}]}

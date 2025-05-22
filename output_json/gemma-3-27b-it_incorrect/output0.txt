@@ -1,21 +1,23 @@
-- User: I'd like to get notified when something new happens with agricultural data.
-ERROR: 'trigger_title': 'Not specified', 'trigger_fields': 'Not specified', 'action_fields': 'Not specified'
+- User: I'd like to get notified when something happens.
+ERROR: 'action_channel': 'Email', 'action_title': 'Send me an email' 
 Belief State: {}
 End BF
-- System: Ok, I understand you want an email notification about agricultural data. Could you tell me what specifically about that data triggers this notification? 
-- User: Notify me when new subsidy programs are announced by the Department of Agriculture.
-Belief State: {}
+- System: Ok, I understand you want an email when a new photo is posted on Facebook with a specific hashtag. But what details about this email do you need?
+- User: Please send me an email with the link to the post and the hashtag used.
+
+Belief State: {'action_channel': 'Email', 'action_title': 'Send me an email'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like to get notified when something new happens with agricultural data.
-ERROR: 'trigger_title': 'Not specified', 'trigger_fields': 'Not specified', 'action_fields': 'Not specified'
+- User: I'd like to get notified when something happens.
+ERROR: 'action_channel': 'Email', 'action_title': 'Send me an email' 
 Belief State: {}
 End BF
 
-- System: Ok, I understand you want an email notification about agricultural data. Could you tell me what specifically about that data triggers this notification? 
-- User: Notify me when new subsidy programs are announced by the Department of Agriculture.
-Belief State: {}
+- System: Ok, I understand you want an email when a new photo is posted on Facebook with a specific hashtag. But what details about this email do you need?
+- User: Please send me an email with the link to the post and the hashtag used.
+
+Belief State: {'action_channel': 'Email', 'action_title': 'Send me an email'}
 End BF
 %%%% JSON
-{'id': 0, 'dialogue': [{'User': "I'd like to get notified when something new happens with agricultural data.", 'Belief State': {}}, {'System': 'Ok, I understand you want an email notification about agricultural data. Could you tell me what specifically about that data triggers this notification?', 'User': 'Notify me when new subsidy programs are announced by the Department of Agriculture.', 'Belief State': {}}]}
+{'id': 0, 'dialogue': [{'User': "I'd like to get notified when something happens.", 'Belief State': {}}, {'System': 'Ok, I understand you want an email when a new photo is posted on Facebook with a specific hashtag. But what details about this email do you need?', 'User': 'Please send me an email with the link to the post and the hashtag used.', 'Belief State': {'action_channel': 'Email', 'action_title': 'Send me an email'}}]}

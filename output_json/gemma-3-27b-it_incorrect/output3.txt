@@ -1,12 +1,23 @@
-- User: I want to receive today’s weather report.
+- User: I'd like to get a notification when something interesting happens with the weather.
+ERROR: 'trigger_title': 'Weather Underground', 'action_title': 'Notifications'
+Belief State: {}
+End BF
+- User: I would like to receive notifications from Weather Underground.
 
-Belief State: {'trigger_title': "Today's weather report"}
+
+Belief State: {'trigger_channel': 'Weather Underground', 'action_channel': 'Notifications'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want to receive today’s weather report.
+- User: I'd like to get a notification when something interesting happens with the weather.
+ERROR: 'trigger_title': 'Weather Underground', 'action_title': 'Notifications'
+Belief State: {}
+End BF
 
-Belief State: {'trigger_title': "Today's weather report"}
+- User: I would like to receive notifications from Weather Underground.
+
+
+Belief State: {'trigger_channel': 'Weather Underground', 'action_channel': 'Notifications'}
 End BF
 %%%% JSON
-{'id': 3, 'dialogue': [{'User': 'I want to receive today’s weather report.', 'Belief State': {'trigger_title': "Today's weather report"}}]}
+{'id': 3, 'dialogue': [{'User': "I'd like to get a notification when something interesting happens with the weather.", 'Belief State': {}}, {'User': 'I would like to receive notifications from Weather Underground.', 'Belief State': {'trigger_channel': 'Weather Underground', 'action_channel': 'Notifications'}}]}

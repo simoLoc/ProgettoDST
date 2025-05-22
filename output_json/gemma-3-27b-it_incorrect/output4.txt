@@ -1,25 +1,21 @@
-- User: I'd like something posted when an event happens.
-ERROR: 'action_channel': 'Twitter'
-
+- User: I'd like something to happen when a new picture is uploaded. Maybe post about it somewhere?
+ERROR: 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image' 
 Belief State: {}
 End BF
-- User: I would like you to post on Twitter.
-
-
-Belief State: {}
+- System: Ok, I understand you want to post a tweet with an image when a new photo is posted on Facebook with a hashtag. But what details should be included in the tweet itself? 
+- User: The tweet should include the text from the original Facebook post and also the same image that was uploaded.
+Belief State: {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like something posted when an event happens.
-ERROR: 'action_channel': 'Twitter'
-
+- User: I'd like something to happen when a new picture is uploaded. Maybe post about it somewhere?
+ERROR: 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image' 
 Belief State: {}
 End BF
 
-- User: I would like you to post on Twitter.
-
-
-Belief State: {}
+- System: Ok, I understand you want to post a tweet with an image when a new photo is posted on Facebook with a hashtag. But what details should be included in the tweet itself? 
+- User: The tweet should include the text from the original Facebook post and also the same image that was uploaded.
+Belief State: {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
 End BF
 %%%% JSON
-{'id': 4, 'dialogue': [{'User': "I'd like something posted when an event happens.", 'Belief State': {}}, {'User': 'I would like you to post on Twitter.', 'Belief State': {}}]}
+{'id': 4, 'dialogue': [{'User': "I'd like something to happen when a new picture is uploaded. Maybe post about it somewhere?", 'Belief State': {}}, {'System': 'Ok, I understand you want to post a tweet with an image when a new photo is posted on Facebook with a hashtag. But what details should be included in the tweet itself?', 'User': 'The tweet should include the text from the original Facebook post and also the same image that was uploaded.', 'Belief State': {'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}}]}
