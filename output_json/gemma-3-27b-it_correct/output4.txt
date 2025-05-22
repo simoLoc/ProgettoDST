@@ -1,12 +1,43 @@
-- User: I want to automatically post a tweet with an image whenever a new item is available.
+- User: I want to automatically post a tweet with an image whenever I save a new item on Pocket.
 
-Belief State: {'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
+End BF
+- System: Great! Since you want to automatically tweet new Pocket items with an image, are there any specific criteria for these items? For instance, do you want to filter by tags or other attributes before posting?
+- User: No, I don't need any filtering. Just post every new item saved on Pocket as a tweet with its associated image.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': ''}
+End BF
+- System: Okay, so you want every new Pocket item with an image to be automatically tweeted. What Twitter account should I use to post these tweets?
+- User: I want you to use my Twitter account for these tweets.
+
+
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter'}
+End BF
+- System: Great! So I'll post "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" along with the image from https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D" to your Twitter account. Is that correct?
+- User: Yes, please use the text and image provided for my tweets on Twitter.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want to automatically post a tweet with an image whenever a new item is available.
+- User: I want to automatically post a tweet with an image whenever I save a new item on Pocket.
 
-Belief State: {'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}
+End BF
+
+- System: Great! Since you want to automatically tweet new Pocket items with an image, are there any specific criteria for these items? For instance, do you want to filter by tags or other attributes before posting?
+- User: No, I don't need any filtering. Just post every new item saved on Pocket as a tweet with its associated image.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': ''}
+End BF
+
+- System: Okay, so you want every new Pocket item with an image to be automatically tweeted. What Twitter account should I use to post these tweets?
+- User: I want you to use my Twitter account for these tweets.
+
+
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter'}
+End BF
+
+- System: Great! So I'll post "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" along with the image from https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D" to your Twitter account. Is that correct?
+- User: Yes, please use the text and image provided for my tweets on Twitter.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}
 End BF
 %%%% JSON
-{'id': 4, 'dialogue': [{'User': 'I want to automatically post a tweet with an image whenever a new item is available.', 'Belief State': {'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}}]}
+{'id': 4, 'dialogue': [{'User': 'I want to automatically post a tweet with an image whenever I save a new item on Pocket.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image'}}, {'System': 'Great! Since you want to automatically tweet new Pocket items with an image, are there any specific criteria for these items? For instance, do you want to filter by tags or other attributes before posting?', 'User': "No, I don't need any filtering. Just post every new item saved on Pocket as a tweet with its associated image.", 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': ''}}, {'System': 'Okay, so you want every new Pocket item with an image to be automatically tweeted. What Twitter account should I use to post these tweets?', 'User': 'I want you to use my Twitter account for these tweets.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter'}}, {'System': 'Great! So I\'ll post "Just saved an interesting article on Pocket! Check it out ➡️ [link to article]" along with the image from https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D" to your Twitter account. Is that correct?', 'User': 'Yes, please use the text and image provided for my tweets on Twitter.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item', 'action_title': 'Post a tweet with image', 'trigger_fields': '', 'trigger_fields_values': '', 'action_channel': 'Twitter', 'action_fields': 'Tweet (Text input), Photo URL (Text input > Photo)', 'action_fields_values': "'Just saved an interesting article on Pocket! Check it out ➡️ [link to article]', 'https://images.unsplash.com/photo-1503023345310-bd7c9bc5eb99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fHx8MA%3D%3D'"}}]}

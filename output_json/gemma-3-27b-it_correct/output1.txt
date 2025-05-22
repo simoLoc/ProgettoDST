@@ -2,11 +2,65 @@
 
 Belief State: {'action_channel': 'Android Device'}
 End BF
+- System: Great! Now that we've set up notifications for your Android device, what kind of music would you like to play when the event occurs? 
+- User: I want to play music and specifically, I’d like it to be a relaxing playlist.
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music'}
+End BF
+- System: Perfect! So you want to play a relaxing playlist on your device when notified. Is there anything else I can help you with regarding this setup?
+- User: No, that’s everything for now. Thank you!
+
+
+
+
+
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+End BF
+- System: Great! Now, regarding the Cookit event, what do you want to happen when your Cookit starts?
+- User: I want to play a relaxing playlist on my device when the Cookit starts.
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+End BF
+- System: So, when your Cookit starts and you want to play a relaxing playlist, do you want this to apply to a specific kitchen?
+- User: Yes, please set the Kitchen ID to 'kitchen'. 
+
+
+
+
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+End BF
 
 %%%%% AFTER REGEXP
 - User: I want to send notifications to my Android device when a specific event happens.
 
 Belief State: {'action_channel': 'Android Device'}
 End BF
+
+- System: Great! Now that we've set up notifications for your Android device, what kind of music would you like to play when the event occurs? 
+- User: I want to play music and specifically, I’d like it to be a relaxing playlist.
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music'}
+End BF
+
+- System: Perfect! So you want to play a relaxing playlist on your device when notified. Is there anything else I can help you with regarding this setup?
+- User: No, that’s everything for now. Thank you!
+
+
+
+
+
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
+End BF
+
+- System: Great! Now, regarding the Cookit event, what do you want to happen when your Cookit starts?
+- User: I want to play a relaxing playlist on my device when the Cookit starts.
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}
+End BF
+
+- System: So, when your Cookit starts and you want to play a relaxing playlist, do you want this to apply to a specific kitchen?
+- User: Yes, please set the Kitchen ID to 'kitchen'. 
+
+
+
+
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}
+End BF
 %%%% JSON
-{'id': 1, 'dialogue': [{'User': 'I want to send notifications to my Android device when a specific event happens.', 'Belief State': {'action_channel': 'Android Device'}}]}
+{'id': 1, 'dialogue': [{'User': 'I want to send notifications to my Android device when a specific event happens.', 'Belief State': {'action_channel': 'Android Device'}}, {'System': "Great! Now that we've set up notifications for your Android device, what kind of music would you like to play when the event occurs?", 'User': 'I want to play music and specifically, I’d like it to be a relaxing playlist.', 'Belief State': {'action_channel': 'Android Device', 'action_title': 'Play music'}}, {'System': 'Perfect! So you want to play a relaxing playlist on your device when notified. Is there anything else I can help you with regarding this setup?', 'User': 'No, that’s everything for now. Thank you!', 'Belief State': {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}}, {'System': 'Great! Now, regarding the Cookit event, what do you want to happen when your Cookit starts?', 'User': 'I want to play a relaxing playlist on my device when the Cookit starts.', 'Belief State': {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started'}}, {'System': 'So, when your Cookit starts and you want to play a relaxing playlist, do you want this to apply to a specific kitchen?', 'User': "Yes, please set the Kitchen ID to 'kitchen'.", 'Belief State': {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': '', 'trigger_channel': 'Home Connect Cookit', 'trigger_title': 'Cookit started', 'trigger_fields': 'Ha ID (Dropdown list)', 'trigger_fields_values': "'kitchen'"}}]}
