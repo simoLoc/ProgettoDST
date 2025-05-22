@@ -136,6 +136,7 @@ prompt_clarification_fine = """
 By analysing the fields of the trigger action rule to be completed and the system question with the user's incorrect response, generate a clarification question and a correct user response.
 The clarification question is intended to ask for clarification of the fields not completed by the incorrect response provided as input. 
 During generation also considers previous incorrect utterances to preserve coherence, as in a human dialogue. 
+The system's question must use as context only the previous incorrect utterances contained in the current input. The user's response must contain all fields to be completed in the trigger action rule. 
 The system must not explicitly ask for that field to be completed.
 The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's answer.
 The output must respect the format of the output given in the example.
