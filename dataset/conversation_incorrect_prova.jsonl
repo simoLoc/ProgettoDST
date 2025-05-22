@@ -1,0 +1,1 @@
+{"id": 0, "dialogue": [{"User": "I want to receive an email notification whenever there’s a new open recall issued.", "Belief State": {"trigger_title": "New open recall", "action_channel": "Email"}}]}

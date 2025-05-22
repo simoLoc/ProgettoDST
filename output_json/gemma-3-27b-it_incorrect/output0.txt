@@ -1,0 +1,10 @@
+- User: I want to receive an email notification whenever there’s a new open recall issued.
+
+Belief State: {'trigger_title': 'New open recall', 'action_channel': 'Email'}
+End BF
+
+%%%%% AFTER REGEXP- User: I want to receive an email notification whenever there’s a new open recall issued.
+
+Belief State: {'trigger_title': 'New open recall', 'action_channel': 'Email'}
+End BF
+ %%%% JSON{'id': 0, 'dialogue': [{'User': 'I want to receive an email notification whenever there’s a new open recall issued.', 'Belief State': {'trigger_title': 'New open recall', 'action_channel': 'Email'}}]}{"id": 1, "dialogue": [{"User": "I'd like something to happen when my cooking session begins, maybe some background music?", "Belief State": {"trigger_title": "Cookit started", "action_title": "Play music"}}, {"System": "Ok, I understand you want music to play when your cooking session starts. But where should this trigger come from and where should the music play?", "User": "The trigger should be on Cookit and the music on Spotify.", "Belief State": {"trigger_title": "Cookit started", "action_title": "Play music"}}]}

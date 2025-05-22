@@ -1,0 +1,12 @@
+- User: I would like you to integrate with Pocket.
+
+
+Belief State: {'trigger_channel': 'Pocket'}
+End BF
+
+%%%%% AFTER REGEXP- User: I would like you to integrate with Pocket.
+
+
+Belief State: {'trigger_channel': 'Pocket'}
+End BF
+ %%%% JSON{'id': 4, 'dialogue': [{'User': 'I would like you to integrate with Pocket.', 'Belief State': {'trigger_channel': 'Pocket'}}]}

@@ -1,0 +1,10 @@
+- User: I want to receive an IFTTT notification based on weather updates from Weather Underground.
+
+Belief State: {'trigger_channel': 'Weather Underground', 'action_title': 'Send a notification from the IFTTT app'}
+End BF
+
+%%%%% AFTER REGEXP- User: I want to receive an IFTTT notification based on weather updates from Weather Underground.
+
+Belief State: {'trigger_channel': 'Weather Underground', 'action_title': 'Send a notification from the IFTTT app'}
+End BF
+ %%%% JSON{'id': 3, 'dialogue': [{'User': 'I want to receive an IFTTT notification based on weather updates from Weather Underground.', 'Belief State': {'trigger_channel': 'Weather Underground', 'action_title': 'Send a notification from the IFTTT app'}}]}{"id": 4, "dialogue": [{"User": "I would like you to integrate with Pocket.", "Belief State": {"trigger_channel": "Pocket"}}]}

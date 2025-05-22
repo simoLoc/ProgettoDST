@@ -1,0 +1,27 @@
+- User: I'd like something to happen when my cooking session begins, maybe some background music?
+ERROR: 'trigger_channel', 'action_channel'
+Belief State: {'trigger_title': 'Cookit started', 'action_title': 'Play music'}
+End BF
+- System: Ok, I understand you want music to play when your cooking session starts. But where should this trigger come from and where should the music play?
+- User: The trigger should be on Cookit and the music on Spotify.
+
+
+
+
+Belief State: {'trigger_title': 'Cookit started', 'action_title': 'Play music'}
+End BF
+
+%%%%% AFTER REGEXP- User: I'd like something to happen when my cooking session begins, maybe some background music?
+ERROR: 'trigger_channel', 'action_channel'
+Belief State: {'trigger_title': 'Cookit started', 'action_title': 'Play music'}
+End BF
+
+- System: Ok, I understand you want music to play when your cooking session starts. But where should this trigger come from and where should the music play?
+- User: The trigger should be on Cookit and the music on Spotify.
+
+
+
+
+Belief State: {'trigger_title': 'Cookit started', 'action_title': 'Play music'}
+End BF
+ %%%% JSON{'id': 1, 'dialogue': [{'User': "I'd like something to happen when my cooking session begins, maybe some background music?", 'Belief State': {'trigger_title': 'Cookit started', 'action_title': 'Play music'}}, {'System': 'Ok, I understand you want music to play when your cooking session starts. But where should this trigger come from and where should the music play?', 'User': 'The trigger should be on Cookit and the music on Spotify.', 'Belief State': {'trigger_title': 'Cookit started', 'action_title': 'Play music'}}]}{"id": 2, "dialogue": [{"User": "I'd like a weather update for tomorrow.", "Belief State": {"trigger_channel": "Weather Underground", "trigger_title": "Tomorrow's weather report", "trigger_fields": "Time (Text input), Location (Location input > Point)", "trigger_fields_values": "'08:00', '34.0522° N, 118.2437° W'"}}, {"System": "You mentioned wanting a weather update for tomorrow. To confirm, are you interested in receiving this report at a specific time and location?", "User": "Yes, I want the report at 08:00 for Los Angeles, which is located at 34.0522° N, 118.2437° W.", "Belief State": {"trigger_channel": "Weather Underground", "trigger_title": "Tomorrow's weather report", "trigger_fields": "Time (Text input), Location (Location input > Point)", "trigger_fields_values": "'08:00', '34.0522° N, 118.2437° W'"}}]}

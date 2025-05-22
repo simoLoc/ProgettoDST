@@ -1,0 +1,10 @@
+- User: I want to receive a notification with today’s weather report from Weather Underground.
+
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
+End BF
+
+%%%%% AFTER REGEXP- User: I want to receive a notification with today’s weather report from Weather Underground.
+
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}
+End BF
+ %%%% JSON{'id': 3, 'dialogue': [{'User': 'I want to receive a notification with today’s weather report from Weather Underground.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Today's weather report", 'action_channel': 'Notifications'}}]}{"id": 4, "dialogue": [{"User": "I want you to automatically post a tweet with an image whenever I save an article to Pocket.", "Belief State": {"trigger_channel": "Pocket", "action_title": "Post a tweet with image"}}]}

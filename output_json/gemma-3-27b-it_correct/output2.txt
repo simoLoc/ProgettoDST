@@ -1,0 +1,12 @@
+- User: I would like you to use Gmail as the action channel.
+
+
+Belief State: {'action_channel': 'Gmail'}
+End BF
+
+%%%%% AFTER REGEXP- User: I would like you to use Gmail as the action channel.
+
+
+Belief State: {'action_channel': 'Gmail'}
+End BF
+ %%%% JSON{'id': 2, 'dialogue': [{'User': 'I would like you to use Gmail as the action channel.', 'Belief State': {'action_channel': 'Gmail'}}]}{"id": 3, "dialogue": [{"User": "I want to receive an IFTTT notification based on weather updates from Weather Underground.", "Belief State": {"trigger_channel": "Weather Underground", "action_title": "Send a notification from the IFTTT app"}}]}

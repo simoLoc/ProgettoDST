@@ -1,0 +1,8 @@
+- User: I want you to automatically post a tweet with an image whenever I save an article to Pocket. 
+Belief State: {'trigger_channel': 'Pocket', 'action_title': 'Post a tweet with image'}
+End BF
+
+%%%%% AFTER REGEXP- User: I want you to automatically post a tweet with an image whenever I save an article to Pocket. 
+Belief State: {'trigger_channel': 'Pocket', 'action_title': 'Post a tweet with image'}
+End BF
+ %%%% JSON{'id': 4, 'dialogue': [{'User': 'I want you to automatically post a tweet with an image whenever I save an article to Pocket.', 'Belief State': {'trigger_channel': 'Pocket', 'action_title': 'Post a tweet with image'}}]}
