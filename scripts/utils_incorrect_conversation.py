@@ -42,7 +42,6 @@ trigger_title: 'New photo post by you with hashtag'
 
 ## OUTPUT
 - User: I want you to monitor all new posts that have a photo and a specific hashtag.
-ERROR: trigger_channel: 'Facebook'
 
 
 ---
@@ -51,7 +50,7 @@ ERROR: trigger_channel: 'Facebook'
 prompt_prima_utterance_fine = """
 By analysing the trigger action rule fields to be not completed provided as input, it generates a user's utterance.
 The user's utterance must be missing some or all of the fieldsto be not completed. Specifically, the utterance may contain synonyms of the missing field or contain no such field.
-The error to be generated may relate to all or some of the fields not completed in the trigger action rule. Accordingly, the output specifies the fields on which the error was generated, following the format of the example.
+The error to be generated may relate to all or some of the fields not completed in the trigger action rule. 
 The output must respect the format of the output given in the example.
 """
 
@@ -82,7 +81,6 @@ action_channel: 'Twitter'
 ## OUTPUT
 - System: After identifying the posts, what should I do?
 - User: I would like to share it on Social Network.
-ERROR: action_channel: 'Twitter'
 
 ---
 
@@ -93,7 +91,7 @@ prompt_incrementale_fine = """
 By analysing the trigger action rule fields to be not completed provided as input, it generates a system question and a user response.
 The fields to be not completed in the trigger-action rule may be more than one, in which case both the system question must refer to all the fields to be not completed. 
 The user response must be missing some or all of the fields to be not completed. Specifically, the user response may contain synonyms of the missing field or contain no such field.
-The error to be generated may relate to all or some of the fields not completed in the trigger action rule. Accordingly, the output specifies the fields on which the error was generated, following the format of the example.
+The error to be generated may relate to all or some of the fields not completed in the trigger action rule.
 During generation also considers previous utterances to preserve coherence, as in a human dialogue. 
 Fields already completed in the trigger-action rule refer to fields already known by the system. These are provided as context for the output to be produced.
 The system must not explicitly ask for that field to be not completed.

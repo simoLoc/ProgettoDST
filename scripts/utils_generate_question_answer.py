@@ -115,52 +115,6 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
     return current_text, old_response
 
 
-def update_bf_error(text: str, bf_current: dict, bf_new: dict) -> dict:
-    """
-    - text: la stringa contenente 'ERROR:' seguito da coppie chiave: 'valore' o sole chiavi
-    - bf_current: dizionario di partenza; ne vengono rimosse le chiavi trovate nel testo
-    Restituisce bf_current modificato.
-    """
-    # Estrai la parte dopo 'ERROR:'
-    parts = text.split('ERROR:', 1)
-    if len(parts) < 2:
-        return bf_current
-    error_part = parts[1]
-
-    # Trova tutte le occorrenze di chiave: 'valore' o solo chiave separate da virgola
-    # Gruppi: 1=chiave, 2=blocco valore (facoltativo)
-    pattern = r"(\w+)(?::\s*('(?:[^']|\\')*'(?:\s*,\s*'(?:[^']|\\')*')*))?"
-    matches = re.findall(pattern, error_part)
-
-    # Per ogni coppia, ricostruisci il valore 
-    parsed = {}
-    for key, val_block in matches:
-        key = key.strip()
-        if not val_block:
-            parsed[key] = None
-        else:
-            values = re.findall(r"'((?:[^']|\\')*)'", val_block)
-            if len(values) > 1:
-                parsed[key] = ", ".join(f"'{v}'" for v in values)
-            elif len(values) == 1:
-                parsed[key] = values[0]
-            else:
-                parsed[key] = None
-
-    # Determina quali chiavi rimuovere:
-    found = [k for k in parsed if k in bf_current]
-    if found:
-        # Rimuovi solo quelle trovate
-        for k in found:
-            bf_current.pop(k, None)
-    else:
-        # Se nessuna trovata, rimuovi tutte le chiavi di bf_new
-        for k in bf_new:
-            bf_current.pop(k, None)
-
-    return bf_current
-
-
 def generate_question_and_answer(fields_trigger_action, entry, fields, current_text, bf_current, str_trigger_action_past, old_response, isAction = False, correct = True):
     """
         Metodo per generare question e answer tramite la selezione casuale dagli elementi nella lista 'fields_trigger_action'.
@@ -202,6 +156,11 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             # str_trigger_action_current è la stringa per l'input del prompt
             bf_new, str_trigger_action_current = get_prompt_input(new_elements, entry)
             
+            if not correct:
+                # se c'è l'errore
+                # belief state rimuovendo gli errori generati
+                bf_current_error = copy(bf_current)
+
             # merge tra i dizionari
             bf_current = bf_current | bf_new   
 
@@ -232,10 +191,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
             # current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
 
             # se ho l'errore allora devo correggere l'errore e poi 
-            if isError:
-                # aggiornamento del belief state rimuovendo gli errori generati
-                bf_current_error = update_bf_error(response, copy(bf_current), bf_new)
-                
+            if isError:                
                 # salvataggio della risposta con errore
                 current_text += response
                 current_text += "\nBelief State: " + str(bf_current_error) + "\nEnd BF\n"

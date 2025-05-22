@@ -6,7 +6,7 @@ from tqdm import tqdm
 import lmstudio as lms
 from utils_correct_conversation import *
 from utils_incorrect_conversation import *
-from utils_generate_question_answer import validate_prompt, generate_question_and_answer, update_bf_error
+from utils_generate_question_answer import validate_prompt, generate_question_and_answer
 import os
 import ast
 import json
@@ -120,8 +120,8 @@ def generate_conversation(entry, correct = False):
 
     # Validazione della risposta (in questo caso è la prima utterance)
     if isError:
-        # aggiornamento del belief state rimuovendo gli errori generati
-        bf_current_error = update_bf_error(response, copy(bf_current), bf_current)
+        # aggiornamento del belief state vuoto
+        bf_current_error = dict()
 
         
         # salvataggio della risposta con errore
@@ -226,7 +226,6 @@ def extract_utterances(conversation: str) -> str:
         ^\ *-\ System:[\s\S]+?             # 2) blocco che parte con System:
         ^\ *-\ User:[\s\S]+?               # e immediatamente segue User:
         )
-        (ERROR:[\s\S]+?)*
         (\n)*^\s*Belief\ state:[\s\S]+?\n            # Belief state sulla propria riga
         ^End\ BF$                          # termine con End BF su riga propria
     ''', re.MULTILINE | re.DOTALL | re.VERBOSE | re.IGNORECASE)
