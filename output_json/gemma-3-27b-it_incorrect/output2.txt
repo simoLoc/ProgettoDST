@@ -1,27 +1,14 @@
-- User: I'd like a weather update for tomorrow.
-ERROR: 'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+- User: I would like you to send an email through Weather Underground.
 
 
-
-
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
-End BF
-- System: You mentioned wanting a weather update for tomorrow. To confirm, are you interested in receiving this report at a specific time and location?
-- User: Yes, I want the report at 08:00 for Los Angeles, which is located at 34.0522° N, 118.2437° W.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+Belief State: {'trigger_channel': 'Weather Underground', 'action_title': 'Send an email'}
 End BF
 
-%%%%% AFTER REGEXP- User: I'd like a weather update for tomorrow.
-ERROR: 'trigger_fields': 'Time (Text input), Location (Location input > Point)' 
+%%%%% AFTER REGEXP
+- User: I would like you to send an email through Weather Underground.
 
 
-
-
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
+Belief State: {'trigger_channel': 'Weather Underground', 'action_title': 'Send an email'}
 End BF
-
-- System: You mentioned wanting a weather update for tomorrow. To confirm, are you interested in receiving this report at a specific time and location?
-- User: Yes, I want the report at 08:00 for Los Angeles, which is located at 34.0522° N, 118.2437° W.
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}
-End BF
- %%%% JSON{'id': 2, 'dialogue': [{'User': "I'd like a weather update for tomorrow.", 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}}, {'System': 'You mentioned wanting a weather update for tomorrow. To confirm, are you interested in receiving this report at a specific time and location?', 'User': 'Yes, I want the report at 08:00 for Los Angeles, which is located at 34.0522° N, 118.2437° W.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'trigger_fields': 'Time (Text input), Location (Location input > Point)', 'trigger_fields_values': "'08:00', '34.0522° N, 118.2437° W'"}}]}{"id": 3, "dialogue": [{"User": "I want to receive a notification with today’s weather report from Weather Underground.", "Belief State": {"trigger_channel": "Weather Underground", "trigger_title": "Today's weather report", "action_channel": "Notifications"}}]}
+%%%% JSON
+{'id': 2, 'dialogue': [{'User': 'I would like you to send an email through Weather Underground.', 'Belief State': {'trigger_channel': 'Weather Underground', 'action_title': 'Send an email'}}]}{"id": 3, "dialogue": [{"User": "I'd like to get a little alert when something happens.", "Belief State": {"action_title": "Send a notification from the IFTTT app"}}, {"User": "I would like you to send a notification from the IFTTT app.", "Belief State": {"action_title": "Send a notification from the IFTTT app"}}]}

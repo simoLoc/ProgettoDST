@@ -1,10 +1,12 @@
-- User: I want my Android device to play music whenever the trigger is activated.
+- User: I want you to play some music whenever Cookit is started.
 
-Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music'}
+Belief State: {'trigger_title': 'Cookit started', 'action_title': 'Play music'}
 End BF
 
-%%%%% AFTER REGEXP- User: I want my Android device to play music whenever the trigger is activated.
+%%%%% AFTER REGEXP
+- User: I want you to play some music whenever Cookit is started.
 
-Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music'}
+Belief State: {'trigger_title': 'Cookit started', 'action_title': 'Play music'}
 End BF
- %%%% JSON{'id': 1, 'dialogue': [{'User': 'I want my Android device to play music whenever the trigger is activated.', 'Belief State': {'action_channel': 'Android Device', 'action_title': 'Play music'}}]}{"id": 2, "dialogue": [{"User": "I would like you to use Gmail as the action channel.", "Belief State": {"action_channel": "Gmail"}}]}
+%%%% JSON
+{'id': 1, 'dialogue': [{'User': 'I want you to play some music whenever Cookit is started.', 'Belief State': {'trigger_title': 'Cookit started', 'action_title': 'Play music'}}]}{"id": 2, "dialogue": [{"User": "I would like information from Weather Underground.", "Belief State": {"trigger_channel": "Weather Underground"}}]}

@@ -1,1 +1,1 @@
-{"id": 0, "dialogue": [{"User": "I want to receive an email notification whenever there’s a new open recall issued.", "Belief State": {"trigger_title": "New open recall", "action_channel": "Email"}}]}
+{"id": 0, "dialogue": [{"User": "I would like you to set the trigger channel to Department of Agriculture.", "Belief State": {"trigger_channel": "Department of Agriculture"}}]}

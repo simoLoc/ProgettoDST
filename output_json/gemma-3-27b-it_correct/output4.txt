@@ -1,12 +1,12 @@
-- User: I would like you to integrate with Pocket.
+- User: I want you to notify me about any new item saved on Pocket.
 
-
-Belief State: {'trigger_channel': 'Pocket'}
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
 End BF
 
-%%%%% AFTER REGEXP- User: I would like you to integrate with Pocket.
+%%%%% AFTER REGEXP
+- User: I want you to notify me about any new item saved on Pocket.
 
-
-Belief State: {'trigger_channel': 'Pocket'}
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
 End BF
- %%%% JSON{'id': 4, 'dialogue': [{'User': 'I would like you to integrate with Pocket.', 'Belief State': {'trigger_channel': 'Pocket'}}]}
+%%%% JSON
+{'id': 4, 'dialogue': [{'User': 'I want you to notify me about any new item saved on Pocket.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}}]}
