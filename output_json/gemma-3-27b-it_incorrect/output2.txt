@@ -1,21 +1,29 @@
-- User: Can you give me a weather update for tomorrow?
-ERROR: 'trigger_title': 'Tomorrow's weather report'
-Belief State: {}
+- User: I'd like to get an email whenever there’s a change in the forecast.
+ERROR: 'trigger_title': 'Tomorrow\'s weather report', 'action_channel': 'Gmail', 'action_title': 'Send an email' 
+
+
+
+
+Belief State: {'trigger_channel': 'Weather Underground'}
 End BF
-- System: Ok, I understand you want a weather update for tomorrow. But from where do you want me to get this information?
-- User: The trigger channel is 'Weather Channel', and the trigger title is 'Tomorrow's weather report'.
-Belief State: {'trigger_title': "Tomorrow's weather report"}
+- System: You mentioned getting an email when there’s a change in the forecast, but can you tell me more about what triggers this notification? Specifically, how often do you want to receive these updates?
+- User: I'd like to get an email every day with tomorrow's weather report from Weather Underground. I want to send it via Gmail.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: Can you give me a weather update for tomorrow?
-ERROR: 'trigger_title': 'Tomorrow's weather report'
-Belief State: {}
+- User: I'd like to get an email whenever there’s a change in the forecast.
+ERROR: 'trigger_title': 'Tomorrow\'s weather report', 'action_channel': 'Gmail', 'action_title': 'Send an email' 
+
+
+
+
+Belief State: {'trigger_channel': 'Weather Underground'}
 End BF
 
-- System: Ok, I understand you want a weather update for tomorrow. But from where do you want me to get this information?
-- User: The trigger channel is 'Weather Channel', and the trigger title is 'Tomorrow's weather report'.
-Belief State: {'trigger_title': "Tomorrow's weather report"}
+- System: You mentioned getting an email when there’s a change in the forecast, but can you tell me more about what triggers this notification? Specifically, how often do you want to receive these updates?
+- User: I'd like to get an email every day with tomorrow's weather report from Weather Underground. I want to send it via Gmail.
+Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email'}
 End BF
 %%%% JSON
-{'id': 2, 'dialogue': [{'User': 'Can you give me a weather update for tomorrow?', 'Belief State': {}}, {'System': 'Ok, I understand you want a weather update for tomorrow. But from where do you want me to get this information?', 'User': "The trigger channel is 'Weather Channel', and the trigger title is 'Tomorrow's weather report'.", 'Belief State': {'trigger_title': "Tomorrow's weather report"}}]}
+{'id': 2, 'dialogue': [{'User': "I'd like to get an email whenever there’s a change in the forecast.", 'Belief State': {'trigger_channel': 'Weather Underground'}}, {'System': 'You mentioned getting an email when there’s a change in the forecast, but can you tell me more about what triggers this notification? Specifically, how often do you want to receive these updates?', 'User': "I'd like to get an email every day with tomorrow's weather report from Weather Underground. I want to send it via Gmail.", 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email'}}]}

@@ -1,12 +1,25 @@
-- User: I want you to post a tweet whenever the trigger is activated, including an image if available.
+- User: I'd like something to happen whenever I save an article.
+ERROR: 'trigger_channel': 'Pocket' 
 
-Belief State: {'action_title': 'Post a tweet with image'}
+
+Belief State: {'trigger_title': 'Any new item'}
+End BF
+- System: So, whenever you save an article, what exactly do you want me to do?
+- User: I’d like something to happen whenever a new item is saved on Pocket. Specifically, I want to trigger an action when any new item appears.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want you to post a tweet whenever the trigger is activated, including an image if available.
+- User: I'd like something to happen whenever I save an article.
+ERROR: 'trigger_channel': 'Pocket' 
 
-Belief State: {'action_title': 'Post a tweet with image'}
+
+Belief State: {'trigger_title': 'Any new item'}
+End BF
+
+- System: So, whenever you save an article, what exactly do you want me to do?
+- User: I’d like something to happen whenever a new item is saved on Pocket. Specifically, I want to trigger an action when any new item appears.
+Belief State: {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}
 End BF
 %%%% JSON
-{'id': 4, 'dialogue': [{'User': 'I want you to post a tweet whenever the trigger is activated, including an image if available.', 'Belief State': {'action_title': 'Post a tweet with image'}}]}
+{'id': 4, 'dialogue': [{'User': "I'd like something to happen whenever I save an article.", 'Belief State': {'trigger_title': 'Any new item'}}, {'System': 'So, whenever you save an article, what exactly do you want me to do?', 'User': 'I’d like something to happen whenever a new item is saved on Pocket. Specifically, I want to trigger an action when any new item appears.', 'Belief State': {'trigger_channel': 'Pocket', 'trigger_title': 'Any new item'}}]}

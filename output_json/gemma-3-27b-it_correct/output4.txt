@@ -1,12 +1,12 @@
-- User: I want you to automatically post a tweet including an image whenever the trigger is activated.
+- User: I want to automatically post a tweet with an image whenever a new item is available.
 
-Belief State: {'action_title': 'Post a tweet with image'}
+Belief State: {'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want you to automatically post a tweet including an image whenever the trigger is activated.
+- User: I want to automatically post a tweet with an image whenever a new item is available.
 
-Belief State: {'action_title': 'Post a tweet with image'}
+Belief State: {'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}
 End BF
 %%%% JSON
-{'id': 4, 'dialogue': [{'User': 'I want you to automatically post a tweet including an image whenever the trigger is activated.', 'Belief State': {'action_title': 'Post a tweet with image'}}]}
+{'id': 4, 'dialogue': [{'User': 'I want to automatically post a tweet with an image whenever a new item is available.', 'Belief State': {'trigger_title': 'Any new item', 'action_channel': 'Twitter', 'action_title': 'Post a tweet with image'}}]}

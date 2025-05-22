@@ -19,3 +19,8 @@
 {"id": 2, "dialogue": [{"User": "I would like you to send an email through Weather Underground.", "Belief State": {"trigger_channel": "Weather Underground", "action_title": "Send an email"}}]}
 {"id": 3, "dialogue": [{"User": "I want to receive today’s weather report.", "Belief State": {"trigger_title": "Today's weather report"}}]}
 {"id": 4, "dialogue": [{"User": "I want you to automatically post a tweet including an image whenever the trigger is activated.", "Belief State": {"action_title": "Post a tweet with image"}}]}
+{"id": 0, "dialogue": [{"User": "I want to receive an email notification when the trigger is activated.", "Belief State": {"action_channel": "Email", "action_title": "Send me an email"}}]}
+{"id": 1, "dialogue": [{"User": "I want to send notifications to my Android device when a specific event happens.", "Belief State": {"action_channel": "Android Device"}}]}
+{"id": 2, "dialogue": [{"User": "I would like tomorrow's weather report.", "Belief State": {"trigger_title": "Tomorrow's weather report"}}]}
+{"id": 3, "dialogue": [{"User": "I want to receive today’s weather report from Weather Underground.", "Belief State": {"trigger_channel": "Weather Underground", "trigger_title": "Today's weather report"}}]}
+{"id": 4, "dialogue": [{"User": "I want to automatically post a tweet with an image whenever a new item is available.", "Belief State": {"trigger_title": "Any new item", "action_channel": "Twitter", "action_title": "Post a tweet with image"}}]}

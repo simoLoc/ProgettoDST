@@ -1,21 +1,12 @@
-- User: I'd like something to happen when I get a notification on my phone.
-ERROR: 'action_channel': 'Android Device', 'action_title': 'Play music'
-Belief State: {'action_fields': '', 'action_fields_values': ''}
-End BF
-- System: Ok, so you want music to play when you receive a notification. Can you tell me more about what triggers this action? What event on your phone should start the music?
-- User: When I get a new message on my Android Device, I'd like to play music.
+- User: I want my Android device to play music whenever the trigger is activated.
+
 Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like something to happen when I get a notification on my phone.
-ERROR: 'action_channel': 'Android Device', 'action_title': 'Play music'
-Belief State: {'action_fields': '', 'action_fields_values': ''}
-End BF
+- User: I want my Android device to play music whenever the trigger is activated.
 
-- System: Ok, so you want music to play when you receive a notification. Can you tell me more about what triggers this action? What event on your phone should start the music?
-- User: When I get a new message on my Android Device, I'd like to play music.
 Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 End BF
 %%%% JSON
-{'id': 1, 'dialogue': [{'User': "I'd like something to happen when I get a notification on my phone.", 'Belief State': {'action_fields': '', 'action_fields_values': ''}}, {'System': 'Ok, so you want music to play when you receive a notification. Can you tell me more about what triggers this action? What event on your phone should start the music?', 'User': "When I get a new message on my Android Device, I'd like to play music.", 'Belief State': {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}}]}
+{'id': 1, 'dialogue': [{'User': 'I want my Android device to play music whenever the trigger is activated.', 'Belief State': {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}}]}

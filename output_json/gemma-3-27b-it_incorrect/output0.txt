@@ -1,12 +1,12 @@
-- User: I’d like to be notified whenever the Department of Agriculture issues a new open recall.
+- User: I want to receive an email notification whenever the Department of Agriculture issues a new open recall.
 
-Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I’d like to be notified whenever the Department of Agriculture issues a new open recall.
+- User: I want to receive an email notification whenever the Department of Agriculture issues a new open recall.
 
-Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}
 End BF
 %%%% JSON
-{'id': 0, 'dialogue': [{'User': 'I’d like to be notified whenever the Department of Agriculture issues a new open recall.', 'Belief State': {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}}]}
+{'id': 0, 'dialogue': [{'User': 'I want to receive an email notification whenever the Department of Agriculture issues a new open recall.', 'Belief State': {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall', 'action_title': 'Send me an email'}}]}

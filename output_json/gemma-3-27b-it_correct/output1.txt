@@ -1,14 +1,12 @@
-- User: I would like you to use the Home Connect Cookit channel.
+- User: I want to send notifications to my Android device when a specific event happens.
 
-
-Belief State: {'trigger_channel': 'Home Connect Cookit'}
+Belief State: {'action_channel': 'Android Device'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I would like you to use the Home Connect Cookit channel.
+- User: I want to send notifications to my Android device when a specific event happens.
 
-
-Belief State: {'trigger_channel': 'Home Connect Cookit'}
+Belief State: {'action_channel': 'Android Device'}
 End BF
 %%%% JSON
-{'id': 1, 'dialogue': [{'User': 'I would like you to use the Home Connect Cookit channel.', 'Belief State': {'trigger_channel': 'Home Connect Cookit'}}]}
+{'id': 1, 'dialogue': [{'User': 'I want to send notifications to my Android device when a specific event happens.', 'Belief State': {'action_channel': 'Android Device'}}]}
