@@ -270,8 +270,8 @@ if __name__ == "__main__":
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
-    file_path_correct = "dataset/conversation_correct_prova.jsonl"
-    file_path_incorrect = "dataset/conversation_incorrect_prova.jsonl"
+    file_path_json_correct = "dataset/conversation_correct_prova.jsonl"
+    file_path_json_incorrect = "dataset/conversation_incorrect_prova.jsonl"
 
 
     with open("dataset/values_prova_completo.json", "r", encoding="utf-8") as f:
@@ -294,8 +294,8 @@ if __name__ == "__main__":
         json_correct = parse_conversation_to_json(correct_conversation, i)
         json_incorrect = parse_conversation_to_json(incorrect_conversation, i)
 
-        save_to_json_lines([json_correct], file_path_correct)
-        save_to_json_lines([json_incorrect], file_path_incorrect)
+        save_to_json_lines([json_correct], file_path_json_correct)
+        save_to_json_lines([json_incorrect], file_path_json_incorrect)
 
         # Percorso del file
         file_path_correct = f"output_json/{name_model}_correct/output{i}.txt"
