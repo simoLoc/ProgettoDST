@@ -143,6 +143,7 @@ prompt_validazione_fine = """
 By analysing the trigger action rule fields and the utterance, it assesses whether or not the utterance
 contains all the required fields.
 The utterance may also contain other information or a field rephrasement, but the output must be 1 if the utterance contains at least all the required fields and 0 otherwise. 
+In the case of trigger_channel and action_channel, you must check that the utterance contains exactly the values of those fields, as in example 1.
 In the case of trigger_title and action_title you can ignore the case of the characters in the utterance, as in example 1.
 The utterance may contain more information, but this information must not be about completing empty fields. In particular, analyse whether the utterance, for the meaning of the fields provided, contains only such information as in example 2.
 The output must respect the format of the output given in the example.
