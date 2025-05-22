@@ -1,23 +1,12 @@
-- User: I'd like to get notified when something happens.
-ERROR: 'action_channel': 'Email', 'action_title': 'Send me an email' 
-Belief State: {}
-End BF
-- System: Ok, I understand you want an email when a new photo is posted on Facebook with a specific hashtag. But what details about this email do you need?
-- User: Please send me an email with the link to the post and the hashtag used.
+- User: I’d like to be notified whenever the Department of Agriculture issues a new open recall.
 
-Belief State: {'action_channel': 'Email', 'action_title': 'Send me an email'}
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I'd like to get notified when something happens.
-ERROR: 'action_channel': 'Email', 'action_title': 'Send me an email' 
-Belief State: {}
-End BF
+- User: I’d like to be notified whenever the Department of Agriculture issues a new open recall.
 
-- System: Ok, I understand you want an email when a new photo is posted on Facebook with a specific hashtag. But what details about this email do you need?
-- User: Please send me an email with the link to the post and the hashtag used.
-
-Belief State: {'action_channel': 'Email', 'action_title': 'Send me an email'}
+Belief State: {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}
 End BF
 %%%% JSON
-{'id': 0, 'dialogue': [{'User': "I'd like to get notified when something happens.", 'Belief State': {}}, {'System': 'Ok, I understand you want an email when a new photo is posted on Facebook with a specific hashtag. But what details about this email do you need?', 'User': 'Please send me an email with the link to the post and the hashtag used.', 'Belief State': {'action_channel': 'Email', 'action_title': 'Send me an email'}}]}
+{'id': 0, 'dialogue': [{'User': 'I’d like to be notified whenever the Department of Agriculture issues a new open recall.', 'Belief State': {'trigger_channel': 'Department of Agriculture', 'trigger_title': 'New open recall'}}]}

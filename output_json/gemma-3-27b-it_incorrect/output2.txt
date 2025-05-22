@@ -1,12 +1,21 @@
-- User: I want to receive tomorrow’s weather report via email.
-
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail'}
+- User: Can you give me a weather update for tomorrow?
+ERROR: 'trigger_title': 'Tomorrow's weather report'
+Belief State: {}
+End BF
+- System: Ok, I understand you want a weather update for tomorrow. But from where do you want me to get this information?
+- User: The trigger channel is 'Weather Channel', and the trigger title is 'Tomorrow's weather report'.
+Belief State: {'trigger_title': "Tomorrow's weather report"}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want to receive tomorrow’s weather report via email.
+- User: Can you give me a weather update for tomorrow?
+ERROR: 'trigger_title': 'Tomorrow's weather report'
+Belief State: {}
+End BF
 
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail'}
+- System: Ok, I understand you want a weather update for tomorrow. But from where do you want me to get this information?
+- User: The trigger channel is 'Weather Channel', and the trigger title is 'Tomorrow's weather report'.
+Belief State: {'trigger_title': "Tomorrow's weather report"}
 End BF
 %%%% JSON
-{'id': 2, 'dialogue': [{'User': 'I want to receive tomorrow’s weather report via email.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail'}}]}
+{'id': 2, 'dialogue': [{'User': 'Can you give me a weather update for tomorrow?', 'Belief State': {}}, {'System': 'Ok, I understand you want a weather update for tomorrow. But from where do you want me to get this information?', 'User': "The trigger channel is 'Weather Channel', and the trigger title is 'Tomorrow's weather report'.", 'Belief State': {'trigger_title': "Tomorrow's weather report"}}]}

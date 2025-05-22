@@ -1,12 +1,14 @@
-- User: I want to receive tomorrow’s weather report via email every day.
+- User: I would like you to send an email through Weather Underground.
 
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email'}
+
+Belief State: {'trigger_channel': 'Weather Underground', 'action_title': 'Send an email'}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I want to receive tomorrow’s weather report via email every day.
+- User: I would like you to send an email through Weather Underground.
 
-Belief State: {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email'}
+
+Belief State: {'trigger_channel': 'Weather Underground', 'action_title': 'Send an email'}
 End BF
 %%%% JSON
-{'id': 2, 'dialogue': [{'User': 'I want to receive tomorrow’s weather report via email every day.', 'Belief State': {'trigger_channel': 'Weather Underground', 'trigger_title': "Tomorrow's weather report", 'action_channel': 'Gmail', 'action_title': 'Send an email'}}]}
+{'id': 2, 'dialogue': [{'User': 'I would like you to send an email through Weather Underground.', 'Belief State': {'trigger_channel': 'Weather Underground', 'action_title': 'Send an email'}}]}

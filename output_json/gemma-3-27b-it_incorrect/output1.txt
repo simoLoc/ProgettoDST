@@ -1,21 +1,21 @@
-- User: I’d like something to happen when my cooking app starts up, and send a notification to my phone.
-ERROR: 'trigger_channel', 'action_title', 'trigger_fields', 'action_fields'
-Belief State: {}
+- User: I'd like something to happen when I get a notification on my phone.
+ERROR: 'action_channel': 'Android Device', 'action_title': 'Play music'
+Belief State: {'action_fields': '', 'action_fields_values': ''}
 End BF
-- System: Ok, I understand you want a notification on your phone when your cooking app starts. But could you tell me which application is triggering this event?
-- User: The trigger is happening within the Cookit app. And I’d like to send the notification to my Android Device.
-Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}
+- System: Ok, so you want music to play when you receive a notification. Can you tell me more about what triggers this action? What event on your phone should start the music?
+- User: When I get a new message on my Android Device, I'd like to play music.
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 End BF
 
 %%%%% AFTER REGEXP
-- User: I’d like something to happen when my cooking app starts up, and send a notification to my phone.
-ERROR: 'trigger_channel', 'action_title', 'trigger_fields', 'action_fields'
-Belief State: {}
+- User: I'd like something to happen when I get a notification on my phone.
+ERROR: 'action_channel': 'Android Device', 'action_title': 'Play music'
+Belief State: {'action_fields': '', 'action_fields_values': ''}
 End BF
 
-- System: Ok, I understand you want a notification on your phone when your cooking app starts. But could you tell me which application is triggering this event?
-- User: The trigger is happening within the Cookit app. And I’d like to send the notification to my Android Device.
-Belief State: {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}
+- System: Ok, so you want music to play when you receive a notification. Can you tell me more about what triggers this action? What event on your phone should start the music?
+- User: When I get a new message on my Android Device, I'd like to play music.
+Belief State: {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}
 End BF
 %%%% JSON
-{'id': 1, 'dialogue': [{'User': 'I’d like something to happen when my cooking app starts up, and send a notification to my phone.', 'Belief State': {}}, {'System': 'Ok, I understand you want a notification on your phone when your cooking app starts. But could you tell me which application is triggering this event?', 'User': 'The trigger is happening within the Cookit app. And I’d like to send the notification to my Android Device.', 'Belief State': {'trigger_title': 'Cookit started', 'action_channel': 'Android Device'}}]}
+{'id': 1, 'dialogue': [{'User': "I'd like something to happen when I get a notification on my phone.", 'Belief State': {'action_fields': '', 'action_fields_values': ''}}, {'System': 'Ok, so you want music to play when you receive a notification. Can you tell me more about what triggers this action? What event on your phone should start the music?', 'User': "When I get a new message on my Android Device, I'd like to play music.", 'Belief State': {'action_channel': 'Android Device', 'action_title': 'Play music', 'action_fields': '', 'action_fields_values': ''}}]}

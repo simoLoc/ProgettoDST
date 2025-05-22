@@ -14,3 +14,8 @@
 {"id": 2, "dialogue": [{"User": "I want to receive tomorrow’s weather report via email every day.", "Belief State": {"trigger_channel": "Weather Underground", "trigger_title": "Tomorrow's weather report", "action_channel": "Gmail", "action_title": "Send an email"}}]}
 {"id": 3, "dialogue": [{"User": "I would like to receive notifications from Weather Underground.", "Belief State": {"trigger_channel": "Weather Underground", "action_channel": "Notifications"}}]}
 {"id": 4, "dialogue": [{"User": "I want you to automatically post a tweet including an image whenever the trigger is activated.", "Belief State": {"action_title": "Post a tweet with image"}}]}
+{"id": 0, "dialogue": [{"User": "I want to receive an email whenever there’s a new open recall issued.", "Belief State": {"trigger_title": "New open recall", "action_channel": "Email", "action_title": "Send me an email"}}]}
+{"id": 1, "dialogue": [{"User": "I would like you to use the Home Connect Cookit channel.", "Belief State": {"trigger_channel": "Home Connect Cookit"}}]}
+{"id": 2, "dialogue": [{"User": "I would like you to send an email through Weather Underground.", "Belief State": {"trigger_channel": "Weather Underground", "action_title": "Send an email"}}]}
+{"id": 3, "dialogue": [{"User": "I want to receive today’s weather report.", "Belief State": {"trigger_title": "Today's weather report"}}]}
+{"id": 4, "dialogue": [{"User": "I want you to automatically post a tweet including an image whenever the trigger is activated.", "Belief State": {"action_title": "Post a tweet with image"}}]}
