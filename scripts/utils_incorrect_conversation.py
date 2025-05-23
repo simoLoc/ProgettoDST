@@ -137,7 +137,7 @@ In the output, the system's question must use as context only the user's incorre
 The system must not explicitly ask for that fields to be completed.
 The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's answer.
 In the output, the system's question and the user's response must avoid referring to the trigger action rule.
-The output must respect the format of the output given in the example. The output must contain the system's question and the user's answer.
+The output must respect the format of the output given in the example. The output must contain the system's question and the user's response.
 """
 
 
@@ -180,7 +180,7 @@ The system's question must use as context only the previous incorrect utterances
 The system must not explicitly ask for that fields to be completed.  
 The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's answer.
 The system's question and the user's response must avoid referring to the trigger action rule.
-The output must respect the format of the output given in the example. The output must contain the system's question and the user's answer.
+The output must respect the format of the output given in the example. The output must contain the system's question and the user's response.
 """
 
 
