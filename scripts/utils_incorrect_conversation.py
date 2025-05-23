@@ -105,8 +105,7 @@ The output must respect the format of the output given in the example.
 
 prompt_clarification_inizio_prima = f"""
 Generates a system question and a user response that are a clarification question and a correct response respectively. 
-Input is provided containing the fields of the trigger action rule to be completed and the user's incorrect utterance. 
-The incorrect response may contain partial completion of the fields or no completion at all. 
+Input is provided containing the fields of the trigger action rule to be completed and the user's incorrect utterance. . 
 The clarification question is intended to ask for clarification of the fields not completed by the incorrect utterance provided as input.
 
 {prompt_rules}
@@ -119,11 +118,11 @@ trigger_channel: 'Facebook'
 trigger_title: 'New photo post by you with hashtag'
 
 ## USER'S INCORRECT UTTERANCE
-- User: I want you to monitor all new posts that have a photo and a specific hashtag.
+- User: I want you to monitor all.
 
 ## OUTPUT
-- System: Ok, but I'm not sure which platform to monitor. Could you specify it?
-- User: Please look at all new Facebook posts.
+- System: Ok, but I'm not sure on what to do and which platform to monitor. Could you specify it?
+- User: Please look at all my new Facebook posts with a specific hashtag.
 
 ---
 
@@ -131,7 +130,7 @@ trigger_title: 'New photo post by you with hashtag'
 
 prompt_clarification_fine_prima = """
 By analysing the fields of the trigger action rule to be completed and the user's incorrect utterance, generate a clarification question and a correct user response.
-The clarification question is intended to ask for clarification of the fields not completed by the incorrect response provided as input.
+The clarification question is intended to ask for clarification of the trigger action rule to be completed, that are not completed in the user incorrect utterance.
 During generation also considers previous incorrect utterances to preserve coherence, as in a human dialogue.
 In the output, the system's question must use as context only the user's incorrect utterance contained in the current input. The user's response must contain all fields to be completed in the trigger action rule.
 The system must not explicitly ask for that fields to be completed.
@@ -148,7 +147,6 @@ The output must respect the format of the output given in the example.
 prompt_clarification_inizio_incrementale = f"""
 Generates a system question and a user response that are a clarification question and a correct response respectively. 
 Input is provided containing the fields of the trigger action rule to be completed and the system question with the user's incorrect response. 
-The incorrect response may contain partial completion of the fields or no completion at all. 
 The clarification question is intended to ask for clarification of the fields not completed by the incorrect response provided as input. 
 
 {prompt_rules}
@@ -162,11 +160,11 @@ trigger_title: 'New photo post by you with hashtag'
 
 ## PREVIOUS INCORRECT UTTERANCES
 - System: To post the photo on Twitter, what do you want that I must monitor?
-- User: I want you to monitor all new posts that have a photo and a specific hashtag.
+- User: I want you to monitor all.
 
 ## OUTPUT
-- System: Ok, but I'm not sure which platform to monitor. Could you specify it?
-- User: Please look at all new Facebook posts.
+- System: Ok, but I'm not sure on what to do and which platform to monitor. Could you specify it?
+- User: Please look at all my new Facebook posts with a specific hashtag.
 
 ---
 
@@ -174,7 +172,7 @@ trigger_title: 'New photo post by you with hashtag'
 
 prompt_clarification_fine_incrementale = """
 By analysing the fields of the trigger action rule to be completed and the system question with the user's incorrect response, generate a clarification question and a correct user response.
-The clarification question is intended to ask for clarification of the fields not completed by the incorrect response provided as input. 
+The clarification question is intended to ask for clarification of the trigger action rule to be completed, that are not completed in the user incorrect utterance.
 During generation also considers previous incorrect utterances to preserve coherence, as in a human dialogue. 
 Incorrect previous utterances may also contain only the user's utterance, but the output must contain the system's clarification question and the user's utterance containing all fields to be completed.
 The system's question must use as context only the previous incorrect utterances contained in the current input. The user's response must contain all fields to be completed in the trigger action rule. 
