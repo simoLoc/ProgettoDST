@@ -248,7 +248,7 @@ if __name__ == "__main__":
     model = lms.llm(name_model)
 
     file_path_json_correct = "dataset/conversation_correct_val.jsonl"
-    file_path_json_incorrect = "dataset/conversation_incorrect_valjsonl"
+    file_path_json_incorrect = "dataset/conversation_incorrect_val.jsonl"
 
 
     with open("dataset/dataset_val.json", "r", encoding="utf-8") as f:
