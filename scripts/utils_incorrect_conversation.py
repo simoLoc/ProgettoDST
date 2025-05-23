@@ -100,10 +100,52 @@ The output must respect the format of the output given in the example.
 """
 
 # ----
-#   PROMPT PER LA CLARIFICATION QUESTION
+#   PROMPT PER LA CLARIFICATION QUESTION - PRIMA UTTERANCE
 # ----
 
-prompt_clarification_inizio = f"""
+prompt_clarification_inizio_prima = f"""
+Generates a system question and a user response that are a clarification question and a correct response respectively. 
+Input is provided containing the fields of the trigger action rule to be completed and the user's incorrect utterance. 
+The incorrect response may contain partial completion of the fields or no completion at all. 
+The clarification question is intended to ask for clarification of the fields not completed by the incorrect utterance provided as input.
+
+{prompt_rules}
+
+### EXAMPLE TRIGGER-ACTION RULES
+## INPUT
+
+## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+trigger_channel: 'Facebook'
+trigger_title: 'New photo post by you with hashtag'
+
+## USER'S INCORRECT UTTERANCE
+- User: I want you to monitor all new posts that have a photo and a specific hashtag.
+
+## OUTPUT
+- System: Ok, but I'm not sure which platform to monitor. Could you specify it?
+- User: Please look at all new Facebook posts.
+
+---
+
+"""
+
+prompt_clarification_fine_prima = """
+By analysing the fields of the trigger action rule to be completed and the user's incorrect utterance, generate a clarification question and a correct user response.
+The clarification question is intended to ask for clarification of the fields not completed by the incorrect response provided as input.
+During generation also considers previous incorrect utterances to preserve coherence, as in a human dialogue.
+In the output, the system's question must use as context only the user's incorrect utterance contained in the current input. The user's response must contain all fields to be completed in the trigger action rule.
+The system must not explicitly ask for that fields to be completed.
+The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's answer.
+In the output, the system's question and the user's response must avoid referring to the trigger action rule.
+The output must respect the format of the output given in the example.
+"""
+
+
+# ----
+#   PROMPT PER LA CLARIFICATION QUESTION - UTTERANCE SUCCESSIVE
+# ----
+
+prompt_clarification_inizio_incrementale = f"""
 Generates a system question and a user response that are a clarification question and a correct response respectively. 
 Input is provided containing the fields of the trigger action rule to be completed and the system question with the user's incorrect response. 
 The incorrect response may contain partial completion of the fields or no completion at all. 
@@ -130,7 +172,7 @@ trigger_title: 'New photo post by you with hashtag'
 
 """
 
-prompt_clarification_fine = """
+prompt_clarification_fine_incrementale = """
 By analysing the fields of the trigger action rule to be completed and the system question with the user's incorrect response, generate a clarification question and a correct user response.
 The clarification question is intended to ask for clarification of the fields not completed by the incorrect response provided as input. 
 During generation also considers previous incorrect utterances to preserve coherence, as in a human dialogue. 
@@ -174,9 +216,23 @@ def get_incorrect_prompt(isFirst, trigger_action_current, trigger_action_past, o
 
 
 
-def get_clarification_prompt(user_utterance, trigger_action_current):
+def get_clarification_prompt(user_utterance, trigger_action_current, isFirst = False):
 
-    current_input = f"""
+    if isFirst:
+        current_input = f"""
+    ### CURRENT INPUT
+
+    ## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+    {trigger_action_current}
+
+    ## USER'S INCORRECT UTTERANCE
+    {user_utterance}
+
+    """
+        prompt_inizio = prompt_clarification_inizio_prima
+        prompt_fine = prompt_clarification_fine_prima
+    else:
+        current_input = f"""
     ### CURRENT INPUT
 
     ## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
@@ -186,9 +242,9 @@ def get_clarification_prompt(user_utterance, trigger_action_current):
     {user_utterance}
 
     """
-
-    prompt_inizio = prompt_clarification_inizio
-    prompt_fine = prompt_clarification_fine
+        prompt_inizio = prompt_clarification_inizio_incrementale
+        prompt_fine = prompt_clarification_fine_incrementale
+    
 
     return prompt_inizio + current_input + prompt_fine
 

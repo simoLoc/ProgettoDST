@@ -73,12 +73,12 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
             # se la validazione non è corretta devo rieseguire la generazione (del clarification prompt o del prompt corretto)
             if isFirst:
                 if isClarification:
-                    prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
+                    prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current, isFirst=isFirst)
                 else: 
                     prompt = get_prompt(isFirst=True, trigger_action_current=str_trigger_action_current, trigger_action_past = "")
             else:
                 if isClarification:
-                    prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
+                    prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current, isFirst=isFirst)
                 else:
                     prompt = get_prompt(isFirst=False, trigger_action_current=str_trigger_action_current,
                                     trigger_action_past=str_trigger_action_past, old_response=old_response)
@@ -198,7 +198,7 @@ def generate_question_and_answer(fields_trigger_action, entry, fields, current_t
 
                 # current_text += "Clarification question\n"
                 # stringa del prompt corretto 
-                prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
+                prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current, isFirst=False)
             
                 # Chiamata al modello
                 response = str(model.respond(prompt, config={"temperature": 0.6}))

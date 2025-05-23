@@ -129,7 +129,7 @@ def generate_conversation(entry, correct = False):
 
         # se la risposta contiene l'errore, allora si deve generare la clarification question
         # stringa del prompt per la clarification question
-        prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current)
+        prompt = get_clarification_prompt(user_utterance=response, trigger_action_current=str_trigger_action_current, isFirst=True)
     
         # Chiamata al modello per generare la clarification question
         response = str(model.respond(prompt, config={"temperature": 0.6}))
