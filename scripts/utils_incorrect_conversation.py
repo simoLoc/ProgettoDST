@@ -95,7 +95,7 @@ The error to be generated may relate to all or some of the fields not completed 
 During generation also considers previous utterances to preserve coherence, as in a human dialogue. 
 Fields already completed in the trigger-action rule refer to fields already known by the system. These are provided as context for the output to be produced.
 The system must not explicitly ask for that field to be not completed.
-The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's answer.
+The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's response.
 The output must respect the format of the output given in the example.
 """
 
@@ -118,7 +118,6 @@ trigger_channel: 'Facebook'
 trigger_title: 'New photo post by you with hashtag'
 
 # USER'S INCORRECT UTTERANCE
-- System: What do you want?
 - User: I want you to monitor all.
 
 # OUTPUT
@@ -135,7 +134,7 @@ The clarification question is intended to ask for clarification of the trigger a
 During generation also considers previous incorrect utterances to preserve coherence, as in a human dialogue.
 In the output, the system's question must use as context only the user's incorrect utterance contained in the current input. The user's response must contain all fields to be completed in the trigger action rule.
 The system must not explicitly ask for that fields to be completed.
-The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's answer.
+The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's response.
 In the output, the system's question and the user's response must avoid referring to the trigger action rule.
 The output must respect the format of the output given in the example. The output must contain the system's question and the user's response.
 """
@@ -178,7 +177,7 @@ During generation also considers previous incorrect utterances to preserve coher
 Incorrect previous utterances may also contain only the user's utterance, but the output must contain the system's clarification question and the user's utterance containing all fields to be completed.
 The system's question must use as context only the previous incorrect utterances contained in the current input. The user's response must contain all fields to be completed in the trigger action rule. 
 The system must not explicitly ask for that fields to be completed.  
-The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's answer.
+The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's response.
 The system's question and the user's response must avoid referring to the trigger action rule.
 The output must respect the format of the output given in the example. The output must contain the system's question and the user's response.
 """
@@ -225,7 +224,6 @@ def get_clarification_prompt(user_utterance, trigger_action_current, isFirst = F
     {trigger_action_current}
 
     ## USER'S INCORRECT UTTERANCE
-    - System: What do you want?
     {user_utterance}
 
     """
