@@ -105,7 +105,7 @@ The output must respect the format of the output given in the example.
 
 prompt_clarification_inizio_prima = f"""
 Generates a system question and a user response that are a clarification question and a correct response respectively. 
-Input is provided containing the fields of the trigger action rule to be completed and the user's incorrect utterance. . 
+Input is provided containing the fields of the trigger action rule to be completed and the user's incorrect utterance.
 The clarification question is intended to ask for clarification of the fields not completed by the incorrect utterance provided as input.
 
 {prompt_rules}
@@ -136,7 +136,8 @@ In the output, the system's question must use as context only the user's incorre
 The system must not explicitly ask for that fields to be completed.
 The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's response.
 In the output, the system's question and the user's response must avoid referring to the trigger action rule.
-The output must respect the format of the output given in the example. The output must contain the system's question and the user's response.
+The input contains the fields of the trigger action rule and the utternace of the user to be corrected. The system question is intended to simulate a clarification question. This is intended to allow an appropriate response from the user, which must include the fields of the trigger action rule to be completed.
+The output must contain the system question and the user response. The output must respect the format of the output given in the example. 
 """
 
 
