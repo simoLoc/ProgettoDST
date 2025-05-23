@@ -123,7 +123,6 @@ def generate_conversation(entry, correct = False):
         # aggiornamento del belief state vuoto
         bf_current_error = dict()
 
-        
         # salvataggio della risposta con errore
         current_text += response
         current_text += "\nBelief State: " + str(bf_current_error) + "\nEnd BF\n"
@@ -136,11 +135,11 @@ def generate_conversation(entry, correct = False):
         response = str(model.respond(prompt, config={"temperature": 0.6}))
 
         # Validazione della generazione del modello, nel caso si riesegue get_clarification_prompt
-        current_text, response = validate_prompt(response, str_trigger_action_current, current_text, isClarification = True)
+        current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text, isClarification = True)
     else: 
         # se la risposta non contiene l'errore, allora si deve effettare la validazione
         # validazione della generazione corretta
-        current_text, response = validate_prompt(response, str_trigger_action_current, current_text)
+        current_text, old_response = validate_prompt(response, str_trigger_action_current, current_text)
 
     # salvataggio del belief state dopo la validazione della risposta
     current_text += "\nBelief State: " + str(bf_current) + "\nEnd BF\n"
@@ -151,7 +150,7 @@ def generate_conversation(entry, correct = False):
         fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields,
                                                                                                                 current_text=current_text, bf_current=bf_current,
                                                                                                                 str_trigger_action_past=str_trigger_action_current,
-                                                                                                                old_response=response, isAction=True, correct = correct)
+                                                                                                                old_response=old_response, isAction=True, correct = correct)
     
         # trigger
         fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields,
@@ -165,7 +164,7 @@ def generate_conversation(entry, correct = False):
         fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=trigger, entry=entry, fields=fields,
                                                                                                                 current_text=current_text, bf_current=bf_current,
                                                                                                                 str_trigger_action_past=str_trigger_action_current,
-                                                                                                                old_response=response, isAction=False, correct = correct)
+                                                                                                                old_response=old_response, isAction=False, correct = correct)
     
         # action
         fields, current_text, bf_current, str_trigger_action_past, old_response = generate_question_and_answer(fields_trigger_action=action, entry=entry, fields=fields,
