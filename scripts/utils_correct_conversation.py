@@ -36,11 +36,11 @@ The output must contain user's utterance on completing of the fields provided as
 
 ### EXAMPLE TRIGGER-ACTION RULES
 ## INPUT
-## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+# FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
 trigger_channel: 'Facebook'
 trigger_title: 'New photo post by you with hashtag'
 
-## OUTPUT
+# OUTPUT
 - User: I want you to monitor all new Facebook posts that have a photo and a specific hashtag.
 
 ---
@@ -65,19 +65,19 @@ The output must contain the system's and user's utterance respectively on the co
 
 ### EXAMPLE TRIGGER-ACTION RULES
 ## INPUT
-## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+# FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
 trigger_fields: 'Hashtag (Text input)''
 trigger_fields_values: ''#frase_poderosa'
 
-## PREVIOUS UTTERANCES
+# PREVIOUS UTTERANCES
 
 - System: Would you like me to specify an hashtag to add in your Facebook post?
 - User: I would like you to add the hashtag #frase_poderosa.
 
-## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+# FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
 action_channel: 'Twitter'
 
-## OUTPUT
+# OUTPUT
 
 - System: After identifying the posts, what should I do?
 - User: I would like to share it on Twitter.
@@ -112,27 +112,27 @@ required fields and 0 otherwise. The output can only be 0 or 1.
 
 ### EXAMPLE 1 TRIGGER-ACTION RULES
 ## INPUT
-## UTTERANCE
+# UTTERANCE
 - User: I want you to monitor all new Facebook posts that have a photo and a specific hashtag.
 
-## FIELDS OF THE TRIGGER-ACTION RULE FOR UTTERANCE
+# FIELDS OF THE TRIGGER-ACTION RULE FOR UTTERANCE
 trigger_channel: 'Facebook'
 trigger_title: 'New photo post by you with hashtag'
 
-## OUTPUT
+# OUTPUT
 Result: 1
 
 
 ### EXAMPLE 2 TRIGGER-ACTION RULES
 ## INPUT
-## UTTERANCE
+# UTTERANCE
 - User: Please play my "Cooking Vibes" playlist.
 
-## FIELDS OF THE TRIGGER-ACTION RULE FOR UTTERANCE
+# FIELDS OF THE TRIGGER-ACTION RULE FOR UTTERANCE
 action_fields: ''
 action_fields_values: ''
 
-## OUTPUT
+# OUTPUT
 Result: 0
 
 ---
@@ -158,11 +158,11 @@ Generates an utterance containing all the fields provided as input.
 
 ### EXAMPLE
 ## INPUT
-## FIELDS TO BE COMPLETED IN THE RESPONSE
+# FIELDS TO BE COMPLETED IN THE RESPONSE
 trigger_fields: 'Hashtag (Text input)''
 trigger_fields_values: ''#frase_poderosa'
 
-## OUTPUT
+# OUTPUT
 - User: I would like you to add the hashtag #frase_poderosa.
 """
 
@@ -182,14 +182,14 @@ must be an answer consistent with the system's question.
 
 ### EXAMPLE
 ## INPUT
-## SYSTEM'S QUESTION
+# SYSTEM'S QUESTION
 - System: Would you like me to specify an hashtag to add in your Facebook post?
 
-## FIELDS TO BE COMPLETED IN THE RESPONSE
+# FIELDS TO BE COMPLETED IN THE RESPONSE
 trigger_fields: 'Hashtag (Text input)''
 trigger_fields_values: ''#frase_poderosa'
 
-## OUTPUT
+# OUTPUT
 - User: I would like you to add the hashtag #frase_poderosa.
 """
 

@@ -36,11 +36,11 @@ The user's utterance must be missing some or all of the fields required by the s
 
 ### EXAMPLE TRIGGER-ACTION RULES
 ## INPUT
-## FIELDS TO BE NOT COMPLETED IN THE TRIGGER-ACTION RULE
+# FIELDS TO BE NOT COMPLETED IN THE TRIGGER-ACTION RULE
 trigger_channel: 'Facebook'
 trigger_title: 'New photo post by you with hashtag'
 
-## OUTPUT
+# OUTPUT
 - User: I want you to monitor all new posts that have a photo and a specific hashtag.
 
 
@@ -67,18 +67,18 @@ Conversely, the user response must not provide the values needed to complete the
 
 ### EXAMPLE TRIGGER-ACTION RULES
 ## INPUT
-## FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
+# FIELDS ALREADY COMPLETED IN THE TRIGGER-ACTION RULE
 trigger_fields: 'Hashtag (Text input)'
 trigger_fields_values: '#frase_poderosa'
 
-## PREVIOUS UTTERANCES
+# PREVIOUS UTTERANCES
 - System: Would you like me to specify an hashtag to add in your Facebook post?
 - User: I would like you to add the hashtag #frase_poderosa.
 
-## FIELDS TO BE NOT COMPLETED IN THE TRIGGER-ACTION RULE
+# FIELDS TO BE NOT COMPLETED IN THE TRIGGER-ACTION RULE
 action_channel: 'Twitter'
 
-## OUTPUT
+# OUTPUT
 - System: After identifying the posts, what should I do?
 - User: I would like to share it on Social Network.
 
@@ -113,14 +113,15 @@ The clarification question is intended to ask for clarification of the fields no
 ### EXAMPLE TRIGGER-ACTION RULES
 ## INPUT
 
-## FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
+# FIELDS TO BE COMPLETED IN THE TRIGGER-ACTION RULE
 trigger_channel: 'Facebook'
 trigger_title: 'New photo post by you with hashtag'
 
-## USER'S INCORRECT UTTERANCE
+# USER'S INCORRECT UTTERANCE
+- System: What do you want?
 - User: I want you to monitor all.
 
-## OUTPUT
+# OUTPUT
 - System: Ok, but I'm not sure on what to do and which platform to monitor. Could you specify it?
 - User: Please look at all my new Facebook posts with a specific hashtag.
 
@@ -158,11 +159,11 @@ The clarification question is intended to ask for clarification of the fields no
 trigger_channel: 'Facebook'
 trigger_title: 'New photo post by you with hashtag'
 
-## PREVIOUS INCORRECT UTTERANCES
+# PREVIOUS INCORRECT UTTERANCES
 - System: To post the photo on Twitter, what do you want that I must monitor?
 - User: I want you to monitor all.
 
-## OUTPUT
+# OUTPUT
 - System: Ok, but I'm not sure on what to do and which platform to monitor. Could you specify it?
 - User: Please look at all my new Facebook posts with a specific hashtag.
 
@@ -224,6 +225,7 @@ def get_clarification_prompt(user_utterance, trigger_action_current, isFirst = F
     {trigger_action_current}
 
     ## USER'S INCORRECT UTTERANCE
+    - System: What do you want?
     {user_utterance}
 
     """
