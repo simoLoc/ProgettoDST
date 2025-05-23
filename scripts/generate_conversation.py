@@ -256,21 +256,21 @@ if __name__ == "__main__":
 
     for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
         
-        correct_conversation_output = generate_conversation(entry, correct = True)
+        # correct_conversation_output = generate_conversation(entry, correct = True)
         incorrect_conversation_output = generate_conversation(entry, correct = False)
 
         # estrazione solo utterance
-        correct_conversation = extract_utterances(correct_conversation_output)
+        # correct_conversation = extract_utterances(correct_conversation_output)
         incorrect_conversation = extract_utterances(incorrect_conversation_output)
 
         """
             SALVATAGGIO DEL JSONL
         """
 
-        json_correct = parse_conversation_to_json(correct_conversation, i)
+        # json_correct = parse_conversation_to_json(correct_conversation, i)
         json_incorrect = parse_conversation_to_json(incorrect_conversation, i)
 
-        save_to_json_lines([json_correct], file_path_json_correct)
+        # save_to_json_lines([json_correct], file_path_json_correct)
         save_to_json_lines([json_incorrect], file_path_json_incorrect)
 
         # Percorso del file
