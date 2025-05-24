@@ -131,14 +131,14 @@ trigger_title: 'New photo post by you with hashtag'
 
 prompt_clarification_fine_prima = """
 By analysing the fields to be completed in the trigger action rule and the user incorrect utterance, generate a system clarification question and a correct user response.
-The input contains the fields to be completed in the trigger action rule and the user incorrect utternace. The system question is intended to simulate a clarification question. 
+The input contains the fields to be completed in the trigger action rule and the user incorrect utterance. The system question is intended to simulate a clarification question. 
 The clarification question consists of asking for more information on the fields to be filled in the trigger action rule, using the user incorrect utterance as context.
 The user response must include the fields to be completed in the trigger action rule.
 The system must not explicitly ask for that fields to be completed. 
 The completion of the fields must be contained in the user's response, not in the system's question.
 In the output, the system's question and the user's response must avoid referring to the trigger action rule.
 During generation also considers previous incorrect utterances to preserve coherence, as in a human dialogue.
-The output must contain the system question and the user response. The output must respect the format of the output given in the example.
+The output must contain the system question and the user response. The clarification question must be a consequence of the user incorrect utterance and must precede the user correct response, as is the example. The output must respect the format of the output given in the example.
 """
 
 
