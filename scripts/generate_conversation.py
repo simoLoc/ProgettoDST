@@ -246,31 +246,31 @@ if __name__ == "__main__":
     name_model = "gemma-3-27b-it"
     model = lms.llm(name_model)
 
-    file_path_json_correct = "dataset/conversation_correct_val.jsonl"
-    file_path_json_incorrect = "dataset/conversation_incorrect_val.jsonl"
+    file_path_json_correct = "dataset/conversation_correct_prova.jsonl"
+    file_path_json_incorrect = "dataset/conversation_incorrect_prova.jsonl"
 
 
-    with open("dataset/dataset_val.json", "r", encoding="utf-8") as f:
+    with open("dataset/values_prova_completo.json", "r", encoding="utf-8") as f:
         dataset = json.load(f)
 
 
     for i, entry in enumerate(tqdm(dataset, total=len(dataset))):
         
-        # correct_conversation_output = generate_conversation(entry, correct = True)
+        correct_conversation_output = generate_conversation(entry, correct = True)
         incorrect_conversation_output = generate_conversation(entry, correct = False)
 
         # estrazione solo utterance
-        # correct_conversation = extract_utterances(correct_conversation_output)
+        correct_conversation = extract_utterances(correct_conversation_output)
         incorrect_conversation = extract_utterances(incorrect_conversation_output)
 
         """
             SALVATAGGIO DEL JSONL
         """
 
-        # json_correct = parse_conversation_to_json(correct_conversation, i)
+        json_correct = parse_conversation_to_json(correct_conversation, i)
         json_incorrect = parse_conversation_to_json(incorrect_conversation, i)
 
-        # save_to_json_lines([json_correct], file_path_json_correct)
+        save_to_json_lines([json_correct], file_path_json_correct)
         save_to_json_lines([json_incorrect], file_path_json_incorrect)
 
         # Percorso del file
