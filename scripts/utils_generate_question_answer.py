@@ -94,18 +94,15 @@ def validate_prompt(response, str_trigger_action_current, current_text, isFirst 
         # print("Correzione della risposta in corso...")
         # current_text += "Correzione della risposta in corso...\n"
         
-        if not isFirst:
-            system_utterance = get_system_user_utterances(user = False, response = response)
+        system_utterance = get_system_user_utterances(user = False, response = response)
 
-            correction_prompt = get_utterance_correction_prompt(system_utterance = system_utterance, trigger_action_current = str_trigger_action_current, isFirst = isFirst)
-            correction_response = str(model.respond(correction_prompt, config={"temperature": 0.6}))
-
+        correction_prompt = get_utterance_correction_prompt(system_utterance = system_utterance, trigger_action_current = str_trigger_action_current, isFirst = isFirst)
+        correction_response = str(model.respond(correction_prompt, config={"temperature": 0.6}))
+        
+        if not isFirst or isClarification:
             current_text += "- System: " + system_utterance + "\n" + correction_response + "\n"
             old_response = "- System: " + system_utterance + "\n" + correction_response
         else:
-            correction_prompt = get_utterance_correction_prompt(system_utterance = '', trigger_action_current = str_trigger_action_current, isFirst = isFirst)
-            correction_response = str(model.respond(correction_prompt, config={"temperature": 0.6}))
-
             current_text += correction_response + "\n"
             old_response = correction_response
     else:
