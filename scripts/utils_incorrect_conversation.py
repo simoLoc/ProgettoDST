@@ -104,7 +104,8 @@ The output must respect the format of the output given in the example.
 # ----
 
 prompt_clarification_inizio_prima = f"""
-Generates a system question and a user response that are a clarification question and a correct response respectively. 
+Generates a system question and a user response, related to the question.
+The system question must be a question of clarification and the user's response clear and complete.
 Input is provided containing the fields of the trigger action rule to be completed and the user's incorrect utterance.
 The clarification question is intended to ask for clarification of the fields not completed by the incorrect utterance provided as input.
 
@@ -129,7 +130,7 @@ trigger_title: 'New photo post by you with hashtag'
 """
 
 prompt_clarification_fine_prima = """
-By analysing the fields of the trigger action rule to be completed and the user's incorrect utterance, generate a clarification question and a correct user response.
+By analysing the fields of the trigger action rule to be completed and the user's incorrect utterance, generate a system clarification question and a correct user response.
 The clarification question is intended to ask for clarification of the trigger action rule to be completed, that are not completed in the user incorrect utterance.
 During generation also considers previous incorrect utterances to preserve coherence, as in a human dialogue.
 In the output, the system's question must use as context only the user's incorrect utterance contained in the current input. The user's response must contain all fields to be completed in the trigger action rule.
@@ -137,7 +138,8 @@ The system must not explicitly ask for that fields to be completed.
 The system's question does not have to specify the filling in of all fields, but only has to be contained in the user's response.
 In the output, the system's question and the user's response must avoid referring to the trigger action rule.
 The input contains the fields of the trigger action rule and the utternace of the user to be corrected. The system question is intended to simulate a clarification question. This is intended to allow an appropriate response from the user, which must include the fields of the trigger action rule to be completed.
-The output must contain the system question and the user response. The output must respect the format of the output given in the example. 
+The output must contain the system question and the user response. The output must respect the format of the output given in the example.
+The input contains the user's utterance, generates the system's question and the user's response.
 """
 
 
